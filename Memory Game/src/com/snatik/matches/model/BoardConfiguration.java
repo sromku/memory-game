@@ -4,10 +4,10 @@ public class BoardConfiguration {
 
 	public static final int _6 = 6;
 	public static final int _12 = 12;
-	public static final int _20 = 20;
-	public static final int _30 = 30;
-	public static final int _40 = 40;
-	public static final int _54 = 54;
+	public static final int _18 = 18;
+	public static final int _28 = 28;
+	public static final int _32 = 32;
+	public static final int _50 = 50;
 
 	public final int difficulty;
 	public final int numTiles;
@@ -30,28 +30,28 @@ public class BoardConfiguration {
 			numRows = 3;
 			time = 90;
 			break;
-		case _20:
+		case _18:
 			difficulty = 3;
-			numTilesInRow = 5;
-			numRows = 4;
+			numTilesInRow = 6;
+			numRows = 3;
 			time = 120;
 			break;
-		case _30:
+		case _28:
 			difficulty = 4;
-			numTilesInRow = 6;
-			numRows = 5;
+			numTilesInRow = 7;
+			numRows = 4;
 			time = 150;
 			break;
-		case _40:
+		case _32:
 			difficulty = 5;
 			numTilesInRow = 8;
-			numRows = 5;
+			numRows = 4;
 			time = 180;
 			break;
-		case _54:
+		case _50:
 			difficulty = 6;
-			numTilesInRow = 9;
-			numRows = 6;
+			numTilesInRow = 10;
+			numRows = 5;
 			time = 210;
 			break;	
 		default:

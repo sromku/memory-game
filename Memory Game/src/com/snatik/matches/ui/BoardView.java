@@ -24,6 +24,7 @@ import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
+import com.snatik.matches.utils.Utils;
 
 public class BoardView extends LinearLayout {
 
@@ -45,7 +46,7 @@ public class BoardView extends LinearLayout {
 		super(context, attributeSet);
 		setOrientation(LinearLayout.VERTICAL);
 		setGravity(Gravity.CENTER);
-		mScreenHeight = getResources().getDisplayMetrics().heightPixels;
+		mScreenHeight = getResources().getDisplayMetrics().heightPixels - Utils.px(70);
 		mScreenWidth = getResources().getDisplayMetrics().widthPixels;
 		mViewReference = new HashMap<Integer, TileView>();
 	}

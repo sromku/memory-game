@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
@@ -13,16 +15,24 @@ import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.model.Game;
 import com.snatik.matches.ui.BoardView;
 import com.snatik.matches.ui.PopupManager;
+import com.snatik.matches.utils.Clock;
+import com.snatik.matches.utils.FontLoader;
+import com.snatik.matches.utils.Clock.OnTimerCount;
+import com.snatik.matches.utils.FontLoader.Font;
 
 public class GameFragment extends BaseFragment {
 
 	private BoardView mBoardView;
+	private TextView mTime;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		ViewGroup view = (ViewGroup) inflater.inflate(R.layout.game_fragment, container, false);
+		mTime = (TextView) view.findViewById(R.id.time_bar_text);
+		FontLoader.setTypeface(Shared.context, new TextView[] {mTime}, Font.GROBOLD);
 		mBoardView = BoardView.fromXml(getActivity().getApplicationContext(), view);
-		view.addView(mBoardView);
+		FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.game_container);
+		frameLayout.addView(mBoardView);
 
 		// set background
 		// ImageView imageView = (ImageView)
@@ -49,7 +59,33 @@ public class GameFragment extends BaseFragment {
 
 	private void buildBoard() {
 		Game game = Shared.engine.getActiveGame();
+		int time = game.boardConfiguration.time;
+		setTime(time);
 		mBoardView.setBoard(game);
+		
+		startClock(time);
+	}
+	
+	private void setTime(int time) {
+		int min = time / 60;
+		int sec = time - min*60;
+		mTime.setText(" " + String.format("%02d", min) + ":" + String.format("%02d", sec));
+	}
+
+	private void startClock(int sec) {
+		Clock clock = Clock.getInstance();
+		clock.startTimer(sec*1000, 1000, new OnTimerCount() {
+			
+			@Override
+			public void onTick(long millisUntilFinished) {
+				setTime((int) (millisUntilFinished/1000));
+			}
+			
+			@Override
+			public void onFinish() {
+				setTime(0);
+			}
+		});
 	}
 
 	@Override

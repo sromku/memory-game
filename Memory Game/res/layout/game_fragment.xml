@@ -10,4 +10,49 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp" >
+            
+            <ImageView 
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/time_bar"
+                />
+            
+            <TextView 
+                android:id="@+id/time_bar_text"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textColor="#FFFFFF"
+                android:text="00:60"
+                android:shadowColor="#2eaed9"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="4"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp"
+                android:textSize="20dp"
+                />
+            
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/game_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </FrameLayout>
+    </LinearLayout>
+
 </FrameLayout>

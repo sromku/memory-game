@@ -38,7 +38,8 @@ public class BoardArrangment {
 	}
 
 	public boolean isPair(int id1, int id2) {
-		return pairs.get(id1).equals(id2);
+		Integer integer = pairs.get(id1);
+		return integer.equals(id2);
 	}
 
 }
