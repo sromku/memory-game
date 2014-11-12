@@ -21,8 +21,8 @@ import com.snatik.matches.events.ui.StartEvent;
 import com.snatik.matches.fragments.DifficultySelectFragment;
 import com.snatik.matches.fragments.GameFragment;
 import com.snatik.matches.fragments.ThemeSelectFragment;
-import com.snatik.matches.model.Board;
 import com.snatik.matches.model.BoardArrangment;
+import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
 
 public class Engine extends EventObserverAdapter {
@@ -83,7 +83,7 @@ public class Engine extends EventObserverAdapter {
 	@Override
 	public void onEvent(SelectGameEvent event) {
 		mPlayingGame = event.game;
-		mToFlip = mPlayingGame.board.numTiles;
+		mToFlip = mPlayingGame.boardConfiguration.numTiles;
 
 		// arrange board
 		arrangeBoard();
@@ -98,17 +98,17 @@ public class Engine extends EventObserverAdapter {
 	}
 
 	private void arrangeBoard() {
-		Board board = mPlayingGame.board;
+		BoardConfiguration boardConfiguration = mPlayingGame.boardConfiguration;
 		BoardArrangment boardArrangment = new BoardArrangment();
 
 		// build pairs
 		// result {0,1,2,...n} // n-number of tiles
 		List<Integer> ids = new ArrayList<Integer>();
-		for (int i = 0; i < board.numTiles; i++) {
+		for (int i = 0; i < boardConfiguration.numTiles; i++) {
 			ids.add(i);
 		}
 		// shuffle
-		// result {4,10,2,...}
+		// result {4,10,2,39,...}
 		Collections.shuffle(ids);
 
 		// place the board
@@ -116,13 +116,18 @@ public class Engine extends EventObserverAdapter {
 		Collections.shuffle(tileImageUrls);
 		boardArrangment.pairs = new HashMap<Integer, Integer>();
 		boardArrangment.tileUrls = new HashMap<Integer, String>();
+		int j = 0;
 		for (int i = 0; i < ids.size(); i++) {
 			if (i + 1 < ids.size()) {
+				// {4,10}, {2,39}, ...
 				boardArrangment.pairs.put(ids.get(i), ids.get(i + 1));
+				// {10,4}, {39,2}, ...
 				boardArrangment.pairs.put(ids.get(i + 1), ids.get(i));
-				boardArrangment.tileUrls.put(ids.get(i), tileImageUrls.get(i));
-				boardArrangment.tileUrls.put(ids.get(i + 1), tileImageUrls.get(i));
+				// {4, 
+				boardArrangment.tileUrls.put(ids.get(i), tileImageUrls.get(j));
+				boardArrangment.tileUrls.put(ids.get(i + 1), tileImageUrls.get(j));
 				i++;
+				j++;
 			}
 		}
 

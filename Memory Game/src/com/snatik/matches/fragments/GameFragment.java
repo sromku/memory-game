@@ -23,13 +23,14 @@ public class GameFragment extends BaseFragment {
 		ViewGroup view = (ViewGroup) inflater.inflate(R.layout.game_fragment, container, false);
 		mBoardView = BoardView.fromXml(getActivity().getApplicationContext(), view);
 		view.addView(mBoardView);
-		
+
 		// set background
-//		ImageView imageView = (ImageView) view.findViewById(R.id.background_image);
-//		Game game = Shared.engine.getActiveGame();
-//		Bitmap bitmap = Themes.getBackgroundImage(game.theme);
-//		imageView.setImageBitmap(bitmap);
-		
+		// ImageView imageView = (ImageView)
+		// view.findViewById(R.id.background_image);
+		// Game game = Shared.engine.getActiveGame();
+		// Bitmap bitmap = Themes.getBackgroundImage(game.theme);
+		// imageView.setImageBitmap(bitmap);
+
 		// build board
 		buildBoard();
 		Shared.eventBus.listen(FlipDownCardsEvent.TYPE, this);
@@ -37,7 +38,7 @@ public class GameFragment extends BaseFragment {
 		Shared.eventBus.listen(GameWonEvent.TYPE, this);
 		return view;
 	}
-	
+
 	@Override
 	public void onDestroy() {
 		Shared.eventBus.unlisten(FlipDownCardsEvent.TYPE, this);
@@ -48,22 +49,22 @@ public class GameFragment extends BaseFragment {
 
 	private void buildBoard() {
 		Game game = Shared.engine.getActiveGame();
-		mBoardView.setBoard(game.board, game.boardArrangment);
+		mBoardView.setBoard(game);
 	}
-	
+
 	@Override
 	public void onEvent(GameWonEvent event) {
 		PopupManager.showPopupWon();
 	}
-	
+
 	@Override
 	public void onEvent(FlipDownCardsEvent event) {
 		mBoardView.flipDownAll();
 	}
-	
+
 	@Override
 	public void onEvent(HidePairCardsEvent event) {
 		mBoardView.hideCards(event.id1, event.id2);
 	}
-	
+
 }

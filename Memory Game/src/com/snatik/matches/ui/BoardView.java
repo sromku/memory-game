@@ -21,8 +21,9 @@ import android.widget.LinearLayout;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.FlipCardEvent;
-import com.snatik.matches.model.Board;
 import com.snatik.matches.model.BoardArrangment;
+import com.snatik.matches.model.BoardConfiguration;
+import com.snatik.matches.model.Game;
 
 public class BoardView extends LinearLayout {
 
@@ -30,7 +31,7 @@ public class BoardView extends LinearLayout {
 	private LinearLayout.LayoutParams mTileLayoutParams;
 	private int mScreenWidth;
 	private int mScreenHeight;
-	private Board mBoard;
+	private BoardConfiguration mBoardConfiguration;
 	private BoardArrangment mBoardArrangment;
 	private Map<Integer, TileView> mViewReference;
 	private List<Integer> flippedUp = new ArrayList<Integer>();
@@ -57,20 +58,20 @@ public class BoardView extends LinearLayout {
 	public static BoardView fromXml(Context context, ViewGroup parent) {
 		return (BoardView) LayoutInflater.from(context).inflate(R.layout.board_view, parent, false);
 	}
-	
-	public void setBoard(Board board, BoardArrangment boardArrangment) {
-		mBoard = board;
-		mBoardArrangment = boardArrangment;
+
+	public void setBoard(Game game) {
+		mBoardConfiguration = game.boardConfiguration;
+		mBoardArrangment = game.boardArrangment;
 		// calc prefered tiles in width and height
 		int singleMargin = getResources().getDimensionPixelSize(R.dimen.card_margin);
 		float density = getResources().getDisplayMetrics().density;
-		singleMargin = Math.max((int) (1 * density), (int) (singleMargin - board.difficulty * 2 * density));
+		singleMargin = Math.max((int) (1 * density), (int) (singleMargin - mBoardConfiguration.difficulty * 2 * density));
 		int sumMargin = 0;
-		for (int row = 0; row < board.numRows; row++) {
+		for (int row = 0; row < mBoardConfiguration.numRows; row++) {
 			sumMargin += singleMargin * 2;
 		}
-		int tilesHeight = (mScreenHeight - sumMargin) / board.numRows;
-		int tilesWidth = (mScreenWidth - sumMargin) / board.numTilesInRow;
+		int tilesHeight = (mScreenHeight - sumMargin) / mBoardConfiguration.numRows;
+		int tilesWidth = (mScreenWidth - sumMargin) / mBoardConfiguration.numTilesInRow;
 		int size = Math.min(tilesHeight, tilesWidth);
 
 		mTileLayoutParams = new LinearLayout.LayoutParams(size, size);
@@ -85,7 +86,7 @@ public class BoardView extends LinearLayout {
 	 */
 	private void buildBoard() {
 
-		for (int row = 0; row < mBoard.numRows; row++) {
+		for (int row = 0; row < mBoardConfiguration.numRows; row++) {
 			// add row
 			addBoardRow(row);
 		}
@@ -98,8 +99,8 @@ public class BoardView extends LinearLayout {
 		linearLayout.setOrientation(LinearLayout.HORIZONTAL);
 		linearLayout.setGravity(Gravity.CENTER);
 
-		for (int tile = 0; tile < mBoard.numTilesInRow; tile++) {
-			addTile(rowNum * mBoard.numTilesInRow + tile, linearLayout);
+		for (int tile = 0; tile < mBoardConfiguration.numTilesInRow; tile++) {
+			addTile(rowNum * mBoardConfiguration.numTilesInRow + tile, linearLayout);
 		}
 
 		// add to this view
@@ -110,7 +111,7 @@ public class BoardView extends LinearLayout {
 		final TileView tileView = TileView.fromXml(getContext(), parent);
 		tileView.setLayoutParams(mTileLayoutParams);
 		parent.addView(tileView);
-		mViewReference.put(id,  tileView);
+		mViewReference.put(id, tileView);
 
 		tileView.setTileImage(mBoardArrangment.getTileBitmap(id));
 		tileView.setOnClickListener(new View.OnClickListener() {
@@ -124,10 +125,10 @@ public class BoardView extends LinearLayout {
 						mLocked = true;
 					}
 					Shared.eventBus.notify(new FlipCardEvent(id));
-				} 
+				}
 			}
 		});
-		
+
 		ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(tileView, "alpha", 0f, 1f);
 		ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(tileView, "scaleX", 0.8f, 1f);
 		scaleXAnimator.setInterpolator(new BounceInterpolator());
@@ -144,7 +145,7 @@ public class BoardView extends LinearLayout {
 			mViewReference.get(id).flipDown();
 		}
 		flippedUp.clear();
-		mLocked = false; 
+		mLocked = false;
 	}
 
 	public void hideCards(int id1, int id2) {
@@ -167,5 +168,5 @@ public class BoardView extends LinearLayout {
 		v.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		animator.start();
 	}
-	
+
 }

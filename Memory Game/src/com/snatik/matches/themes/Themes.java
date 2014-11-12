@@ -23,6 +23,7 @@ public class Themes {
 		theme.name = "Mosters";
 		theme.backgroundImageUrl = URI_DRAWABLE + "back_horror";
 		theme.tileImageUrls = new ArrayList<String>();
+		// 40 drawables
 		for (int i = 1; i <= 40; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("mosters_%d", i));
 		}
