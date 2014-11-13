@@ -41,9 +41,7 @@ public class MainActivity extends FragmentActivity {
 	public void onBackPressed() {
 		if (PopupManager.isShown()) {
 			PopupManager.closePopup();
-		} 
-		
-		if (ScreenController.getInstance().onBack()) {
+		} else if (ScreenController.getInstance().onBack()) {
 			super.onBackPressed();
 		}
 	}

@@ -6,8 +6,8 @@ import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
-import com.snatik.matches.events.ui.SelectDiffucltyEvent;
-import com.snatik.matches.events.ui.SelectGameEvent;
+import com.snatik.matches.events.ui.ThemeSelectedEvent;
+import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.events.ui.StartEvent;
 
 
@@ -15,7 +15,7 @@ public interface EventObserver {
 
 	void onEvent(FlipCardEvent event);
 
-	void onEvent(SelectGameEvent event);
+	void onEvent(DifficultySelectedEvent event);
 
 	void onEvent(HidePairCardsEvent event);
 
@@ -23,7 +23,7 @@ public interface EventObserver {
 
 	void onEvent(StartEvent event);
 
-	void onEvent(SelectDiffucltyEvent event);
+	void onEvent(ThemeSelectedEvent event);
 
 	void onEvent(GameWonEvent event);
 

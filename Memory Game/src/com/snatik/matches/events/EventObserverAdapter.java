@@ -6,8 +6,8 @@ import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
-import com.snatik.matches.events.ui.SelectDiffucltyEvent;
-import com.snatik.matches.events.ui.SelectGameEvent;
+import com.snatik.matches.events.ui.ThemeSelectedEvent;
+import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.events.ui.StartEvent;
 
 
@@ -18,7 +18,7 @@ public class EventObserverAdapter implements EventObserver {
 	}
 
 	@Override
-	public void onEvent(SelectGameEvent event) {
+	public void onEvent(DifficultySelectedEvent event) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -38,7 +38,7 @@ public class EventObserverAdapter implements EventObserver {
 	}
 
 	@Override
-	public void onEvent(SelectDiffucltyEvent event) {
+	public void onEvent(ThemeSelectedEvent event) {
 		throw new UnsupportedOperationException();
 	}
 

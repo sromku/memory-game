@@ -14,13 +14,15 @@ import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
-import com.snatik.matches.events.ui.SelectDiffucltyEvent;
-import com.snatik.matches.events.ui.SelectGameEvent;
+import com.snatik.matches.events.ui.ThemeSelectedEvent;
+import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.events.ui.StartEvent;
+import com.snatik.matches.memory.Memory;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
 import com.snatik.matches.model.GameState;
+import com.snatik.matches.themes.Theme;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Clock;
 
@@ -31,6 +33,7 @@ public class Engine extends EventObserverAdapter {
 	private int mFlippedId = -1;
 	private int mToFlip = -1;
 	private ScreenController mScreenController;
+	private Theme mSelectedTheme;
 
 	private Engine() {
 		mScreenController = ScreenController.getInstance();
@@ -44,19 +47,19 @@ public class Engine extends EventObserverAdapter {
 	}
 
 	public void start() {
-		Shared.eventBus.listen(SelectGameEvent.TYPE, this);
+		Shared.eventBus.listen(DifficultySelectedEvent.TYPE, this);
 		Shared.eventBus.listen(FlipCardEvent.TYPE, this);
 		Shared.eventBus.listen(StartEvent.TYPE, this);
-		Shared.eventBus.listen(SelectDiffucltyEvent.TYPE, this);
+		Shared.eventBus.listen(ThemeSelectedEvent.TYPE, this);
 		Shared.eventBus.listen(BackGameEvent.TYPE, this);
 		Shared.eventBus.listen(NextGameEvent.TYPE, this);
 	}
 
 	public void stop() {
-		Shared.eventBus.unlisten(SelectGameEvent.TYPE, this);
+		Shared.eventBus.unlisten(DifficultySelectedEvent.TYPE, this);
 		Shared.eventBus.unlisten(FlipCardEvent.TYPE, this);
 		Shared.eventBus.unlisten(StartEvent.TYPE, this);
-		Shared.eventBus.unlisten(SelectDiffucltyEvent.TYPE, this);
+		Shared.eventBus.unlisten(ThemeSelectedEvent.TYPE, this);
 		Shared.eventBus.unlisten(BackGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(NextGameEvent.TYPE, this);
 	}
@@ -73,10 +76,7 @@ public class Engine extends EventObserverAdapter {
 		if (mPlayingGame.gameState.achievedStars == 3 && difficulty < 6) {
 			difficulty++;
 		} 
-		Game game = new Game();
-		game.theme = mPlayingGame.theme;
-		game.boardConfiguration = new BoardConfiguration(difficulty);
-		Shared.eventBus.notify(new SelectGameEvent(game));
+		Shared.eventBus.notify(new DifficultySelectedEvent(difficulty));
 	}
 	
 	@Override
@@ -86,13 +86,16 @@ public class Engine extends EventObserverAdapter {
 	}
 
 	@Override
-	public void onEvent(SelectDiffucltyEvent event) {
+	public void onEvent(ThemeSelectedEvent event) {
+		mSelectedTheme = event.theme;
 		mScreenController.openScreen(Screen.DIFFICULTY);
 	}
 
 	@Override
-	public void onEvent(SelectGameEvent event) {
-		mPlayingGame = event.game;
+	public void onEvent(DifficultySelectedEvent event) {
+		mPlayingGame = new Game();
+		mPlayingGame.boardConfiguration = new BoardConfiguration(event.difficulty);
+		mPlayingGame.theme = mSelectedTheme;
 		mToFlip = mPlayingGame.boardConfiguration.numTiles;
 
 		// arrange board
@@ -175,7 +178,8 @@ public class Engine extends EventObserverAdapter {
 					// calc score
 					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds; 
 					
-					// TODO - save to memory
+					// save to memory
+					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
 					
 					Shared.eventBus.notify(new GameWonEvent(gameState), 1200);
 				}
@@ -191,5 +195,9 @@ public class Engine extends EventObserverAdapter {
 
 	public Game getActiveGame() {
 		return mPlayingGame;
+	}
+	
+	public Theme getSelectedTheme() {
+		return mSelectedTheme;
 	}
 }
