@@ -5,25 +5,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-
-import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.events.EventObserverAdapter;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;
 import com.snatik.matches.events.engine.GameWonEvent;
 import com.snatik.matches.events.engine.HidePairCardsEvent;
+import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
+import com.snatik.matches.events.ui.NextGameEvent;
 import com.snatik.matches.events.ui.SelectDiffucltyEvent;
 import com.snatik.matches.events.ui.SelectGameEvent;
 import com.snatik.matches.events.ui.StartEvent;
-import com.snatik.matches.fragments.DifficultySelectFragment;
-import com.snatik.matches.fragments.GameFragment;
-import com.snatik.matches.fragments.ThemeSelectFragment;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
+import com.snatik.matches.model.GameState;
+import com.snatik.matches.ui.PopupManager;
+import com.snatik.matches.utils.Clock;
 
 public class Engine extends EventObserverAdapter {
 
@@ -31,8 +30,10 @@ public class Engine extends EventObserverAdapter {
 	private Game mPlayingGame = null;
 	private int mFlippedId = -1;
 	private int mToFlip = -1;
+	private ScreenController mScreenController;
 
 	private Engine() {
+		mScreenController = ScreenController.getInstance();
 	}
 
 	public static Engine getInstance() {
@@ -47,6 +48,8 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.listen(FlipCardEvent.TYPE, this);
 		Shared.eventBus.listen(StartEvent.TYPE, this);
 		Shared.eventBus.listen(SelectDiffucltyEvent.TYPE, this);
+		Shared.eventBus.listen(BackGameEvent.TYPE, this);
+		Shared.eventBus.listen(NextGameEvent.TYPE, this);
 	}
 
 	public void stop() {
@@ -54,30 +57,37 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.unlisten(FlipCardEvent.TYPE, this);
 		Shared.eventBus.unlisten(StartEvent.TYPE, this);
 		Shared.eventBus.unlisten(SelectDiffucltyEvent.TYPE, this);
+		Shared.eventBus.unlisten(BackGameEvent.TYPE, this);
+		Shared.eventBus.unlisten(NextGameEvent.TYPE, this);
 	}
 
 	@Override
 	public void onEvent(StartEvent event) {
-
-		// start the screen
-		FragmentManager fragmentManager = Shared.activity.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		ThemeSelectFragment fragment = new ThemeSelectFragment();
-		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction.replace(R.id.fragment_container, fragment);
-		fragmentTransaction.commit();
+		mScreenController.openScreen(Screen.THEME_SELECT);
+	}
+	
+	@Override
+	public void onEvent(NextGameEvent event) {
+		PopupManager.closePopup();
+		int difficulty = mPlayingGame.boardConfiguration.difficulty;
+		if (mPlayingGame.gameState.achievedStars == 3 && difficulty < 6) {
+			difficulty++;
+		} 
+		Game game = new Game();
+		game.theme = mPlayingGame.theme;
+		game.boardConfiguration = new BoardConfiguration(difficulty);
+		Shared.eventBus.notify(new SelectGameEvent(game));
+	}
+	
+	@Override
+	public void onEvent(BackGameEvent event) {
+		PopupManager.closePopup();
+		mScreenController.openScreen(Screen.DIFFICULTY);
 	}
 
 	@Override
 	public void onEvent(SelectDiffucltyEvent event) {
-
-		// start the screen
-		FragmentManager fragmentManager = Shared.activity.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		DifficultySelectFragment fragment = new DifficultySelectFragment();
-		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction.replace(R.id.fragment_container, fragment);
-		fragmentTransaction.commit();
+		mScreenController.openScreen(Screen.DIFFICULTY);
 	}
 
 	@Override
@@ -89,12 +99,7 @@ public class Engine extends EventObserverAdapter {
 		arrangeBoard();
 
 		// start the screen
-		FragmentManager fragmentManager = Shared.activity.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		GameFragment fragment = new GameFragment();
-		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction.replace(R.id.fragment_container, fragment);
-		fragmentTransaction.commit();
+		mScreenController.openScreen(Screen.GAME);
 	}
 
 	private void arrangeBoard() {
@@ -148,7 +153,31 @@ public class Engine extends EventObserverAdapter {
 				Shared.eventBus.notify(new HidePairCardsEvent(mFlippedId, id), 1000);
 				mToFlip -= 2;
 				if (mToFlip == 0) {
-					Shared.eventBus.notify(new GameWonEvent(), 1200);
+					int passedSeconds = (int) (Clock.getInstance().getPassedTime() / 1000);
+					Clock.getInstance().pause();
+					int totalTime = mPlayingGame.boardConfiguration.time;
+					GameState gameState = new GameState();
+					mPlayingGame.gameState = gameState;
+					// remained seconds
+					gameState.remainedSeconds = totalTime - passedSeconds;
+					
+					// calc stars
+					if (passedSeconds <= totalTime/2) {
+						gameState.achievedStars = 3;
+					} else if (passedSeconds <= totalTime - totalTime/5) {
+						gameState.achievedStars = 2;
+					} else if (passedSeconds < totalTime) {
+						gameState.achievedStars = 1;
+					} else {
+						gameState.achievedStars = 0;
+					}
+					
+					// calc score
+					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds; 
+					
+					// TODO - save to memory
+					
+					Shared.eventBus.notify(new GameWonEvent(gameState), 1200);
 				}
 			} else {
 				// Log.i("my_tag", "Flip: all down");

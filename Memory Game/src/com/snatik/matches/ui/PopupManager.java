@@ -14,6 +14,7 @@ import android.widget.RelativeLayout.LayoutParams;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.model.GameState;
 import com.snatik.matches.utils.Utils;
 
 public class PopupManager {
@@ -46,13 +47,14 @@ public class PopupManager {
 		animatorSet.start();
 	}
 
-	public static void showPopupWon() {
+	public static void showPopupWon(GameState gameState) {
 		RelativeLayout popupContainer = (RelativeLayout) Shared.activity.findViewById(R.id.popup_container);
 		popupContainer.removeAllViews();
 
 		// popup
 		PopupWonView popupWonView = new PopupWonView(Shared.context);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Utils.px(250), Utils.px(300));
+		popupWonView.setGameState(gameState);
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Utils.px(240), Utils.px(300));
 		params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		popupContainer.addView(popupWonView, params);
 

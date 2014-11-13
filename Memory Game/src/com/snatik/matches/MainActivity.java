@@ -3,12 +3,11 @@ package com.snatik.matches;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.widget.ImageView;
 
 import com.snatik.matches.common.Shared;
-import com.snatik.matches.fragments.MenuFragment;
+import com.snatik.matches.engine.ScreenController;
+import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Utils;
 
@@ -29,11 +28,7 @@ public class MainActivity extends FragmentActivity {
 		setBackgroundImage();
 
 		// set menu
-		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-		MenuFragment fragment = new MenuFragment();
-		fragmentTransaction.add(R.id.fragment_container, fragment);
-		fragmentTransaction.commit();
+		ScreenController.getInstance().openScreen(Screen.MENU);
 	}
 
 	@Override
@@ -46,7 +41,9 @@ public class MainActivity extends FragmentActivity {
 	public void onBackPressed() {
 		if (PopupManager.isShown()) {
 			PopupManager.closePopup();
-		} else {
+		} 
+		
+		if (ScreenController.getInstance().onBack()) {
 			super.onBackPressed();
 		}
 	}

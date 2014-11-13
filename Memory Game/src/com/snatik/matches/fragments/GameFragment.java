@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.snatik.matches.R;
@@ -16,19 +17,21 @@ import com.snatik.matches.model.Game;
 import com.snatik.matches.ui.BoardView;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Clock;
-import com.snatik.matches.utils.FontLoader;
 import com.snatik.matches.utils.Clock.OnTimerCount;
+import com.snatik.matches.utils.FontLoader;
 import com.snatik.matches.utils.FontLoader.Font;
 
 public class GameFragment extends BaseFragment {
 
 	private BoardView mBoardView;
 	private TextView mTime;
+	private ImageView mTimeImage;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		ViewGroup view = (ViewGroup) inflater.inflate(R.layout.game_fragment, container, false);
 		mTime = (TextView) view.findViewById(R.id.time_bar_text);
+		mTimeImage = (ImageView) view.findViewById(R.id.time_bar_image);
 		FontLoader.setTypeface(Shared.context, new TextView[] {mTime}, Font.GROBOLD);
 		mBoardView = BoardView.fromXml(getActivity().getApplicationContext(), view);
 		FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.game_container);
@@ -90,7 +93,9 @@ public class GameFragment extends BaseFragment {
 
 	@Override
 	public void onEvent(GameWonEvent event) {
-		PopupManager.showPopupWon();
+		mTime.setVisibility(View.GONE);
+		mTimeImage.setVisibility(View.GONE);
+		PopupManager.showPopupWon(event.gameState);
 	}
 
 	@Override

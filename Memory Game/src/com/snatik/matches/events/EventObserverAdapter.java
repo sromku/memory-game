@@ -3,7 +3,9 @@ package com.snatik.matches.events;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;
 import com.snatik.matches.events.engine.GameWonEvent;
 import com.snatik.matches.events.engine.HidePairCardsEvent;
+import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
+import com.snatik.matches.events.ui.NextGameEvent;
 import com.snatik.matches.events.ui.SelectDiffucltyEvent;
 import com.snatik.matches.events.ui.SelectGameEvent;
 import com.snatik.matches.events.ui.StartEvent;
@@ -43,6 +45,16 @@ public class EventObserverAdapter implements EventObserver {
 	@Override
 	public void onEvent(GameWonEvent event) {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void onEvent(BackGameEvent event) {
+		throw new UnsupportedOperationException();		
+	}
+
+	@Override
+	public void onEvent(NextGameEvent event) {
+		throw new UnsupportedOperationException();		
 	}
 
 }

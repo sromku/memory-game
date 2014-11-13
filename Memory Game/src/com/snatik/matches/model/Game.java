@@ -24,4 +24,6 @@ public class Game {
 	 */
 	public Theme theme;
 
+	public GameState gameState;
+
 }

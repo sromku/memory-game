@@ -22,43 +22,43 @@ public class DifficultySelectFragment extends Fragment {
 		DifficultyView difficulty1 = (DifficultyView) view.findViewById(R.id.select_difficulty_1);
 		difficulty1.setDifficulty(1);
 		difficulty1.setStart(0);
-		setOnClick(difficulty1, BoardConfiguration._6);
+		setOnClick(difficulty1, 1);
 		
 		DifficultyView difficulty2 = (DifficultyView) view.findViewById(R.id.select_difficulty_2);
 		difficulty2.setDifficulty(2);
 		difficulty2.setStart(0);
-		setOnClick(difficulty2, BoardConfiguration._12);
+		setOnClick(difficulty2, 2);
 		
 		DifficultyView difficulty3 = (DifficultyView) view.findViewById(R.id.select_difficulty_3);
 		difficulty3.setDifficulty(3);
 		difficulty3.setStart(0);
-		setOnClick(difficulty3, BoardConfiguration._18);
+		setOnClick(difficulty3, 3);
 		
 		DifficultyView difficulty4 = (DifficultyView) view.findViewById(R.id.select_difficulty_4);
 		difficulty4.setDifficulty(4);
 		difficulty4.setStart(0);
-		setOnClick(difficulty4, BoardConfiguration._28);
+		setOnClick(difficulty4, 4);
 		
 		DifficultyView difficulty5 = (DifficultyView) view.findViewById(R.id.select_difficulty_5);
 		difficulty5.setDifficulty(5);
 		difficulty5.setStart(0);
-		setOnClick(difficulty5, BoardConfiguration._32);
+		setOnClick(difficulty5, 5);
 		
 		DifficultyView difficulty6 = (DifficultyView) view.findViewById(R.id.select_difficulty_6);
 		difficulty6.setDifficulty(6);
 		difficulty6.setStart(0);
-		setOnClick(difficulty6, BoardConfiguration._50);
+		setOnClick(difficulty6, 6);
 		
 		return view;
 	}
 	
-	private void setOnClick(View view, final int boardNumber) {
+	private void setOnClick(View view, final int difficulty) {
 		view.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Game game = new Game();
 				game.theme = Themes.createMosterTheme();
-				game.boardConfiguration = new BoardConfiguration(boardNumber);
+				game.boardConfiguration = new BoardConfiguration(difficulty);
 				Shared.eventBus.notify(new SelectGameEvent(game));
 			}
 		});
