@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.media.ThumbnailUtils;
 
 import com.snatik.matches.common.Shared;
 
@@ -68,6 +69,16 @@ public class Utils {
 		// Decode bitmap with inSampleSize set
 		options.inJustDecodeBounds = false;
 		return BitmapFactory.decodeResource(Shared.context.getResources(), resource, options);
+	}
+
+	/**
+	 * Downscales a bitmap by the specified factor
+	 */
+	public static Bitmap downscaleBitmap(Bitmap wallpaper, int factor) {
+		// convert to bitmap and get the center
+		int widthPixels = wallpaper.getWidth() / factor;
+		int heightPixels = wallpaper.getHeight() / factor;
+		return ThumbnailUtils.extractThumbnail(wallpaper, widthPixels, heightPixels);
 	}
 
 	public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {

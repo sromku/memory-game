@@ -40,13 +40,6 @@ public class MenuFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				PopupManager.showPopupSettings();
-//				// animate title from place and navigation buttons from place
-//				animateAllAssetsOff(new AnimatorListenerAdapter() {
-//					@Override
-//					public void onAnimationEnd(Animator animation) {
-//						PopupManager.showPopupSettings();
-//					}
-//				});
 			}
 		});
 		mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);

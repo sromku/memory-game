@@ -12,7 +12,6 @@ import android.graphics.drawable.TransitionDrawable;
 import android.os.Handler;
 import android.widget.ImageView;
 
-import com.google.android.gms.internal.mh;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
 import com.snatik.matches.common.Music;
@@ -73,6 +72,12 @@ public class Engine extends EventObserverAdapter {
 	}
 
 	public void stop() {
+		mPlayingGame = null;
+		mBackgroundImage.setImageDrawable(null);
+		mBackgroundImage = null;
+		mHandler.removeCallbacksAndMessages(null);
+		mHandler = null;
+		
 		Shared.eventBus.unlisten(DifficultySelectedEvent.TYPE, this);
 		Shared.eventBus.unlisten(FlipCardEvent.TYPE, this);
 		Shared.eventBus.unlisten(StartEvent.TYPE, this);
@@ -80,6 +85,8 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.unlisten(BackGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(NextGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(ResetBackgroundEvent.TYPE, this);
+		
+		mInstance = null;
 	}
 
 	@Override

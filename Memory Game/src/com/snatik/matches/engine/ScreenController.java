@@ -6,7 +6,6 @@ import java.util.List;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
@@ -20,6 +19,7 @@ public class ScreenController {
 
 	private static ScreenController mInstance = null;
 	private static List<Screen> openedScreens = new ArrayList<Screen>();
+	private FragmentManager mFragmentManager;
 
 	private ScreenController() {
 	}
@@ -43,16 +43,16 @@ public class ScreenController {
 	}
 
 	public void openScreen(Screen screen) {
+		mFragmentManager = Shared.activity.getSupportFragmentManager();
+		
 		if (screen == Screen.GAME && openedScreens.get(openedScreens.size() - 1) == Screen.GAME) {
 			openedScreens.remove(openedScreens.size() - 1);
 		} else if (screen == Screen.DIFFICULTY && openedScreens.get(openedScreens.size() - 1) == Screen.GAME) {
 			openedScreens.remove(openedScreens.size() - 1);
 			openedScreens.remove(openedScreens.size() - 1);
 		}
-		Log.i("my_tag", "open screen: " + screen);
 		Fragment fragment = getFragment(screen);
-		FragmentManager fragmentManager = Shared.activity.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
 		fragmentTransaction.replace(R.id.fragment_container, fragment);
 		fragmentTransaction.commit();
 		openedScreens.add(screen);
