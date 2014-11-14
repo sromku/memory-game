@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.ScreenController;
 import com.snatik.matches.engine.ScreenController.Screen;
+import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Utils;
 
@@ -42,6 +43,9 @@ public class MainActivity extends FragmentActivity {
 	public void onBackPressed() {
 		if (PopupManager.isShown()) {
 			PopupManager.closePopup();
+			if (ScreenController.getLastScreen() == Screen.GAME) {
+				Shared.eventBus.notify(new BackGameEvent());
+			}
 		} else if (ScreenController.getInstance().onBack()) {
 			super.onBackPressed();
 		}

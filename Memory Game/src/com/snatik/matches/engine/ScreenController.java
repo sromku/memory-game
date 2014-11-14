@@ -37,6 +37,10 @@ public class ScreenController {
 		DIFFICULTY,
 		THEME_SELECT
 	}
+	
+	public static Screen getLastScreen() {
+		return openedScreens.get(openedScreens.size() - 1);
+	}
 
 	public void openScreen(Screen screen) {
 		if (screen == Screen.GAME && openedScreens.get(openedScreens.size() - 1) == Screen.GAME) {

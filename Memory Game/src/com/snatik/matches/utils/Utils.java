@@ -2,6 +2,8 @@ package com.snatik.matches.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
 import com.snatik.matches.common.Shared;
 
@@ -10,28 +12,64 @@ public class Utils {
 	public static int px(int dp) {
 		return (int) (Shared.context.getResources().getDisplayMetrics().density * dp);
 	}
-	
+
 	public static int screenWidth() {
 		return Shared.context.getResources().getDisplayMetrics().widthPixels;
 	}
-	
+
 	public static int screenHeight() {
 		return Shared.context.getResources().getDisplayMetrics().heightPixels;
 	}
-	
-	public static Bitmap scaleDown(int resource, int reqWidth, int reqHeight) {
-         BitmapFactory.Options options = new BitmapFactory.Options();
-         options.inJustDecodeBounds = true;
-         BitmapFactory.decodeResource(Shared.context.getResources(), resource);
 
-         // Calculate inSampleSize
-         options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+	public static Bitmap crop(Bitmap source, int newHeight, int newWidth) {
+		int sourceWidth = source.getWidth();
+		int sourceHeight = source.getHeight();
 
-         // Decode bitmap with inSampleSize set
-         options.inJustDecodeBounds = false;
-         return BitmapFactory.decodeResource(Shared.context.getResources(), resource, options);
+		// Compute the scaling factors to fit the new height and width,
+		// respectively.
+		// To cover the final image, the final scaling will be the bigger
+		// of these two.
+		float xScale = (float) newWidth / sourceWidth;
+		float yScale = (float) newHeight / sourceHeight;
+		float scale = Math.max(xScale, yScale);
+
+		// Now get the size of the source bitmap when scaled
+		float scaledWidth = scale * sourceWidth;
+		float scaledHeight = scale * sourceHeight;
+
+		// Let's find out the upper left coordinates if the scaled bitmap
+		// should be centered in the new size give by the parameters
+		float left = (newWidth - scaledWidth) / 2;
+		float top = (newHeight - scaledHeight) / 2;
+
+		// The target rectangle for the new, scaled version of the source bitmap
+		// will now
+		// be
+		RectF targetRect = new RectF(left, top, left + scaledWidth, top + scaledHeight);
+
+		// Finally, we create a new bitmap of the specified size and draw our
+		// new,
+		// scaled bitmap onto it.
+		Bitmap dest = Bitmap.createBitmap(newWidth, newHeight, source.getConfig());
+		Canvas canvas = new Canvas(dest);
+		canvas.drawBitmap(source, null, targetRect, null);
+
+		return dest;
 	}
-	
+
+	public static Bitmap scaleDown(int resource, int reqWidth, int reqHeight) {
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(Shared.context.getResources(), resource);
+
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeResource(Shared.context.getResources(), resource, options);
+	}
+
 	public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
 		// Raw height and width of image
 		final int height = options.outHeight;

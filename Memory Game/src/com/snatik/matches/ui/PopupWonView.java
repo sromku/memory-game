@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.snatik.matches.R;
+import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
@@ -101,7 +102,7 @@ public class PopupWonView extends RelativeLayout {
 			animateStar(mStar1, 0);
 			mStar2.setVisibility(View.VISIBLE);
 			mStar2.setAlpha(0f);
-			animateStar(mStar2, 300);
+			animateStar(mStar2, 600);
 			break;
 		case 3:
 			mStar1.setVisibility(View.VISIBLE);
@@ -109,16 +110,16 @@ public class PopupWonView extends RelativeLayout {
 			animateStar(mStar1, 0);
 			mStar2.setVisibility(View.VISIBLE);
 			mStar2.setAlpha(0f);
-			animateStar(mStar2, 300);
+			animateStar(mStar2, 600);
 			mStar3.setVisibility(View.VISIBLE);
 			mStar3.setAlpha(0f);
-			animateStar(mStar3, 600);
+			animateStar(mStar3, 1200);
 			break;
 		default:
 			break;
 		}
 	}
-
+	
 	private void animateStar(final View view, int delay) {
 		ObjectAnimator alpha = ObjectAnimator.ofFloat(view, "alpha", 0, 1f);
 		alpha.setDuration(100);
@@ -130,6 +131,14 @@ public class PopupWonView extends RelativeLayout {
 		animatorSet.setStartDelay(delay);
 		animatorSet.setDuration(600);
 		animatorSet.start();
+		
+		mHandler.postDelayed(new Runnable() {
+			
+			@Override
+			public void run() {
+				Music.showStar();
+			}
+		}, delay);
 	}
 
 	private void animateScoreAndTime(final int remainedSeconds, final int achievedScore) {

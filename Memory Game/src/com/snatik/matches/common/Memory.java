@@ -1,10 +1,9 @@
-package com.snatik.matches.memory;
+package com.snatik.matches.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.snatik.matches.common.Shared;
 
 public class Memory {
 

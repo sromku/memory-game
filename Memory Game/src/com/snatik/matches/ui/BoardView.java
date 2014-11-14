@@ -92,6 +92,7 @@ public class BoardView extends LinearLayout {
 			addBoardRow(row);
 		}
 
+		setClipChildren(false);
 	}
 
 	private void addBoardRow(int rowNum) {
@@ -106,12 +107,14 @@ public class BoardView extends LinearLayout {
 
 		// add to this view
 		addView(linearLayout, mRowLayoutParams);
+		linearLayout.setClipChildren(false);
 	}
 
 	private void addTile(final int id, ViewGroup parent) {
 		final TileView tileView = TileView.fromXml(getContext(), parent);
 		tileView.setLayoutParams(mTileLayoutParams);
 		parent.addView(tileView);
+		parent.setClipChildren(false);
 		mViewReference.put(id, tileView);
 
 		tileView.setTileImage(mBoardArrangment.getTileBitmap(id));

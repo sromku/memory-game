@@ -18,7 +18,7 @@ import com.snatik.matches.model.GameState;
 import com.snatik.matches.utils.Utils;
 
 public class PopupManager {
-
+	
 	public static void showPopupSettings() {
 		RelativeLayout popupContainer = (RelativeLayout) Shared.activity.findViewById(R.id.popup_container);
 		popupContainer.removeAllViews();

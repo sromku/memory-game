@@ -30,12 +30,15 @@ public class GameFragment extends BaseFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		ViewGroup view = (ViewGroup) inflater.inflate(R.layout.game_fragment, container, false);
+		view.setClipChildren(false);
+		((ViewGroup)view.findViewById(R.id.game_board)).setClipChildren(false);
 		mTime = (TextView) view.findViewById(R.id.time_bar_text);
 		mTimeImage = (ImageView) view.findViewById(R.id.time_bar_image);
 		FontLoader.setTypeface(Shared.context, new TextView[] {mTime}, Font.GROBOLD);
 		mBoardView = BoardView.fromXml(getActivity().getApplicationContext(), view);
 		FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.game_container);
 		frameLayout.addView(mBoardView);
+		frameLayout.setClipChildren(false);
 
 		// set background
 		// ImageView imageView = (ImageView)

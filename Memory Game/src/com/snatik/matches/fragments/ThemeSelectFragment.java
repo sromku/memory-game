@@ -13,9 +13,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
 import com.snatik.matches.R;
+import com.snatik.matches.common.Memory;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.ThemeSelectedEvent;
-import com.snatik.matches.memory.Memory;
 import com.snatik.matches.themes.Theme;
 import com.snatik.matches.themes.Themes;
 

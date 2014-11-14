@@ -6,9 +6,16 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
+import android.os.Handler;
 import android.widget.ImageView;
 
+import com.google.android.gms.internal.mh;
 import com.snatik.matches.R;
+import com.snatik.matches.common.Memory;
+import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.events.EventObserverAdapter;
@@ -22,7 +29,6 @@ import com.snatik.matches.events.ui.NextGameEvent;
 import com.snatik.matches.events.ui.ResetBackgroundEvent;
 import com.snatik.matches.events.ui.StartEvent;
 import com.snatik.matches.events.ui.ThemeSelectedEvent;
-import com.snatik.matches.memory.Memory;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
@@ -42,9 +48,11 @@ public class Engine extends EventObserverAdapter {
 	private ScreenController mScreenController;
 	private Theme mSelectedTheme;
 	private ImageView mBackgroundImage;
+	private Handler mHandler;
 
 	private Engine() {
 		mScreenController = ScreenController.getInstance();
+		mHandler = new Handler();
 	}
 
 	public static Engine getInstance() {
@@ -73,7 +81,7 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.unlisten(NextGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(ResetBackgroundEvent.TYPE, this);
 	}
-	
+
 	@Override
 	public void onEvent(ResetBackgroundEvent event) {
 		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
@@ -84,17 +92,17 @@ public class Engine extends EventObserverAdapter {
 	public void onEvent(StartEvent event) {
 		mScreenController.openScreen(Screen.THEME_SELECT);
 	}
-	
+
 	@Override
 	public void onEvent(NextGameEvent event) {
 		PopupManager.closePopup();
 		int difficulty = mPlayingGame.boardConfiguration.difficulty;
 		if (mPlayingGame.gameState.achievedStars == 3 && difficulty < 6) {
 			difficulty++;
-		} 
+		}
 		Shared.eventBus.notify(new DifficultySelectedEvent(difficulty));
 	}
-	
+
 	@Override
 	public void onEvent(BackGameEvent event) {
 		PopupManager.closePopup();
@@ -104,9 +112,17 @@ public class Engine extends EventObserverAdapter {
 	@Override
 	public void onEvent(ThemeSelectedEvent event) {
 		mSelectedTheme = event.theme;
-		Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
-		mBackgroundImage.setImageBitmap(backgroundImage);
 		mScreenController.openScreen(Screen.DIFFICULTY);
+		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+		Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
+		backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
+		Drawable backgrounds[] = new Drawable[2];
+		backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
+		backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage); 
+		TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
+		mBackgroundImage.setImageDrawable(crossfader);
+		crossfader.startTransition(2000);
+		mBackgroundImage.setImageDrawable(crossfader);
 	}
 
 	@Override
@@ -149,7 +165,7 @@ public class Engine extends EventObserverAdapter {
 				boardArrangment.pairs.put(ids.get(i), ids.get(i + 1));
 				// {10,4}, {39,2}, ...
 				boardArrangment.pairs.put(ids.get(i + 1), ids.get(i));
-				// {4, 
+				// {4,
 				boardArrangment.tileUrls.put(ids.get(i), tileImageUrls.get(j));
 				boardArrangment.tileUrls.put(ids.get(i + 1), tileImageUrls.get(j));
 				i++;
@@ -172,6 +188,14 @@ public class Engine extends EventObserverAdapter {
 				// Log.i("my_tag", "Flip: is pair: " + mFlippedId + ", " + id);
 				// send event - hide id1, id2
 				Shared.eventBus.notify(new HidePairCardsEvent(mFlippedId, id), 1000);
+				// play music
+				mHandler.postDelayed(new Runnable() {
+					
+					@Override
+					public void run() {
+						Music.playCorrent();
+					}
+				}, 1000);
 				mToFlip -= 2;
 				if (mToFlip == 0) {
 					int passedSeconds = (int) (Clock.getInstance().getPassedTime() / 1000);
@@ -181,24 +205,24 @@ public class Engine extends EventObserverAdapter {
 					mPlayingGame.gameState = gameState;
 					// remained seconds
 					gameState.remainedSeconds = totalTime - passedSeconds;
-					
+
 					// calc stars
-					if (passedSeconds <= totalTime/2) {
+					if (passedSeconds <= totalTime / 2) {
 						gameState.achievedStars = 3;
-					} else if (passedSeconds <= totalTime - totalTime/5) {
+					} else if (passedSeconds <= totalTime - totalTime / 5) {
 						gameState.achievedStars = 2;
 					} else if (passedSeconds < totalTime) {
 						gameState.achievedStars = 1;
 					} else {
 						gameState.achievedStars = 0;
 					}
-					
+
 					// calc score
-					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds * mPlayingGame.theme.id; 
-					
+					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds * mPlayingGame.theme.id;
+
 					// save to memory
 					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
-					
+
 					Shared.eventBus.notify(new GameWonEvent(gameState), 1200);
 				}
 			} else {
@@ -214,7 +238,7 @@ public class Engine extends EventObserverAdapter {
 	public Game getActiveGame() {
 		return mPlayingGame;
 	}
-	
+
 	public Theme getSelectedTheme() {
 		return mSelectedTheme;
 	}

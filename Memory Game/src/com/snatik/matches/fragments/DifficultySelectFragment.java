@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.snatik.matches.R;
+import com.snatik.matches.common.Memory;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.DifficultySelectedEvent;
-import com.snatik.matches.memory.Memory;
 import com.snatik.matches.themes.Theme;
 import com.snatik.matches.ui.DifficultyView;
 
