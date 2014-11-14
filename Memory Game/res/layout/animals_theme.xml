@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
         android:src="@drawable/animals_theme" />
 
     <ImageView
@@ -18,7 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/theme"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
         android:src="@drawable/theme_stars_1" />
 
 </RelativeLayout>

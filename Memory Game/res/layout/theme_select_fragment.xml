@@ -7,17 +7,32 @@
     android:paddingLeft="40dp"
     android:paddingRight="40dp" >
 
-    <include
+    <RelativeLayout
         android:id="@+id/theme_animals_container"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/animals_theme" 
-        android:layout_marginRight="40dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_weight="1" >
 
-    <include
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            layout="@layout/animals_theme" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/theme_monsters_container"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/monsters_theme" />
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            layout="@layout/monsters_theme" />
+    </RelativeLayout>
 
 </LinearLayout>

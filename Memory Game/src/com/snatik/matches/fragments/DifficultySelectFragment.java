@@ -1,10 +1,14 @@
 package com.snatik.matches.fragments;
 
+import android.animation.AnimatorSet;
+import android.animation.AnimatorSet.Builder;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.BounceInterpolator;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
@@ -49,7 +53,22 @@ public class DifficultySelectFragment extends Fragment {
 		difficulty6.setStars(Memory.getHighStars(theme.id, 6));
 		setOnClick(difficulty6, 6);
 		
+		animate(difficulty1, difficulty2, difficulty3, difficulty4, difficulty5, difficulty6);
+		
 		return view;
+	}
+	
+	private void animate(View... view) {
+		AnimatorSet animatorSet = new AnimatorSet();
+		Builder builder = animatorSet.play(new AnimatorSet());
+		for (int i = 0; i < view.length; i++) {
+			ObjectAnimator scaleX = ObjectAnimator.ofFloat(view[i], "scaleX", 0.8f, 1f);
+			ObjectAnimator scaleY = ObjectAnimator.ofFloat(view[i], "scaleY", 0.8f, 1f);
+			builder.with(scaleX).with(scaleY);
+		}
+		animatorSet.setDuration(500);
+		animatorSet.setInterpolator(new BounceInterpolator());
+		animatorSet.start();
 	}
 	
 	private void setOnClick(View view, final int difficulty) {

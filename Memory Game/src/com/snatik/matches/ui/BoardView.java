@@ -10,6 +10,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -37,6 +39,7 @@ public class BoardView extends LinearLayout {
 	private Map<Integer, TileView> mViewReference;
 	private List<Integer> flippedUp = new ArrayList<Integer>();
 	private boolean mLocked = false;
+	private int mSize;
 
 	public BoardView(Context context) {
 		this(context, null);
@@ -73,9 +76,9 @@ public class BoardView extends LinearLayout {
 		}
 		int tilesHeight = (mScreenHeight - sumMargin) / mBoardConfiguration.numRows;
 		int tilesWidth = (mScreenWidth - sumMargin) / mBoardConfiguration.numTilesInRow;
-		int size = Math.min(tilesHeight, tilesWidth);
+		mSize = Math.min(tilesHeight, tilesWidth);
 
-		mTileLayoutParams = new LinearLayout.LayoutParams(size, size);
+		mTileLayoutParams = new LinearLayout.LayoutParams(mSize, mSize);
 		mTileLayoutParams.setMargins(singleMargin, singleMargin, singleMargin, singleMargin);
 
 		// build the ui
@@ -117,7 +120,19 @@ public class BoardView extends LinearLayout {
 		parent.setClipChildren(false);
 		mViewReference.put(id, tileView);
 
-		tileView.setTileImage(mBoardArrangment.getTileBitmap(id));
+		new AsyncTask<Void, Void, Bitmap>() {
+
+			@Override
+			protected Bitmap doInBackground(Void... params) {
+				return mBoardArrangment.getTileBitmap(id, mSize);
+			}
+			
+			@Override
+			protected void onPostExecute(Bitmap result) {
+				tileView.setTileImage(result);
+			}
+		}.execute();
+		
 		tileView.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -133,14 +148,14 @@ public class BoardView extends LinearLayout {
 			}
 		});
 
-		ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(tileView, "alpha", 0f, 1f);
 		ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(tileView, "scaleX", 0.8f, 1f);
 		scaleXAnimator.setInterpolator(new BounceInterpolator());
 		ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(tileView, "scaleY", 0.8f, 1f);
 		scaleYAnimator.setInterpolator(new BounceInterpolator());
 		AnimatorSet animatorSet = new AnimatorSet();
-		animatorSet.playTogether(alphaAnimator, scaleXAnimator, scaleYAnimator);
+		animatorSet.playTogether(scaleXAnimator, scaleYAnimator);
 		animatorSet.setDuration(500);
+		tileView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		animatorSet.start();
 	}
 
