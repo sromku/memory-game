@@ -3,36 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="horizontal" 
+    android:orientation="horizontal"
     android:paddingLeft="40dp"
-    android:paddingRight="40dp">
+    android:paddingRight="40dp" >
 
-    <RelativeLayout
+    <include
         android:id="@+id/theme_animals_container"
-        android:layout_width="match_parent"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" 
-        android:layout_marginRight="10dp">
+        layout="@layout/animals_theme" 
+        android:layout_marginRight="40dp"/>
 
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            layout="@layout/animals_theme" />
-    </RelativeLayout>
-
-    <RelativeLayout
+    <include
         android:id="@+id/theme_monsters_container"
-        android:layout_width="match_parent"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp" >
-
-        <include
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            layout="@layout/monsters_theme" />
-    </RelativeLayout>
+        layout="@layout/monsters_theme" />
 
 </LinearLayout>

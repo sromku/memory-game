@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.widget.ImageView;
 
@@ -77,7 +78,7 @@ public class Engine extends EventObserverAdapter {
 		mBackgroundImage = null;
 		mHandler.removeCallbacksAndMessages(null);
 		mHandler = null;
-		
+
 		Shared.eventBus.unlisten(DifficultySelectedEvent.TYPE, this);
 		Shared.eventBus.unlisten(FlipCardEvent.TYPE, this);
 		Shared.eventBus.unlisten(StartEvent.TYPE, this);
@@ -85,14 +86,30 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.unlisten(BackGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(NextGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(ResetBackgroundEvent.TYPE, this);
-		
+
 		mInstance = null;
 	}
 
 	@Override
 	public void onEvent(ResetBackgroundEvent event) {
-		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-		mBackgroundImage.setImageBitmap(bitmap);
+		Drawable drawable = mBackgroundImage.getDrawable();
+		if (drawable != null) {
+			((TransitionDrawable) drawable).reverseTransition(2000);
+		} else {
+			new AsyncTask<Void, Void, Bitmap>() {
+
+				@Override
+				protected Bitmap doInBackground(Void... params) {
+					Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+					return bitmap;
+				}
+
+				protected void onPostExecute(Bitmap bitmap) {
+					mBackgroundImage.setImageBitmap(bitmap);
+				};
+
+			}.execute();
+		}
 	}
 
 	@Override
@@ -120,16 +137,28 @@ public class Engine extends EventObserverAdapter {
 	public void onEvent(ThemeSelectedEvent event) {
 		mSelectedTheme = event.theme;
 		mScreenController.openScreen(Screen.DIFFICULTY);
-		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-		Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
-		backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
-		Drawable backgrounds[] = new Drawable[2];
-		backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
-		backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage); 
-		TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
-		mBackgroundImage.setImageDrawable(crossfader);
-		crossfader.startTransition(2000);
-		mBackgroundImage.setImageDrawable(crossfader);
+		AsyncTask<Void, Void, TransitionDrawable> task = new AsyncTask<Void, Void, TransitionDrawable>() {
+
+			@Override
+			protected TransitionDrawable doInBackground(Void... params) {
+				Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+				Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
+				backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
+				Drawable backgrounds[] = new Drawable[2];
+				backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
+				backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage);
+				TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
+				return crossfader;
+			}
+
+			@Override
+			protected void onPostExecute(TransitionDrawable result) {
+				super.onPostExecute(result);
+				mBackgroundImage.setImageDrawable(result);
+				result.startTransition(2000);
+			}
+		};
+		task.execute();
 	}
 
 	@Override
@@ -197,7 +226,7 @@ public class Engine extends EventObserverAdapter {
 				Shared.eventBus.notify(new HidePairCardsEvent(mFlippedId, id), 1000);
 				// play music
 				mHandler.postDelayed(new Runnable() {
-					
+
 					@Override
 					public void run() {
 						Music.playCorrent();

@@ -49,17 +49,17 @@ public class ThemeSelectFragment extends Fragment {
 		/**
 		 * Imporove performance first!!!
 		 */
-		// animateShow(animals);
-		// animateShow(monsters);
+		 animateShow(animals);
+		 animateShow(monsters);
 
 		return view;
 	}
 
 	private void animateShow(View view) {
-		ObjectAnimator animatorScaleX = ObjectAnimator.ofFloat(view, "scaleX", 0f, 1f);
-		ObjectAnimator animatorScaleY = ObjectAnimator.ofFloat(view, "scaleY", 0f, 1f);
+		ObjectAnimator animatorScaleX = ObjectAnimator.ofFloat(view, "scaleX", 0.5f, 1f);
+		ObjectAnimator animatorScaleY = ObjectAnimator.ofFloat(view, "scaleY", 0.5f, 1f);
 		AnimatorSet animatorSet = new AnimatorSet();
-		animatorSet.setDuration(500);
+		animatorSet.setDuration(300);
 		animatorSet.playTogether(animatorScaleX, animatorScaleY);
 		animatorSet.setInterpolator(new DecelerateInterpolator(2));
 		view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
