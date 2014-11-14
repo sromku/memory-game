@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/theme_animals_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1" 
         android:layout_marginRight="10dp">
 
@@ -24,7 +24,7 @@
     <RelativeLayout
         android:id="@+id/theme_monsters_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_marginLeft="10dp" >
 
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            layout="@layout/animals_theme" />
+            layout="@layout/monsters_theme" />
     </RelativeLayout>
 
 </LinearLayout>

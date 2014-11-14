@@ -6,6 +6,7 @@ import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
+import com.snatik.matches.events.ui.ResetBackgroundEvent;
 import com.snatik.matches.events.ui.ThemeSelectedEvent;
 import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.events.ui.StartEvent;
@@ -54,6 +55,11 @@ public class EventObserverAdapter implements EventObserver {
 
 	@Override
 	public void onEvent(NextGameEvent event) {
+		throw new UnsupportedOperationException();		
+	}
+
+	@Override
+	public void onEvent(ResetBackgroundEvent event) {
 		throw new UnsupportedOperationException();		
 	}
 

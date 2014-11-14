@@ -23,6 +23,7 @@ public class MainActivity extends FragmentActivity {
 
 		Shared.activity = this;
 		Shared.engine.start();
+		Shared.engine.setBackgroundImageView(mBackgroundImage);
 
 		// set background
 		setBackgroundImage();

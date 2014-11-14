@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/animals_theme" />
-
+        android:src="@drawable/monsters_theme" />
+    
     <ImageView
         android:id="@+id/theme_stars"
         android:layout_width="match_parent"

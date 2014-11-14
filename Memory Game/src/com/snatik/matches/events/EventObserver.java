@@ -4,11 +4,12 @@ import com.snatik.matches.events.engine.FlipDownCardsEvent;
 import com.snatik.matches.events.engine.GameWonEvent;
 import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.events.ui.BackGameEvent;
+import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
-import com.snatik.matches.events.ui.ThemeSelectedEvent;
-import com.snatik.matches.events.ui.DifficultySelectedEvent;
+import com.snatik.matches.events.ui.ResetBackgroundEvent;
 import com.snatik.matches.events.ui.StartEvent;
+import com.snatik.matches.events.ui.ThemeSelectedEvent;
 
 
 public interface EventObserver {
@@ -30,5 +31,7 @@ public interface EventObserver {
 	void onEvent(BackGameEvent event);
 
 	void onEvent(NextGameEvent event);
+
+	void onEvent(ResetBackgroundEvent event);
 
 }

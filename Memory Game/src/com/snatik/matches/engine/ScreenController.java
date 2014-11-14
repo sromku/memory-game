@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.events.ui.ResetBackgroundEvent;
 import com.snatik.matches.fragments.DifficultySelectFragment;
 import com.snatik.matches.fragments.GameFragment;
 import com.snatik.matches.fragments.MenuFragment;
@@ -38,6 +39,12 @@ public class ScreenController {
 	}
 
 	public void openScreen(Screen screen) {
+		if (screen == Screen.GAME && openedScreens.get(openedScreens.size() - 1) == Screen.GAME) {
+			openedScreens.remove(openedScreens.size() - 1);
+		} else if (screen == Screen.DIFFICULTY && openedScreens.get(openedScreens.size() - 1) == Screen.GAME) {
+			openedScreens.remove(openedScreens.size() - 1);
+			openedScreens.remove(openedScreens.size() - 1);
+		}
 		Log.i("my_tag", "open screen: " + screen);
 		Fragment fragment = getFragment(screen);
 		FragmentManager fragmentManager = Shared.activity.getSupportFragmentManager();
@@ -49,6 +56,7 @@ public class ScreenController {
 
 	public boolean onBack() {
 		if (openedScreens.size() > 0) {
+			Screen screenToRemove = openedScreens.get(openedScreens.size() - 1);
 			openedScreens.remove(openedScreens.size() - 1);
 			if (openedScreens.size() == 0) {
 				return true;
@@ -56,6 +64,10 @@ public class ScreenController {
 			Screen screen = openedScreens.get(openedScreens.size() - 1);
 			openedScreens.remove(openedScreens.size() - 1);
 			openScreen(screen);
+			if ((screen == Screen.THEME_SELECT || screen == Screen.MENU) && 
+					(screenToRemove == Screen.DIFFICULTY || screenToRemove == Screen.GAME)) {
+				Shared.eventBus.notify(new ResetBackgroundEvent());
+			}
 			return false;
 		}
 		return true;

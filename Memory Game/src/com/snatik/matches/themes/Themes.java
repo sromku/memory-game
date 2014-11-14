@@ -3,9 +3,9 @@ package com.snatik.matches.themes;
 import java.util.ArrayList;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.utils.Utils;
 
 public class Themes {
 
@@ -40,7 +40,8 @@ public class Themes {
 	public static Bitmap getBackgroundImage(Theme theme) {
 		String drawableResourceName = theme.backgroundImageUrl.substring(Themes.URI_DRAWABLE.length());
 		int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
-		return BitmapFactory.decodeResource(Shared.context.getResources(), drawableResourceId);
+		Bitmap bitmap = Utils.scaleDown(drawableResourceId, Utils.screenWidth(), Utils.screenHeight());
+		return bitmap;
 	}
 
 }

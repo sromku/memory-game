@@ -5,6 +5,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import android.graphics.Bitmap;
+import android.widget.ImageView;
+
+import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.events.EventObserverAdapter;
@@ -12,19 +16,22 @@ import com.snatik.matches.events.engine.FlipDownCardsEvent;
 import com.snatik.matches.events.engine.GameWonEvent;
 import com.snatik.matches.events.engine.HidePairCardsEvent;
 import com.snatik.matches.events.ui.BackGameEvent;
+import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.events.ui.NextGameEvent;
-import com.snatik.matches.events.ui.ThemeSelectedEvent;
-import com.snatik.matches.events.ui.DifficultySelectedEvent;
+import com.snatik.matches.events.ui.ResetBackgroundEvent;
 import com.snatik.matches.events.ui.StartEvent;
+import com.snatik.matches.events.ui.ThemeSelectedEvent;
 import com.snatik.matches.memory.Memory;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
 import com.snatik.matches.model.GameState;
 import com.snatik.matches.themes.Theme;
+import com.snatik.matches.themes.Themes;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Clock;
+import com.snatik.matches.utils.Utils;
 
 public class Engine extends EventObserverAdapter {
 
@@ -34,6 +41,7 @@ public class Engine extends EventObserverAdapter {
 	private int mToFlip = -1;
 	private ScreenController mScreenController;
 	private Theme mSelectedTheme;
+	private ImageView mBackgroundImage;
 
 	private Engine() {
 		mScreenController = ScreenController.getInstance();
@@ -53,6 +61,7 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.listen(ThemeSelectedEvent.TYPE, this);
 		Shared.eventBus.listen(BackGameEvent.TYPE, this);
 		Shared.eventBus.listen(NextGameEvent.TYPE, this);
+		Shared.eventBus.listen(ResetBackgroundEvent.TYPE, this);
 	}
 
 	public void stop() {
@@ -62,6 +71,13 @@ public class Engine extends EventObserverAdapter {
 		Shared.eventBus.unlisten(ThemeSelectedEvent.TYPE, this);
 		Shared.eventBus.unlisten(BackGameEvent.TYPE, this);
 		Shared.eventBus.unlisten(NextGameEvent.TYPE, this);
+		Shared.eventBus.unlisten(ResetBackgroundEvent.TYPE, this);
+	}
+	
+	@Override
+	public void onEvent(ResetBackgroundEvent event) {
+		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+		mBackgroundImage.setImageBitmap(bitmap);
 	}
 
 	@Override
@@ -88,6 +104,8 @@ public class Engine extends EventObserverAdapter {
 	@Override
 	public void onEvent(ThemeSelectedEvent event) {
 		mSelectedTheme = event.theme;
+		Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
+		mBackgroundImage.setImageBitmap(backgroundImage);
 		mScreenController.openScreen(Screen.DIFFICULTY);
 	}
 
@@ -176,7 +194,7 @@ public class Engine extends EventObserverAdapter {
 					}
 					
 					// calc score
-					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds; 
+					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds * mPlayingGame.theme.id; 
 					
 					// save to memory
 					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
@@ -199,5 +217,9 @@ public class Engine extends EventObserverAdapter {
 	
 	public Theme getSelectedTheme() {
 		return mSelectedTheme;
+	}
+
+	public void setBackgroundImageView(ImageView backgroundImage) {
+		mBackgroundImage = backgroundImage;
 	}
 }

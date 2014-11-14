@@ -1,14 +1,21 @@
 package com.snatik.matches.fragments;
 
+import java.util.Locale;
+
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.ThemeSelectedEvent;
+import com.snatik.matches.memory.Memory;
 import com.snatik.matches.themes.Theme;
 import com.snatik.matches.themes.Themes;
 
@@ -19,10 +26,12 @@ public class ThemeSelectFragment extends Fragment {
 		View view = LayoutInflater.from(Shared.context).inflate(R.layout.theme_select_fragment, container, false);
 		View animals = view.findViewById(R.id.theme_animals_container);
 		View monsters = view.findViewById(R.id.theme_monsters_container);
-		
+
 		final Theme themeAnimals = Themes.createAnimalsTheme();
+		setStars((ImageView) animals.findViewById(R.id.theme_stars), themeAnimals);
 		final Theme themeMonsters = Themes.createMosterTheme();
-		
+		setStars((ImageView) monsters.findViewById(R.id.theme_stars), themeMonsters);
+
 		animals.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -36,6 +45,34 @@ public class ThemeSelectFragment extends Fragment {
 				Shared.eventBus.notify(new ThemeSelectedEvent(themeMonsters));
 			}
 		});
+
+		/**
+		 * Imporove performance first!!!
+		 */
+		// animateShow(animals);
+		// animateShow(monsters);
+
 		return view;
+	}
+
+	private void animateShow(View view) {
+		ObjectAnimator animatorScaleX = ObjectAnimator.ofFloat(view, "scaleX", 0f, 1f);
+		ObjectAnimator animatorScaleY = ObjectAnimator.ofFloat(view, "scaleY", 0f, 1f);
+		AnimatorSet animatorSet = new AnimatorSet();
+		animatorSet.setDuration(500);
+		animatorSet.playTogether(animatorScaleX, animatorScaleY);
+		animatorSet.setInterpolator(new DecelerateInterpolator(2));
+		view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+		animatorSet.start();
+	}
+
+	private void setStars(ImageView imageView, Theme theme) {
+		int sum = 0;
+		for (int difficulty = 1; difficulty <= 6; difficulty++) {
+			sum += Memory.getHighStars(theme.id, difficulty);
+		}
+		String drawableResourceName = String.format(Locale.US, "theme_stars_%d", sum / 6);
+		int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
+		imageView.setImageResource(drawableResourceId);
 	}
 }
