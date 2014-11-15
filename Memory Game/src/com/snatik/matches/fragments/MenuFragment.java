@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.common.Stats;
 import com.snatik.matches.events.ui.StartEvent;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Utils;
@@ -42,6 +43,7 @@ public class MenuFragment extends Fragment {
 		mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Stats.getInstance().sendScreenView(Stats.Event.POPUP_SETTINGS);
 				PopupManager.showPopupSettings();
 				// GameState gameState = new GameState();
 				// gameState.achievedScore = 345;
@@ -54,6 +56,7 @@ public class MenuFragment extends Fragment {
 		mGooglePlayGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Stats.getInstance().sendScreenView(Stats.Event.POPUP_GOOGLE_PLAY);
 				Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
 			}
 		});
@@ -79,7 +82,7 @@ public class MenuFragment extends Fragment {
 
 		// play background music
 		Music.playBackgroundMusic();
-
+		Stats.getInstance().sendScreenView(Stats.Event.SCREEN_MENU);
 		return view;
 	}
 

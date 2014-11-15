@@ -13,34 +13,42 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/margine_top" >
-            
-            <ImageView 
+
+            <ImageView
                 android:id="@+id/time_bar_image"
                 android:layout_width="@dimen/clock_width"
                 android:layout_height="@dimen/clock_height"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/clock_margin_right"
-                android:src="@drawable/time_bar"
-                />
-            
-            <TextView 
+                android:src="@drawable/time_bar" />
+
+            <TextView
                 android:id="@+id/time_bar_text"
                 android:layout_width="@dimen/clock_width"
                 android:layout_height="@dimen/clock_height"
-                android:textColor="#FFFFFF"
-                android:text="00:60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/clock_text_margin_right"
+                android:gravity="center"
                 android:shadowColor="#2eaed9"
                 android:shadowDx="4"
                 android:shadowDy="4"
                 android:shadowRadius="4"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/clock_text_margin_right"
-                android:textSize="@dimen/clock_text_size"
-                />
-            
+                android:text="00:60"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/clock_text_size" />
+
+            <!-- Ads -->
+
+            <LinearLayout
+                android:id="@+id/public_ads_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:gravity="left"
+                android:orientation="horizontal" >
+            </LinearLayout>
         </RelativeLayout>
 
         <FrameLayout

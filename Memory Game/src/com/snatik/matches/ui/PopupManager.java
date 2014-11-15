@@ -68,6 +68,7 @@ public class PopupManager {
 		animatorSet.playTogether(scaleXAnimator, scaleYAnimator);
 		animatorSet.setDuration(500);
 		animatorSet.setInterpolator(new DecelerateInterpolator(2));
+		popupWonView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		animatorSet.start();
 	}
 

@@ -93,6 +93,7 @@ public class PopupWonView extends RelativeLayout {
 		case 1:
 			mStar2.setVisibility(View.GONE);
 			mStar3.setVisibility(View.GONE);
+			mStar1.setAlpha(0f);
 			animateStar(mStar1, 0);
 			break;
 		case 2:
@@ -130,6 +131,7 @@ public class PopupWonView extends RelativeLayout {
 		animatorSet.setInterpolator(new BounceInterpolator());
 		animatorSet.setStartDelay(delay);
 		animatorSet.setDuration(600);
+		view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		animatorSet.start();
 		
 		mHandler.postDelayed(new Runnable() {

@@ -1,20 +1,76 @@
-# To enable ProGuard in your project, edit project.properties
-# to define the proguard.config property as described in that file.
-#
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in ${sdk.dir}/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the ProGuard
-# include property in project.properties.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-optimizationpasses 25
+-dontskipnonpubliclibraryclassmembers
+-allowaccessmodification
+-renamesourcefileattribute SourceFile    
+-keepattributes SourceFile,LineNumberTable
 
-# Add any project specific keep options here:
+-libraryjars /Users/sromku/android/adt/sdk/platforms/android-19/android.jar
+-libraryjars libs/mint-4.0.5.jar
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Bugsense
+-keep class com.splunk.** { *; }
+-dontwarn com.splunk.**
+
+# ----------- GENERAL ----------
+-keepattributes *Annotation*
+-keepattributes InnerClasses
+-keepattributes Signature
+-keepattributes SourceFile
+
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.content.SherlockActivity
+-keep public class * extends android.content.SherlockFragmentActivity
+
+# Explicitly preserve all serialization members. The Serializable interface
+-keepnames class * implements java.io.Serializable
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    !static !transient <fields>;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+# Preserve the special static methods that are required in all enumeration classes.
+-keepclassmembers enum * {
+    **[] $VALUES;
+    public *;
+}
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+
+-keep public class * extends android.view.View {
+    public <init>(android.content.Context);
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+    public void set*(...);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+-keepclassmembers class * extends android.content.Context {
+   public void *(android.view.View);
+   public void *(android.view.MenuItem);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    static ** CREATOR;
+}
+
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+

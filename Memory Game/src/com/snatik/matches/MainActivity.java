@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.Engine;
@@ -14,6 +13,7 @@ import com.snatik.matches.events.EventBus;
 import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Utils;
+import com.splunk.mint.Mint;
 
 public class MainActivity extends FragmentActivity {
 
@@ -23,6 +23,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		Mint.initAndStartSession(MainActivity.this, "1d80072c");
 		Shared.context = getApplicationContext();
 		Shared.engine = Engine.getInstance();
 		Shared.eventBus = EventBus.getInstance();
@@ -39,8 +40,6 @@ public class MainActivity extends FragmentActivity {
 
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
-		
-		Toast.makeText(getApplicationContext(), getString(R.string.debug), Toast.LENGTH_LONG).show();
 	}
 
 	@Override

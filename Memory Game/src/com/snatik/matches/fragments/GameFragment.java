@@ -6,10 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.snatik.matches.R;
+import com.snatik.matches.common.Ads;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.common.Stats;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;
 import com.snatik.matches.events.engine.GameWonEvent;
 import com.snatik.matches.events.engine.HidePairCardsEvent;
@@ -26,6 +31,7 @@ public class GameFragment extends BaseFragment {
 	private BoardView mBoardView;
 	private TextView mTime;
 	private ImageView mTimeImage;
+	private LinearLayout ads;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,7 +51,22 @@ public class GameFragment extends BaseFragment {
 		Shared.eventBus.listen(FlipDownCardsEvent.TYPE, this);
 		Shared.eventBus.listen(HidePairCardsEvent.TYPE, this);
 		Shared.eventBus.listen(GameWonEvent.TYPE, this);
+		
+		ads = (LinearLayout) view.findViewById(R.id.public_ads_layout);
+		setAds();
+		Stats.getInstance().sendScreenView(Stats.Event.SCREEN_GAME);
 		return view;
+	}
+	
+	private void setAds() {
+		// Look up the AdView as a resource and load a request.
+		AdView adView = new AdView(getActivity());
+		adView.setAdSize(AdSize.BANNER);
+		
+		ads.removeAllViews();
+		ads.addView(adView);
+		Ads.getInstance().setBannerView(adView);
+		Ads.getInstance().showBannerAd();
 	}
 
 	@Override
