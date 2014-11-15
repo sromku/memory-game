@@ -14,6 +14,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Music;
@@ -42,14 +43,20 @@ public class MenuFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				PopupManager.showPopupSettings();
-//				GameState gameState = new GameState();
-//				gameState.achievedScore = 345;
-//				gameState.achievedStars = 3;
-//				gameState.remainedSeconds = 50;
-//				PopupManager.showPopupWon(gameState );
+				// GameState gameState = new GameState();
+				// gameState.achievedScore = 345;
+				// gameState.achievedStars = 3;
+				// gameState.remainedSeconds = 50;
+				// PopupManager.showPopupWon(gameState );
 			}
 		});
 		mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);
+		mGooglePlayGameButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+			}
+		});
 		mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_lights);
 		mTooltip = (ImageView) view.findViewById(R.id.tooltip);
 		mStartGameButton.setOnClickListener(new View.OnClickListener() {

@@ -55,6 +55,6 @@
     <dimen name="popup_settings_height">200dp</dimen>
     <dimen name="popup_settings_sound_image_size">50dp</dimen>
     <dimen name="popup_settings_sound_text_size">20dp</dimen>
-    <dimen name="popup_settings_padding_top">60dp</dimen>
+    <dimen name="popup_settings_padding_top">55dp</dimen>
     <dimen name="popup_settings_padding_left">20dp</dimen>
 </resources>
