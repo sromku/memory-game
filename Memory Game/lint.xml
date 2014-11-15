@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="DuplicateIds">
+        <ignore path="res/layout/theme_select_fragment.xml" />
+    </issue>
     <issue id="UseSparseArrays" severity="ignore" />
 </lint>

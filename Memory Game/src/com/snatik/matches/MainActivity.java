@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.Engine;
@@ -38,6 +39,8 @@ public class MainActivity extends FragmentActivity {
 
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
+		
+		Toast.makeText(getApplicationContext(), getString(R.string.debug), Toast.LENGTH_LONG).show();
 	}
 
 	@Override

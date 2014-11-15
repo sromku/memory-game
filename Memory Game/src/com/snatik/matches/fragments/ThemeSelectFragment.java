@@ -28,9 +28,9 @@ public class ThemeSelectFragment extends Fragment {
 		View monsters = view.findViewById(R.id.theme_monsters_container);
 
 		final Theme themeAnimals = Themes.createAnimalsTheme();
-		setStars((ImageView) animals.findViewById(R.id.theme_stars), themeAnimals);
+		setStars((ImageView) animals.findViewById(R.id.theme_animals), themeAnimals, "animals");
 		final Theme themeMonsters = Themes.createMosterTheme();
-		setStars((ImageView) monsters.findViewById(R.id.theme_stars), themeMonsters);
+		setStars((ImageView) monsters.findViewById(R.id.theme_monsters), themeMonsters, "monsters");
 
 		animals.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -66,14 +66,14 @@ public class ThemeSelectFragment extends Fragment {
 		animatorSet.start();
 	}
 
-	private void setStars(ImageView imageView, Theme theme) {
+	private void setStars(ImageView imageView, Theme theme, String type) {
 		int sum = 0;
 		for (int difficulty = 1; difficulty <= 6; difficulty++) {
 			sum += Memory.getHighStars(theme.id, difficulty);
 		}
 		int num = sum / 6;
 		if (num != 0) {
-			String drawableResourceName = String.format(Locale.US, "theme_stars_%d", num);
+			String drawableResourceName = String.format(Locale.US, type + "_theme_star_%d", num);
 			int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
 			imageView.setImageResource(drawableResourceId);
 		}

@@ -14,7 +14,6 @@ import com.snatik.matches.common.Shared;
 public class DifficultyView extends LinearLayout {
 
 	private ImageView mTitle;
-	private ImageView mStars;
 	
 	public DifficultyView(Context context) {
 		this(context, null);
@@ -25,19 +24,12 @@ public class DifficultyView extends LinearLayout {
 		LayoutInflater.from(context).inflate(R.layout.difficult_view, this, true);
 		setOrientation(LinearLayout.VERTICAL);
 		mTitle = (ImageView) findViewById(R.id.title);
-		mStars = (ImageView) findViewById(R.id.starts);
 	}
 	
-	public void setDifficulty(int difficulty) {
-		String titleResource = String.format(Locale.US, "button_difficulty_%d", difficulty);
+	public void setDifficulty(int difficulty, int stars) {
+		String titleResource = String.format(Locale.US, "button_difficulty_%d_star_%d", difficulty, stars);
 		int drawableResourceId = Shared.context.getResources().getIdentifier(titleResource, "drawable", Shared.context.getPackageName());
 		mTitle.setImageResource(drawableResourceId);
 	}
 	
-	public void setStars(int stars) {
-		String titleResource = String.format(Locale.US, "button_difficulty_bottom_star_%d", stars);
-		int drawableResourceId = Shared.context.getResources().getIdentifier(titleResource, "drawable", Shared.context.getPackageName());
-		mStars.setImageResource(drawableResourceId);
-	}
-
 }

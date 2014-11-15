@@ -19,6 +19,10 @@
     <dimen name="tooltip_margin_left">180dp</dimen>
     <dimen name="tooltip_margin_bottom">170dp</dimen>
 
+    <!-- theme -->
+    <dimen name="theme_padding">60dp</dimen>
+    <dimen name="theme_margin">30dp</dimen>
+    
     <!-- difficulty level -->
     <dimen name="difficulty_padding">40dp</dimen>
     <dimen name="difficulty_margin">15dp</dimen>
