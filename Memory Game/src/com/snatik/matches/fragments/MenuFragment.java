@@ -16,6 +16,7 @@ import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 
 import com.snatik.matches.R;
+import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.StartEvent;
 import com.snatik.matches.ui.PopupManager;
@@ -36,6 +37,7 @@ public class MenuFragment extends Fragment {
 		mTitle = (ImageView) view.findViewById(R.id.title);
 		mStartGameButton = (ImageView) view.findViewById(R.id.start_game_button);
 		mSettingsGameButton = (ImageView) view.findViewById(R.id.settings_game_button);
+		mSettingsGameButton.setSoundEffectsEnabled(false);
 		mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -62,6 +64,10 @@ public class MenuFragment extends Fragment {
 
 		startLightsAnimation();
 		startTootipAnimation();
+
+		// play background music
+		Music.playBackgroundMusic();
+
 		return view;
 	}
 
@@ -79,22 +85,22 @@ public class MenuFragment extends Fragment {
 		// tooltip
 		ObjectAnimator tooltipAnimator = ObjectAnimator.ofFloat(mTooltip, "alpha", 0f);
 		tooltipAnimator.setDuration(100);
-		
+
 		// settings button
 		ObjectAnimator settingsAnimator = ObjectAnimator.ofFloat(mSettingsGameButton, "translationY", Utils.px(120));
 		settingsAnimator.setInterpolator(new AccelerateInterpolator(2));
 		settingsAnimator.setDuration(300);
-		
+
 		// google play button
 		ObjectAnimator googlePlayAnimator = ObjectAnimator.ofFloat(mGooglePlayGameButton, "translationY", Utils.px(120));
 		googlePlayAnimator.setInterpolator(new AccelerateInterpolator(2));
 		googlePlayAnimator.setDuration(300);
-		
+
 		// start button
 		ObjectAnimator startButtonAnimator = ObjectAnimator.ofFloat(mStartGameButton, "translationY", Utils.px(130));
 		startButtonAnimator.setInterpolator(new AccelerateInterpolator(2));
 		startButtonAnimator.setDuration(300);
-		
+
 		AnimatorSet animatorSet = new AnimatorSet();
 		animatorSet.playTogether(titleAnimator, lightsAnimatorX, lightsAnimatorY, tooltipAnimator, settingsAnimator, googlePlayAnimator, startButtonAnimator);
 		animatorSet.addListener(adapter);

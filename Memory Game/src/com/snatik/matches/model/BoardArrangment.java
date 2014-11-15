@@ -40,6 +40,10 @@ public class BoardArrangment {
 
 	public boolean isPair(int id1, int id2) {
 		Integer integer = pairs.get(id1);
+		if (integer == null) {
+			// TODO Report this bug!!!
+			return false;
+		}
 		return integer.equals(id2);
 	}
 

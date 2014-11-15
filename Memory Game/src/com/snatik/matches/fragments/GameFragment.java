@@ -40,13 +40,6 @@ public class GameFragment extends BaseFragment {
 		frameLayout.addView(mBoardView);
 		frameLayout.setClipChildren(false);
 
-		// set background
-		// ImageView imageView = (ImageView)
-		// view.findViewById(R.id.background_image);
-		// Game game = Shared.engine.getActiveGame();
-		// Bitmap bitmap = Themes.getBackgroundImage(game.theme);
-		// imageView.setImageBitmap(bitmap);
-
 		// build board
 		buildBoard();
 		Shared.eventBus.listen(FlipDownCardsEvent.TYPE, this);

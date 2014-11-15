@@ -32,7 +32,7 @@ public class PopupManager {
 
 		// popup
 		PopupSettingsView popupSettingsView = new PopupSettingsView(Shared.context);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Utils.px(300), Utils.px(200));
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Utils.px(300), LayoutParams.WRAP_CONTENT);
 		params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		popupContainer.addView(popupSettingsView, params);
 
