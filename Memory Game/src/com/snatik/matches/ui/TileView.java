@@ -48,17 +48,14 @@ public class TileView extends FrameLayout {
 
 	public void flipUp() {
 		mFlippedDown = false;
-		// mTopImage.setVisibility(View.GONE);
 		flip();
-
 	}
 
 	public void flipDown() {
 		mFlippedDown = true;
-		// mTopImage.setVisibility(View.VISIBLE);
 		flip();
 	}
-
+	
 	private void flip() {
 		FlipAnimation flipAnimation = new FlipAnimation(mTopImage, mTileImage);
 		if (mTopImage.getVisibility() == View.GONE) {

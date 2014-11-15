@@ -15,7 +15,6 @@ import android.widget.RelativeLayout.LayoutParams;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.model.GameState;
-import com.snatik.matches.utils.Utils;
 
 public class PopupManager {
 	
@@ -32,7 +31,9 @@ public class PopupManager {
 
 		// popup
 		PopupSettingsView popupSettingsView = new PopupSettingsView(Shared.context);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Utils.px(300), LayoutParams.WRAP_CONTENT);
+		int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_settings_width);
+		int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_settings_height);
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
 		params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		popupContainer.addView(popupSettingsView, params);
 
@@ -54,7 +55,9 @@ public class PopupManager {
 		// popup
 		PopupWonView popupWonView = new PopupWonView(Shared.context);
 		popupWonView.setGameState(gameState);
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Utils.px(240), Utils.px(300));
+		int width = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_won_width);
+		int height = Shared.context.getResources().getDimensionPixelSize(R.dimen.popup_won_height);
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(width, height);
 		params.addRule(RelativeLayout.CENTER_IN_PARENT);
 		popupContainer.addView(popupWonView, params);
 

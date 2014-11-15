@@ -42,6 +42,11 @@ public class MenuFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				PopupManager.showPopupSettings();
+//				GameState gameState = new GameState();
+//				gameState.achievedScore = 345;
+//				gameState.achievedStars = 3;
+//				gameState.remainedSeconds = 50;
+//				PopupManager.showPopupWon(gameState );
 			}
 		});
 		mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);

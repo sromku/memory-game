@@ -49,9 +49,12 @@ public class BoardView extends LinearLayout {
 		super(context, attributeSet);
 		setOrientation(LinearLayout.VERTICAL);
 		setGravity(Gravity.CENTER);
-		mScreenHeight = getResources().getDisplayMetrics().heightPixels - Utils.px(70);
-		mScreenWidth = getResources().getDisplayMetrics().widthPixels;
+		int margin = getResources().getDimensionPixelSize(R.dimen.margine_top);
+		int padding = getResources().getDimensionPixelSize(R.dimen.board_padding);
+		mScreenHeight = getResources().getDisplayMetrics().heightPixels - margin - padding*2;
+		mScreenWidth = getResources().getDisplayMetrics().widthPixels - padding*2 - Utils.px(20);
 		mViewReference = new HashMap<Integer, TileView>();
+		setClipToPadding(false);
 	}
 
 	@Override

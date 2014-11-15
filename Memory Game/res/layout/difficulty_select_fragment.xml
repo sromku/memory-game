@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="horizontal"
-    android:paddingLeft="40dp"
-    android:paddingRight="40dp" >
+    android:paddingLeft="@dimen/difficulty_padding"
+    android:paddingRight="@dimen/difficulty_padding" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/difficulty_margin"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
@@ -24,13 +24,13 @@
             android:id="@+id/select_difficulty_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="@dimen/difficulty_margin_top" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/difficulty_margin"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
@@ -44,13 +44,13 @@
             android:id="@+id/select_difficulty_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="@dimen/difficulty_margin_top" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/difficulty_margin"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical" >
@@ -64,7 +64,7 @@
             android:id="@+id/select_difficulty_6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="@dimen/difficulty_margin_top" />
     </LinearLayout>
 
 </LinearLayout>

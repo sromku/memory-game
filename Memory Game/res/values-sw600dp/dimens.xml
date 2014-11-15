@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_margin">10dp</dimen>
+    
+    <!-- title -->
+    <dimen name="title_width">600dp</dimen>
+    <dimen name="title_height">180dp</dimen>
+    <dimen name="title_margin_top">120dp</dimen>
+</resources>

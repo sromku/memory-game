@@ -163,6 +163,7 @@ public class Engine extends EventObserverAdapter {
 
 	@Override
 	public void onEvent(DifficultySelectedEvent event) {
+		mFlippedId = -1;
 		mPlayingGame = new Game();
 		mPlayingGame.boardConfiguration = new BoardConfiguration(event.difficulty);
 		mPlayingGame.theme = mSelectedTheme;

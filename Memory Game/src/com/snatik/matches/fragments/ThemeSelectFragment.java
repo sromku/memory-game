@@ -49,8 +49,8 @@ public class ThemeSelectFragment extends Fragment {
 		/**
 		 * Imporove performance first!!!
 		 */
-		 animateShow(animals);
-		 animateShow(monsters);
+		animateShow(animals);
+		animateShow(monsters);
 
 		return view;
 	}
@@ -71,8 +71,11 @@ public class ThemeSelectFragment extends Fragment {
 		for (int difficulty = 1; difficulty <= 6; difficulty++) {
 			sum += Memory.getHighStars(theme.id, difficulty);
 		}
-		String drawableResourceName = String.format(Locale.US, "theme_stars_%d", sum / 6);
-		int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
-		imageView.setImageResource(drawableResourceId);
+		int num = sum / 6;
+		if (num != 0) {
+			String drawableResourceName = String.format(Locale.US, "theme_stars_%d", num);
+			int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
+			imageView.setImageResource(drawableResourceId);
+		}
 	}
 }

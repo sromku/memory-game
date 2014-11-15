@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:gravity="left|top" 
+    android:paddingTop="@dimen/popup_settings_padding_top"
+    android:paddingLeft="@dimen/popup_settings_padding_left">
 
     <LinearLayout
         android:id="@+id/sound_off"
@@ -15,7 +18,7 @@
         <ImageView
             android:id="@+id/sound_image"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/popup_settings_sound_image_size"
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
@@ -23,8 +26,8 @@
 
         <TextView
             android:id="@+id/sound_off_text"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/popup_settings_sound_image_size"
             android:layout_marginLeft="8dp"
             android:gravity="left|center_vertical"
             android:shadowColor="#2eaed9"
@@ -33,7 +36,7 @@
             android:shadowRadius="4"
             android:text="Sound ON"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="@dimen/popup_settings_sound_text_size" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,7 +50,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/popup_settings_sound_image_size"
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
@@ -55,8 +58,8 @@
 
         <TextView
             android:id="@+id/rate_text"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/popup_settings_sound_image_size"
             android:layout_marginLeft="8dp"
             android:gravity="left|center_vertical"
             android:shadowColor="#2eaed9"
@@ -65,7 +68,7 @@
             android:shadowRadius="4"
             android:text="Rate this"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="@dimen/popup_settings_sound_text_size" />
     </LinearLayout>
 
 </LinearLayout>

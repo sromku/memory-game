@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:src="@drawable/button_difficulty_1" />
 
     <ImageView
@@ -13,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:src="@drawable/button_difficulty_bottom_star_2" />
 
 </merge>
