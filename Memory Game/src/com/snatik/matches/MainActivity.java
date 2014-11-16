@@ -1,5 +1,6 @@
 package com.snatik.matches;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -14,20 +15,24 @@ import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Utils;
 import com.splunk.mint.Mint;
+import com.sromku.simple.fb.SimpleFacebook;
 
 public class MainActivity extends FragmentActivity {
 
 	private ImageView mBackgroundImage;
+	private SimpleFacebook mSimpleFacebook;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		mSimpleFacebook = SimpleFacebook.getInstance(this);
+		mSimpleFacebook.eventAppLaunched();
 		
 		Mint.initAndStartSession(MainActivity.this, "1d80072c");
 		Shared.context = getApplicationContext();
 		Shared.engine = Engine.getInstance();
 		Shared.eventBus = EventBus.getInstance();
-		
+
 		setContentView(R.layout.activity_main);
 		mBackgroundImage = (ImageView) findViewById(R.id.background_image);
 
@@ -40,6 +45,18 @@ public class MainActivity extends FragmentActivity {
 
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		mSimpleFacebook = SimpleFacebook.getInstance(this);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		mSimpleFacebook.onActivityResult(this, requestCode, resultCode, data);
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	@Override
