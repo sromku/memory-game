@@ -3,6 +3,7 @@
 
     <string name="app_name">Memory Game</string>
     <string name="debug">regular</string>
+    <string name="app_id">1537893283094745</string>
     
     <string-array name="ad_kewords">
         <item>memory game</item>
