@@ -11,6 +11,10 @@
 -keep class com.splunk.** { *; }
 -dontwarn com.splunk.**
 
+# Facebook
+-keep class com.facebook.** { *; }
+-keep class com.sromku.simple.fb.** { *; }
+
 # ----------- GENERAL ----------
 -keepattributes *Annotation*
 -keepattributes InnerClasses
