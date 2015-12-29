@@ -6,9 +6,9 @@
 
 ### Features
 
-- 2 Themes : `Animals` & `Monsters`
-- 6 types of difficulties
-- Sounds on winning
+- 2 Themes : `Animals` :cat2: & `Monsters` :octopus:
+- 6 types of difficulties :star2:
+- Sounds on winning :musical_note:
 
 If you have more ideas or you want to add more options / themes / sounds or whatever, fill free to update the source for yourself or open a pull request. :sparkles:
 
