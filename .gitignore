@@ -1,6 +1,8 @@
-bin
-gen
-Release
-proguard
+*.iml
+.gradle
+/local.properties
+.idea
 .DS_Store
-*.class
+/build
+/captures
+Release
