@@ -29,4 +29,9 @@ If you have more ideas or you want to add more options / themes / sounds or what
 
 ### License
 
-Apache License 2.0
+- The code is: `Apache License 2.0`
+- For UI assets please check the licenses here:
+	- http://graphicriver.net/item/animals-collection-farm-and-domestic-set/7177721
+	- http://graphicriver.net/item/monster-creation-kit-and-large-pack/8851390
+	- http://graphicriver.net/item/10-fresh-game-backgrounds/9137937
+	- http://graphicriver.net/item/cartoon-games-gui-pack-11-/6056785
