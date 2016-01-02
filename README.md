@@ -12,7 +12,7 @@
 
 If you have more ideas or you want to add more options / themes / sounds or whatever, fill free to update the source for yourself or open a pull request. :sparkles:
 
-<img src="http://www.sromku.com/static/pregnancy_memorygame_preview.png"/>
+<img src="http://www.sromku.com/static/img/pregnancy_memorygame_preview.png"/>
 
 ### Download It
 
