@@ -20,7 +20,7 @@ If you have more ideas or you want to add more options / themes / sounds or what
 
 ### Next
 
-- :ballot_box_with_check: 2 player game
+- [ ] 2 player game
 - :ballot_box_with_check: Add one more theme
 - [ ] Add more sounds
 - [ ] Add Game Services support 
