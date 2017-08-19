@@ -1,11 +1,11 @@
 package com.snatik.matches.themes;
 
-import java.util.ArrayList;
-
 import android.graphics.Bitmap;
 
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.utils.Utils;
+
+import java.util.ArrayList;
 
 public class Themes {
 
@@ -33,6 +33,19 @@ public class Themes {
 		// 40 drawables
 		for (int i = 1; i <= 40; i++) {
 			theme.tileImageUrls.add(URI_DRAWABLE + String.format("mosters_%d", i));
+		}
+		return theme;
+	}
+
+	public static Theme createEmojiTheme() {
+		Theme theme = new Theme();
+		theme.id = 3;
+		theme.name = "Emoji";
+		theme.backgroundImageUrl = URI_DRAWABLE + "background";
+		theme.tileImageUrls = new ArrayList<String>();
+		// 40 drawables
+		for (int i = 1; i <= 40; i++) {
+			theme.tileImageUrls.add(URI_DRAWABLE + String.format("emoji_%d", i));
 		}
 		return theme;
 	}
