@@ -39,7 +39,7 @@ public class Themes {
 
 	public static Theme createEmojiTheme() {
 		Theme theme = new Theme();
-		theme.id = 2;
+		theme.id = 3;
 		theme.name = "Emoji";
 		theme.backgroundImageUrl = URI_DRAWABLE + "background";
 		theme.tileImageUrls = new ArrayList<String>();
