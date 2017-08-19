@@ -2,8 +2,8 @@ package com.snatik.matches.themes;
 
 import android.graphics.Bitmap;
 
-import com.obosapps.matches.common.Shared;
-import com.obosapps.matches.utils.Utils;
+import com.snatik.matches.common.Shared;
+import com.snatik.matches.utils.Utils;
 
 import java.util.ArrayList;
 
