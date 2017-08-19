@@ -4,7 +4,7 @@ We just wanted a simple memory game for kids 4+ age. No ads, no complicated scre
 
 ### Features
 
-- 2 Themes : `Animals` :cat2: & `Monsters` :octopus:
+- 3 Themes : `Animals` :cat2: `Monsters` :octopus: & `Emojis` :smile:  
 - 6 types of difficulties :star2:
 - Sounds on winning :musical_note:
 
@@ -21,7 +21,7 @@ If you have more ideas or you want to add more options / themes / sounds or what
 ### Next
 
 - [ ] 2 player game
-- [ ] Add one more theme
+- :ballot_box_with_check: Add one more theme
 - [ ] Add more sounds
 - [ ] Add Game Services support 
 
