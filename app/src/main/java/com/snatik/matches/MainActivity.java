@@ -1,11 +1,14 @@
 package com.snatik.matches;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
 
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.common.SQLiteDB;
 import com.snatik.matches.engine.Engine;
 import com.snatik.matches.engine.ScreenController;
 import com.snatik.matches.engine.ScreenController.Screen;
@@ -38,6 +41,10 @@ public class MainActivity extends FragmentActivity {
 
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
+
+		//set SQLiteDB
+		SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
+
 	}
 
 	@Override
@@ -64,4 +71,5 @@ public class MainActivity extends FragmentActivity {
 		bitmap = Utils.downscaleBitmap(bitmap, 2);
 		mBackgroundImage.setImageBitmap(bitmap);
 	}
+
 }
