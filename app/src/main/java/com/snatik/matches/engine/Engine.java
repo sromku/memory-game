@@ -1,10 +1,5 @@
 package com.snatik.matches.engine;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -16,6 +11,7 @@ import android.widget.ImageView;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
 import com.snatik.matches.common.Music;
+import com.snatik.matches.common.SQLiteDB;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.events.EventObserverAdapter;
@@ -38,6 +34,11 @@ import com.snatik.matches.themes.Themes;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Clock;
 import com.snatik.matches.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 public class Engine extends EventObserverAdapter {
 
@@ -242,6 +243,7 @@ public class Engine extends EventObserverAdapter {
 					mPlayingGame.gameState = gameState;
 					// remained seconds
 					gameState.remainedSeconds = totalTime - passedSeconds;
+					gameState.passedSeconds = passedSeconds;
 
 					// calc stars
 					if (passedSeconds <= totalTime / 2) {
@@ -256,9 +258,15 @@ public class Engine extends EventObserverAdapter {
 
 					// calc score
 					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds * mPlayingGame.theme.id;
+					System.out.println(passedSeconds);
 
 					// save to memory
 					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
+					SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
+					db.saveToTable(mPlayingGame.theme.id,mPlayingGame.boardConfiguration
+							.difficulty,mPlayingGame.gameState.passedSeconds);
+
+
 
 					Shared.eventBus.notify(new GameWonEvent(gameState), 1200);
 				}
