@@ -109,35 +109,6 @@ public class SQLiteDB extends SQLiteOpenHelper {
         }
     }
 
-
-    /*public String checkForTable () {
-
-        String result = null;
-        SQLiteDatabase db = getWritableDatabase();
-
-        String query = "SELECT name FROM sqlite_master WHERE type = 'table' AND name = " + TABLE_NAME + ";";
-        db.execSQL(query);
-        Cursor c = db.rawQuery(query,null);
-        c.moveToFirst();
-        if (c != null) {
-           result = c.getString(c.getColumnIndex("name"));
-        }
-
-        db.close();
-        return result;
-    } */
-
-    /*public String insertValues() {
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "INSERT INTO " + TABLE_NAME +" VALUES (20, 2, 4);";
-        db.execSQL(query);
-        System.out.println("VALUES INSERTED ! ! ! !");
-        String query1 = "SELECT " + COLUMN_THEME + "  FROM " + TABLE_NAME + " WHERE " + COLUMN_DIFFICULTY + " = 4;";
-        Cursor c = db.rawQuery(query1,null);
-        c.moveToFirst();
-        return c.getString(c.getColumnIndex(COLUMN_THEME));
-    } */
-
     @Override public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
         System.out.println("HI");
