@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.Settings;
 
+import static android.R.attr.data;
+
 /**
  * Created by Dimitris on 25/8/2017.
  */
@@ -25,10 +27,6 @@ public class SQLiteDB extends SQLiteOpenHelper {
 
     @Override public void onCreate(SQLiteDatabase db){
 
-    }
-
-    public void createTable() {
-        SQLiteDatabase db = getWritableDatabase();
         String initQuery = "CREATE TABLE IF NOT EXISTS " +TABLE_NAME + " ( " + COLUMN_TIME + " INTEGER, " +
                 COLUMN_THEME + " INTEGER, "  + COLUMN_DIFFICULTY + " INTEGER, PRIMARY KEY( " +COLUMN_THEME +", " +
                 COLUMN_DIFFICULTY + ") );";
@@ -38,6 +36,7 @@ public class SQLiteDB extends SQLiteOpenHelper {
         System.out.println(DB_NAME);
 
         System.out.println("EVERYTHING WENT ALRIGHT!!");
+
     }
 
     public void dropTable () {
