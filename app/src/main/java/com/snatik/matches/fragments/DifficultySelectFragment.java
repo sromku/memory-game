@@ -3,8 +3,11 @@ package com.snatik.matches.fragments;
 import android.animation.AnimatorSet;
 import android.animation.AnimatorSet.Builder;
 import android.animation.ObjectAnimator;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,14 +63,36 @@ public class DifficultySelectFragment extends Fragment {
 
 		animate(difficulty1, difficulty2, difficulty3, difficulty4, difficulty5, difficulty6);
 
-        TextView text1 = (TextView) view.findViewById(R.id.time_difficulty_1);
-        TextView text2 = (TextView) view.findViewById(R.id.time_difficulty_2);
-        TextView text3 = (TextView) view.findViewById(R.id.time_difficulty_3);
-        TextView text4 = (TextView) view.findViewById(R.id.time_difficulty_4);
-        TextView text5 = (TextView) view.findViewById(R.id.time_difficulty_5);
-        TextView text6 = (TextView) view.findViewById(R.id.time_difficulty_6);
+		Typeface type = Typeface.createFromAsset(Shared.context.getAssets(),"fonts/grobold.ttf");
 
-        SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
+
+        TextView text1 = (TextView) view.findViewById(R.id.time_difficulty_1);
+		text1.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		text1.setTypeface(type);
+
+        TextView text2 = (TextView) view.findViewById(R.id.time_difficulty_2);
+		text2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		text2.setTypeface(type);
+
+        TextView text3 = (TextView) view.findViewById(R.id.time_difficulty_3);
+		text3.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		text3.setTypeface(type);
+
+        TextView text4 = (TextView) view.findViewById(R.id.time_difficulty_4);
+		text4.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		text4.setTypeface(type);
+
+        TextView text5 = (TextView) view.findViewById(R.id.time_difficulty_5);
+		text5.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		text5.setTypeface(type);
+
+        TextView text6 = (TextView) view.findViewById(R.id.time_difficulty_6);
+		text6.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		text6.setTypeface(type);
+
+
+
+		SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
         List <Integer> times = new ArrayList<>();
 
 		for(int i = 1; i<=6 ; i++) {
@@ -173,4 +198,6 @@ public class DifficultySelectFragment extends Fragment {
 			}
 		});
 	}
+
+
 }
