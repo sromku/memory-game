@@ -9,13 +9,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.BounceInterpolator;
+import android.widget.TextView;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
+import com.snatik.matches.common.SQLiteDB;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.themes.Theme;
 import com.snatik.matches.ui.DifficultyView;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.TimeZone;
+
+import static android.R.id.text1;
 
 public class DifficultySelectFragment extends Fragment {
 
@@ -50,8 +60,107 @@ public class DifficultySelectFragment extends Fragment {
 
 		animate(difficulty1, difficulty2, difficulty3, difficulty4, difficulty5, difficulty6);
 
+        TextView text1 = (TextView) view.findViewById(R.id.time_difficulty_1);
+        TextView text2 = (TextView) view.findViewById(R.id.time_difficulty_2);
+        TextView text3 = (TextView) view.findViewById(R.id.time_difficulty_3);
+        TextView text4 = (TextView) view.findViewById(R.id.time_difficulty_4);
+        TextView text5 = (TextView) view.findViewById(R.id.time_difficulty_5);
+        TextView text6 = (TextView) view.findViewById(R.id.time_difficulty_6);
+
+        SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
+        List <Integer> times = new ArrayList<>();
+        /*for(int i = 1;i<=6;i++) {
+
+            int bestTime = db.getBestTimeForStage(theme.id, i);
+            if (bestTime != 0) {
+                divsList.add(bestTime / 60);
+                modList.add(bestTime % 60);
+            } else {
+                divsList.add(-1);
+                modList.add(-1);
+            }
+        } */
+		for(int i = 1; i<=6 ; i++) {
+			if(db.getBestTimeForStage(theme.id, i)!= 0) {
+				times.add(db.getBestTimeForStage(theme.id, i));
+			} else {
+				times.add(-1);
+			}
+			System.out.println(times.get(i-1));
+		}
+
+		if(times.get(0) != -1) {
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+			Date date = new Date(times.get(0) * 1000);
+			text1.setText(" BEST : " + dateFormat.format(date));
+
+		} else {
+			text1.setText("BEST :  - ");
+		}
+
+		if(times.get(1) != -1) {
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+			Date date = new Date(times.get(1) * 1000);
+			text2.setText(" BEST : " + dateFormat.format(date));
+
+		} else {
+			text2.setText("BEST :  - ");
+		}
+
+		if(times.get(2) != -1) {
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+			Date date = new Date(times.get(2) * 1000);
+			text3.setText(" BEST : " + dateFormat.format(date));
+
+		} else {
+			text3.setText("BEST :  - ");
+		}
+
+		if(times.get(3) != -1) {
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+			Date date = new Date(times.get(3) * 1000);
+			text4.setText(" BEST : " + dateFormat.format(date));
+
+		} else {
+			text4.setText("BEST :  - ");
+		}
+
+		if(times.get(4) != -1) {
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+			Date date = new Date(times.get(4) * 1000);
+			text5.setText(" BEST : " + dateFormat.format(date));
+
+		} else {
+			text5.setText("BEST :  - ");
+		}
+
+		if(times.get(5) != -1) {
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+			Date date = new Date(times.get(5) * 1000);
+			text6.setText(" BEST : " + dateFormat.format(date));
+
+		} else {
+			text6.setText("BEST :  - ");
+		}
+
+
 		return view;
+
+
 	}
+
 
 	private void animate(View... view) {
 		AnimatorSet animatorSet = new AnimatorSet();
