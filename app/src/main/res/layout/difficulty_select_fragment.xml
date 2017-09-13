@@ -32,7 +32,8 @@
             android:layout_marginTop="-40dp"
             android:layout_marginBottom="18dp"
             android:background="@drawable/time_border"
-            android:id="@+id/time_difficulty_1"/>
+            android:id="@+id/time_difficulty_1"
+            android:textSize="17sp"/>
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_4"
@@ -46,6 +47,7 @@
             android:layout_marginTop="-40dp"
             android:background="@drawable/time_border"
             android:id="@+id/time_difficulty_4"
+            android:textSize="17sp"
             />
 
 
@@ -75,6 +77,7 @@
             android:layout_marginBottom="18dp"
             android:background="@drawable/time_border"
             android:id="@+id/time_difficulty_2"
+            android:textSize="17sp"
           />
 
         <com.snatik.matches.ui.DifficultyView
@@ -89,6 +92,7 @@
             android:layout_marginTop="-40dp"
             android:background="@drawable/time_border"
             android:id="@+id/time_difficulty_5"
+            android:textSize="17sp"
             />
 
 
@@ -117,7 +121,8 @@
             android:layout_marginTop="-40dp"
             android:background="@drawable/time_border"
             android:layout_marginBottom="18dp"
-            android:id="@+id/time_difficulty_3"/>
+            android:id="@+id/time_difficulty_3"
+            android:textSize="17sp"/>
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_6"
@@ -131,6 +136,7 @@
             android:layout_marginTop="-40dp"
             android:background="@drawable/time_border"
             android:id="@+id/time_difficulty_6"
+            android:textSize="17sp"
             />
 
 
