@@ -69,17 +69,7 @@ public class DifficultySelectFragment extends Fragment {
 
         SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
         List <Integer> times = new ArrayList<>();
-        /*for(int i = 1;i<=6;i++) {
 
-            int bestTime = db.getBestTimeForStage(theme.id, i);
-            if (bestTime != 0) {
-                divsList.add(bestTime / 60);
-                modList.add(bestTime % 60);
-            } else {
-                divsList.add(-1);
-                modList.add(-1);
-            }
-        } */
 		for(int i = 1; i<=6 ; i++) {
 			if(db.getBestTimeForStage(theme.id, i)!= 0) {
 				times.add(db.getBestTimeForStage(theme.id, i));
