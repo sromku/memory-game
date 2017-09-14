@@ -1,6 +1,5 @@
 package com.snatik.matches.events.engine;
 
-import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.AbstractEvent;
 import com.snatik.matches.events.EventObserver;
 import com.snatik.matches.model.GameState;
