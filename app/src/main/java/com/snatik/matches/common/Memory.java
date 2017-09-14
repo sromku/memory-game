@@ -73,7 +73,7 @@ public class Memory {
 			Log.i("Best time for diff", ""+bestTime);
 			int minutes = (bestTime % 3600) / 60;
 			int seconds = (bestTime) % 60;
-			String result = String.format("%02d:%02d", minutes, seconds);
+			String result = String.format("BEST : %02d:%02d", minutes, seconds);
 			return result;
 		} else {
 			String result = "BEST : -";
