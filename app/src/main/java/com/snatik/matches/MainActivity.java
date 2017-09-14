@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
 
 import com.snatik.matches.common.Shared;
-import com.snatik.matches.common.SQLiteDB;
 import com.snatik.matches.engine.Engine;
 import com.snatik.matches.engine.ScreenController;
 import com.snatik.matches.engine.ScreenController.Screen;
