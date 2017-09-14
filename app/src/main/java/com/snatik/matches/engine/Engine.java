@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
 import com.snatik.matches.common.Music;
-import com.snatik.matches.common.SQLiteDB;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.events.EventObserverAdapter;
