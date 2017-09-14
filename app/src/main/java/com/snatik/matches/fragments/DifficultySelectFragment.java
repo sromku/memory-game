@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
-import com.snatik.matches.common.SQLiteDB;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.themes.Theme;
