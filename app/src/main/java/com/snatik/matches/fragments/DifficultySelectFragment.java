@@ -22,13 +22,6 @@ import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.themes.Theme;
 import com.snatik.matches.ui.DifficultyView;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
-
-import static android.R.id.text1;
 
 public class DifficultySelectFragment extends Fragment {
 
