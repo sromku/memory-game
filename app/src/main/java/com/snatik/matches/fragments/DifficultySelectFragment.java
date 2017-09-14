@@ -7,6 +7,7 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,113 +70,38 @@ public class DifficultySelectFragment extends Fragment {
         TextView text1 = (TextView) view.findViewById(R.id.time_difficulty_1);
 		text1.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 		text1.setTypeface(type);
+        text1.setText(Memory.getBestTimeForStage(theme.id,1));
 
         TextView text2 = (TextView) view.findViewById(R.id.time_difficulty_2);
 		text2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 		text2.setTypeface(type);
+        text2.setText(Memory.getBestTimeForStage(theme.id,2));
 
         TextView text3 = (TextView) view.findViewById(R.id.time_difficulty_3);
 		text3.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 		text3.setTypeface(type);
+        text3.setText(Memory.getBestTimeForStage(theme.id,3));
 
         TextView text4 = (TextView) view.findViewById(R.id.time_difficulty_4);
 		text4.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 		text4.setTypeface(type);
+        text4.setText(Memory.getBestTimeForStage(theme.id,4));
 
         TextView text5 = (TextView) view.findViewById(R.id.time_difficulty_5);
 		text5.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 		text5.setTypeface(type);
+        text5.setText(Memory.getBestTimeForStage(theme.id,5));
 
         TextView text6 = (TextView) view.findViewById(R.id.time_difficulty_6);
 		text6.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
 		text6.setTypeface(type);
-
-
-
-		SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
-        List <Integer> times = new ArrayList<>();
-
-		for(int i = 1; i<=6 ; i++) {
-			if(db.getBestTimeForStage(theme.id, i)!= 0) {
-				times.add(db.getBestTimeForStage(theme.id, i));
-			} else {
-				times.add(-1);
-			}
-			System.out.println(times.get(i-1));
-		}
-
-		if(times.get(0) != -1) {
-
-			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-			Date date = new Date(times.get(0) * 1000);
-			text1.setText(" BEST : " + dateFormat.format(date));
-
-		} else {
-			text1.setText("BEST :  - ");
-		}
-
-		if(times.get(1) != -1) {
-
-			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-			Date date = new Date(times.get(1) * 1000);
-			text2.setText(" BEST : " + dateFormat.format(date));
-
-		} else {
-			text2.setText("BEST :  - ");
-		}
-
-		if(times.get(2) != -1) {
-
-			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-			Date date = new Date(times.get(2) * 1000);
-			text3.setText(" BEST : " + dateFormat.format(date));
-
-		} else {
-			text3.setText("BEST :  - ");
-		}
-
-		if(times.get(3) != -1) {
-
-			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-			Date date = new Date(times.get(3) * 1000);
-			text4.setText(" BEST : " + dateFormat.format(date));
-
-		} else {
-			text4.setText("BEST :  - ");
-		}
-
-		if(times.get(4) != -1) {
-
-			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-			Date date = new Date(times.get(4) * 1000);
-			text5.setText(" BEST : " + dateFormat.format(date));
-
-		} else {
-			text5.setText("BEST :  - ");
-		}
-
-		if(times.get(5) != -1) {
-
-			SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
-			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-			Date date = new Date(times.get(5) * 1000);
-			text6.setText(" BEST : " + dateFormat.format(date));
-
-		} else {
-			text6.setText("BEST :  - ");
-		}
+        text6.setText(Memory.getBestTimeForStage(theme.id,6));
 
 
 		return view;
 
 
 	}
-
 
 	private void animate(View... view) {
 		AnimatorSet animatorSet = new AnimatorSet();
