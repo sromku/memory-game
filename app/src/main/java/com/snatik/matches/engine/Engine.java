@@ -1,10 +1,5 @@
 package com.snatik.matches.engine;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -38,6 +33,11 @@ import com.snatik.matches.themes.Themes;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Clock;
 import com.snatik.matches.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 public class Engine extends EventObserverAdapter {
 
@@ -242,6 +242,7 @@ public class Engine extends EventObserverAdapter {
 					mPlayingGame.gameState = gameState;
 					// remained seconds
 					gameState.remainedSeconds = totalTime - passedSeconds;
+					gameState.passedSeconds = passedSeconds;
 
 					// calc stars
 					if (passedSeconds <= totalTime / 2) {
@@ -259,6 +260,9 @@ public class Engine extends EventObserverAdapter {
 
 					// save to memory
 					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
+					Memory.saveTime(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty ,gameState.passedSeconds);
+
+
 
 					Shared.eventBus.notify(new GameWonEvent(gameState), 1200);
 				}

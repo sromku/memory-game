@@ -12,6 +12,7 @@ public class GameWonEvent extends AbstractEvent {
 	public static final String TYPE = GameWonEvent.class.getName();
 
 	public GameState gameState;
+
 	
 	public GameWonEvent(GameState gameState) {
 		this.gameState = gameState;
