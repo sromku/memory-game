@@ -3,68 +3,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:paddingRight="@dimen/difficulty_padding"
     android:orientation="horizontal"
-    android:paddingLeft="@dimen/difficulty_padding"
-    android:paddingRight="@dimen/difficulty_padding" >
+    android:layout_marginTop="0dp"
+    android:paddingLeft="@dimen/difficulty_padding">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/difficulty_margin"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="@dimen/difficulty_margin"
+        android:layout_marginRight="@dimen/difficulty_margin"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/time_border"
+            android:id="@+id/time_difficulty_1"
+            android:textSize="17sp"/>
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/difficulty_margin_top" />
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/time_border"
+            android:id="@+id/time_difficulty_4"
+            android:textSize="17sp"
+            />
+
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/difficulty_margin"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="@dimen/difficulty_margin"
+        android:layout_marginRight="@dimen/difficulty_margin"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/time_border"
+            android:id="@+id/time_difficulty_2"
+            android:textSize="17sp"
+          />
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/difficulty_margin_top" />
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/time_border"
+            android:id="@+id/time_difficulty_5"
+            android:textSize="17sp"
+            />
+
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/difficulty_margin"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="@dimen/difficulty_margin"
+        android:layout_marginRight="@dimen/difficulty_margin"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/time_border"
+            android:layout_marginBottom="18dp"
+            android:id="@+id/time_difficulty_3"
+            android:textSize="17sp"/>
 
         <com.snatik.matches.ui.DifficultyView
             android:id="@+id/select_difficulty_6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/difficulty_margin_top" />
+            android:layout_height="30dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/time_border"
+            android:id="@+id/time_difficulty_6"
+            android:textSize="17sp"
+            />
+
+
     </LinearLayout>
 
 </LinearLayout>

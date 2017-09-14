@@ -1,5 +1,6 @@
 package com.snatik.matches;
 
+
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -38,6 +39,8 @@ public class MainActivity extends FragmentActivity {
 
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
+
+
 	}
 
 	@Override
@@ -64,4 +67,5 @@ public class MainActivity extends FragmentActivity {
 		bitmap = Utils.downscaleBitmap(bitmap, 2);
 		mBackgroundImage.setImageBitmap(bitmap);
 	}
+
 }
