@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.snatik.matches.R;
@@ -261,7 +260,7 @@ public class Engine extends EventObserverAdapter {
 
 					// save to memory
 					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
-					Memory.saveTime(mPlayingGame.theme.id,mPlayingGame.boardConfiguration.difficulty,gameState.passedSeconds);
+					Memory.saveTime(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty ,gameState.passedSeconds);
 
 
 
