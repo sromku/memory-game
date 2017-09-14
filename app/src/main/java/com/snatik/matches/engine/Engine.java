@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.snatik.matches.R;
@@ -258,13 +259,10 @@ public class Engine extends EventObserverAdapter {
 
 					// calc score
 					gameState.achievedScore = mPlayingGame.boardConfiguration.difficulty * gameState.remainedSeconds * mPlayingGame.theme.id;
-					System.out.println(passedSeconds);
 
 					// save to memory
 					Memory.save(mPlayingGame.theme.id, mPlayingGame.boardConfiguration.difficulty, gameState.achievedStars);
-					SQLiteDB db = new SQLiteDB(Shared.context,null,null,1);
-					db.saveToTable(mPlayingGame.theme.id,mPlayingGame.boardConfiguration
-							.difficulty,mPlayingGame.gameState.passedSeconds);
+					Memory.saveTime(mPlayingGame.theme.id,mPlayingGame.boardConfiguration.difficulty,gameState.passedSeconds);
 
 
 
