@@ -10,7 +10,7 @@ public class Memory {
 
 	private static final String SHARED_PREFERENCES_NAME = "com.snatik.matches";
 	private static String highStartKey = "theme_%d_difficulty_%d";
-	private static String bestTimeKey = "themeTime_%d_difficultyTime_%d";
+	private static String bestTimeKey = "themetime_%d_difficultytime_%d";
 
 	public static void save(int theme, int difficulty, int stars) {
 
