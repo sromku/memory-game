@@ -34,8 +34,3 @@ If you have more ideas or you want to add more options / themes / sounds or what
 	- http://graphicriver.net/item/10-fresh-game-backgrounds/9137937
 	- http://graphicriver.net/item/cartoon-games-gui-pack-11-/6056785
 
-
-## Follow us
-
-[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/snatik/memory-game)
-[![Twitter Follow](https://img.shields.io/twitter/follow/snatikteam.svg?style=social)](https://twitter.com/snatikteam)
