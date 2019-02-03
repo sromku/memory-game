@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.snatik.matches" >
 
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="21" />
-
     <application
         android:name=".GameApplication"
         android:allowBackup="true"
