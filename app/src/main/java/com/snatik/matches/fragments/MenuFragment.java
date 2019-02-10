@@ -31,6 +31,7 @@ public class MenuFragment extends Fragment {
 	private ImageView mTooltip;
 	private ImageView mSettingsGameButton;
 	private ImageView mGooglePlayGameButton;
+	private AnimatorSet mMenuAnimationSet;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +43,10 @@ public class MenuFragment extends Fragment {
 		mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if(PopupManager.isShown() || mMenuAnimationSet.isRunning()) {
+					return;
+				}
+
 				PopupManager.showPopupSettings();
 			}
 		});
@@ -49,7 +54,7 @@ public class MenuFragment extends Fragment {
 		mGooglePlayGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+				openLeaderboards();
 			}
 		});
 		mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_lights);
@@ -58,16 +63,11 @@ public class MenuFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-
-				// animate title from place and navigation buttons from place
-				animateAllAssetsOff(new AnimatorListenerAdapter() {
-					@Override
-					public void onAnimationEnd(Animator animation) {
-						Shared.eventBus.notify(new StartEvent());
-					}
-				});
+				startGame();
 			}
 		});
+
+		mMenuAnimationSet = new AnimatorSet();
 
 		startLightsAnimation();
 		startTootipAnimation();
@@ -107,10 +107,9 @@ public class MenuFragment extends Fragment {
 		startButtonAnimator.setInterpolator(new AccelerateInterpolator(2));
 		startButtonAnimator.setDuration(300);
 
-		AnimatorSet animatorSet = new AnimatorSet();
-		animatorSet.playTogether(titleAnimator, lightsAnimatorX, lightsAnimatorY, tooltipAnimator, settingsAnimator, googlePlayAnimator, startButtonAnimator);
-		animatorSet.addListener(adapter);
-		animatorSet.start();
+		mMenuAnimationSet.playTogether(titleAnimator, lightsAnimatorX, lightsAnimatorY, tooltipAnimator, settingsAnimator, googlePlayAnimator, startButtonAnimator);
+		mMenuAnimationSet.addListener(adapter);
+		mMenuAnimationSet.start();
 	}
 
 	private void startTootipAnimation() {
@@ -142,4 +141,25 @@ public class MenuFragment extends Fragment {
 		animator.start();
 	}
 
+	private void startGame() {
+	if(PopupManager.isShown()) {
+		return;
+	}
+
+	// animate title from place and navigation buttons from place
+	animateAllAssetsOff(new AnimatorListenerAdapter() {
+		@Override
+		public void onAnimationEnd(Animator animation) {
+			Shared.eventBus.notify(new StartEvent());
+		}
+	});
+}
+
+	private void openLeaderboards() {
+		if (PopupManager.isShown() || mMenuAnimationSet.isRunning()){
+			return;
+		}
+
+		Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+	}
 }
