@@ -11,6 +11,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -40,6 +41,7 @@ public class BoardView extends LinearLayout {
 	private List<Integer> flippedUp = new ArrayList<Integer>();
 	private boolean mLocked = false;
 	private int mSize;
+	private MediaPlayer mediaPlayer;
 
 	public BoardView(Context context) {
 		this(context, null);
@@ -142,6 +144,8 @@ public class BoardView extends LinearLayout {
 			public void onClick(View v) {
 				if (!mLocked && tileView.isFlippedDown()) {
 					tileView.flipUp();
+					mediaPlayer = MediaPlayer.create(Shared.context, R.raw.click_on);
+					mediaPlayer.start();
 					flippedUp.add(id);
 					if (flippedUp.size() == 2) {
 						mLocked = true;

@@ -9,7 +9,7 @@ import com.snatik.matches.themes.Theme;
  */
 public class Game {
 
-	/**
+	 /**
 	 * The board configuration
 	 */
 	public BoardConfiguration boardConfiguration;

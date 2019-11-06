@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
+import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.ThemeSelectedEvent;
 import com.snatik.matches.themes.Theme;
@@ -64,6 +65,11 @@ public class ThemeSelectFragment extends Fragment {
 		animateShow(emoji);
 
 		return view;
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
 	}
 
 	private void animateShow(View view) {
