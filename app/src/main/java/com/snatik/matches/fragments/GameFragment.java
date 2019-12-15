@@ -1,6 +1,9 @@
 package com.snatik.matches.fragments;
 
+import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.snatik.matches.R;
+import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;
 import com.snatik.matches.events.engine.GameWonEvent;
@@ -22,7 +26,7 @@ import com.snatik.matches.utils.Clock.OnTimerCount;
 import com.snatik.matches.utils.FontLoader;
 import com.snatik.matches.utils.FontLoader.Font;
 
-public class GameFragment extends BaseFragment {
+public class GameFragment extends BaseFragment{
 
 	private BoardView mBoardView;
 	private TextView mTime;
@@ -47,7 +51,7 @@ public class GameFragment extends BaseFragment {
 		Shared.eventBus.listen(FlipDownCardsEvent.TYPE, this);
 		Shared.eventBus.listen(HidePairCardsEvent.TYPE, this);
 		Shared.eventBus.listen(GameWonEvent.TYPE, this);
-		
+
 		return view;
 	}
 	

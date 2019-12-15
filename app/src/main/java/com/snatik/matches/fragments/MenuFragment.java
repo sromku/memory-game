@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -72,10 +73,9 @@ public class MenuFragment extends Fragment {
 		startLightsAnimation();
 		startTootipAnimation();
 
-		// play background music
-		Music.playBackgroundMusic();
 		return view;
 	}
+
 
 	protected void animateAllAssetsOff(AnimatorListenerAdapter adapter) {
 		// title

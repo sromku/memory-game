@@ -31,5 +31,7 @@ public class DifficultyView extends LinearLayout {
 		int drawableResourceId = Shared.context.getResources().getIdentifier(titleResource, "drawable", Shared.context.getPackageName());
 		mTitle.setImageResource(drawableResourceId);
 	}
+
+
 	
 }

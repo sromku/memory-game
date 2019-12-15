@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +16,13 @@ import android.widget.TextView;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
+import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.ui.DifficultySelectedEvent;
 import com.snatik.matches.themes.Theme;
 import com.snatik.matches.ui.DifficultyView;
 
-public class DifficultySelectFragment extends Fragment {
+public class DifficultySelectFragment extends Fragment implements View.OnKeyListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -88,6 +90,30 @@ public class DifficultySelectFragment extends Fragment {
 
         return view;
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+        this.getView().setFocusableInTouchMode(true);
+        this.getView().requestFocus();
+        this.getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if( keyCode == KeyEvent.KEYCODE_BACK )
+                {
+                    Music.stopBackgroundMusic();
+                    return true;
+                }
+                return false;
+            }
+        });
+        return false;
     }
 
     private String getBestTimeForStage(int theme, int difficulty) {
