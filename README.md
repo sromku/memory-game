@@ -10,14 +10,6 @@ We just wanted a simple memory game for kids 4+ age. No ads, no complicated scre
 
 If you have more ideas or you want to add more options / themes / sounds or whatever, fill free to update the source for yourself or open a pull request. :sparkles:
 
-<img src="http://www.sromku.com/static/img/pregnancy_memorygame_preview.png"/>
-
-### Download It
-
-<a href="https://play.google.com/store/apps/details?id=com.snatik.matches">
-  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-</a>
-
 ### Next
 
 - [ ] 2 player game
