@@ -3,7 +3,8 @@ package com.snatik.matches.fragments;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import java.util.Locale;
 public class ThemeSelectFragment extends Fragment {
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = LayoutInflater.from(Shared.context).inflate(R.layout.theme_select_fragment, container, false);
 		View animals = view.findViewById(R.id.theme_animals_container);
 		View monsters = view.findViewById(R.id.theme_monsters_container);
@@ -52,7 +53,7 @@ public class ThemeSelectFragment extends Fragment {
 		emoji.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Shared.eventBus.notify(new ThemeSelectedEvent(themeEmoji));
+				Shared.eventBus.notify(new  ThemeSelectedEvent(themeEmoji));
 			}
 		});
 

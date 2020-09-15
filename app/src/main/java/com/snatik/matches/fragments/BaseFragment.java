@@ -1,6 +1,6 @@
 package com.snatik.matches.fragments;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.snatik.matches.events.EventObserver;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;

@@ -96,19 +96,8 @@ public class Engine extends EventObserverAdapter {
 		if (drawable != null) {
 			((TransitionDrawable) drawable).reverseTransition(2000);
 		} else {
-			new AsyncTask<Void, Void, Bitmap>() {
-
-				@Override
-				protected Bitmap doInBackground(Void... params) {
-					Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-					return bitmap;
-				}
-
-				protected void onPostExecute(Bitmap bitmap) {
-					mBackgroundImage.setImageBitmap(bitmap);
-				};
-
-			}.execute();
+			Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+			mBackgroundImage.setImageBitmap(bitmap);
 		}
 	}
 
@@ -137,28 +126,15 @@ public class Engine extends EventObserverAdapter {
 	public void onEvent(ThemeSelectedEvent event) {
 		mSelectedTheme = event.theme;
 		mScreenController.openScreen(Screen.DIFFICULTY);
-		AsyncTask<Void, Void, TransitionDrawable> task = new AsyncTask<Void, Void, TransitionDrawable>() {
-
-			@Override
-			protected TransitionDrawable doInBackground(Void... params) {
-				Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-				Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
-				backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
-				Drawable backgrounds[] = new Drawable[2];
-				backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
-				backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage);
-				TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
-				return crossfader;
-			}
-
-			@Override
-			protected void onPostExecute(TransitionDrawable result) {
-				super.onPostExecute(result);
-				mBackgroundImage.setImageDrawable(result);
-				result.startTransition(2000);
-			}
-		};
-		task.execute();
+		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+		Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
+		backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
+		Drawable[] backgrounds = new Drawable[2];
+		backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
+		backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage);
+		TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
+		mBackgroundImage.setImageDrawable(crossfader);
+		crossfader.startTransition(2000);
 	}
 
 	@Override
