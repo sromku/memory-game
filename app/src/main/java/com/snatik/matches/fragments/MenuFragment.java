@@ -6,7 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +49,7 @@ public class MenuFragment extends Fragment {
 		mGooglePlayGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+				Toast.makeText(getActivity(), "Leader boards will be available in the next game updates", Toast.LENGTH_LONG).show();
 			}
 		});
 		mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_lights);

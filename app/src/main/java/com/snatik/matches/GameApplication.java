@@ -10,6 +10,5 @@ public class GameApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		FontLoader.loadFonts(this);
-
 	}
 }

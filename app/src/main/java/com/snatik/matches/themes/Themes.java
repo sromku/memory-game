@@ -53,8 +53,7 @@ public class Themes {
 	public static Bitmap getBackgroundImage(Theme theme) {
 		String drawableResourceName = theme.backgroundImageUrl.substring(Themes.URI_DRAWABLE.length());
 		int drawableResourceId = Shared.context.getResources().getIdentifier(drawableResourceName, "drawable", Shared.context.getPackageName());
-		Bitmap bitmap = Utils.scaleDown(drawableResourceId, Utils.screenWidth(), Utils.screenHeight());
-		return bitmap;
+		return Utils.scaleDown(drawableResourceId, Utils.screenWidth(), Utils.screenHeight());
 	}
 
 }

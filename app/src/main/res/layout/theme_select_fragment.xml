@@ -1,56 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:paddingLeft="@dimen/theme_padding"
-    android:paddingRight="@dimen/theme_padding" >
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/theme_animals_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginRight="@dimen/theme_margin"
-        android:layout_weight="1" >
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:baselineAligned="false"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:paddingLeft="@dimen/theme_padding"
+		android:paddingRight="@dimen/theme_padding">
 
-        <ImageView
-            android:id="@+id/theme_animals"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/animals_theme_star_0" />
+		<RelativeLayout
+			android:id="@+id/theme_animals_container"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/theme_padding"
+			android:layout_margin="@dimen/theme_margin_all"
+			android:layout_weight="1">
 
-    </RelativeLayout>
+			<ImageView
+				android:id="@+id/theme_animals"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:adjustViewBounds="true"
+				android:contentDescription="@string/app_name"
+				android:src="@drawable/animals_theme_star_0" />
 
-    <RelativeLayout
-        android:id="@+id/theme_monsters_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/theme_margin"
-        android:layout_weight="1" >
+		</RelativeLayout>
 
-        <ImageView
-            android:id="@+id/theme_monsters"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/monsters_theme_star_0" />
-    </RelativeLayout>
+		<RelativeLayout
+			android:padding="@dimen/theme_padding"
+			android:id="@+id/theme_monsters_container"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/theme_margin_all"
+			android:layout_weight="1">
 
-    <RelativeLayout
-        android:id="@+id/theme_emoji_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/theme_margin"
-        android:layout_weight="1" >
+			<ImageView
+				android:id="@+id/theme_monsters"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:adjustViewBounds="true"
+				android:contentDescription="@string/app_name"
+				android:src="@drawable/monsters_theme_star_0" />
+		</RelativeLayout>
 
-        <ImageView
-            android:id="@+id/theme_emoji"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/emoji_theme_star_0" />
-    </RelativeLayout>
+		<RelativeLayout
+			android:padding="@dimen/theme_padding"
+			android:id="@+id/theme_emoji_container"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/theme_margin_all"
+			android:layout_weight="1">
 
-</LinearLayout>
+			<ImageView
+				android:id="@+id/theme_emoji"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:adjustViewBounds="true"
+				android:contentDescription="@string/app_name"
+				android:src="@drawable/emoji_theme_star_0" />
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</HorizontalScrollView>

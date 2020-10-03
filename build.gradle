@@ -6,7 +6,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
     }
 }
 
@@ -16,7 +16,8 @@ allprojects {
         maven {
             url "https://maven.google.com"
         }
-    }
+		google()
+	}
 }
 
 task clean(type: Delete) {
