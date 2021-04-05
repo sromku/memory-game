@@ -25,10 +25,6 @@ public class Music {
 		}
 	}
 
-	public static void playBackgroundMusic() {
-		// TODO
-	}
-
 	public static void showStar() {
 		if (!OFF) {
 			MediaPlayer mp = MediaPlayer.create(Shared.context, R.raw.star);

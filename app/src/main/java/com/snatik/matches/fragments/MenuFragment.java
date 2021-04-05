@@ -73,7 +73,6 @@ public class MenuFragment extends Fragment {
 		startTootipAnimation();
 
 		// play background music
-		Music.playBackgroundMusic();
 		return view;
 	}
 
