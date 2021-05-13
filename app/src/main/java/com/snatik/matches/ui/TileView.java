@@ -91,7 +91,7 @@ public class TileView extends FrameLayout {
 			this.fromView = fromView;
 			this.toView = toView;
 
-			setDuration(700);
+			//setDuration(700);
 			setFillAfter(false);
 			setInterpolator(new AccelerateDecelerateInterpolator());
 		}
