@@ -42,6 +42,7 @@ import java.util.List;
 public class Engine extends EventObserverAdapter {
 
 	private static Engine mInstance = null;
+	public static boolean isFlipping = false;
 	private Game mPlayingGame = null;
 	private int mFlippedId = -1;
 	private int mToFlip = -1;
@@ -269,7 +270,8 @@ public class Engine extends EventObserverAdapter {
 			} else {
 				// Log.i("my_tag", "Flip: all down");
 				// send event - flip all down
-				Shared.eventBus.notify(new FlipDownCardsEvent(), 1000);
+				isFlipping = true;
+				Shared.eventBus.notify(new FlipDownCardsEvent(), 700);
 			}
 			mFlippedId = -1;
 			// Log.i("my_tag", "Flip: mFlippedId: " + mFlippedId);
