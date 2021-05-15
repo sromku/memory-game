@@ -6,6 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MenuFragment extends Fragment {
 	private ImageView mTooltip;
 	private ImageView mSettingsGameButton;
 	private ImageView mGooglePlayGameButton;
+	private long mLastClickedTime = 0;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,14 +44,20 @@ public class MenuFragment extends Fragment {
 		mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				PopupManager.showPopupSettings();
+				if (SystemClock.elapsedRealtime() - mLastClickedTime > 700) {
+					mLastClickedTime = SystemClock.elapsedRealtime();
+					PopupManager.showPopupSettings();
+				}
 			}
 		});
 		mGooglePlayGameButton = (ImageView) view.findViewById(R.id.google_play_button);
 		mGooglePlayGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+				if (SystemClock.elapsedRealtime() - mLastClickedTime > 700) {
+					mLastClickedTime = SystemClock.elapsedRealtime();
+					Toast.makeText(getActivity(), "Leaderboards will be available in the next game updates", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 		mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_lights);
@@ -60,12 +68,15 @@ public class MenuFragment extends Fragment {
 			public void onClick(View v) {
 
 				// animate title from place and navigation buttons from place
-				animateAllAssetsOff(new AnimatorListenerAdapter() {
-					@Override
-					public void onAnimationEnd(Animator animation) {
-						Shared.eventBus.notify(new StartEvent());
-					}
-				});
+				if (SystemClock.elapsedRealtime() - mLastClickedTime > 700) {
+					mLastClickedTime = SystemClock.elapsedRealtime();
+					animateAllAssetsOff(new AnimatorListenerAdapter() {
+						@Override
+						public void onAnimationEnd(Animator animation) {
+							Shared.eventBus.notify(new StartEvent());
+						}
+					});
+				}
 			}
 		});
 

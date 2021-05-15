@@ -44,7 +44,6 @@ public class BoardView extends LinearLayout {
 	private List<Integer> flippedUp = new ArrayList<Integer>();
 	private boolean mLocked = false;
 	private int mSize;
-	private long mLastClickedTime = 0;
 
 	public BoardView(Context context) {
 		this(context, null);
@@ -146,7 +145,6 @@ public class BoardView extends LinearLayout {
 			@Override
 			public void onClick(View v) {
 				if (!mLocked && tileView.isFlippedDown() && !Engine.isFlipping) {
-					mLastClickedTime = SystemClock.elapsedRealtime();
 					tileView.flipUp();
 					flippedUp.add(id);
 					if (flippedUp.size() == 2) {
