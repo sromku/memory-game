@@ -12,6 +12,8 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +24,7 @@ import android.widget.LinearLayout;
 
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.engine.Engine;
 import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
@@ -36,6 +39,7 @@ public class BoardView extends LinearLayout {
 	private int mScreenHeight;
 	private BoardConfiguration mBoardConfiguration;
 	private BoardArrangment mBoardArrangment;
+	private Handler mhandler = new Handler();
 	private Map<Integer, TileView> mViewReference;
 	private List<Integer> flippedUp = new ArrayList<Integer>();
 	private boolean mLocked = false;
@@ -140,7 +144,7 @@ public class BoardView extends LinearLayout {
 
 			@Override
 			public void onClick(View v) {
-				if (!mLocked && tileView.isFlippedDown()) {
+				if (!mLocked && tileView.isFlippedDown() && !Engine.isFlipping) {
 					tileView.flipUp();
 					flippedUp.add(id);
 					if (flippedUp.size() == 2) {
@@ -167,6 +171,12 @@ public class BoardView extends LinearLayout {
 			mViewReference.get(id).flipDown();
 		}
 		flippedUp.clear();
+		mhandler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				Engine.isFlipping = false;
+			}
+		}, 700);
 		mLocked = false;
 	}
 

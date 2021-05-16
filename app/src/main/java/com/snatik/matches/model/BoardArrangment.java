@@ -39,12 +39,14 @@ public class BoardArrangment {
 	}
 
 	public boolean isPair(int id1, int id2) {
-		Integer integer = pairs.get(id1);
-		if (integer == null) {
-			// TODO Report this bug!!!
+
+		int value;
+		if (pairs.get(id1) == null) {
 			return false;
+		} else {
+			value = pairs.get(id1);
 		}
-		return integer.equals(id2);
+		return value == id2;
 	}
 
 }

@@ -33,6 +33,7 @@ public class PopupWonView extends RelativeLayout {
 	private ImageView mNextButton;
 	private ImageView mBackButton;
 	private Handler mHandler;
+	private boolean isLocked = false;
 
 	public PopupWonView(Context context) {
 		this(context, null);
@@ -62,7 +63,10 @@ public class PopupWonView extends RelativeLayout {
 		mNextButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Shared.eventBus.notify(new NextGameEvent());
+				if (!isLocked) {
+					Shared.eventBus.notify(new NextGameEvent());
+					isLocked = true;
+				}
 			}
 		});
 	}

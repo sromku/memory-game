@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.services.BackgroundMusicService;
 import com.snatik.matches.utils.FontLoader;
 import com.snatik.matches.utils.FontLoader.Font;
 
@@ -61,9 +62,11 @@ public class PopupSettingsView extends LinearLayout {
 		if (Music.OFF) {
 			mSoundText.setText("Sound OFF");
 			mSoundImage.setImageResource(R.drawable.button_music_off);
+			BackgroundMusicService.mediaPlayer.pause();
 		} else {
 			mSoundText.setText("Sound ON");
 			mSoundImage.setImageResource(R.drawable.button_music_on);
+			BackgroundMusicService.mediaPlayer.start();
 		}
 	}
 }
