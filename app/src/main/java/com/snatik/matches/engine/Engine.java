@@ -271,7 +271,7 @@ public class Engine extends EventObserverAdapter {
 				// Log.i("my_tag", "Flip: all down");
 				// send event - flip all down
 				isFlipping = true;
-				Shared.eventBus.notify(new FlipDownCardsEvent(), 700);
+				Shared.eventBus.notify(new FlipDownCardsEvent(), 1000);
 			}
 			mFlippedId = -1;
 			// Log.i("my_tag", "Flip: mFlippedId: " + mFlippedId);
