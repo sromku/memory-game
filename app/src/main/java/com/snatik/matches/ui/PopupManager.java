@@ -27,6 +27,12 @@ public class PopupManager {
 		imageView.setBackgroundColor(Color.parseColor("#88555555"));
 		imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		imageView.setClickable(true);
+		imageView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				closePopup();
+			}
+		});
 		popupContainer.addView(imageView);
 
 		// popup
