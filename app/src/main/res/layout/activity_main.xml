@@ -7,7 +7,13 @@
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"></ImageView>
+
+    <include
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/back_button"/>
 
     <FrameLayout
         android:id="@+id/fragment_container"

@@ -2,9 +2,12 @@ package com.snatik.matches;
 
 
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.Engine;
@@ -18,6 +21,7 @@ import com.snatik.matches.utils.Utils;
 public class MainActivity extends FragmentActivity {
 
 	private ImageView mBackgroundImage;
+	private LinearLayout mBackButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class MainActivity extends FragmentActivity {
 
 		setContentView(R.layout.activity_main);
 		mBackgroundImage = (ImageView) findViewById(R.id.background_image);
+		mBackButton = (LinearLayout) findViewById(R.id.back_button);
 
 		Shared.activity = this;
 		Shared.engine.start();
@@ -40,7 +45,12 @@ public class MainActivity extends FragmentActivity {
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
 
-
+		mBackButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				onBackPressed();
+			}
+		});
 	}
 
 	@Override
