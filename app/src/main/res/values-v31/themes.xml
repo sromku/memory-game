@@ -3,7 +3,9 @@
         <item name="android:windowBackground">@color/sky</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
-        <!-- Draw the game art under the display cutout instead of letterboxing it. -->
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <!-- System splash screen: launcher icon on the sky colour of the menu background. -->
+        <item name="android:windowSplashScreenBackground">@color/sky</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
     </style>
 </resources>

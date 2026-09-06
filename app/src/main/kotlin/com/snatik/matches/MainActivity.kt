@@ -67,6 +67,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        viewModel.onScreenShown()
+    }
+
+    override fun onStop() {
+        viewModel.onScreenHidden()
+        super.onStop()
+    }
+
     private fun handle(event: UiEvent) {
         when (event) {
             UiEvent.OpenThemeSelect -> push(ThemeSelectFragment(), BACK_STACK_THEME)

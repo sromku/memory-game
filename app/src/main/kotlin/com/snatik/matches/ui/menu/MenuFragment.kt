@@ -10,7 +10,6 @@ import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.snatik.matches.R
@@ -27,9 +26,6 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
         val binding = MenuFragmentBinding.bind(view)
         binding.settingsGameButton.isSoundEffectsEnabled = false
         binding.settingsGameButton.setOnClickListener { viewModel.openSettings() }
-        binding.googlePlayButton.setOnClickListener {
-            Toast.makeText(requireContext(), R.string.leaderboards_coming_soon, Toast.LENGTH_LONG).show()
-        }
         binding.startGameButton.setOnClickListener { button ->
             button.isEnabled = false
             animateAllAssetsOff(binding) { viewModel.startPressed() }
@@ -58,16 +54,12 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
             interpolator = slide
             duration = slideDuration
         }
-        val googlePlay = ObjectAnimator.ofFloat(binding.googlePlayButton, View.TRANSLATION_Y, 120.dp(binding.root)).apply {
-            interpolator = slide
-            duration = slideDuration
-        }
         val start = ObjectAnimator.ofFloat(binding.startGameButton, View.TRANSLATION_Y, 130.dp(binding.root)).apply {
             interpolator = slide
             duration = slideDuration
         }
         AnimatorSet().apply {
-            playTogether(title, lightsX, lightsY, tooltip, settings, googlePlay, start)
+            playTogether(title, lightsX, lightsY, tooltip, settings, start)
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) = onEnd()
             })

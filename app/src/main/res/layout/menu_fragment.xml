@@ -38,17 +38,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/button_settings" />
 
-    <ImageView
-        android:id="@+id/google_play_button"
-        android:layout_width="@dimen/settings_game_button"
-        android:layout_height="@dimen/settings_game_button"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/settings_game_button_margin"
-        android:layout_toStartOf="@id/start_game_button"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/cd_leaderboards"
-        android:scaleType="centerCrop"
-        android:src="@drawable/button_google_play" />
 
     <ImageView
         android:id="@+id/title"
@@ -65,7 +54,7 @@
         android:id="@+id/tooltip"
         android:layout_width="@dimen/tooltip_width"
         android:layout_height="@dimen/tooltip_height"
-        android:layout_alignStart="@id/google_play_button"
+        android:layout_alignStart="@id/start_game_button"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/tooltip_margin_left"
         android:layout_marginBottom="@dimen/tooltip_margin_bottom"

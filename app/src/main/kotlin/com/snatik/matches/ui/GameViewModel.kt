@@ -69,6 +69,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     private var clockJob: Job? = null
 
+    /** When the app left the screen mid-round, so the pause does not count against the player. */
+    private var pausedAtMillis: Long? = null
+
     /** Parent of every delayed effect of the current round, cancelled when a new round starts. */
     private var roundJob: Job = Job()
 
@@ -120,6 +123,22 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         uiEvents.trySend(UiEvent.ReturnToDifficultySelect)
     }
 
+    /** The activity is no longer visible: stop the clock so an interruption does not cost stars. */
+    fun onScreenHidden() {
+        val game = game ?: return
+        if (game.result != null || pausedAtMillis != null) return
+        pausedAtMillis = SystemClock.elapsedRealtime()
+        clockJob?.cancel()
+    }
+
+    fun onScreenShown() {
+        val pausedAt = pausedAtMillis ?: return
+        pausedAtMillis = null
+        val game = game ?: return
+        game.startedAtMillis += SystemClock.elapsedRealtime() - pausedAt
+        startClock(game)
+    }
+
     fun toggleSound(): Boolean {
         val enabled = !_soundEnabled.value
         _soundEnabled.value = enabled
@@ -162,6 +181,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     private fun startRound(theme: GameTheme, difficulty: Difficulty) {
         roundJob.cancel()
         roundJob = Job()
+        pausedAtMillis = null
         while (boardEvents.tryReceive().isSuccess) Unit // drop effects of the previous round
         val images = loadTileImages(theme)
         val round = Game(

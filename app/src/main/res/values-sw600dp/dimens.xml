@@ -16,7 +16,7 @@
     <dimen name="settings_game_button_margin">45dp</dimen>
     <dimen name="tooltip_width">120dp</dimen>
     <dimen name="tooltip_height">52dp</dimen>
-    <dimen name="tooltip_margin_left">180dp</dimen>
+    <dimen name="tooltip_margin_left">60dp</dimen>
     <dimen name="tooltip_margin_bottom">170dp</dimen>
 
     <!-- theme -->
@@ -26,6 +26,9 @@
     <!-- difficulty level -->
     <dimen name="difficulty_padding">40dp</dimen>
     <dimen name="difficulty_margin">15dp</dimen>
+    <dimen name="difficulty_best_overlap">-50dp</dimen>
+    <dimen name="difficulty_best_height">46dp</dimen>
+    <dimen name="difficulty_best_text_size">22dp</dimen>
 
     <!-- game -->
     <dimen name="margine_top">70dp</dimen>

@@ -14,55 +14,69 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/difficulty_margin"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="@dimen/difficulty_margin"
-        android:layout_marginBottom="30dp"
         android:layout_weight="1"
-        android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/select_difficulty_1"
+        <!-- Button and its best-time label move together, whatever the screen size. -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/button_difficulty_1_star_0" />
-
-        <TextView
-            android:id="@+id/time_difficulty_1"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/time_border"
-            android:fontFamily="@font/grobold"
             android:gravity="center"
-            android:textSize="17sp"
-            tools:text="@string/best_time_none" />
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
-        <ImageView
-            android:id="@+id/select_difficulty_4"
+            <ImageView
+                android:id="@+id/select_difficulty_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/button_difficulty_1_star_0" />
+
+            <TextView
+                android:id="@+id/time_difficulty_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/difficulty_best_height"
+                android:layout_marginTop="@dimen/difficulty_best_overlap"
+                android:background="@drawable/time_border"
+                android:fontFamily="@font/grobold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/difficulty_best_text_size"
+                tools:text="@string/best_time_none" />
+        </LinearLayout>
+
+        <!-- Button and its best-time label move together, whatever the screen size. -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/button_difficulty_4_star_0" />
-
-        <TextView
-            android:id="@+id/time_difficulty_4"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
-            android:fontFamily="@font/grobold"
             android:gravity="center"
-            android:textSize="17sp"
-            tools:text="@string/best_time_none" />
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/select_difficulty_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/button_difficulty_4_star_0" />
+
+            <TextView
+                android:id="@+id/time_difficulty_4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/difficulty_best_height"
+                android:layout_marginTop="@dimen/difficulty_best_overlap"
+                android:background="@drawable/time_border"
+                android:fontFamily="@font/grobold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/difficulty_best_text_size"
+                tools:text="@string/best_time_none" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -70,55 +84,69 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/difficulty_margin"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="@dimen/difficulty_margin"
-        android:layout_marginBottom="30dp"
         android:layout_weight="1"
-        android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/select_difficulty_2"
+        <!-- Button and its best-time label move together, whatever the screen size. -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/button_difficulty_2_star_0" />
-
-        <TextView
-            android:id="@+id/time_difficulty_2"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/time_border"
-            android:fontFamily="@font/grobold"
             android:gravity="center"
-            android:textSize="17sp"
-            tools:text="@string/best_time_none" />
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
-        <ImageView
-            android:id="@+id/select_difficulty_5"
+            <ImageView
+                android:id="@+id/select_difficulty_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/button_difficulty_2_star_0" />
+
+            <TextView
+                android:id="@+id/time_difficulty_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/difficulty_best_height"
+                android:layout_marginTop="@dimen/difficulty_best_overlap"
+                android:background="@drawable/time_border"
+                android:fontFamily="@font/grobold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/difficulty_best_text_size"
+                tools:text="@string/best_time_none" />
+        </LinearLayout>
+
+        <!-- Button and its best-time label move together, whatever the screen size. -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/button_difficulty_5_star_0" />
-
-        <TextView
-            android:id="@+id/time_difficulty_5"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
-            android:fontFamily="@font/grobold"
             android:gravity="center"
-            android:textSize="17sp"
-            tools:text="@string/best_time_none" />
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/select_difficulty_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/button_difficulty_5_star_0" />
+
+            <TextView
+                android:id="@+id/time_difficulty_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/difficulty_best_height"
+                android:layout_marginTop="@dimen/difficulty_best_overlap"
+                android:background="@drawable/time_border"
+                android:fontFamily="@font/grobold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/difficulty_best_text_size"
+                tools:text="@string/best_time_none" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -126,55 +154,69 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/difficulty_margin"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="@dimen/difficulty_margin"
-        android:layout_marginBottom="30dp"
         android:layout_weight="1"
-        android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/select_difficulty_3"
+        <!-- Button and its best-time label move together, whatever the screen size. -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/button_difficulty_3_star_0" />
-
-        <TextView
-            android:id="@+id/time_difficulty_3"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/time_border"
-            android:fontFamily="@font/grobold"
             android:gravity="center"
-            android:textSize="17sp"
-            tools:text="@string/best_time_none" />
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
-        <ImageView
-            android:id="@+id/select_difficulty_6"
+            <ImageView
+                android:id="@+id/select_difficulty_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/button_difficulty_3_star_0" />
+
+            <TextView
+                android:id="@+id/time_difficulty_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/difficulty_best_height"
+                android:layout_marginTop="@dimen/difficulty_best_overlap"
+                android:background="@drawable/time_border"
+                android:fontFamily="@font/grobold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/difficulty_best_text_size"
+                tools:text="@string/best_time_none" />
+        </LinearLayout>
+
+        <!-- Button and its best-time label move together, whatever the screen size. -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/button_difficulty_6_star_0" />
-
-        <TextView
-            android:id="@+id/time_difficulty_6"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
-            android:fontFamily="@font/grobold"
             android:gravity="center"
-            android:textSize="17sp"
-            tools:text="@string/best_time_none" />
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/select_difficulty_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/button_difficulty_6_star_0" />
+
+            <TextView
+                android:id="@+id/time_difficulty_6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/difficulty_best_height"
+                android:layout_marginTop="@dimen/difficulty_best_overlap"
+                android:background="@drawable/time_border"
+                android:fontFamily="@font/grobold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/difficulty_best_text_size"
+                tools:text="@string/best_time_none" />
+        </LinearLayout>
 
     </LinearLayout>
 

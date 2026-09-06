@@ -34,10 +34,11 @@ class PopupWonView(
     }
 
     fun showResult(result: GameResult, onStar: () -> Unit) {
-        binding.timeBarText.text = context.formatClock(result.remainingSeconds)
+        // The time taken is what the difficulty screen records as "best", so that is what is shown.
+        binding.timeBarText.text = context.formatClock(result.passedSeconds)
         binding.scoreBarText.text = context.getString(R.string.score_format, 0)
         postAfter(REVEAL_DELAY_MS) {
-            animateScoreAndTime(result)
+            animateScore(result.score)
             animateStars(result.stars, onStar)
         }
     }
@@ -76,15 +77,11 @@ class PopupWonView(
         postAfter(delay, onStar)
     }
 
-    private fun animateScoreAndTime(result: GameResult) {
-        countAnimator = ValueAnimator.ofFloat(1f, 0f).apply {
+    private fun animateScore(score: Int) {
+        countAnimator = ValueAnimator.ofInt(0, score).apply {
             duration = COUNT_DURATION_MS
             addUpdateListener { animator ->
-                val remainingFraction = animator.animatedValue as Float
-                val score = result.score - (result.score * remainingFraction).toInt()
-                val time = (result.remainingSeconds * remainingFraction).toInt()
-                binding.timeBarText.text = context.formatClock(time)
-                binding.scoreBarText.text = context.getString(R.string.score_format, score)
+                binding.scoreBarText.text = context.getString(R.string.score_format, animator.animatedValue as Int)
             }
             start()
         }

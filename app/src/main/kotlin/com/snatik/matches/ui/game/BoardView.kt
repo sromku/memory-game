@@ -59,6 +59,7 @@ class BoardView(context: Context) : LinearLayout(context) {
                 val tileView = TileView(context).apply {
                     layoutParams = LayoutParams(tileSize, tileSize).apply { setMargins(margin, margin, margin, margin) }
                     contentDescription = context.getString(R.string.cd_tile)
+                    setTileSize(tileSize)
                     setOnClickListener { onTileClick?.invoke(tile) }
                 }
                 when {

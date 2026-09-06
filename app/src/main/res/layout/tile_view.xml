@@ -17,6 +17,7 @@
         android:background="@drawable/tile">
 
         <ImageView
+            android:id="@+id/back_star"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

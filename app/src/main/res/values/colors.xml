@@ -4,4 +4,6 @@
     <color name="text_shadow">#2EAED9</color>
     <color name="popup_scrim">#88555555</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Sky of the default background art; shown until the bitmap is decoded. -->
+    <color name="sky">#70B8FF</color>
 </resources>
