@@ -41,6 +41,14 @@ scripts/verify-release.sh           # signed release APK + AAB with pre-upload c
 Signing and the Play Store checklist are in [docs/RELEASE.md](docs/RELEASE.md). Signing material
 never lives in this repository.
 
+## Artwork
+
+The originals live in `art/original`. Every bitmap under `app/src/main/res` is generated from them by
+`scripts/regenerate-art.sh`: a Real-ESRGAN pass (the anime model, which suits this flat cartoon
+style) upscales each original 4x, then each asset is rendered at the exact pixel size it is shown at
+for every density bucket, phones and tablets separately, and saved as WebP. Edit or add an original,
+rerun the script, commit the result.
+
 ## Code layout
 
 - `game/` pure Kotlin rules: `Difficulty`, `Board` (shuffled pairs), `GameEngine` (flip state machine), `GameResult` (stars and score)

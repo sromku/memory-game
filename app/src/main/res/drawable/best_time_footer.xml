@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Footer under a difficulty button, drawn in the button's own frame colours. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#962A06" />
+            <corners android:bottomLeftRadius="10dp" android:bottomRightRadius="10dp" />
+        </shape>
+    </item>
+    <item android:top="0dp" android:left="3dp" android:right="3dp" android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#91DAF2" />
+            <corners android:bottomLeftRadius="8dp" android:bottomRightRadius="8dp" />
+        </shape>
+    </item>
+</layer-list>

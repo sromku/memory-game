@@ -7,6 +7,7 @@ import android.view.View
 import android.view.animation.BounceInterpolator
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.doOnLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.snatik.matches.R
@@ -31,16 +32,37 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
             binding.timeDifficulty1, binding.timeDifficulty2, binding.timeDifficulty3,
             binding.timeDifficulty4, binding.timeDifficulty5, binding.timeDifficulty6,
         )
+        val cells = listOf(
+            binding.cellDifficulty1, binding.cellDifficulty2, binding.cellDifficulty3,
+            binding.cellDifficulty4, binding.cellDifficulty5, binding.cellDifficulty6,
+        )
         val buttonArt = resources.obtainTypedArray(R.array.difficulty_buttons)
         try {
             Difficulty.entries.forEachIndexed { index, difficulty ->
                 bindButton(buttons[index], buttonArt, theme, difficulty)
                 bindBestTime(bestTimes[index], theme, difficulty)
+                fitButtonToCell(cells[index], buttons[index], bestTimes[index])
             }
         } finally {
             buttonArt.recycle()
         }
         animate(buttons)
+    }
+
+    /**
+     * The button art keeps its aspect ratio, so on short screens it must give up width to fit the
+     * cell's height together with the footer. Only the cell's measured height can tell us how much.
+     */
+    private fun fitButtonToCell(cell: View, button: ImageView, footer: TextView) {
+        cell.doOnLayout {
+            val overlap = resources.getDimensionPixelSize(R.dimen.difficulty_best_overlap)
+            val available = cell.height - footer.height - overlap
+            if (available > 0 && button.maxHeight != available) {
+                button.maxHeight = available
+                button.maxWidth = cell.width
+                button.requestLayout()
+            }
+        }
     }
 
     private fun bindButton(

@@ -25,7 +25,7 @@
     <!-- difficulty level -->
     <dimen name="difficulty_padding">40dp</dimen>
     <dimen name="difficulty_margin">10dp</dimen>
-    <dimen name="difficulty_best_overlap">-40dp</dimen>
+    <dimen name="difficulty_best_overlap">-2dp</dimen>
     <dimen name="difficulty_best_height">35dp</dimen>
     <dimen name="difficulty_best_text_size">17dp</dimen>
     

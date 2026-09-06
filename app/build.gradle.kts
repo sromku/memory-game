@@ -62,9 +62,8 @@ android {
             // Text sizes are in dp on purpose: the labels sit inside fixed-size artwork and must not
             // grow with the system font setting.
             "SpUsage",
-            // The artwork predates density buckets; layouts give every image an explicit size, so
-            // reorganising the PNGs would change nothing on screen.
-            "IconLocation", "IconDensities", "IconMissingDensityFolder", "IconDipSize", "IconDuplicatesConfig",
+            // Phone and tablet buckets legitimately coincide at some sizes (80dp at 3x == 160dp at 1.5x).
+            "IconDuplicatesConfig",
             // Version bumps are a deliberate decision, not a lint failure.
             "GradleDependency", "AndroidGradlePluginVersion",
         )
