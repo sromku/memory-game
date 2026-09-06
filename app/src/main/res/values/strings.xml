@@ -6,7 +6,7 @@
     <string name="sound_off">Sound OFF</string>
     <string name="rate_this">Rate this</string>
     <string name="privacy_policy">Privacy policy</string>
-    <string name="privacy_policy_url" translatable="false">https://sromku.github.io/memory-game/privacy.html</string>
+    <string name="privacy_policy_url" translatable="false">https://sromku.com/memory-game/privacy.html</string>
     <!-- minutes, seconds -->
     <string name="best_time_format">BEST %1$02d:%2$02d</string>
     <!-- minutes, seconds -->
