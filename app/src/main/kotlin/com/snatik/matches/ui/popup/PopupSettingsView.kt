@@ -14,6 +14,7 @@ class PopupSettingsView(
     soundEnabled: Boolean,
     private val onToggleSound: () -> Boolean,
     onRate: () -> Unit,
+    onPrivacyPolicy: () -> Unit,
 ) : LinearLayout(context) {
 
     private val binding = PopupSettingsViewBinding.inflate(LayoutInflater.from(context), this)
@@ -32,6 +33,7 @@ class PopupSettingsView(
         )
         binding.soundOff.setOnClickListener { render(onToggleSound()) }
         binding.rate.setOnClickListener { onRate() }
+        binding.privacyLink.setOnClickListener { onPrivacyPolicy() }
         render(soundEnabled)
     }
 

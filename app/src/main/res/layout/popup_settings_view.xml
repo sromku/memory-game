@@ -71,4 +71,23 @@
             android:textSize="@dimen/popup_settings_sound_text_size" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/privacy_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/popup_settings_privacy_margin_top"
+        android:layout_marginEnd="@dimen/popup_settings_padding_left"
+        android:contentDescription="@string/cd_privacy_policy"
+        android:fontFamily="@font/grobold"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="4"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/white"
+        android:textSize="@dimen/popup_settings_privacy_text_size" />
+
 </merge>

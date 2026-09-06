@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                 soundEnabled = viewModel.soundEnabled.value,
                 onToggleSound = viewModel::toggleSound,
                 onRate = ::openStoreListing,
+                onPrivacyPolicy = ::openPrivacyPolicy,
             )
             is UiEvent.ShowWon -> showWonPopup(event.result)
             UiEvent.ClosePopup -> popups.close()
@@ -134,6 +135,10 @@ class MainActivity : AppCompatActivity() {
         } catch (_: ActivityNotFoundException) {
             startActivity(Intent(Intent.ACTION_VIEW, "https://play.google.com/store/apps/details?id=$PLAY_STORE_PACKAGE".toUri()))
         }
+    }
+
+    private fun openPrivacyPolicy() {
+        startActivity(Intent(Intent.ACTION_VIEW, getString(R.string.privacy_policy_url).toUri()))
     }
 
     private companion object {

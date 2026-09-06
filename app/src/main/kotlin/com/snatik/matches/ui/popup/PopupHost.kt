@@ -33,7 +33,7 @@ class PopupHost(
 
     val isWonShown: Boolean get() = shown?.popup is PopupWonView
 
-    fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit) {
+    fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
         reset()
         val scrim = View(context).apply {
             alpha = 0f
@@ -42,7 +42,7 @@ class PopupHost(
         }
         container.addView(scrim, FrameLayout.LayoutParams(MATCH, MATCH))
 
-        val popup = PopupSettingsView(context, soundEnabled, onToggleSound, onRate)
+        val popup = PopupSettingsView(context, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
         val popupParams = centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height)
         container.addView(popup, popupParams)
 

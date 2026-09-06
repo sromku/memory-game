@@ -63,4 +63,6 @@
     <dimen name="popup_settings_sound_text_size">25dp</dimen>
     <dimen name="popup_settings_padding_top">68dp</dimen>
     <dimen name="popup_settings_padding_left">30dp</dimen>
+    <dimen name="popup_settings_privacy_margin_top">0dp</dimen>
+    <dimen name="popup_settings_privacy_text_size">18dp</dimen>
 </resources>
