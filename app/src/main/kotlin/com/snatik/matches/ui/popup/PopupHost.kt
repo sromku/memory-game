@@ -9,9 +9,8 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.widget.FrameLayout
+import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import androidx.core.view.children
-import androidx.core.view.isNotEmpty
 import com.snatik.matches.R
 import com.snatik.matches.game.GameResult
 
@@ -23,68 +22,59 @@ class PopupHost(
     private val container: FrameLayout,
     private val onShownChanged: (shown: Boolean) -> Unit,
 ) {
+    /** What is on screen: the popup itself, and the views that scale away with it when it closes. */
+    private class Shown(val popup: View, val scrim: View?, val companions: List<View>)
+
     private val context get() = container.context
+    private var shown: Shown? = null
     private var closing = false
 
-    val isShown: Boolean get() = container.isNotEmpty()
+    val isShown: Boolean get() = shown != null
 
-    val isWonShown: Boolean get() = container.children.any { it is PopupWonView }
+    val isWonShown: Boolean get() = shown?.popup is PopupWonView
 
     fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit) {
         reset()
         val scrim = View(context).apply {
+            alpha = 0f
             setBackgroundColor(ContextCompat.getColor(context, R.color.popup_scrim))
-            isClickable = true // swallow taps so the menu underneath stays inert
+            setOnClickListener { close() } // tapping outside the popup dismisses it
         }
         container.addView(scrim, FrameLayout.LayoutParams(MATCH, MATCH))
 
         val popup = PopupSettingsView(context, soundEnabled, onToggleSound, onRate)
-        container.addView(popup, centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height))
-        onShownChanged(true)
+        val popupParams = centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height)
+        container.addView(popup, popupParams)
 
-        AnimatorSet().apply {
-            playTogether(
-                ObjectAnimator.ofFloat(popup, View.SCALE_X, 0f, 1f),
-                ObjectAnimator.ofFloat(popup, View.SCALE_Y, 0f, 1f),
-                ObjectAnimator.ofFloat(scrim, View.ALPHA, 0f, 1f),
-            )
-            duration = OPEN_DURATION_MS
-            interpolator = DecelerateInterpolator(2f)
-            start()
+        // Close button sitting on the popup's top-right corner, scaled in and out together with it.
+        val closeSize = context.resources.getDimensionPixelSize(R.dimen.popup_close_size)
+        val close = ImageView(context).apply {
+            scaleX = 0f
+            scaleY = 0f
+            setImageResource(R.drawable.ic_popup_close)
+            contentDescription = context.getString(R.string.cd_close)
+            translationX = (popupParams.width - closeSize) / 2f
+            translationY = -(popupParams.height - closeSize) / 2f
+            setOnClickListener { close() }
         }
+        container.addView(close, FrameLayout.LayoutParams(closeSize, closeSize, Gravity.CENTER))
+        present(Shown(popup, scrim, listOf(close)))
     }
 
     fun showWon(result: GameResult, onStar: () -> Unit, onBack: () -> Unit, onNext: () -> Unit) {
         reset()
         val popup = PopupWonView(context, onBack, onNext)
         container.addView(popup, centered(R.dimen.popup_won_width, R.dimen.popup_won_height))
-        onShownChanged(true)
         popup.showResult(result, onStar)
-
-        AnimatorSet().apply {
-            playTogether(
-                ObjectAnimator.ofFloat(popup, View.SCALE_X, 0f, 1f),
-                ObjectAnimator.ofFloat(popup, View.SCALE_Y, 0f, 1f),
-            )
-            duration = OPEN_DURATION_MS
-            interpolator = DecelerateInterpolator(2f)
-            start()
-        }
+        present(Shown(popup, scrim = null, companions = emptyList()))
     }
 
     fun close() {
-        if (!isShown || closing) return
+        val current = shown ?: return
+        if (closing) return
         closing = true
-        val views = container.children.toList()
-        val popup = views.last()
-        val scrim = views.dropLast(1).firstOrNull()
-        val animators = mutableListOf<Animator>(
-            ObjectAnimator.ofFloat(popup, View.SCALE_X, 0f),
-            ObjectAnimator.ofFloat(popup, View.SCALE_Y, 0f),
-        )
-        if (scrim != null) animators += ObjectAnimator.ofFloat(scrim, View.ALPHA, 0f)
         AnimatorSet().apply {
-            playTogether(animators)
+            playTogether(scaleAnimators(current, 0f) + listOfNotNull(current.scrim?.let { ObjectAnimator.ofFloat(it, View.ALPHA, 0f) }))
             duration = CLOSE_DURATION_MS
             interpolator = AccelerateInterpolator(2f)
             addListener(object : AnimatorListenerAdapter() {
@@ -94,9 +84,26 @@ class PopupHost(
         }
     }
 
+    private fun present(next: Shown) {
+        shown = next
+        onShownChanged(true)
+        AnimatorSet().apply {
+            playTogether(scaleAnimators(next, 1f) + listOfNotNull(next.scrim?.let { ObjectAnimator.ofFloat(it, View.ALPHA, 1f) }))
+            duration = OPEN_DURATION_MS
+            interpolator = DecelerateInterpolator(2f)
+            start()
+        }
+    }
+
+    private fun scaleAnimators(shown: Shown, to: Float): List<Animator> =
+        (listOf(shown.popup) + shown.companions).flatMap { view ->
+            listOf(ObjectAnimator.ofFloat(view, View.SCALE_X, to), ObjectAnimator.ofFloat(view, View.SCALE_Y, to))
+        }
+
     private fun reset() {
         closing = false
-        if (container.isNotEmpty()) {
+        if (shown != null) {
+            shown = null
             container.removeAllViews()
             onShownChanged(false)
         }

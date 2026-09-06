@@ -8,6 +8,7 @@ import android.view.animation.BounceInterpolator
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.doOnLayout
+import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.snatik.matches.R
@@ -55,8 +56,13 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
      */
     private fun fitButtonToCell(cell: View, button: ImageView, footer: TextView) {
         cell.doOnLayout {
-            val overlap = resources.getDimensionPixelSize(R.dimen.difficulty_best_overlap)
-            val available = cell.height - footer.height - overlap
+            val gap = resources.getDimensionPixelSize(R.dimen.difficulty_best_gap)
+            // The footer may already have been squeezed by an oversized button, so ask for its natural height.
+            footer.measure(
+                View.MeasureSpec.makeMeasureSpec(cell.width, View.MeasureSpec.AT_MOST),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+            )
+            val available = cell.height - footer.measuredHeight - gap
             if (available > 0 && button.maxHeight != available) {
                 button.maxHeight = available
                 button.maxWidth = cell.width
@@ -80,11 +86,9 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
 
     private fun bindBestTime(label: TextView, theme: GameTheme, difficulty: Difficulty) {
         val best = viewModel.bestTimeSeconds(theme, difficulty)
-        label.text = if (best == null) {
-            getString(R.string.best_time_none)
-        } else {
-            getString(R.string.best_time_format, (best % 3600) / 60, best % 60)
-        }
+        // Unplayed levels keep the label's space (so the buttons line up) but show nothing.
+        label.text = getString(R.string.best_time_format, (best ?: 0) / 60, (best ?: 0) % 60)
+        label.isInvisible = best == null
     }
 
     private fun animate(views: List<View>) {

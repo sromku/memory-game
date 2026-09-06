@@ -28,6 +28,8 @@ class PopupWonView(
     private var countAnimator: ValueAnimator? = null
 
     init {
+        scaleX = 0f
+        scaleY = 0f
         setBackgroundResource(R.drawable.level_complete)
         binding.buttonBack.setOnClickListener { onBack() }
         binding.buttonNext.setOnClickListener { onNext() }

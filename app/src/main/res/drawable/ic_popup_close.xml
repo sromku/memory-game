@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Round close button in the popup ribbon's colours: dark rim, orange-red face, white cross. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+    <path
+        android:fillColor="#8B2A0F"
+        android:pathData="M22,2 a20,20 0 1,0 0.001,0 z" />
+    <path
+        android:fillColor="#F0511E"
+        android:pathData="M22,5 a17,17 0 1,0 0.001,0 z" />
+    <path
+        android:fillColor="#FF7A45"
+        android:pathData="M22,7 a15,15 0 0,1 15,15 a15,10 0 0,0 -30,0 a15,15 0 0,1 15,-15 z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M15,15 L29,29 M29,15 L15,29" />
+</vector>

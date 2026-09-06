@@ -47,14 +47,17 @@
                 <TextView
                     android:id="@+id/time_difficulty_1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/difficulty_best_height"
-                    android:layout_marginTop="@dimen/difficulty_best_overlap"
-                    android:background="@drawable/best_time_footer"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/difficulty_best_gap"
                     android:fontFamily="@font/grobold"
                     android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
                     android:textColor="@color/white"
                     android:textSize="@dimen/difficulty_best_text_size"
-                    tools:text="@string/best_time_none" />
+                    tools:text="@string/best_time_format" />
             </LinearLayout>
         </FrameLayout>
 
@@ -85,14 +88,17 @@
                 <TextView
                     android:id="@+id/time_difficulty_4"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/difficulty_best_height"
-                    android:layout_marginTop="@dimen/difficulty_best_overlap"
-                    android:background="@drawable/best_time_footer"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/difficulty_best_gap"
                     android:fontFamily="@font/grobold"
                     android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
                     android:textColor="@color/white"
                     android:textSize="@dimen/difficulty_best_text_size"
-                    tools:text="@string/best_time_none" />
+                    tools:text="@string/best_time_format" />
             </LinearLayout>
         </FrameLayout>
 
@@ -133,14 +139,17 @@
                 <TextView
                     android:id="@+id/time_difficulty_2"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/difficulty_best_height"
-                    android:layout_marginTop="@dimen/difficulty_best_overlap"
-                    android:background="@drawable/best_time_footer"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/difficulty_best_gap"
                     android:fontFamily="@font/grobold"
                     android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
                     android:textColor="@color/white"
                     android:textSize="@dimen/difficulty_best_text_size"
-                    tools:text="@string/best_time_none" />
+                    tools:text="@string/best_time_format" />
             </LinearLayout>
         </FrameLayout>
 
@@ -171,14 +180,17 @@
                 <TextView
                     android:id="@+id/time_difficulty_5"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/difficulty_best_height"
-                    android:layout_marginTop="@dimen/difficulty_best_overlap"
-                    android:background="@drawable/best_time_footer"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/difficulty_best_gap"
                     android:fontFamily="@font/grobold"
                     android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
                     android:textColor="@color/white"
                     android:textSize="@dimen/difficulty_best_text_size"
-                    tools:text="@string/best_time_none" />
+                    tools:text="@string/best_time_format" />
             </LinearLayout>
         </FrameLayout>
 
@@ -219,14 +231,17 @@
                 <TextView
                     android:id="@+id/time_difficulty_3"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/difficulty_best_height"
-                    android:layout_marginTop="@dimen/difficulty_best_overlap"
-                    android:background="@drawable/best_time_footer"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/difficulty_best_gap"
                     android:fontFamily="@font/grobold"
                     android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
                     android:textColor="@color/white"
                     android:textSize="@dimen/difficulty_best_text_size"
-                    tools:text="@string/best_time_none" />
+                    tools:text="@string/best_time_format" />
             </LinearLayout>
         </FrameLayout>
 
@@ -257,14 +272,17 @@
                 <TextView
                     android:id="@+id/time_difficulty_6"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/difficulty_best_height"
-                    android:layout_marginTop="@dimen/difficulty_best_overlap"
-                    android:background="@drawable/best_time_footer"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/difficulty_best_gap"
                     android:fontFamily="@font/grobold"
                     android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
                     android:textColor="@color/white"
                     android:textSize="@dimen/difficulty_best_text_size"
-                    tools:text="@string/best_time_none" />
+                    tools:text="@string/best_time_format" />
             </LinearLayout>
         </FrameLayout>
 

@@ -35,6 +35,7 @@ Standard Android Studio project: Kotlin, AndroidX, Gradle Kotlin DSL, target SDK
 ./gradlew :app:assembleDebug        # debug build, installs next to the store version
 ./gradlew :app:testDebugUnitTest    # game-logic unit tests
 ./gradlew :app:lintDebug            # lint, warnings are errors
+./gradlew checkKeystore             # verify the signing keystore configuration
 scripts/verify-release.sh           # signed release APK + AAB with pre-upload checks
 ```
 
@@ -43,11 +44,17 @@ never lives in this repository.
 
 ## Artwork
 
-The originals live in `art/original`. Every bitmap under `app/src/main/res` is generated from them by
-`scripts/regenerate-art.sh`: a Real-ESRGAN pass (the anime model, which suits this flat cartoon
-style) upscales each original 4x, then each asset is rendered at the exact pixel size it is shown at
-for every density bucket, phones and tablets separately, and saved as WebP. Edit or add an original,
-rerun the script, commit the result.
+The originals live in `art/original`. Every bitmap under `app/src/main/res`, the launcher icon and
+the Play Store icon (`art/store`) are generated from them by a Gradle task: a Real-ESRGAN pass (the
+anime model, which suits this flat cartoon style) upscales each original 4x, then each asset is
+rendered at the exact pixel size it is shown at for every density bucket, phones and tablets
+separately, and saved as WebP. Edit or add an original, rerun, commit the result.
+
+```
+brew install webp
+# download realesrgan-ncnn-vulkan for macOS from https://github.com/xinntao/Real-ESRGAN/releases
+./gradlew regenerateArt -Prealesrgan=/path/to/realesrgan-ncnn-vulkan
+```
 
 ## Code layout
 

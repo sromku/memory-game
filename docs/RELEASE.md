@@ -48,9 +48,9 @@ SHA-1:   22:37:7C:54:8A:59:26:70:6E:67:FD:0B:D1:B5:25:34:A1:DE:C0:DA
 Keep it (and a backup) outside the repository or in `keystore/`, which git ignores. Losing it means
 Play's key reset process, which requires enrolling in Play App Signing.
 
-`scripts/check-keystore.sh` lists a keystore's certificates without a password, tests password
-guesses from a file (`--try guesses.txt`, one per line, never echoed), and checks the configured
-`MEMORY_GAME_*` properties (`--props`).
+`./gradlew checkKeystore` lists a keystore's certificates without a password, checks the configured
+`MEMORY_GAME_*` properties, and with `-Pguesses=/path/to/guesses.txt` tests one password guess per
+line without ever echoing them.
 
 ## Verifying a release
 
@@ -75,3 +75,33 @@ Stars and best times are stored in `SharedPreferences` file `com.snatik.matches`
 `theme_<themeId>_difficulty_<level>` and `themetime_<themeId>_difficultytime_<level>`, exactly as
 in version 1007, so players keep their progress. `GamePreferencesKeysTest` guards these formats.
 Backup to Google Drive and device-to-device transfer are enabled for that file.
+
+## Play Console: getting the listing back
+
+The app was removed on 13 November 2019 for "not adhering to Google Play Developer Program
+policies" (no more specific reason is shown), and it is additionally flagged for targeting API 28
+instead of the required API 35 / 36. The build in this repository targets API 36, which clears the
+two target-API items as soon as a new version is published. The removal itself is cleared by
+publishing a compliant version; if the console still refuses, use "Submit an appeal" on the same
+page (5 to 8 days).
+
+Complete every section under **Policy** > **App content** before creating the release. What to
+answer for this app:
+
+- **Privacy policy**: URL of `docs/privacy-policy.md` on GitHub (enable GitHub Pages for a cleaner
+  address if preferred). Required because the audience includes children.
+- **Ads**: no, the app contains no ads.
+- **App access**: all functionality is available without special access.
+- **Content rating**: fill the IARC questionnaire as a game with no violence, no user interaction,
+  no purchases; expect "Everyone" / PEGI 3.
+- **Target audience and content**: the app is for children; select the age groups including under 13
+  and older. This enrols the app in the Families policy: the app has no ads, no third-party SDKs,
+  no data collection and no external links except the Play Store, which complies. Do not tick
+  "appeals to children" as an accident of the store listing text; declare it as intended.
+- **Data safety**: no data collected, no data shared. The game progress stays on the device.
+- **Government apps, Financial features, Health, News**: no.
+- **App category**: Games > Educational (as before).
+
+Then **Test and release** > **Production** > **Create new release**, upload
+`release/memory-game-<version>-<code>.apk` produced by `scripts/verify-release.sh`, add release
+notes, and submit for review. Review of a previously removed app can take longer than usual.

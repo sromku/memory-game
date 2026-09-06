@@ -17,6 +17,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.snatik.matches.databinding.ActivityMainBinding
+import com.snatik.matches.game.GameResult
 import com.snatik.matches.ui.BackgroundCrossfader
 import com.snatik.matches.ui.GameViewModel
 import com.snatik.matches.ui.GameViewModel.UiEvent
@@ -98,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showWonPopup(result: com.snatik.matches.game.GameResult) {
+    private fun showWonPopup(result: GameResult) {
         popups.showWon(
             result = result,
             onStar = viewModel::playStarSound,

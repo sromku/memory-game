@@ -4,7 +4,9 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.view.Gravity
 import android.view.View
+import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
 import com.snatik.matches.R
 import com.snatik.matches.game.Game
@@ -94,12 +96,26 @@ class BoardView(context: Context) : LinearLayout(context) {
             .start()
     }
 
+    /** A matched card puffs up for a moment, then twists and shrinks away. */
     private fun hide(view: View) {
         view.animate()
-            .alpha(0f)
-            .setDuration(100)
+            .scaleX(1.18f)
+            .scaleY(1.18f)
+            .setDuration(160)
+            .setInterpolator(DecelerateInterpolator())
             .withLayer()
-            .withEndAction { view.visibility = INVISIBLE }
+            .withEndAction {
+                view.animate()
+                    .scaleX(0f)
+                    .scaleY(0f)
+                    .rotation(25f)
+                    .alpha(0f)
+                    .setDuration(320)
+                    .setInterpolator(AccelerateInterpolator(1.5f))
+                    .withLayer()
+                    .withEndAction { view.visibility = INVISIBLE }
+                    .start()
+            }
             .start()
     }
 }

@@ -25,8 +25,7 @@
     <!-- difficulty level -->
     <dimen name="difficulty_padding">80dp</dimen>
     <dimen name="difficulty_margin">20dp</dimen>
-    <dimen name="difficulty_best_overlap">-2dp</dimen>
-    <dimen name="difficulty_best_height">58dp</dimen>
+    <dimen name="difficulty_best_gap">8dp</dimen>
     <dimen name="difficulty_best_text_size">28dp</dimen>
     
     <!-- game -->
@@ -57,6 +56,7 @@
     <dimen name="popup_button_score_margin_bottom">145dp</dimen>
     
     <!-- settings popup -->
+    <dimen name="popup_close_size">56dp</dimen>
     <dimen name="popup_settings_width">400dp</dimen>
     <dimen name="popup_settings_height">250dp</dimen>
     <dimen name="popup_settings_sound_image_size">65dp</dimen>

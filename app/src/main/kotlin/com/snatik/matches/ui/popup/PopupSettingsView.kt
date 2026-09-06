@@ -19,6 +19,8 @@ class PopupSettingsView(
     private val binding = PopupSettingsViewBinding.inflate(LayoutInflater.from(context), this)
 
     init {
+        scaleX = 0f
+        scaleY = 0f
         orientation = VERTICAL
         gravity = Gravity.START or Gravity.TOP
         setBackgroundResource(R.drawable.settings_popup)
