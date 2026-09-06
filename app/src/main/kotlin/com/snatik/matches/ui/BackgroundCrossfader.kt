@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
  * cross-faded in through [overlay].
  */
 class BackgroundCrossfader(
-    private val base: ImageView,
+    private val base: LivingSceneView,
     private val overlay: ImageView,
     private val scope: CoroutineScope,
 ) {
@@ -25,7 +25,7 @@ class BackgroundCrossfader(
 
     fun loadDefault() {
         scope.launch {
-            base.setImageBitmap(BitmapLoader.decodeSampled(base.resources, R.drawable.background, screenWidth, screenHeight))
+            base.setScene(BitmapLoader.decodeSampled(base.resources, R.drawable.background, screenWidth, screenHeight))
         }
     }
 
@@ -33,6 +33,8 @@ class BackgroundCrossfader(
         if (theme == shownTheme) return
         shownTheme = theme
         loadJob?.cancel()
+        // The scene only moves while it can be seen; under a theme background it rests.
+        if (theme == null) base.start() else base.stop()
         if (theme == null) {
             overlay.animate()
                 .alpha(0f)

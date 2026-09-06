@@ -1,12 +1,14 @@
 package com.snatik.matches.ui.character
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
 import android.graphics.Canvas
 import android.graphics.ColorFilter
 import android.graphics.Matrix
 import android.graphics.Paint
+import android.graphics.Path
 import android.graphics.PixelFormat
-import android.graphics.RectF
 import android.graphics.drawable.Animatable
 import android.graphics.drawable.Drawable
 import android.view.animation.AccelerateDecelerateInterpolator
@@ -14,20 +16,22 @@ import kotlin.math.PI
 import kotlin.math.sin
 
 /**
- * Draws a [Character] from its vector paths, so it is crisp at any size, and brings it to life:
- * an idle loop (breathing squash-and-stretch, a slow sway, blinking) and a one-off happy hop.
+ * Draws a [RenderedCharacter] and brings it to life: an idle loop (breathing squash-and-stretch,
+ * a slow sway, blinking) and a one-off happy hop. Per frame this is two bitmap draws and a handful
+ * of eye paths, cheap enough to run on every face-up card.
  */
-class CharacterDrawable(private val character: Character) : Drawable(), Animatable {
+class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), Animatable {
 
-    private val fill = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val matrix = Matrix()
+    private val character = rendered.character
+    private val bitmapPaint = Paint(Paint.FILTER_BITMAP_FLAG or Paint.ANTI_ALIAS_FLAG)
+    private val eyePaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val matrix = Matrix()        // character units -> canvas, with the current pose
     private val partMatrix = Matrix()
-    private val scratch = android.graphics.Path()
+    private val scratch = Path()
 
-    /** 0..1 progress of the idle loop, driven by [idle]. */
-    private var phase = 0f
-    private var blink = 0f      // 1 = eyes fully closed
-    private var hop = 0f        // 0 = on the ground, 1 = top of the hop
+    private var phase = 0f              // 0..1 through the idle loop
+    private var blink = 0f              // 1 = eyes fully closed
+    private var hop = 0f                // 0 = on the ground, 1 = top of the hop
     private var hopRotation = 0f
 
     private val idle = ValueAnimator.ofFloat(0f, 1f).apply {
@@ -40,7 +44,11 @@ class CharacterDrawable(private val character: Character) : Drawable(), Animatab
         duration = BLINK_MS
         startDelay = 1400
         addUpdateListener { blink = it.animatedValue as Float; invalidateSelf() }
-        doOnEndRestart()
+        addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator) {
+                if (idle.isRunning) { startDelay = (1800..4200).random().toLong(); start() }
+            }
+        })
     }
 
     override fun draw(canvas: Canvas) {
@@ -66,36 +74,31 @@ class CharacterDrawable(private val character: Character) : Drawable(), Animatab
         matrix.postScale(scale, scale)
         matrix.postTranslate(left, top - lift)
 
-        val eyes = character.hasEyes
-        for (part in character.parts) {
-            fill.color = part.color
-            // Paths are transformed in software into one reused scratch path: drawing the original
-            // path under a canvas transform is not reliably rendered by the hardware canvas.
-            when (part.group) {
-                Character.Group.SHADOW -> {
-                    // The shadow stays on the ground and shrinks while the character is in the air.
-                    partMatrix.set(matrix)
-                    partMatrix.preTranslate(0f, lift / scale)
-                    val s = 1f - 0.4f * hop
-                    partMatrix.preScale(s, s, part.bounds.centerX(), part.bounds.centerY())
-                    fill.alpha = (255 * (1f - 0.5f * hop)).toInt()
-                    drawTransformed(canvas, part, partMatrix)
-                    fill.alpha = 255
-                }
-                Character.Group.EYE, Character.Group.PUPIL -> {
-                    partMatrix.set(matrix)
-                    // Each eye closes around its own centre, so many-eyed monsters blink too.
-                    if (eyes && blink > 0f) partMatrix.preScale(1f, 1f - 0.92f * blink, part.bounds.centerX(), part.bounds.centerY())
-                    drawTransformed(canvas, part, partMatrix)
-                }
-                Character.Group.BODY -> drawTransformed(canvas, part, matrix)
-            }
+        // Shadow: stays on the ground, shrinks and fades while the character is in the air.
+        rendered.shadow?.let { shadow ->
+            partMatrix.set(matrix)
+            partMatrix.preTranslate(0f, lift / scale)
+            val s = 1f - 0.4f * hop
+            partMatrix.preScale(s, s, rendered.shadowOrigin.centerX(), rendered.shadowOrigin.centerY())
+            partMatrix.preTranslate(rendered.shadowOrigin.left, rendered.shadowOrigin.top)
+            partMatrix.preScale(1f / rendered.scale, 1f / rendered.scale)
+            bitmapPaint.alpha = (255 * (1f - 0.5f * hop)).toInt()
+            canvas.drawBitmap(shadow, partMatrix, bitmapPaint)
+            bitmapPaint.alpha = 255
         }
-    }
 
-    private fun drawTransformed(canvas: Canvas, part: Character.Part, m: Matrix) {
-        part.path.transform(m, scratch)
-        canvas.drawPath(scratch, fill)
+        partMatrix.set(matrix)
+        partMatrix.preScale(1f / rendered.scale, 1f / rendered.scale)
+        canvas.drawBitmap(rendered.body, partMatrix, bitmapPaint)
+
+        // Eyes close around their own centres, so many-eyed monsters blink too.
+        for (eye in rendered.eyes) {
+            eyePaint.color = eye.color
+            partMatrix.set(matrix)
+            if (blink > 0f) partMatrix.preScale(1f, 1f - 0.92f * blink, eye.bounds.centerX(), eye.bounds.centerY())
+            eye.path.transform(partMatrix, scratch)
+            canvas.drawPath(scratch, eyePaint)
+        }
     }
 
     /** A quick joyful jump, used when the card's pair is found. */
@@ -114,7 +117,7 @@ class CharacterDrawable(private val character: Character) : Drawable(), Animatab
 
     override fun start() {
         if (!idle.isRunning) idle.start()
-        if (!blinker.isRunning) blinker.start()
+        if (rendered.eyes.isNotEmpty() && !blinker.isRunning) blinker.start()
     }
 
     override fun stop() {
@@ -126,17 +129,9 @@ class CharacterDrawable(private val character: Character) : Drawable(), Animatab
 
     override fun isRunning(): Boolean = idle.isRunning
 
-    override fun setAlpha(alpha: Int) { fill.alpha = alpha }
-    override fun setColorFilter(colorFilter: ColorFilter?) { fill.colorFilter = colorFilter }
+    override fun setAlpha(alpha: Int) { bitmapPaint.alpha = alpha; eyePaint.alpha = alpha }
+    override fun setColorFilter(colorFilter: ColorFilter?) { bitmapPaint.colorFilter = colorFilter; eyePaint.colorFilter = colorFilter }
     @Deprecated("Deprecated in Java") override fun getOpacity(): Int = PixelFormat.TRANSLUCENT
-
-    private fun ValueAnimator.doOnEndRestart() {
-        addListener(object : android.animation.AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: android.animation.Animator) {
-                if (idle.isRunning) { startDelay = (1800..4200).random().toLong(); start() }
-            }
-        })
-    }
 
     private companion object {
         const val IDLE_PERIOD_MS = 2600L

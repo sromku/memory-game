@@ -1,41 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:paddingStart="@dimen/theme_padding"
-    android:paddingEnd="@dimen/theme_padding">
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/theme_padding"
+        android:paddingEnd="@dimen/theme_padding">
+
+        <ImageView
+            android:id="@+id/theme_animals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/theme_margin"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cd_theme_animals"
+            tools:src="@drawable/animals_theme_star_0" />
+
+        <ImageView
+            android:id="@+id/theme_monsters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/theme_margin"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cd_theme_monsters"
+            tools:src="@drawable/monsters_theme_star_0" />
+
+        <ImageView
+            android:id="@+id/theme_emoji"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/theme_margin"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cd_theme_emoji"
+            tools:src="@drawable/emoji_theme_star_0" />
+
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/theme_animals"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/theme_margin"
-        android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/cd_theme_animals"
-        tools:src="@drawable/animals_theme_star_0" />
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/screen_back_button"
+        android:layout_height="@dimen/screen_back_button"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="@dimen/screen_back_margin"
+        android:layout_marginTop="@dimen/screen_back_margin"
+        android:contentDescription="@string/cd_back"
+        android:padding="4dp"
+        tools:src="@drawable/button_back" />
 
-    <ImageView
-        android:id="@+id/theme_monsters"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/theme_margin"
-        android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/cd_theme_monsters"
-        tools:src="@drawable/monsters_theme_star_0" />
-
-    <ImageView
-        android:id="@+id/theme_emoji"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/theme_margin"
-        android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/cd_theme_emoji"
-        tools:src="@drawable/emoji_theme_star_0" />
-
-</LinearLayout>
+</FrameLayout>

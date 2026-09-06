@@ -13,6 +13,9 @@ import com.snatik.matches.databinding.PopupSettingsViewBinding
 class PopupSettingsView(
     context: Context,
     frame: Drawable,
+    private val soundOnIcon: Drawable,
+    private val soundOffIcon: Drawable,
+    rateIcon: Drawable,
     soundEnabled: Boolean,
     private val onToggleSound: () -> Boolean,
     onRate: () -> Unit,
@@ -35,12 +38,13 @@ class PopupSettingsView(
         )
         binding.soundOff.setOnClickListener { render(onToggleSound()) }
         binding.rate.setOnClickListener { onRate() }
-        binding.privacyLink.setOnClickListener { onPrivacyPolicy() }
+        binding.privacy.setOnClickListener { onPrivacyPolicy() }
+        binding.rateImage.setImageDrawable(rateIcon)
         render(soundEnabled)
     }
 
     private fun render(soundEnabled: Boolean) {
         binding.soundOffText.setText(if (soundEnabled) R.string.sound_on else R.string.sound_off)
-        binding.soundImage.setImageResource(if (soundEnabled) R.drawable.button_music_on else R.drawable.button_music_off)
+        binding.soundImage.setImageDrawable(if (soundEnabled) soundOnIcon else soundOffIcon)
     }
 }

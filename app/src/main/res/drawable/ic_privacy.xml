@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Round button in the popup's own style with a shield, for the privacy policy row. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="50"
+    android:viewportHeight="50">
+    <path android:fillColor="#8B2A0F" android:pathData="M25,2 a23,23 0 1,0 0.001,0 z" />
+    <path android:fillColor="#F0511E" android:pathData="M25,5.5 a19.5,19.5 0 1,0 0.001,0 z" />
+    <path android:fillColor="#FF7A45" android:pathData="M25,7.5 a17.5,17.5 0 0,1 17.5,17.5 a17.5,11 0 0,0 -35,0 a17.5,17.5 0 0,1 17.5,-17.5 z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M25,13 L35.5,17 v8.5 c0,6.5 -4.5,11 -10.5,13.5 c-6,-2.5 -10.5,-7 -10.5,-13.5 v-8.5 z" />
+    <path android:fillColor="#F0511E" android:pathData="M25,17.2 L32,19.9 v5.6 c0,4.4 -3,7.6 -7,9.5 c-4,-1.9 -7,-5.1 -7,-9.5 v-5.6 z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M21.5,25.5 l2.6,2.6 l5,-5.5 l1.6,1.5 l-6.6,7 l-4.2,-4.2 z" />
+</vector>

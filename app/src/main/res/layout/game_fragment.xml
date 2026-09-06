@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipChildren="false"
-    android:orientation="vertical">
+    android:clipChildren="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,4 +51,17 @@
         android:layout_weight="1"
         android:clipChildren="false" />
 
-</LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/screen_back_button"
+        android:layout_height="@dimen/screen_back_button"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="@dimen/screen_back_margin"
+        android:layout_marginTop="@dimen/screen_back_margin"
+        android:contentDescription="@string/cd_back"
+        android:padding="4dp"
+        tools:src="@drawable/button_back" />
+
+</FrameLayout>

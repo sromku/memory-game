@@ -2,6 +2,8 @@
 <resources>
 
     <dimen name="card_margin">10dp</dimen>
+    <dimen name="screen_back_button">72dp</dimen>
+    <dimen name="screen_back_margin">14dp</dimen>
 
     <!-- title -->
     <dimen name="title_width">600dp</dimen>
@@ -60,11 +62,10 @@
     <dimen name="popup_close_size">56dp</dimen>
     <dimen name="popup_settings_width">400dp</dimen>
     <dimen name="popup_settings_height">250dp</dimen>
-    <dimen name="popup_settings_sound_image_size">65dp</dimen>
+    <dimen name="popup_settings_row_height">50dp</dimen>
+    <dimen name="popup_settings_row_gap">8dp</dimen>
     <dimen name="popup_settings_sound_text_size">25dp</dimen>
-    <dimen name="popup_settings_padding_top">68dp</dimen>
+    <dimen name="popup_settings_padding_top">58dp</dimen>
     <dimen name="popup_settings_padding_left">30dp</dimen>
-    <dimen name="popup_settings_privacy_margin_top">0dp</dimen>
-    <dimen name="popup_settings_privacy_text_size">18dp</dimen>
 
 </resources>

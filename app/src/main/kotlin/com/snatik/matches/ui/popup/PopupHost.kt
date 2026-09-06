@@ -43,12 +43,12 @@ class PopupHost(
     fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
         scope.launch {
             val frame = context.loadDrawable(R.drawable.settings_popup)
-            context.warmDrawables(R.drawable.button_music_on, R.drawable.button_music_off, R.drawable.button_rate)
-            showSettings(frame, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
+            val icons = listOf(R.drawable.button_music_on, R.drawable.button_music_off, R.drawable.button_rate).map { context.loadDrawable(it) }
+            showSettings(frame, icons, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
         }
     }
 
-    private fun showSettings(frame: Drawable, soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
+    private fun showSettings(frame: Drawable, icons: List<Drawable>, soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
         reset()
         val scrim = View(context).apply {
             alpha = 0f
@@ -57,7 +57,7 @@ class PopupHost(
         }
         container.addView(scrim, FrameLayout.LayoutParams(MATCH, MATCH))
 
-        val popup = PopupSettingsView(context, frame, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
+        val popup = PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
         val popupParams = centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height)
         container.addView(popup, popupParams)
 

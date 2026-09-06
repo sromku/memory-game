@@ -4,14 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Two stacked backgrounds; the theme layer is cross-faded in and out by alpha. -->
-    <ImageView
+    <!-- Two stacked backgrounds: the living menu scene, and a theme layer cross-faded in and out by alpha. -->
+    <com.snatik.matches.ui.LivingSceneView
         android:id="@+id/background_default"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:importantForAccessibility="no"
-        android:scaleType="centerCrop"
-        tools:src="@drawable/background" />
+        tools:background="@drawable/background" />
 
     <ImageView
         android:id="@+id/background_theme"

@@ -51,6 +51,8 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
             buttonArt.recycle()
         }
         animate(buttons)
+        viewLifecycleOwner.lifecycleScope.launch { binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back)) }
+        binding.backButton.setOnClickListener { requireActivity().onBackPressedDispatcher.onBackPressed() }
     }
 
     /**

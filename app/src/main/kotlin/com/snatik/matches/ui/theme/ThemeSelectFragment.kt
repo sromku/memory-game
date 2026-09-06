@@ -25,6 +25,8 @@ class ThemeSelectFragment : Fragment(R.layout.theme_select_fragment) {
         bindCard(binding.themeAnimals, GameTheme.ANIMALS)
         bindCard(binding.themeMonsters, GameTheme.MONSTERS)
         bindCard(binding.themeEmoji, GameTheme.EMOJI)
+        viewLifecycleOwner.lifecycleScope.launch { binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back)) }
+        binding.backButton.setOnClickListener { requireActivity().onBackPressedDispatcher.onBackPressed() }
     }
 
     override fun onStart() {

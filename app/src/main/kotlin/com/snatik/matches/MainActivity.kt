@@ -71,9 +71,11 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         viewModel.onScreenShown()
+        if (viewModel.selectedTheme.value == null) binding.backgroundDefault.start()
     }
 
     override fun onStop() {
+        binding.backgroundDefault.stop()
         viewModel.onScreenHidden()
         super.onStop()
     }
