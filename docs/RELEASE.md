@@ -52,6 +52,27 @@ Play's key reset process, which requires enrolling in Play App Signing.
 `MEMORY_GAME_*` properties, and with `-Pguesses=/path/to/guesses.txt` tests one password guess per
 line without ever echoing them.
 
+## The key was public: what to do about it
+
+`Release/key.keystore` was committed to this repository in November 2014 and removed in December
+2015, so it sat in the public history for years (it was purged from history on 6 September 2026,
+which does not recall existing clones). The file is the real signing key, protected only by its
+password. Assume the key is exposed.
+
+Since the aim is to keep the existing listing (its reviews and installs), the fix is a key upgrade
+through Play App Signing, done right after the first successful update:
+
+1. **Enroll in Play App Signing** with the existing key: Play Console > Test and release > Setup >
+   App signing > "Use a different key" / "Export and upload a key from Java keystore". Play's PEPK
+   tool encrypts the key locally; the password is typed into that tool only.
+2. **Request an app signing key upgrade** on the same page ("Request key upgrade"). Play generates
+   a new signing key it holds; new installs get the new key, existing installs keep updating.
+3. From then on upload **AABs** (`release/memory-game-<version>-<code>.aab`), signed with the
+   same upload key; `scripts/verify-release.sh` builds both.
+
+Until step 2 is complete, do not publish anything else signed with this key beyond the update that
+brings the app back.
+
 ## Verifying a release
 
 ```
