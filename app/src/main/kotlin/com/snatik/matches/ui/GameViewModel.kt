@@ -41,6 +41,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     /** Effects on the board of the current round, consumed by the game screen. */
     sealed interface BoardEvent {
+        /** The second card of a pair just matched; the pair is still shown for a moment. */
+        data class Matched(val first: Int, val second: Int) : BoardEvent
         data class HidePair(val first: Int, val second: Int) : BoardEvent
         data class FlipDown(val first: Int, val second: Int) : BoardEvent
         data class Won(val result: GameResult) : BoardEvent
@@ -161,6 +163,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             GameEngine.Flip.Ignored -> return false
             is GameEngine.Flip.First -> Unit
             is GameEngine.Flip.Match -> {
+                boardEvents.trySend(BoardEvent.Matched(flip.first, flip.second))
                 launchInRound {
                     delay(RESOLVE_DELAY_MS)
                     game.engine.resolve()
@@ -183,11 +186,10 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         roundJob = Job()
         pausedAtMillis = null
         while (boardEvents.tryReceive().isSuccess) Unit // drop effects of the previous round
-        val images = loadTileImages(theme)
         val round = Game(
             theme = theme,
             difficulty = difficulty,
-            board = Board.create(difficulty.tileCount, images),
+            board = Board.create(difficulty.tileCount, theme.characters.indices.toList()),
             startedAtMillis = SystemClock.elapsedRealtime(),
         )
         game = round
@@ -224,15 +226,6 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun launchInRound(block: suspend () -> Unit) {
         viewModelScope.launch(roundJob) { block() }
-    }
-
-    private fun loadTileImages(theme: GameTheme): List<Int> {
-        val array = getApplication<Application>().resources.obtainTypedArray(theme.tileImagesRes)
-        try {
-            return List(array.length()) { array.getResourceId(it, 0) }
-        } finally {
-            array.recycle()
-        }
     }
 
     override fun onCleared() {

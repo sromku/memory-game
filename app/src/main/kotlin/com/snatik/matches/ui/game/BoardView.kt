@@ -1,7 +1,6 @@
 package com.snatik.matches.ui.game
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.view.Gravity
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -10,6 +9,7 @@ import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
 import com.snatik.matches.R
 import com.snatik.matches.game.Game
+import com.snatik.matches.ui.character.CharacterDrawable
 import kotlin.math.max
 import kotlin.math.min
 
@@ -76,7 +76,9 @@ class BoardView(context: Context) : LinearLayout(context) {
         }
     }
 
-    fun setTileImage(tile: Int, bitmap: Bitmap) = tiles[tile].setImage(bitmap)
+    fun setTileCharacter(tile: Int, character: CharacterDrawable) = tiles[tile].setCharacter(character)
+
+    fun celebrate(vararg matched: Int) = matched.forEach { tiles[it].celebrate() }
 
     fun flipUp(tile: Int) = tiles[tile].flipUp()
 

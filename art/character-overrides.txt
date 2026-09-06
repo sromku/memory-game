@@ -1,0 +1,7 @@
+# Corrections to the automatic part tagging in CharacterTracer, one per line: <name> <rule>
+# Rules: no-eyes   the character has no eyes the tracer can tell apart; nothing blinks.
+emoji_8 no-eyes
+emoji_39 no-eyes
+emoji_45 no-eyes
+animals_22 no-eyes
+animals_26 no-eyes

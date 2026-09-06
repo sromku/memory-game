@@ -17,8 +17,12 @@ import com.snatik.matches.game.Game
 import com.snatik.matches.ui.GameViewModel
 import com.snatik.matches.ui.GameViewModel.BoardEvent
 import com.snatik.matches.ui.formatClock
-import com.snatik.matches.ui.image.BitmapLoader
+import com.snatik.matches.ui.image.loadDrawable
+import com.snatik.matches.ui.character.Character
+import com.snatik.matches.ui.character.CharacterDrawable
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class GameFragment : Fragment(R.layout.game_fragment) {
 
@@ -27,6 +31,9 @@ class GameFragment : Fragment(R.layout.game_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val binding = GameFragmentBinding.bind(view)
         val game = viewModel.game ?: return
+        viewLifecycleOwner.lifecycleScope.launch {
+            binding.timeBarImage.setImageDrawable(requireContext().loadDrawable(R.drawable.time_bar))
+        }
         val board = BoardView(requireContext()).apply {
             onTileClick = { tile -> if (viewModel.flipTile(tile)) flipUp(tile) }
         }
@@ -49,6 +56,7 @@ class GameFragment : Fragment(R.layout.game_fragment) {
                 launch {
                     viewModel.boardEventFlow.collect { event ->
                         when (event) {
+                            is BoardEvent.Matched -> board.celebrate(event.first, event.second)
                             is BoardEvent.HidePair -> board.hide(event.first, event.second)
                             is BoardEvent.FlipDown -> board.flipDown(event.first, event.second)
                             is BoardEvent.Won -> hideClock(binding)
@@ -64,15 +72,17 @@ class GameFragment : Fragment(R.layout.game_fragment) {
         binding.timeBarImage.isVisible = false
     }
 
-    /** Decodes each distinct card image once, at the size the tiles are actually shown. */
+    /** Loads each distinct character once; both cards of a pair share the paths but animate on their own. */
     private fun loadTileImages(game: Game, board: BoardView) {
-        val size = board.tileSize
         val tilesByImage = (0 until game.board.tileCount).groupBy(game.board::imageOf)
+        val assets = requireContext().assets
         viewLifecycleOwner.lifecycleScope.launch {
             for ((image, tiles) in tilesByImage) {
                 launch {
-                    val bitmap = BitmapLoader.decodeSampled(resources, image, size, size)
-                    tiles.forEach { board.setTileImage(it, bitmap) }
+                    val name = game.theme.characters[image]
+                    val character = withContext(Dispatchers.IO) { Character.load(assets, name) }
+                        ?: error("Missing character asset $name")
+                    tiles.forEach { board.setTileCharacter(it, CharacterDrawable(character)) }
                 }
             }
         }
