@@ -88,8 +88,8 @@ page (5 to 8 days).
 Complete every section under **Policy** > **App content** before creating the release. What to
 answer for this app:
 
-- **Privacy policy**: `https://sromku.com/memory-game/privacy.html`, served by GitHub Pages
-  from the `docs/` folder (repository Settings > Pages > Deploy from branch, `master`, `/docs`).
+- **Privacy policy**: `https://sromku.com/memory-game/privacy.html`. The page lives in the
+  `sromku.github.io` repository (folder `memory-game/`), the personal site served at sromku.com.
   Required because the audience includes children; the app links to the same page from its
   settings popup, as the Families policy asks.
 - **Ads**: no, the app contains no ads.

@@ -40,8 +40,8 @@ scripts/verify-release.sh           # signed release APK + AAB with pre-upload c
 ```
 
 Signing and the Play Store checklist are in [docs/RELEASE.md](docs/RELEASE.md). Signing material
-never lives in this repository. The `docs/` folder is also the GitHub Pages site with the
-[privacy policy](https://sromku.com/memory-game/privacy.html).
+never lives in this repository. The [privacy policy](https://sromku.com/memory-game/privacy.html)
+is published from the `sromku.github.io` site repository.
 
 ## Artwork
 
