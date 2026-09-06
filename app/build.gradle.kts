@@ -88,3 +88,38 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 }
+
+/*
+ * Children's-app guard. The Play listing declares this app for children under the Families policy
+ * and certifies COPPA/GDPR compliance (see CLAUDE.md). This task fails any build that introduces
+ * something that would break that: a manifest permission, or a dependency from a family of SDKs
+ * that collects data, shows ads, or phones home. Extend the lists deliberately, never quietly.
+ */
+val checkChildSafety = tasks.register("checkChildSafety") {
+    group = "verification"
+    description = "Fails if the app declares permissions or depends on data-collecting, ad, or network SDKs."
+    val forbiddenDependencyPrefixes = listOf(
+        "com.google.android.gms:play-services-ads", "com.google.android.gms:play-services-analytics",
+        "com.google.android.gms:play-services-auth", "com.google.android.gms:play-services-games",
+        "com.google.firebase", "com.facebook", "com.appsflyer", "com.adjust", "com.amplitude", "com.mixpanel",
+        "com.segment", "io.sentry", "com.bugsnag", "com.unity3d.ads", "com.applovin", "com.ironsource",
+        "com.chartboost", "com.vungle", "com.onesignal", "com.braze", "com.mopub", "com.squareup.okhttp3",
+        "com.squareup.retrofit2", "io.ktor:ktor-client",
+    )
+    val manifest = layout.projectDirectory.file("src/main/AndroidManifest.xml")
+    val dependencies = configurations.named("releaseRuntimeClasspath").map { config ->
+        config.incoming.resolutionResult.allComponents.map { it.id.displayName }
+    }
+    doLast {
+        val permissions = Regex("<uses-permission[^>]*android:name=\"([^\"]+)\"").findAll(manifest.asFile.readText()).map { it.groupValues[1] }.toList()
+        if (permissions.isNotEmpty()) {
+            throw GradleException("Children's-app guard: the manifest declares permissions $permissions. The app must declare none; see CLAUDE.md.")
+        }
+        val offending = dependencies.get().filter { dep -> forbiddenDependencyPrefixes.any { dep.startsWith(it) } }
+        if (offending.isNotEmpty()) {
+            throw GradleException("Children's-app guard: forbidden dependencies $offending. No ads, analytics, or network SDKs; see CLAUDE.md.")
+        }
+    }
+}
+
+tasks.named("preBuild") { dependsOn(checkChildSafety) }

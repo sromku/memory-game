@@ -57,6 +57,12 @@ brew install webp
 ./gradlew regenerateArt -Prealesrgan=/path/to/realesrgan-ncnn-vulkan
 ```
 
+## Rules for changes
+
+The Play listing declares the game for children and certifies COPPA and GDPR compliance. Any change
+must keep it free of data collection, network access, permissions, ads, purchases and third-party
+SDKs; `CLAUDE.md` spells this out and the `checkChildSafety` task fails the build when it can tell.
+
 ## Code layout
 
 - `game/` pure Kotlin rules: `Difficulty`, `Board` (shuffled pairs), `GameEngine` (flip state machine), `GameResult` (stars and score)
