@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#3A7CC9</color>
+    <color name="text_shadow">#2EAED9</color>
+    <color name="popup_scrim">#88555555</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

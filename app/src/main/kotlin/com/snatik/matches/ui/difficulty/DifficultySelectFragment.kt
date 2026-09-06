@@ -1,0 +1,82 @@
+package com.snatik.matches.ui.difficulty
+
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.os.Bundle
+import android.view.View
+import android.view.animation.BounceInterpolator
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import com.snatik.matches.R
+import com.snatik.matches.databinding.DifficultySelectFragmentBinding
+import com.snatik.matches.game.Difficulty
+import com.snatik.matches.game.GameResult
+import com.snatik.matches.game.GameTheme
+import com.snatik.matches.ui.GameViewModel
+
+class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
+
+    private val viewModel: GameViewModel by activityViewModels()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val binding = DifficultySelectFragmentBinding.bind(view)
+        val theme = viewModel.selectedTheme.value ?: return
+        val buttons = listOf(
+            binding.selectDifficulty1, binding.selectDifficulty2, binding.selectDifficulty3,
+            binding.selectDifficulty4, binding.selectDifficulty5, binding.selectDifficulty6,
+        )
+        val bestTimes = listOf(
+            binding.timeDifficulty1, binding.timeDifficulty2, binding.timeDifficulty3,
+            binding.timeDifficulty4, binding.timeDifficulty5, binding.timeDifficulty6,
+        )
+        val buttonArt = resources.obtainTypedArray(R.array.difficulty_buttons)
+        try {
+            Difficulty.entries.forEachIndexed { index, difficulty ->
+                bindButton(buttons[index], buttonArt, theme, difficulty)
+                bindBestTime(bestTimes[index], theme, difficulty)
+            }
+        } finally {
+            buttonArt.recycle()
+        }
+        animate(buttons)
+    }
+
+    private fun bindButton(
+        button: ImageView,
+        buttonArt: android.content.res.TypedArray,
+        theme: GameTheme,
+        difficulty: Difficulty,
+    ) {
+        val stars = viewModel.highStars(theme, difficulty)
+        val index = (difficulty.level - 1) * (GameResult.MAX_STARS + 1) + stars
+        button.setImageResource(buttonArt.getResourceId(index, 0))
+        button.contentDescription = getString(R.string.cd_difficulty, difficulty.level)
+        button.setOnClickListener { viewModel.selectDifficulty(difficulty) }
+    }
+
+    private fun bindBestTime(label: TextView, theme: GameTheme, difficulty: Difficulty) {
+        val best = viewModel.bestTimeSeconds(theme, difficulty)
+        label.text = if (best == null) {
+            getString(R.string.best_time_none)
+        } else {
+            getString(R.string.best_time_format, (best % 3600) / 60, best % 60)
+        }
+    }
+
+    private fun animate(views: List<View>) {
+        val animators = views.flatMap {
+            listOf(
+                ObjectAnimator.ofFloat(it, View.SCALE_X, 0.8f, 1f),
+                ObjectAnimator.ofFloat(it, View.SCALE_Y, 0.8f, 1f),
+            )
+        }
+        AnimatorSet().apply {
+            playTogether(animators)
+            duration = 500
+            interpolator = BounceInterpolator()
+            start()
+        }
+    }
+}

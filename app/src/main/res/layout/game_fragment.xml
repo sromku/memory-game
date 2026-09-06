@@ -1,52 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:clipChildren="false"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/game_board"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="@dimen/margine_top">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/margine_top" >
+        <ImageView
+            android:id="@+id/time_bar_image"
+            android:layout_width="@dimen/clock_width"
+            android:layout_height="@dimen/clock_height"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/clock_margin_right"
+            android:importantForAccessibility="no"
+            android:src="@drawable/time_bar" />
 
-            <ImageView
-                android:id="@+id/time_bar_image"
-                android:layout_width="@dimen/clock_width"
-                android:layout_height="@dimen/clock_height"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/clock_margin_right"
-                android:src="@drawable/time_bar" />
+        <TextView
+            android:id="@+id/time_bar_text"
+            android:layout_width="@dimen/clock_width"
+            android:layout_height="@dimen/clock_height"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/clock_text_margin_right"
+            android:fontFamily="@font/grobold"
+            android:gravity="center"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/clock_text_size"
+            tools:text="01:00" />
 
-            <TextView
-                android:id="@+id/time_bar_text"
-                android:layout_width="@dimen/clock_width"
-                android:layout_height="@dimen/clock_height"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/clock_text_margin_right"
-                android:gravity="center"
-                android:shadowColor="#2eaed9"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="4"
-                android:text="00:60"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/clock_text_size" />
+    </RelativeLayout>
 
-        </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/game_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipChildren="false" />
 
-        <FrameLayout
-            android:id="@+id/game_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" >
-        </FrameLayout>
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

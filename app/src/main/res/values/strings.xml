@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Memory Game</string>
-    <string name="debug">regular</string>
 
+    <string name="sound_on">Sound ON</string>
+    <string name="sound_off">Sound OFF</string>
+    <string name="rate_this">Rate this</string>
+    <string name="best_time_none">BEST : -</string>
+    <!-- minutes, seconds -->
+    <string name="best_time_format">BEST : %1$02d:%2$02d</string>
+    <!-- minutes, seconds -->
+    <string name="clock_format">" %1$02d:%2$02d"</string>
+    <string name="score_format">%1$d</string>
+    <string name="leaderboards_coming_soon">Leaderboards will be available in the next game updates</string>
+
+    <string name="cd_start_game">Start game</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_leaderboards">Leaderboards</string>
+    <string name="cd_theme_animals">Animals theme</string>
+    <string name="cd_theme_monsters">Monsters theme</string>
+    <string name="cd_theme_emoji">Emoji theme</string>
+    <string name="cd_difficulty">Difficulty %1$d</string>
+    <string name="cd_back">Back to difficulty selection</string>
+    <string name="cd_play_again">Play again</string>
+    <string name="cd_star">Star</string>
+    <string name="cd_sound_toggle">Toggle sound</string>
+    <string name="cd_rate">Rate on Google Play</string>
+    <string name="cd_tile">Card</string>
 </resources>

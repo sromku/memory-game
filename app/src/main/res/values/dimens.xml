@@ -25,7 +25,6 @@
     <!-- difficulty level -->
     <dimen name="difficulty_padding">40dp</dimen>
     <dimen name="difficulty_margin">10dp</dimen>
-    <dimen name="difficulty_margin_top">20dp</dimen>
     
     <!-- game -->
     <dimen name="margine_top">70dp</dimen>

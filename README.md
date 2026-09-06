@@ -1,36 +1,59 @@
 # Memory Game
 
-We just wanted a simple memory game for kids 4+ age. No ads, no complicated screens, but a straightforward nice looking, working and open source game.
+A simple memory game for kids aged 4+. No ads, no accounts, no complicated screens: pick a theme,
+pick a difficulty, find the pairs before the clock runs out.
 
-### Features
+<p align="center">
+  <img src="docs/screenshots/menu.png" width="49%" alt="Main menu" />
+  <img src="docs/screenshots/themes.png" width="49%" alt="Theme selection" />
+  <img src="docs/screenshots/game.png" width="49%" alt="Playing the animals theme" />
+  <img src="docs/screenshots/level-complete.png" width="49%" alt="Level completed with three stars" />
+</p>
 
-- 3 Themes : `Animals` :cat2: `Monsters` :octopus: & `Emojis` :smile:  
-- 6 types of difficulties :star2:
-- Sounds on winning :musical_note:
+- 3 themes: Animals, Monsters and Emojis
+- 6 difficulties, from 3x2 up to 10x5 cards
+- Stars and best times per level, sounds on winning
 
-If you have more ideas or you want to add more options / themes / sounds or whatever, fill free to update the source for yourself or open a pull request. :sparkles:
+## The story
 
-<img src="http://www.sromku.com/static/img/pregnancy_memorygame_preview.png"/>
+**2014 to 2019.** The game was written in Java, released on Google Play as
+[Memory Game (Free)](https://play.google.com/store/apps/details?id=com.snatik.matches) and published
+here as open source. The last release was version 1.01.001007 in February 2019.
 
-### Download It
+**2019 to 2026.** Maintenance stopped. Google Play removed the app in November 2019 for not keeping
+up with its developer policies, and the code sat still while Android moved on by twelve API levels.
 
-<a href="https://play.google.com/store/apps/details?id=com.snatik.matches">
-  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
-</a>
+**2026.** The revival. The whole app was converted from Java to Kotlin, restructured, debugged,
+tested and prepared for release purely with AI (Claude Code), with the original artwork and gameplay
+kept intact. It is on its way back to the store.
 
-### Next
+## Building
 
-- [ ] 2 player game
-- [x] Add one more theme
-- [ ] Add more sounds
-- [ ] Add Game Services support 
+Standard Android Studio project: Kotlin, AndroidX, Gradle Kotlin DSL, target SDK 36, min SDK 24.
 
-### License
+```
+./gradlew :app:assembleDebug        # debug build, installs next to the store version
+./gradlew :app:testDebugUnitTest    # game-logic unit tests
+./gradlew :app:lintDebug            # lint, warnings are errors
+scripts/verify-release.sh           # signed release APK + AAB with pre-upload checks
+```
 
-- The code is: `Apache License 2.0` (See [LICENSE](./LICENSE.md) for details.)
-- For UI assets please check the licenses here:
-	- http://graphicriver.net/item/animals-collection-farm-and-domestic-set/7177721
-	- http://graphicriver.net/item/monster-creation-kit-and-large-pack/8851390
-	- http://graphicriver.net/item/10-fresh-game-backgrounds/9137937
-	- http://graphicriver.net/item/cartoon-games-gui-pack-11-/6056785
+Signing and the Play Store checklist are in [docs/RELEASE.md](docs/RELEASE.md). Signing material
+never lives in this repository.
 
+## Code layout
+
+- `game/` pure Kotlin rules: `Difficulty`, `Board` (shuffled pairs), `GameEngine` (flip state machine), `GameResult` (stars and score)
+- `data/GamePreferences` best stars and times, key-compatible with the 2019 release
+- `ui/GameViewModel` the round in progress, its clock, and the timing of every effect
+- `ui/...` one fragment per screen, the board and tile views, the popups
+- `audio/SoundPlayer` sound effects through `SoundPool`
+
+## License
+
+- Code: [Apache License 2.0](./LICENSE)
+- Artwork is licensed separately from its authors:
+  - http://graphicriver.net/item/animals-collection-farm-and-domestic-set/7177721
+  - http://graphicriver.net/item/monster-creation-kit-and-large-pack/8851390
+  - http://graphicriver.net/item/10-fresh-game-backgrounds/9137937
+  - http://graphicriver.net/item/cartoon-games-gui-pack-11-/6056785

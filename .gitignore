@@ -1,8 +1,16 @@
 *.iml
 .gradle
+.kotlin
 /local.properties
 .idea
 .DS_Store
 /build
 /captures
-Release
+.externalNativeBuild
+.cxx
+
+# Release artifacts and signing material: never commit
+/release
+/keystore
+*.jks
+*.keystore
