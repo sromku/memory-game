@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -15,7 +16,7 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/cd_theme_animals"
-        android:src="@drawable/animals_theme_star_0" />
+        tools:src="@drawable/animals_theme_star_0" />
 
     <ImageView
         android:id="@+id/theme_monsters"
@@ -25,7 +26,7 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/cd_theme_monsters"
-        android:src="@drawable/monsters_theme_star_0" />
+        tools:src="@drawable/monsters_theme_star_0" />
 
     <ImageView
         android:id="@+id/theme_emoji"
@@ -35,6 +36,6 @@
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:contentDescription="@string/cd_theme_emoji"
-        android:src="@drawable/emoji_theme_star_0" />
+        tools:src="@drawable/emoji_theme_star_0" />
 
 </LinearLayout>

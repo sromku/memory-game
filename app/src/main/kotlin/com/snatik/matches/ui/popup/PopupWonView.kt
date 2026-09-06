@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.BounceInterpolator
@@ -19,6 +20,7 @@ import com.snatik.matches.ui.formatClock
 @SuppressLint("ViewConstructor") // created in code only
 class PopupWonView(
     context: Context,
+    frame: Drawable,
     onBack: () -> Unit,
     onNext: () -> Unit,
 ) : RelativeLayout(context) {
@@ -30,7 +32,7 @@ class PopupWonView(
     init {
         scaleX = 0f
         scaleY = 0f
-        setBackgroundResource(R.drawable.level_complete)
+        background = frame
         binding.buttonBack.setOnClickListener { onBack() }
         binding.buttonNext.setOnClickListener { onNext() }
     }

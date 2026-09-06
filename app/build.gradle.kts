@@ -64,6 +64,9 @@ android {
             "SpUsage",
             // Phone and tablet buckets legitimately coincide at some sizes (80dp at 3x == 160dp at 1.5x).
             "IconDuplicatesConfig",
+            // The traced UI vectors are large and have long path data by nature: they replace bitmaps, not
+            // icons, and are rasterised once per size and cached.
+            "VectorPath", "VectorRaster",
             // Version bumps are a deliberate decision, not a lint failure.
             "GradleDependency", "AndroidGradlePluginVersion",
         )

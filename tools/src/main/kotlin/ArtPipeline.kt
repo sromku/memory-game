@@ -9,14 +9,16 @@ import kotlin.math.roundToInt
  * Regenerates every bitmap resource from the originals in art/original.
  *
  * 1. Real-ESRGAN (anime model) upscales each original 4x into art/master (git-ignored, cached).
- * 2. Each UI asset is rendered at the pixel size it is displayed at for every density bucket,
+ * 2. UI art becomes one vector drawable per asset (see VectorArtTracer); the few assets that do
+ *    not trace well are rendered at the pixel size they are displayed at for every density bucket,
  *    phones (dp from values/dimens.xml) and tablets (values-sw720dp/dimens.xml) separately.
- * 3. Card pictures and backgrounds go to drawable-nodpi at 2x / 3x their original size; the app
- *    decodes them sub-sampled to the size actually shown.
+ * 3. Backgrounds go to drawable-nodpi at 2x / 3x their original size; the app decodes them
+ *    sub-sampled to the size actually shown.
  * 4. Everything is written as WebP (lossy, quality 92, lossless alpha), a third of PNG's size for
  *    this flat artwork.
  * 5. Launcher icons (legacy 48dp and adaptive 108dp foreground, every density) and the 512 px
  *    Play Store icon come from art/original/app_icon.png the same way.
+ * 6. Card pictures are traced into vector characters (see CharacterTracer) instead of bitmaps.
  *
  * Outputs newer than their master are left alone, so a rerun only redoes what changed.
  */
@@ -24,6 +26,7 @@ class ArtPipeline(
     private val root: File,
     private val realesrgan: File,
     private val cwebp: File,
+    private val vtracer: File?,
     private val log: (String) -> Unit,
 ) {
     /** A UI asset and the dp size it is displayed at on phones and on tablets. */
@@ -53,25 +56,46 @@ class ArtPipeline(
         for (level in 1..6) for (stars in 0..3) add(Asset("button_difficulty_${level}_star_$stars", 260, 340))
     }
 
+    /**
+     * Assets that stay bitmaps: the title is a hatched texture that traces into ~9,500 paths, and the
+     * play-button glow is a translucent gradient no flat tracer can express.
+     */
+    private val bitmapOnly = setOf("title", "button_start_lights")
+
     private val phoneBuckets = mapOf("drawable-mdpi" to 1.0, "drawable-hdpi" to 1.5, "drawable-xhdpi" to 2.0, "drawable-xxhdpi" to 3.0, "drawable-xxxhdpi" to 4.0)
     private val tabletBuckets = mapOf("drawable-sw600dp-mdpi" to 1.0, "drawable-sw600dp-hdpi" to 1.5, "drawable-sw600dp-xhdpi" to 2.0, "drawable-sw600dp-xxhdpi" to 3.0)
 
     fun run() {
         master.mkdirs()
+        val vectorTracer = vtracer?.let { VectorArtTracer(it, log) }
         for (asset in uiAssets) {
-            val m = upscaled(original.resolve("${asset.name}.png"))
-            emit(asset, m, phoneBuckets, asset.phoneDp)
-            emit(asset, m, tabletBuckets, asset.tabletDp)
+            if (asset.name in bitmapOnly) {
+                val m = upscaled(original.resolve("${asset.name}.png"))
+                emit(asset, m, phoneBuckets, asset.phoneDp)
+                emit(asset, m, tabletBuckets, asset.tabletDp)
+                continue
+            }
+            val m = master.resolve("${asset.name}.png")
+            val target = res.resolve("drawable/${asset.name}.xml")
+            upscaled(original.resolve("${asset.name}.png"))
+            if (upToDate(target, m)) continue
+            val image = javax.imageio.ImageIO.read(m)
+            val (wDp, hDp) = if (asset.byWidth) asset.tabletDp to (asset.tabletDp.toDouble() * image.height / image.width).roundToInt()
+                             else (asset.tabletDp.toDouble() * image.width / image.height).roundToInt() to asset.tabletDp
+            (vectorTracer ?: error("Pass -Pvtracer=/path/to/vtracer to regenerate the UI vectors")).trace(m, target, wDp, hDp)
         }
         // The largest screens are 2560 px wide: 3x of 1024 covers them, and so does 2x of 1880.
         background("background", 3760)
         background("back_animals", 3072)
         background("back_horror", 3072)
-        // Card pictures show at up to ~660 px on a 10-inch tablet; 800 px keeps them sharp there.
+        // Card pictures become vector characters (assets/characters), drawn and animated by the app.
+        val tracer = vtracer?.let { CharacterTracer(it, root.resolve("art/character-overrides.txt"), log) }
         for (tile in original.resolve("tiles").listFiles { f -> f.extension == "png" }.orEmpty().sorted()) {
-            val target = res.resolve("drawable-nodpi/${tile.nameWithoutExtension}.webp")
-            if (upToDate(target, master.resolve("tiles/${tile.name}"))) continue
-            writeWebp(scaled(upscaled(tile), 800, 800), target)
+            val target = root.resolve("app/src/main/assets/characters/${tile.nameWithoutExtension}.chr")
+            val m = master.resolve("tiles/${tile.name}")
+            if (upToDate(target, m)) continue
+            upscaled(tile)
+            (tracer ?: error("Pass -Pvtracer=/path/to/vtracer to regenerate the card characters")).trace(m, target)
         }
         icons()
     }

@@ -45,16 +45,25 @@ is published from the `sromku.github.io` site repository.
 
 ## Artwork
 
-The originals live in `art/original`. Every bitmap under `app/src/main/res`, the launcher icon and
-the Play Store icon (`art/store`) are generated from them by a Gradle task: a Real-ESRGAN pass (the
-anime model, which suits this flat cartoon style) upscales each original 4x, then each asset is
-rendered at the exact pixel size it is shown at for every density bucket, phones and tablets
-separately, and saved as WebP. Edit or add an original, rerun, commit the result.
+The originals live in `art/original`. Everything the app draws is generated from them by one Gradle
+task, so a change to an original is a rerun and a commit:
+
+- **Cards** are vector characters. Each picture is upscaled 4x with Real-ESRGAN, traced to paths
+  with vtracer, and its parts (body, eyes, pupils, shadow) tagged by geometry into
+  `app/src/main/assets/characters/<name>.chr`. The app draws them on a Canvas, crisp at any size,
+  and animates them: breathing and blinking while face up, a hop when matched. Tagging mistakes are
+  corrected in `art/character-overrides.txt`.
+- **UI art** (buttons, popups, theme cards) becomes one vector drawable per asset: colours are bled
+  into the transparent area, the silhouette is traced from the alpha channel and used as a clip
+  path, and the soft drop shadow becomes one translucent path. The title (a hatched texture) and
+  the play-button glow (a translucent gradient) do not trace well and stay WebP, rendered at the
+  exact pixel size for every density bucket. Backgrounds stay WebP too.
+- **Launcher and Play Store icons** come from `art/original/app_icon.png` the same way.
 
 ```
 brew install webp
-# download realesrgan-ncnn-vulkan for macOS from https://github.com/xinntao/Real-ESRGAN/releases
-./gradlew regenerateArt -Prealesrgan=/path/to/realesrgan-ncnn-vulkan
+# download realesrgan-ncnn-vulkan and vtracer for macOS from their GitHub releases
+./gradlew regenerateArt -Prealesrgan=/path/to/realesrgan-ncnn-vulkan -Pvtracer=/path/to/vtracer
 ```
 
 ## Rules for changes
@@ -69,6 +78,7 @@ SDKs; `CLAUDE.md` spells this out and the `checkChildSafety` task fails the buil
 - `data/GamePreferences` best stars and times, key-compatible with the 2019 release
 - `ui/GameViewModel` the round in progress, its clock, and the timing of every effect
 - `ui/...` one fragment per screen, the board and tile views, the popups
+- `ui/character/` the vector card characters and their animation
 - `audio/SoundPlayer` sound effects through `SoundPool`
 
 ## License

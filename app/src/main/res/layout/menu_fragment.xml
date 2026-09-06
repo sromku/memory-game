@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,7 +25,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/cd_start_game"
         android:scaleType="centerCrop"
-        android:src="@drawable/button_start" />
+        tools:src="@drawable/button_start" />
 
     <ImageView
         android:id="@+id/settings_game_button"
@@ -36,7 +37,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/cd_settings"
         android:scaleType="centerCrop"
-        android:src="@drawable/button_settings" />
+        tools:src="@drawable/button_settings" />
 
 
     <ImageView
@@ -61,5 +62,5 @@
         android:adjustViewBounds="true"
         android:importantForAccessibility="no"
         android:scaleType="centerCrop"
-        android:src="@drawable/tooltip_play" />
+        tools:src="@drawable/tooltip_play" />
 </RelativeLayout>

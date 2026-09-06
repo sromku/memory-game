@@ -2,6 +2,7 @@ package com.snatik.matches.ui.popup
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -11,6 +12,7 @@ import com.snatik.matches.databinding.PopupSettingsViewBinding
 @SuppressLint("ViewConstructor") // created in code only
 class PopupSettingsView(
     context: Context,
+    frame: Drawable,
     soundEnabled: Boolean,
     private val onToggleSound: () -> Boolean,
     onRate: () -> Unit,
@@ -24,7 +26,7 @@ class PopupSettingsView(
         scaleY = 0f
         orientation = VERTICAL
         gravity = Gravity.START or Gravity.TOP
-        setBackgroundResource(R.drawable.settings_popup)
+        background = frame
         setPadding(
             resources.getDimensionPixelSize(R.dimen.popup_settings_padding_left),
             resources.getDimensionPixelSize(R.dimen.popup_settings_padding_top),

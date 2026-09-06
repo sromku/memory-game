@@ -8,6 +8,9 @@ import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import com.snatik.matches.ui.image.loadDrawable
+import kotlinx.coroutines.launch
 import com.snatik.matches.R
 import com.snatik.matches.databinding.ThemeSelectFragmentBinding
 import com.snatik.matches.game.GameTheme
@@ -32,13 +35,16 @@ class ThemeSelectFragment : Fragment(R.layout.theme_select_fragment) {
 
     private fun bindCard(card: ImageView, theme: GameTheme) {
         val cards = resources.obtainTypedArray(theme.cardImagesRes)
-        try {
-            card.setImageResource(cards.getResourceId(viewModel.averageStars(theme), 0))
+        val art = try {
+            cards.getResourceId(viewModel.averageStars(theme), 0)
         } finally {
             cards.recycle()
         }
         card.setOnClickListener { viewModel.selectTheme(theme) }
-        animateShow(card)
+        viewLifecycleOwner.lifecycleScope.launch {
+            card.setImageDrawable(requireContext().loadDrawable(art))
+            animateShow(card)
+        }
     }
 
     private fun animateShow(view: View) {

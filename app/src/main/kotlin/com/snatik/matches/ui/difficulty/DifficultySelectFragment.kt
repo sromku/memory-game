@@ -11,6 +11,9 @@ import androidx.core.view.doOnLayout
 import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import com.snatik.matches.ui.image.loadDrawable
+import kotlinx.coroutines.launch
 import com.snatik.matches.R
 import com.snatik.matches.databinding.DifficultySelectFragmentBinding
 import com.snatik.matches.game.Difficulty
@@ -79,7 +82,8 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
     ) {
         val stars = viewModel.highStars(theme, difficulty)
         val index = (difficulty.level - 1) * (GameResult.MAX_STARS + 1) + stars
-        button.setImageResource(buttonArt.getResourceId(index, 0))
+        val art = buttonArt.getResourceId(index, 0)
+        viewLifecycleOwner.lifecycleScope.launch { button.setImageDrawable(requireContext().loadDrawable(art)) }
         button.contentDescription = getString(R.string.cd_difficulty, difficulty.level)
         button.setOnClickListener { viewModel.selectDifficulty(difficulty) }
     }

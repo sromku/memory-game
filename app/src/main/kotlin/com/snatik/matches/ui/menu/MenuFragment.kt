@@ -12,6 +12,9 @@ import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import com.snatik.matches.ui.image.loadDrawable
+import kotlinx.coroutines.launch
 import com.snatik.matches.R
 import com.snatik.matches.databinding.MenuFragmentBinding
 import com.snatik.matches.ui.GameViewModel
@@ -24,6 +27,12 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val binding = MenuFragmentBinding.bind(view)
+        viewLifecycleOwner.lifecycleScope.launch {
+            // Traced vectors: inflate them off the main thread so the first frame is not held up.
+            binding.startGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_start))
+            binding.settingsGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_settings))
+            binding.tooltip.setImageDrawable(requireContext().loadDrawable(R.drawable.tooltip_play))
+        }
         binding.settingsGameButton.isSoundEffectsEnabled = false
         binding.settingsGameButton.setOnClickListener { viewModel.openSettings() }
         binding.startGameButton.setOnClickListener { button ->

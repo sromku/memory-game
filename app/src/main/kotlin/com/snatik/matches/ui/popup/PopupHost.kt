@@ -9,7 +9,12 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.widget.FrameLayout
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import com.snatik.matches.ui.image.loadDrawable
+import com.snatik.matches.ui.image.warmDrawables
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import androidx.core.content.ContextCompat
 import com.snatik.matches.R
 import com.snatik.matches.game.GameResult
@@ -20,6 +25,7 @@ import com.snatik.matches.game.GameResult
  */
 class PopupHost(
     private val container: FrameLayout,
+    private val scope: CoroutineScope,
     private val onShownChanged: (shown: Boolean) -> Unit,
 ) {
     /** What is on screen: the popup itself, and the views that scale away with it when it closes. */
@@ -33,7 +39,16 @@ class PopupHost(
 
     val isWonShown: Boolean get() = shown?.popup is PopupWonView
 
+    /** Popups carry traced vector frames with hundreds of paths; they are inflated off the main thread first. */
     fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
+        scope.launch {
+            val frame = context.loadDrawable(R.drawable.settings_popup)
+            context.warmDrawables(R.drawable.button_music_on, R.drawable.button_music_off, R.drawable.button_rate)
+            showSettings(frame, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
+        }
+    }
+
+    private fun showSettings(frame: Drawable, soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
         reset()
         val scrim = View(context).apply {
             alpha = 0f
@@ -42,7 +57,7 @@ class PopupHost(
         }
         container.addView(scrim, FrameLayout.LayoutParams(MATCH, MATCH))
 
-        val popup = PopupSettingsView(context, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
+        val popup = PopupSettingsView(context, frame, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
         val popupParams = centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height)
         container.addView(popup, popupParams)
 
@@ -62,8 +77,16 @@ class PopupHost(
     }
 
     fun showWon(result: GameResult, onStar: () -> Unit, onBack: () -> Unit, onNext: () -> Unit) {
+        scope.launch {
+            val frame = context.loadDrawable(R.drawable.level_complete)
+            context.warmDrawables(R.drawable.button_back, R.drawable.button_again, R.drawable.level_complete_star)
+            showWon(frame, result, onStar, onBack, onNext)
+        }
+    }
+
+    private fun showWon(frame: Drawable, result: GameResult, onStar: () -> Unit, onBack: () -> Unit, onNext: () -> Unit) {
         reset()
-        val popup = PopupWonView(context, onBack, onNext)
+        val popup = PopupWonView(context, frame, onBack, onNext)
         container.addView(popup, centered(R.dimen.popup_won_width, R.dimen.popup_won_height))
         popup.showResult(result, onStar)
         present(Shown(popup, scrim = null, companions = emptyList()))

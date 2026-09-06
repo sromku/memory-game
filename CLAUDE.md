@@ -25,8 +25,10 @@ build when it can detect a violation; the rest is judgement.
 
 - Signing material lives only in ~/.gradle/gradle.properties as MEMORY_GAME_* properties. Never
   print or commit it. `./gradlew checkKeystore` verifies it.
-- Bitmaps are generated from art/original by `./gradlew regenerateArt`; do not edit files under
-  app/src/main/res/drawable-* or mipmap-* by hand.
+- All art is generated from art/original by `./gradlew regenerateArt`; do not edit files under
+  app/src/main/res/drawable*, mipmap-* or app/src/main/assets/characters by hand. UI art is traced
+  vector drawables (tools/VectorArtTracer.kt); only title, the play-button glow and backgrounds are WebP. Card characters
+  are traced vectors (tools/CharacterTracer.kt); fix wrong eye tagging in art/character-overrides.txt.
 - Preference keys and file name in GamePreferences are a compatibility contract with the 2019
   release; a test guards them.
 - Run the game on the MemoryGame_* emulators only, on a fixed port with ANDROID_SERIAL set.

@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/clock_margin_right"
             android:importantForAccessibility="no"
-            android:src="@drawable/time_bar" />
+            tools:src="@drawable/time_bar" />
 
         <TextView
             android:id="@+id/time_bar_text"

@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val popupBackCallback = onBackPressedDispatcher.addCallback(this, enabled = false) {
             if (popups.isWonShown) viewModel.backToDifficultySelect() else popups.close()
         }
-        popups = PopupHost(binding.popupContainer) { shown -> popupBackCallback.isEnabled = shown }
+        popups = PopupHost(binding.popupContainer, lifecycleScope) { shown -> popupBackCallback.isEnabled = shown }
         backgrounds = BackgroundCrossfader(binding.backgroundDefault, binding.backgroundTheme, lifecycleScope)
         backgrounds.loadDefault()
 
