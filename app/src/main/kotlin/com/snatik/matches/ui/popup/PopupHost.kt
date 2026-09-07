@@ -73,7 +73,7 @@ class PopupHost(
             setImageResource(R.drawable.ic_popup_close)
             contentDescription = context.getString(R.string.cd_close)
             // Centred on the frame's top-right corner. The ribbon rises above the frame, so the frame's
-            // top edge sits at 19% of the popup's height (measured in art/original/settings_popup.png).
+            // top edge sits at about 7% of the popup's height (measured in art/original/settings_popup.png).
             translationX = closeSize / 2f
             translationY = popupParams.height * SETTINGS_FRAME_TOP - closeSize / 2f
             setOnClickListener { close() }
@@ -153,7 +153,7 @@ class PopupHost(
 
     private companion object {
         const val MATCH = FrameLayout.LayoutParams.MATCH_PARENT
-        const val SETTINGS_FRAME_TOP = 0.19f
+        const val SETTINGS_FRAME_TOP = 0.07f
         const val OPEN_DURATION_MS = 500L
         const val CLOSE_DURATION_MS = 300L
     }
