@@ -66,4 +66,15 @@
     <dimen name="popup_settings_sound_text_size">20dp</dimen>
     <dimen name="popup_settings_padding_top">46dp</dimen>
     <dimen name="popup_settings_padding_left">20dp</dimen>
+
+    <!-- road map -->
+    <dimen name="road_spacing">112dp</dimen>
+    <dimen name="road_node_radius">24dp</dimen>
+    <dimen name="road_margin">120dp</dimen>
+    <dimen name="road_header_text_size">20dp</dimen>
+    <dimen name="road_header_star">28dp</dimen>
+    <dimen name="road_header_gap">6dp</dimen>
+    <dimen name="road_header_group_gap">22dp</dimen>
+    <dimen name="road_header_margin_end">20dp</dimen>
+    <dimen name="difficulty_lock_size">44dp</dimen>
 </resources>

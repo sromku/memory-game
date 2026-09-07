@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Padlock for difficulties that have not opened yet, in the panel art's gold and dark red. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#40000000"
+        android:pathData="M12,24 h26 a3,3 0 0,1 3,3 v14 a3,3 0 0,1 -3,3 h-26 a3,3 0 0,1 -3,-3 v-14 a3,3 0 0,1 3,-3 z" />
+    <path
+        android:pathData="M15,22 v-7 a9,9 0 0,1 18,0 v7"
+        android:strokeColor="#972802"
+        android:strokeLineCap="round"
+        android:strokeWidth="7" />
+    <path
+        android:pathData="M15,22 v-7 a9,9 0 0,1 18,0 v7"
+        android:strokeColor="#FEDD09"
+        android:strokeLineCap="round"
+        android:strokeWidth="3.5" />
+    <path
+        android:fillColor="#972802"
+        android:pathData="M10,20 h28 a4,4 0 0,1 4,4 v16 a4,4 0 0,1 -4,4 h-28 a4,4 0 0,1 -4,-4 v-16 a4,4 0 0,1 4,-4 z" />
+    <path
+        android:fillColor="#FEDD09"
+        android:pathData="M11,23 h26 a2,2 0 0,1 2,2 v14 a2,2 0 0,1 -2,2 h-26 a2,2 0 0,1 -2,-2 v-14 a2,2 0 0,1 2,-2 z" />
+    <path
+        android:fillColor="#972802"
+        android:pathData="M24,28 a3,3 0 0,1 1.5,5.6 l1,4.4 h-5 l1,-4.4 a3,3 0 0,1 1.5,-5.6 z" />
+</vector>

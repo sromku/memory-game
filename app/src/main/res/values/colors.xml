@@ -6,4 +6,17 @@
     <color name="white">#FFFFFFFF</color>
     <!-- Sky of the default background art; shown until the bitmap is decoded. -->
     <color name="sky">#70B8FF</color>
+
+    <!-- The road map, in the colours of the panel art: light blue panels, dark red rims, gold stars. -->
+    <color name="road_panel">#8FD9F6</color>
+    <color name="road_rim">#972802</color>
+    <color name="road_gold">#FEDD09</color>
+    <color name="road_gold_dark">#E0900A</color>
+    <color name="road_locked">#B9C7D1</color>
+    <color name="road_locked_rim">#66757F</color>
+    <color name="road_surface">#FFF3D0</color>
+    <color name="road_edge">#7B3A1B</color>
+    <color name="road_shadow">#40000000</color>
+    <color name="road_star_slot">#62D1FB</color>
+    <color name="road_star_slot_rim">#3E9BCB</color>
 </resources>

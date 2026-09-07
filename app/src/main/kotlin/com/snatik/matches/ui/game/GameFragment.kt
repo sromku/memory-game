@@ -36,7 +36,7 @@ class GameFragment : Fragment(R.layout.game_fragment) {
             binding.timeBarImage.setImageDrawable(requireContext().loadDrawable(R.drawable.time_bar))
             binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back))
         }
-        binding.backButton.setOnClickListener { viewModel.backToDifficultySelect() }
+        binding.backButton.setOnClickListener { viewModel.backToRoadMap() }
         val board = BoardView(requireContext()).apply {
             onTileClick = { tile -> if (viewModel.flipTile(tile)) flipUp(tile) }
         }

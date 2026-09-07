@@ -53,6 +53,7 @@ class ProgressTest {
         assertFalse(played(one, Road.ROUNDS_TO_UNLOCK_NEXT - 1).isUnlocked(two))
         assertTrue(played(one, Road.ROUNDS_TO_UNLOCK_NEXT).isUnlocked(two))
         assertFalse("each difficulty opens only from the one before it", played(one, 40).isUnlocked(Difficulty.LEVEL_3))
+        assertTrue("a road with a result on it is open", played(Difficulty.LEVEL_5, 1).isUnlocked(Difficulty.LEVEL_5))
     }
 
     @Test
@@ -65,6 +66,16 @@ class ProgressTest {
         assertEquals(listOf(1, 2, 3, 4), p.completedRounds(one).map { it.index })
         assertTrue(played(one, 40).isCompleted(RoundSpec(one, 40)))
         assertFalse(played(one, 39).isCompleted(RoundSpec(one, 40)))
+    }
+
+    @Test
+    fun `average stars summarise a road`() {
+        assertEquals(0, Progress.EMPTY.averageStars(one))
+        assertEquals(3, played(one, 4, stars = 3).averageStars(one))
+        val mixed = played(one, 2, stars = 3).record(RoundSpec(one, 3), RoundResult(1, 30)) // 7 over 3 rounds
+        assertEquals(2, mixed.averageStars(one))
+        val low = played(one, 3, stars = 1).record(RoundSpec(one, 4), RoundResult(2, 30)) // 5 over 4 rounds
+        assertEquals(1, low.averageStars(one))
     }
 
     @Test

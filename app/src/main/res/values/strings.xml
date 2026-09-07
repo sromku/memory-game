@@ -7,8 +7,8 @@
     <string name="rate_this">Rate this</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_policy_url" translatable="false">https://sromku.com/memory-game/privacy.html</string>
-    <!-- minutes, seconds -->
-    <string name="best_time_format">BEST %1$02d:%2$02d</string>
+    <!-- rounds done, rounds on the road -->
+    <string name="road_progress_format">%1$d / %2$d</string>
     <!-- minutes, seconds -->
     <string name="clock_format">" %1$02d:%2$02d"</string>
     <string name="score_format">%1$d</string>
@@ -19,7 +19,9 @@
     <string name="cd_theme_monsters">Monsters theme</string>
     <string name="cd_theme_emoji">Emoji theme</string>
     <string name="cd_difficulty">Difficulty %1$d</string>
-    <string name="cd_back">Back to difficulty selection</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_road_map">Rounds of this difficulty</string>
+    <string name="cd_locked">Locked</string>
     <string name="cd_play_again">Play again</string>
     <string name="cd_star">Star</string>
     <string name="cd_sound_toggle">Toggle sound</string>

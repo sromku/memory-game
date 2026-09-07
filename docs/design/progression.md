@@ -41,8 +41,23 @@ Players of version 1.x have best stars and times per theme and difficulty in Sha
 On the first start with the new store, the best of each difficulty across themes becomes the
 result of that difficulty's round 1, so their stars stay visible on the road.
 
+## Level map
+
+Each difficulty has its own map screen, reached from the difficulty buttons: the road winds from
+left to right as a gentle wave, one badge per round. Done rounds are blue and carry their stars and
+can be replayed; the next round is gold, breathes, and waits under a bobbing arrow; the rest are
+grey. Special rounds are eight-pointed badges. The map opens centred on the next round; after a
+round is played it opens on that round, pops its stars in, then travels on to the next one.
+
+Difficulty buttons show the road's rounded mean stars and "done / 40"; a road that has not opened
+yet is grey with a padlock and shakes its head when tapped. The clock of a round is the round's
+own time, so later rounds are judged more strictly.
+
+The map is a single custom view: `RoadGeometry` (pure) places the rounds, `RoadNode` (pure) says
+what state each is in, `RoadMapView` paints, scrolls and animates.
+
 ## What ships when
 
 - Milestone 1 (this): model, store, migration, recording of results. Screens unchanged.
-- Milestone 2: the level map, per-round time, special rounds.
+- Milestone 2 (this): the level map, per-round time, special rounds marked on the map.
 - Milestone 3: quick play and the celebration between rounds.

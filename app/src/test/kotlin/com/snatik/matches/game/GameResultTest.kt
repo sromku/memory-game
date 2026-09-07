@@ -1,11 +1,12 @@
 package com.snatik.matches.game
 
+import com.snatik.matches.game.progression.RoundSpec
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class GameResultTest {
 
-    private val level1 = Difficulty.LEVEL_1 // 60 seconds
+    private val level1 = RoundSpec(Difficulty.LEVEL_1, 1) // 60 seconds
 
     @Test
     fun `three stars within half the time`() {
@@ -33,7 +34,7 @@ class GameResultTest {
 
     @Test
     fun `score is level times remaining seconds times theme multiplier`() {
-        val result = GameResult.compute(Difficulty.LEVEL_4, themeMultiplier = 3, passedSeconds = 50)
+        val result = GameResult.compute(RoundSpec(Difficulty.LEVEL_4, 1), themeMultiplier = 3, passedSeconds = 50)
         assertEquals(100, result.remainingSeconds)
         assertEquals(4 * 100 * 3, result.score)
         assertEquals(50, result.passedSeconds)
@@ -44,5 +45,14 @@ class GameResultTest {
         val result = GameResult.compute(level1, themeMultiplier = 2, passedSeconds = 90)
         assertEquals(0, result.remainingSeconds)
         assertEquals(0, result.score)
+    }
+
+    @Test
+    fun `later rounds judge against their tighter time`() {
+        val last = RoundSpec(Difficulty.LEVEL_1, 40) // 42 seconds
+        assertEquals(3, GameResult.compute(last, 1, passedSeconds = 21).stars)
+        assertEquals(2, GameResult.compute(last, 1, passedSeconds = 22).stars)
+        assertEquals(0, GameResult.compute(last, 1, passedSeconds = 42).stars)
+        assertEquals(21, GameResult.compute(last, 1, passedSeconds = 21).remainingSeconds)
     }
 }

@@ -25,6 +25,7 @@ import com.snatik.matches.ui.difficulty.DifficultySelectFragment
 import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
 import com.snatik.matches.ui.popup.PopupHost
+import com.snatik.matches.ui.road.RoadMapFragment
 import com.snatik.matches.ui.theme.ThemeSelectFragment
 import kotlinx.coroutines.launch
 
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         enterImmersiveMode()
 
         val popupBackCallback = onBackPressedDispatcher.addCallback(this, enabled = false) {
-            if (popups.isWonShown) viewModel.backToDifficultySelect() else popups.close()
+            if (popups.isWonShown) viewModel.backToRoadMap() else popups.close()
         }
         popups = PopupHost(binding.popupContainer, lifecycleScope) { shown -> popupBackCallback.isEnabled = shown }
         backgrounds = BackgroundCrossfader(binding.backgroundDefault, binding.backgroundTheme, lifecycleScope)
@@ -84,12 +85,13 @@ class MainActivity : AppCompatActivity() {
         when (event) {
             UiEvent.OpenThemeSelect -> push(ThemeSelectFragment(), BACK_STACK_THEME)
             UiEvent.OpenDifficultySelect -> push(DifficultySelectFragment(), BACK_STACK_DIFFICULTY)
+            UiEvent.OpenRoadMap -> push(RoadMapFragment(), BACK_STACK_ROAD)
             UiEvent.OpenGame -> {
                 // "Play again" replaces the finished round instead of stacking on top of it.
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                 push(GameFragment(), BACK_STACK_GAME)
             }
-            UiEvent.ReturnToDifficultySelect ->
+            UiEvent.ReturnToRoadMap ->
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             UiEvent.ShowSettings -> popups.showSettings(
                 soundEnabled = viewModel.soundEnabled.value,
@@ -106,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         popups.showWon(
             result = result,
             onStar = viewModel::playStarSound,
-            onBack = viewModel::backToDifficultySelect,
+            onBack = viewModel::backToRoadMap,
             onNext = viewModel::nextGame,
         )
     }
@@ -148,6 +150,7 @@ class MainActivity : AppCompatActivity() {
         const val PLAY_STORE_PACKAGE = "com.snatik.matches"
         const val BACK_STACK_THEME = "theme"
         const val BACK_STACK_DIFFICULTY = "difficulty"
+        const val BACK_STACK_ROAD = "road"
         const val BACK_STACK_GAME = "game"
     }
 }

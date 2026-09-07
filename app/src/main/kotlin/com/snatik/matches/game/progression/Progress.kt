@@ -36,10 +36,20 @@ class Progress private constructor(private val results: Map<RoundSpec, RoundResu
 
     val totalStars: Int get() = results.values.sumOf { it.stars }
 
-    /** The first difficulty is always open; each next one opens after enough rounds of the previous. */
+    /** How the road is going at a glance: the rounded mean stars of its played rounds, 0 when none. */
+    fun averageStars(difficulty: Difficulty): Int {
+        val played = completedCount(difficulty)
+        if (played == 0) return 0
+        return (starsOn(difficulty) * 2 + played) / (2 * played)
+    }
+
+    /**
+     * The first difficulty is always open; each next one opens after enough rounds of the previous.
+     * A difficulty that was ever played (results carried over from 1.x, say) stays open.
+     */
     fun isUnlocked(difficulty: Difficulty): Boolean {
         val previous = Difficulty.entries.getOrNull(difficulty.ordinal - 1) ?: return true
-        return completedCount(previous) >= Road.ROUNDS_TO_UNLOCK_NEXT
+        return completedCount(difficulty) > 0 || completedCount(previous) >= Road.ROUNDS_TO_UNLOCK_NEXT
     }
 
     fun isCompleted(round: RoundSpec): Boolean = round in results

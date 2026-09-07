@@ -8,7 +8,6 @@ import com.snatik.matches.audio.SoundPlayer
 import com.snatik.matches.data.GamePreferences
 import com.snatik.matches.data.ProgressStore
 import com.snatik.matches.game.progression.Progress
-import com.snatik.matches.game.progression.Road
 import com.snatik.matches.game.progression.RoundResult
 import com.snatik.matches.game.progression.RoundSpec
 import com.snatik.matches.game.Board
@@ -37,8 +36,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     sealed interface UiEvent {
         data object OpenThemeSelect : UiEvent
         data object OpenDifficultySelect : UiEvent
+        data object OpenRoadMap : UiEvent
         data object OpenGame : UiEvent
-        data object ReturnToDifficultySelect : UiEvent
+        data object ReturnToRoadMap : UiEvent
         data object ShowSettings : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
         data object ClosePopup : UiEvent
@@ -57,11 +57,17 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     private val progressStore = ProgressStore(application, viewModelScope)
     private val sounds = SoundPlayer(application)
 
-    /** The player's roads; screens observe this in later milestones. */
+    /** The player's roads. */
     val progress: StateFlow<Progress> = progressStore.progress
 
     private val _selectedTheme = MutableStateFlow<GameTheme?>(null)
     val selectedTheme: StateFlow<GameTheme?> = _selectedTheme.asStateFlow()
+
+    private val _selectedDifficulty = MutableStateFlow<Difficulty?>(null)
+    val selectedDifficulty: StateFlow<Difficulty?> = _selectedDifficulty.asStateFlow()
+
+    /** The round finished most recently, waiting for the map to celebrate it. */
+    private var finishedRound: RoundSpec? = null
 
     private val _soundEnabled = MutableStateFlow(preferences.soundEnabled)
     val soundEnabled: StateFlow<Boolean> = _soundEnabled.asStateFlow()
@@ -86,11 +92,10 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     /** Parent of every delayed effect of the current round, cancelled when a new round starts. */
     private var roundJob: Job = Job()
 
-    fun highStars(theme: GameTheme, difficulty: Difficulty) = preferences.highStars(theme, difficulty)
-
-    fun bestTimeSeconds(theme: GameTheme, difficulty: Difficulty) = preferences.bestTimeSeconds(theme, difficulty)
-
     fun averageStars(theme: GameTheme) = preferences.averageStars(theme)
+
+    /** Hands over the round that just finished, once, so the map can celebrate it. */
+    fun consumeFinishedRound(): RoundSpec? = finishedRound.also { finishedRound = null }
 
     fun startPressed() {
         uiEvents.trySend(UiEvent.OpenThemeSelect)
@@ -107,9 +112,16 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         game = null
     }
 
+    /** Opens the difficulty's road; roads that have not opened yet are ignored. */
     fun selectDifficulty(difficulty: Difficulty) {
+        if (!progress.value.isUnlocked(difficulty)) return
+        _selectedDifficulty.value = difficulty
+        uiEvents.trySend(UiEvent.OpenRoadMap)
+    }
+
+    fun selectRound(round: RoundSpec) {
         val theme = _selectedTheme.value ?: return
-        startRound(theme, difficulty)
+        startRound(theme, round)
         uiEvents.trySend(UiEvent.OpenGame)
     }
 
@@ -117,21 +129,18 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         uiEvents.trySend(UiEvent.ShowSettings)
     }
 
-    /** From the "won" popup: same level again, or the next one after a three-star round. */
+    /** From the "won" popup: the next round of the road, or back to the map when the road is done. */
     fun nextGame() {
-        val finished = game ?: return
-        uiEvents.trySend(UiEvent.ClosePopup)
-        val difficulty = if (finished.result?.stars == GameResult.MAX_STARS) {
-            finished.difficulty.next ?: finished.difficulty
-        } else {
-            finished.difficulty
+        val next = game?.round?.next
+        if (next == null) backToRoadMap() else {
+            uiEvents.trySend(UiEvent.ClosePopup)
+            selectRound(next)
         }
-        selectDifficulty(difficulty)
     }
 
-    fun backToDifficultySelect() {
+    fun backToRoadMap() {
         uiEvents.trySend(UiEvent.ClosePopup)
-        uiEvents.trySend(UiEvent.ReturnToDifficultySelect)
+        uiEvents.trySend(UiEvent.ReturnToRoadMap)
     }
 
     /** The activity is no longer visible: stop the clock so an interruption does not cost stars. */
@@ -190,32 +199,28 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         return true
     }
 
-    private fun startRound(theme: GameTheme, difficulty: Difficulty) {
+    private fun startRound(theme: GameTheme, round: RoundSpec) {
         roundJob.cancel()
         roundJob = Job()
         pausedAtMillis = null
         while (boardEvents.tryReceive().isSuccess) Unit // drop effects of the previous round
-        // Until the level map ships, every game plays as the next open round of its road; a finished
-        // road replays its last round.
-        val spec = progressStore.progress.value.nextRound(difficulty)
-            ?: RoundSpec(difficulty, Road.ROUNDS_PER_DIFFICULTY)
-        val round = Game(
+        val started = Game(
             theme = theme,
-            difficulty = difficulty,
-            round = spec,
-            board = Board.create(difficulty.tileCount, theme.characters.indices.toList()),
+            round = round,
+            board = Board.create(round.difficulty.tileCount, theme.characters.indices.toList()),
             startedAtMillis = SystemClock.elapsedRealtime(),
         )
-        game = round
-        startClock(round)
+        game = started
+        startClock(started)
     }
 
     private fun finishRound(game: Game) {
         clockJob?.cancel()
-        val result = GameResult.compute(game.difficulty, game.theme.id, passedSeconds(game))
+        val result = GameResult.compute(game.round, game.theme.id, passedSeconds(game))
         game.result = result
         preferences.recordResult(game.theme, game.difficulty, result.stars, result.passedSeconds)
         progressStore.record(game.round, RoundResult(result.stars, result.passedSeconds))
+        finishedRound = game.round
         launchInRound {
             delay(WON_DELAY_MS)
             boardEvents.send(BoardEvent.Won(result))
@@ -227,7 +232,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         clockJob?.cancel()
         clockJob = viewModelScope.launch {
             while (isActive) {
-                val remaining = game.difficulty.timeSeconds - passedSeconds(game)
+                val remaining = game.round.timeSeconds - passedSeconds(game)
                 _remainingSeconds.value = remaining.coerceAtLeast(0)
                 if (remaining <= 0) break
                 val elapsed = SystemClock.elapsedRealtime() - game.startedAtMillis

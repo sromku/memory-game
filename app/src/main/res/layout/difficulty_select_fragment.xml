@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <!-- Each cell gets half the column. The button keeps its aspect ratio and shrinks to whatever
-                 height the cell can give it (set in code); the best-time footer follows the button width. -->
+                 height the cell can give it (set in code); the progress footer follows the button width. -->
             <FrameLayout
                 android:id="@+id/cell_difficulty_1"
                 android:layout_width="match_parent"
@@ -40,16 +40,31 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:id="@+id/select_difficulty_1"
+                    <FrameLayout
+                        android:id="@+id/holder_difficulty_1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/button_difficulty_1_star_0" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/select_difficulty_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/button_difficulty_1_star_0" />
+
+                        <ImageView
+                            android:id="@+id/lock_difficulty_1"
+                            android:layout_width="@dimen/difficulty_lock_size"
+                            android:layout_height="@dimen/difficulty_lock_size"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/cd_locked"
+                            android:src="@drawable/ic_lock"
+                            android:visibility="gone" />
+                    </FrameLayout>
 
                     <TextView
-                        android:id="@+id/time_difficulty_1"
+                        android:id="@+id/progress_difficulty_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
@@ -61,12 +76,12 @@
                         android:shadowRadius="4"
                         android:textColor="@color/white"
                         android:textSize="@dimen/difficulty_best_text_size"
-                        tools:text="@string/best_time_format" />
+                        tools:text="12 / 40" />
                 </LinearLayout>
             </FrameLayout>
 
             <!-- Each cell gets half the column. The button keeps its aspect ratio and shrinks to whatever
-                 height the cell can give it (set in code); the best-time footer follows the button width. -->
+                 height the cell can give it (set in code); the progress footer follows the button width. -->
             <FrameLayout
                 android:id="@+id/cell_difficulty_4"
                 android:layout_width="match_parent"
@@ -81,16 +96,31 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:id="@+id/select_difficulty_4"
+                    <FrameLayout
+                        android:id="@+id/holder_difficulty_4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/button_difficulty_4_star_0" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/select_difficulty_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/button_difficulty_4_star_0" />
+
+                        <ImageView
+                            android:id="@+id/lock_difficulty_4"
+                            android:layout_width="@dimen/difficulty_lock_size"
+                            android:layout_height="@dimen/difficulty_lock_size"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/cd_locked"
+                            android:src="@drawable/ic_lock"
+                            android:visibility="gone" />
+                    </FrameLayout>
 
                     <TextView
-                        android:id="@+id/time_difficulty_4"
+                        android:id="@+id/progress_difficulty_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
@@ -102,7 +132,7 @@
                         android:shadowRadius="4"
                         android:textColor="@color/white"
                         android:textSize="@dimen/difficulty_best_text_size"
-                        tools:text="@string/best_time_format" />
+                        tools:text="12 / 40" />
                 </LinearLayout>
             </FrameLayout>
 
@@ -117,7 +147,7 @@
             android:orientation="vertical">
 
             <!-- Each cell gets half the column. The button keeps its aspect ratio and shrinks to whatever
-                 height the cell can give it (set in code); the best-time footer follows the button width. -->
+                 height the cell can give it (set in code); the progress footer follows the button width. -->
             <FrameLayout
                 android:id="@+id/cell_difficulty_2"
                 android:layout_width="match_parent"
@@ -132,16 +162,31 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:id="@+id/select_difficulty_2"
+                    <FrameLayout
+                        android:id="@+id/holder_difficulty_2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/button_difficulty_2_star_0" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/select_difficulty_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/button_difficulty_2_star_0" />
+
+                        <ImageView
+                            android:id="@+id/lock_difficulty_2"
+                            android:layout_width="@dimen/difficulty_lock_size"
+                            android:layout_height="@dimen/difficulty_lock_size"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/cd_locked"
+                            android:src="@drawable/ic_lock"
+                            android:visibility="gone" />
+                    </FrameLayout>
 
                     <TextView
-                        android:id="@+id/time_difficulty_2"
+                        android:id="@+id/progress_difficulty_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
@@ -153,12 +198,12 @@
                         android:shadowRadius="4"
                         android:textColor="@color/white"
                         android:textSize="@dimen/difficulty_best_text_size"
-                        tools:text="@string/best_time_format" />
+                        tools:text="12 / 40" />
                 </LinearLayout>
             </FrameLayout>
 
             <!-- Each cell gets half the column. The button keeps its aspect ratio and shrinks to whatever
-                 height the cell can give it (set in code); the best-time footer follows the button width. -->
+                 height the cell can give it (set in code); the progress footer follows the button width. -->
             <FrameLayout
                 android:id="@+id/cell_difficulty_5"
                 android:layout_width="match_parent"
@@ -173,16 +218,31 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:id="@+id/select_difficulty_5"
+                    <FrameLayout
+                        android:id="@+id/holder_difficulty_5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/button_difficulty_5_star_0" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/select_difficulty_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/button_difficulty_5_star_0" />
+
+                        <ImageView
+                            android:id="@+id/lock_difficulty_5"
+                            android:layout_width="@dimen/difficulty_lock_size"
+                            android:layout_height="@dimen/difficulty_lock_size"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/cd_locked"
+                            android:src="@drawable/ic_lock"
+                            android:visibility="gone" />
+                    </FrameLayout>
 
                     <TextView
-                        android:id="@+id/time_difficulty_5"
+                        android:id="@+id/progress_difficulty_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
@@ -194,7 +254,7 @@
                         android:shadowRadius="4"
                         android:textColor="@color/white"
                         android:textSize="@dimen/difficulty_best_text_size"
-                        tools:text="@string/best_time_format" />
+                        tools:text="12 / 40" />
                 </LinearLayout>
             </FrameLayout>
 
@@ -209,7 +269,7 @@
             android:orientation="vertical">
 
             <!-- Each cell gets half the column. The button keeps its aspect ratio and shrinks to whatever
-                 height the cell can give it (set in code); the best-time footer follows the button width. -->
+                 height the cell can give it (set in code); the progress footer follows the button width. -->
             <FrameLayout
                 android:id="@+id/cell_difficulty_3"
                 android:layout_width="match_parent"
@@ -224,16 +284,31 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:id="@+id/select_difficulty_3"
+                    <FrameLayout
+                        android:id="@+id/holder_difficulty_3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/button_difficulty_3_star_0" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/select_difficulty_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/button_difficulty_3_star_0" />
+
+                        <ImageView
+                            android:id="@+id/lock_difficulty_3"
+                            android:layout_width="@dimen/difficulty_lock_size"
+                            android:layout_height="@dimen/difficulty_lock_size"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/cd_locked"
+                            android:src="@drawable/ic_lock"
+                            android:visibility="gone" />
+                    </FrameLayout>
 
                     <TextView
-                        android:id="@+id/time_difficulty_3"
+                        android:id="@+id/progress_difficulty_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
@@ -245,12 +320,12 @@
                         android:shadowRadius="4"
                         android:textColor="@color/white"
                         android:textSize="@dimen/difficulty_best_text_size"
-                        tools:text="@string/best_time_format" />
+                        tools:text="12 / 40" />
                 </LinearLayout>
             </FrameLayout>
 
             <!-- Each cell gets half the column. The button keeps its aspect ratio and shrinks to whatever
-                 height the cell can give it (set in code); the best-time footer follows the button width. -->
+                 height the cell can give it (set in code); the progress footer follows the button width. -->
             <FrameLayout
                 android:id="@+id/cell_difficulty_6"
                 android:layout_width="match_parent"
@@ -265,16 +340,31 @@
                     android:orientation="vertical"
                     tools:ignore="UseCompoundDrawables">
 
-                    <ImageView
-                        android:id="@+id/select_difficulty_6"
+                    <FrameLayout
+                        android:id="@+id/holder_difficulty_6"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/button_difficulty_6_star_0" />
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/select_difficulty_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/button_difficulty_6_star_0" />
+
+                        <ImageView
+                            android:id="@+id/lock_difficulty_6"
+                            android:layout_width="@dimen/difficulty_lock_size"
+                            android:layout_height="@dimen/difficulty_lock_size"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/cd_locked"
+                            android:src="@drawable/ic_lock"
+                            android:visibility="gone" />
+                    </FrameLayout>
 
                     <TextView
-                        android:id="@+id/time_difficulty_6"
+                        android:id="@+id/progress_difficulty_6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
@@ -286,7 +376,7 @@
                         android:shadowRadius="4"
                         android:textColor="@color/white"
                         android:textSize="@dimen/difficulty_best_text_size"
-                        tools:text="@string/best_time_format" />
+                        tools:text="12 / 40" />
                 </LinearLayout>
             </FrameLayout>
 
