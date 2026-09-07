@@ -49,6 +49,7 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         /** A visitor stands about a fifth of the screen tall. */
         const val VISITOR_HEIGHT = 0.19f
         const val BUBBLE_SECONDS = 2.4f
+        const val GREETING_DELAY_SECONDS = 1.5f
     }
 
     /** An animal standing on the grass: its drawable animates itself; the view only places it and nudges a hop now and then. */
@@ -65,6 +66,10 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
 
     private val phrases = resources.getStringArray(R.array.animal_phrases)
     private var lastPhrase = -1
+
+    /** The friend of the day's hello: said once, a moment after the scene starts moving. */
+    private var greeting: String? = null
+    private var greetAt = 0f
     private val bubblePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFFFFFFFF.toInt() }
     private val bubbleRim = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
@@ -102,9 +107,17 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         invalidate()
     }
 
+    /** The first visitor says [text] once, [delaySeconds] after the scene is next started. */
+    fun greet(text: String, delaySeconds: Float = GREETING_DELAY_SECONDS) {
+        greeting = text
+        greetAt = (System.currentTimeMillis() - startMillis) / 1000f + delaySeconds
+        if (running) start()
+    }
+
     fun start() {
         running = true
         visitors.forEach { it.drawable.start() }
+        greeting?.let { greetAt = maxOf(greetAt, (System.currentTimeMillis() - startMillis) / 1000f + GREETING_DELAY_SECONDS) }
         postInvalidateOnAnimation()
     }
 
@@ -161,6 +174,11 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
                 v.nextHopAt = t + 4f + random.nextFloat() * 8f
             }
         }
+        val hello = greeting
+        if (running && hello != null && t > greetAt && visitors.isNotEmpty()) {
+            greeting = null
+            speak(visitors.first(), hello)
+        }
 
         if (running) postInvalidateOnAnimation()
     }
@@ -172,15 +190,21 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         var pick = random.nextInt(phrases.size)
         if (pick == lastPhrase) pick = (pick + 1) % phrases.size
         lastPhrase = pick
-        hit.phrase = phrases[pick]
+        speak(hit, phrases[pick])
+        performClick()
+        return true
+    }
+
+    /** The animal hops and shows [text] in a bubble with a fresh rim colour. */
+    private fun speak(v: Visitor, text: String) {
         var rim = random.nextInt(rimColors.size)
         if (rim == lastRim) rim = (rim + 1) % rimColors.size
         lastRim = rim
-        hit.rimColor = rimColors[rim]
-        hit.spokeAt = (System.currentTimeMillis() - startMillis) / 1000f
-        hit.drawable.hop()
-        performClick()
-        return true
+        v.rimColor = rimColors[rim]
+        v.phrase = text
+        v.spokeAt = (System.currentTimeMillis() - startMillis) / 1000f
+        v.drawable.hop()
+        invalidate()
     }
 
     override fun performClick(): Boolean {
@@ -202,7 +226,8 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         val bw = textPaint.measureText(text) + 2 * padX
         val bh = textPaint.textSize * 1.9f
         val tail = bh * 0.35f
-        val cx = v.box.exactCenterX().coerceIn(bw / 2 + 8f, width - bw / 2 - 8f)
+        val margin = height * 0.025f // bubbles of animals at the edges stay comfortably on screen
+        val cx = v.box.exactCenterX().coerceIn(bw / 2 + margin, width - bw / 2 - margin)
         val bottom = v.box.top - tail - height * 0.01f
         val r = bh * 0.45f
         canvas.withScale(pop, pop, v.box.exactCenterX(), bottom + tail) {

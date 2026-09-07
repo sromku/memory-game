@@ -9,6 +9,8 @@ import android.graphics.DashPathEffect
 import android.graphics.Matrix
 import android.graphics.Paint
 import android.graphics.Path
+import android.graphics.Rect
+import android.os.Bundle
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
@@ -17,6 +19,9 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 import android.widget.OverScroller
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.customview.widget.ExploreByTouchHelper
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.withSave
 import com.snatik.matches.R
@@ -127,9 +132,50 @@ class RoadMapView @JvmOverloads constructor(context: Context, attrs: AttributeSe
     private var wobbleAngle = 0f
     private var wobbleAnimator: ValueAnimator? = null
 
+    /** Every round is a virtual view for screen readers, described by its state. */
+    private val accessibility = object : ExploreByTouchHelper(this) {
+        override fun getVirtualViewAt(x: Float, y: Float): Int =
+            geometry?.roundAt(x + scrollX, y, radius * TAP_REACH) ?: INVALID_ID
+
+        override fun getVisibleVirtualViews(virtualViewIds: MutableList<Int>) {
+            for (index in 1..nodes.size) virtualViewIds += index
+        }
+
+        override fun onPopulateNodeForVirtualView(virtualViewId: Int, node: AccessibilityNodeInfoCompat) {
+            val geometry = geometry
+            val round = nodes.getOrNull(virtualViewId - 1)
+            if (geometry == null || round == null) {
+                node.contentDescription = ""
+                node.setBoundsInParent(Rect(0, 0, 1, 1))
+                return
+            }
+            node.contentDescription = when (round.state) {
+                RoadNode.State.DONE -> resources.getQuantityString(R.plurals.cd_round_done, round.stars, virtualViewId, round.stars)
+                RoadNode.State.NEXT -> context.getString(R.string.cd_round_next, virtualViewId)
+                RoadNode.State.LOCKED -> context.getString(R.string.cd_round_locked, virtualViewId)
+            }
+            val r = radius * SPECIAL_SCALE
+            val cx = geometry.x(virtualViewId) - scrollX
+            val cy = geometry.y(virtualViewId)
+            node.setBoundsInParent(Rect((cx - r).toInt(), (cy - r).toInt(), (cx + r).toInt(), (cy + r).toInt()))
+            if (round.isPlayable) node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK)
+        }
+
+        override fun onPerformActionForVirtualView(virtualViewId: Int, action: Int, arguments: Bundle?): Boolean {
+            if (action != AccessibilityNodeInfoCompat.ACTION_CLICK) return false
+            val round = nodes.getOrNull(virtualViewId - 1)?.takeIf { it.isPlayable } ?: return false
+            onRoundSelected?.invoke(round.round)
+            return true
+        }
+    }
+
     init {
         contentDescription = context.getString(R.string.cd_road_map)
+        ViewCompat.setAccessibilityDelegate(this, accessibility)
     }
+
+    override fun dispatchHoverEvent(event: MotionEvent): Boolean =
+        accessibility.dispatchHoverEvent(event) || super.dispatchHoverEvent(event)
 
     /**
      * Shows a road. When [celebrate] names a round that is now done, the map opens on it, pops its
@@ -141,6 +187,7 @@ class RoadMapView @JvmOverloads constructor(context: Context, attrs: AttributeSe
         val celebrated = celebrate?.index?.takeIf { nodes.getOrNull(it - 1)?.state == RoadNode.State.DONE }
         pendingFocus = Focus(index = celebrated ?: nextIndex ?: nodes.size, celebrate = celebrated != null)
         if (width > 0 && height > 0) layoutRoad()
+        accessibility.invalidateRoot()
         invalidate()
     }
 

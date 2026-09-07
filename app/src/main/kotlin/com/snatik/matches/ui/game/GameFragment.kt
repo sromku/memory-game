@@ -23,6 +23,7 @@ import com.snatik.matches.ui.character.Character
 import com.snatik.matches.ui.character.CharacterDrawable
 import com.snatik.matches.ui.character.RenderedCharacter
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -41,6 +42,7 @@ class GameFragment : Fragment(R.layout.game_fragment) {
             binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back))
         }
         binding.backButton.setOnClickListener { viewModel.backToRoadMap() }
+        binding.roundLabel.text = getString(R.string.round_format, game.round.index)
         val board = BoardView(requireContext()).apply {
             onTileClick = { tile -> if (viewModel.flipTile(tile)) flipUp(tile) }
         }
@@ -50,14 +52,17 @@ class GameFragment : Fragment(R.layout.game_fragment) {
         board.doOnLayout {
             board.post {
                 board.setBoard(game)
-                loadTileImages(game, board)
+                val loading = loadTileImages(game, board)
+                if (game.result != null) {
+                    // Back after a configuration change: the guests are already there, without confetti.
+                    viewLifecycleOwner.lifecycleScope.launch {
+                        loading.join()
+                        celebrate(binding, game, confetti = false)
+                    }
+                }
             }
         }
-        if (game.result != null) {
-            // Back after a configuration change: the guests are already there, without confetti.
-            hideClock(binding)
-            celebrate(binding, game, confetti = false)
-        }
+        if (game.result != null) hideClock(binding)
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -90,11 +95,11 @@ class GameFragment : Fragment(R.layout.game_fragment) {
      * Loads and rasterises each distinct character once, at the size the cards are shown, off the
      * main thread; both cards of a pair share the bitmaps but animate on their own.
      */
-    private fun loadTileImages(game: Game, board: BoardView) {
+    private fun loadTileImages(game: Game, board: BoardView): Job {
         val tilesByImage = (0 until game.board.tileCount).groupBy(game.board::imageOf)
         val assets = requireContext().assets
         val size = board.tileSize
-        viewLifecycleOwner.lifecycleScope.launch {
+        return viewLifecycleOwner.lifecycleScope.launch {
             for ((image, tiles) in tilesByImage) {
                 launch {
                     val name = game.theme.characters[image]

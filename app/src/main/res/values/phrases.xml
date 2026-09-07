@@ -103,4 +103,15 @@
         <item>Woof!</item>
         <item>Meow!</item>
     </string-array>
+
+    <!-- What the friend of the day says when the menu appears; one per day, in turn. -->
+    <string-array name="animal_greetings">
+        <item>Hi! Let\'s play!</item>
+        <item>Hello friend!</item>
+        <item>You\'re here! Yay!</item>
+        <item>Good to see you!</item>
+        <item>Ready to play?</item>
+        <item>Hi hi! Come play!</item>
+        <item>Welcome back!</item>
+    </string-array>
 </resources>

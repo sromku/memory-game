@@ -40,6 +40,7 @@ class BackgroundCrossfader(
                 visitor to CharacterDrawable(RenderedCharacter.render(character, size))
             }.filterNotNull()
             base.setVisitors(placed)
+            base.greet(MenuVisitors.greeting(base.resources.getStringArray(R.array.animal_greetings)))
         }
     }
 

@@ -8,6 +8,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
+import android.os.Bundle
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
@@ -16,6 +17,9 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.OvershootInterpolator
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.customview.widget.ExploreByTouchHelper
 import androidx.core.graphics.withClip
 import com.snatik.matches.R
 import com.snatik.matches.ui.character.CharacterDrawable
@@ -67,6 +71,40 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         textAlign = Paint.Align.CENTER
     }
 
+    /** Each character is a virtual view for screen readers; they can be tapped when the scene takes taps. */
+    private val accessibility = object : ExploreByTouchHelper(this) {
+        override fun getVirtualViewAt(x: Float, y: Float): Int {
+            val hit = guests.indexOfFirst { it.visible > 0.5f && it.bounds.contains(x.toInt(), y.toInt()) }
+            return if (hit >= 0) hit else INVALID_ID
+        }
+
+        override fun getVisibleVirtualViews(virtualViewIds: MutableList<Int>) {
+            guests.forEachIndexed { index, guest -> if (guest.visible > 0.5f) virtualViewIds += index }
+        }
+
+        override fun onPopulateNodeForVirtualView(virtualViewId: Int, node: AccessibilityNodeInfoCompat) {
+            val guest = guests.getOrNull(virtualViewId)
+            node.contentDescription = context.getString(R.string.cd_friend, virtualViewId + 1)
+            node.setBoundsInParent(if (guest != null && !guest.bounds.isEmpty) Rect(guest.bounds) else Rect(0, 0, 1, 1))
+            if (onGuestTapped != null) node.addAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK)
+        }
+
+        override fun onPerformActionForVirtualView(virtualViewId: Int, action: Int, arguments: Bundle?): Boolean {
+            if (action != AccessibilityNodeInfoCompat.ACTION_CLICK) return false
+            val listener = onGuestTapped ?: return false
+            if (virtualViewId !in guests.indices) return false
+            listener(virtualViewId)
+            return true
+        }
+    }
+
+    init {
+        ViewCompat.setAccessibilityDelegate(this, accessibility)
+    }
+
+    override fun dispatchHoverEvent(event: MotionEvent): Boolean =
+        accessibility.dispatchHoverEvent(event) || super.dispatchHoverEvent(event)
+
     fun setGround(y: Float) {
         groundY = y
         invalidate()
@@ -83,6 +121,7 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
             drawable.start()
             guests += Guest(drawable, 0.5f + (index - (n - 1) / 2f) * spacing)
         }
+        accessibility.invalidateRoot()
         invalidate()
     }
 

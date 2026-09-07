@@ -78,4 +78,7 @@ in `CenterCrop`).
 - Milestone 2 (this): the level map, per-round time, special rounds marked on the map.
 - Milestone 3: quick play and the celebration between rounds.
 - Milestone 4: "Who was here?" on the special rounds.
-- Milestone 5 (this): "Follow the song" on every other special round, with synthesised notes.
+- Milestone 5: "Follow the song" on every other special round, with synthesised notes.
+- Milestone 6 (this): polish. The friend of the day on the menu (visitors drawn from the calendar
+  day, the first says hello), the round number on the board, the celebration surviving a rotation,
+  and screen-reader access to the rounds of the map and the characters of the mini-games.

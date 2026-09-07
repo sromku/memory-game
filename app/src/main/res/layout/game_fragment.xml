@@ -26,6 +26,13 @@
             tools:src="@drawable/time_bar" />
 
         <TextView
+            android:id="@+id/round_label"
+            style="@style/RoadHeaderText"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/clock_text_size"
+            tools:text="Round 12" />
+
+        <TextView
             android:id="@+id/time_bar_text"
             android:layout_width="@dimen/clock_width"
             android:layout_height="@dimen/clock_height"

@@ -30,6 +30,10 @@
     <string name="song_again">Listen again!</string>
     <string name="song_your_turn">Your turn!</string>
     <string name="cd_singers">The singers</string>
+    <string name="round_format">Round %1$d</string>
+    <string name="cd_round_next">Round %1$d, next to play</string>
+    <string name="cd_round_locked">Round %1$d, not open yet</string>
+    <string name="cd_friend">Friend %1$d</string>
     <string name="cd_play_again">Play again</string>
     <string name="cd_star">Star</string>
     <string name="cd_sound_toggle">Toggle sound</string>
@@ -37,4 +41,10 @@
     <string name="cd_close">Close</string>
     <string name="cd_privacy_policy">Open the privacy policy</string>
     <string name="cd_tile">Card</string>
+
+    <!-- round number, stars -->
+    <plurals name="cd_round_done">
+        <item quantity="one">Round %1$d, done with %2$d star</item>
+        <item quantity="other">Round %1$d, done with %2$d stars</item>
+    </plurals>
 </resources>
