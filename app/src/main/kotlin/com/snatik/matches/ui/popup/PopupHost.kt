@@ -86,7 +86,8 @@ class PopupHost(
             contentDescription = context.getString(R.string.cd_close)
             // Centred on the frame's top-right corner. The ribbon rises above the frame, so the frame's
             // top edge sits at about 7% of the popup's height (measured in art/original/settings_popup.png).
-            translationX = closeSize / 2f
+            val rtl = container.layoutDirection == View.LAYOUT_DIRECTION_RTL
+            translationX = if (rtl) -closeSize / 2f else closeSize / 2f
             translationY = popupParams.height * SETTINGS_FRAME_TOP - closeSize / 2f + 6f * context.resources.displayMetrics.density
             setOnClickListener { close() }
         }
@@ -107,8 +108,8 @@ class PopupHost(
                 context.loadDrawable(R.drawable.level_complete),
                 listOf(
                     Label(context.getString(R.string.level_completed), x = 0.5f, y = 0.065f, height = 0.058f, maxWidth = 0.72f),
-                    Label(context.getString(R.string.time), x = 0.255f, y = 0.468f, height = 0.058f, maxWidth = 0.23f),
-                    Label(context.getString(R.string.score), x = 0.255f, y = 0.612f, height = 0.058f, maxWidth = 0.23f),
+                    Label(context.getString(R.string.time), x = 0.23f, y = 0.468f, height = 0.055f, maxWidth = 0.19f),
+                    Label(context.getString(R.string.score), x = 0.23f, y = 0.612f, height = 0.055f, maxWidth = 0.19f),
                 ),
             )
             context.warmDrawables(R.drawable.button_back, R.drawable.button_again, R.drawable.level_complete_star)

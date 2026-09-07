@@ -17,12 +17,12 @@ LETTERED = os.path.join(ORIGINAL, 'lettered')
 # that background is lettering.
 BOXES = {
     'tooltip_play': [((0.2, 0.12, 0.8, 0.56), 'blue')],
-    'settings_popup': [((0.25, 0.04, 0.75, 0.18), 'red')],
-    'level_complete': [((0.12, 0.02, 0.88, 0.115), 'red'), ((0.08, 0.42, 0.395, 0.53), 'flat'), ((0.07, 0.545, 0.385, 0.67), 'flat')],
+    'settings_popup': [((0.27, 0.05, 0.73, 0.165), 'flat')],
+    'level_complete': [((0.14, 0.03, 0.86, 0.105), 'flat'), ((0.08, 0.42, 0.395, 0.53), 'flat'), ((0.07, 0.545, 0.385, 0.67), 'flat')],
 }
 for theme in ('animals', 'monsters', 'emoji'):
     for stars in range(4):
-        BOXES[f'{theme}_theme_star_{stars}'] = [((0.2, 0.03, 0.8, 0.135), 'red')]
+        BOXES[f'{theme}_theme_star_{stars}'] = [((0.22, 0.045, 0.78, 0.115), 'flat')]
 for level in range(1, 7):
     for stars in range(4):
         BOXES[f'button_difficulty_{level}_star_{stars}'] = [((0.1, 0.14, 0.9, 0.43), 'blue')]

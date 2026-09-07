@@ -47,7 +47,7 @@ class PopupLanguageView(
         setShadowLayer(4f, 4f, 4f, ContextCompat.getColor(context, R.color.text_shadow))
         gravity = Gravity.START or Gravity.CENTER_VERTICAL
         val pad = resources.getDimensionPixelSize(R.dimen.popup_language_row_padding)
-        setPadding(pad, pad, pad, pad)
+        setPadding(pad * 3, pad, pad * 3, pad)
         contentDescription = name
         setOnClickListener { onClick() }
     }
