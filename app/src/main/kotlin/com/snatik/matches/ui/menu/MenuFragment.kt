@@ -13,6 +13,8 @@ import android.view.animation.BounceInterpolator
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.snatik.matches.ui.image.Label
+import com.snatik.matches.ui.image.LabeledDrawable
 import com.snatik.matches.ui.image.loadDrawable
 import kotlinx.coroutines.launch
 import com.snatik.matches.R
@@ -32,7 +34,8 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
             binding.startGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_start))
             binding.settingsGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_settings))
             binding.mapGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_map))
-            binding.tooltip.setImageDrawable(requireContext().loadDrawable(R.drawable.tooltip_play))
+            val play = Label(getString(R.string.play), x = 0.5f, y = 0.33f, height = 0.3f, maxWidth = 0.7f)
+            binding.tooltip.setImageDrawable(LabeledDrawable(requireContext(), requireContext().loadDrawable(R.drawable.tooltip_play), listOf(play)))
         }
         binding.settingsGameButton.isSoundEffectsEnabled = false
         binding.settingsGameButton.setOnClickListener { viewModel.openSettings() }

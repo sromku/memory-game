@@ -5,6 +5,7 @@ LANGS['ru'] = dict(
     strings=dict(
         app_name='Игра на память', sound_on='Звук ВКЛ', sound_off='Звук ВЫКЛ', rate_this='Оценить', privacy_policy='Конфиденциальность',
         language='Язык', language_phone='Язык телефона', cd_language='Выбрать язык',
+        difficulty_name_1='Новичок', difficulty_name_2='Легко', difficulty_name_3='Средне', difficulty_name_4='Сложно', difficulty_name_5='Эксперт', difficulty_name_6='Мастер', theme_animals='Животные', theme_monsters='Монстры', theme_emoji='Эмодзи', settings='Настройки', level_completed='Уровень пройден!', time='Время', score='Очки', play='играть',
         cd_quick_play='Играть', cd_map='Темы и дорожки', cd_settings='Настройки', cd_theme_animals='Тема «Животные»',
         cd_theme_monsters='Тема «Монстры»', cd_theme_emoji='Тема «Эмодзи»', cd_difficulty='Сложность %1$d', cd_back='Назад',
         cd_road_map='Раунды этой сложности', cd_locked='Закрыто', who_look='Смотри!', who_missing='Кого не хватает?',
@@ -25,12 +26,14 @@ LANGS['ru'] = dict(
              'Солнечный день!', 'Солнышко!', 'Смотри, облако!', 'Радуга!', 'Бабочка!', 'Цветочки!', 'Блеск!', 'Ням!', 'Ням-ням', 'Перекусим?',
              'Поспим?', 'Zzz… ой, привет!', 'Потанцуем!', 'Ля-ля-ля', 'Пи-пи!', 'Му?', 'Кря!', 'Хрю!', 'Гав!', 'Мяу!'],
     greetings=['Привет! Давай играть!', 'Привет, дружок!', 'Ты пришёл! Ура!', 'Рад тебя видеть!', 'Готов играть?', 'Привет-привет! Иди играть!', 'С возвращением!'],
+    title=('Память', 'игра для детей'),
 )
 
 LANGS['uk'] = dict(
     strings=dict(
         app_name='Гра на пам\'ять', sound_on='Звук УВІМК', sound_off='Звук ВИМК', rate_this='Оцінити', privacy_policy='Конфіденційність',
         language='Мова', language_phone='Мова телефону', cd_language='Вибрати мову',
+        difficulty_name_1='Новачок', difficulty_name_2='Легко', difficulty_name_3='Середньо', difficulty_name_4='Складно', difficulty_name_5='Експерт', difficulty_name_6='Майстер', theme_animals='Тварини', theme_monsters='Монстри', theme_emoji='Емодзі', settings='Опції', level_completed='Рівень пройдено!', time='Час', score='Очки', play='грати',
         cd_quick_play='Грати', cd_map='Теми та доріжки', cd_settings='Налаштування', cd_theme_animals='Тема «Тварини»',
         cd_theme_monsters='Тема «Монстри»', cd_theme_emoji='Тема «Емодзі»', cd_difficulty='Складність %1$d', cd_back='Назад',
         cd_road_map='Раунди цієї складності', cd_locked='Зачинено', who_look='Дивись!', who_missing='Кого бракує?',
@@ -51,12 +54,14 @@ LANGS['uk'] = dict(
              'Сонячний день!', 'Сонечко!', 'Дивись, хмаринка!', 'Веселка!', 'Метелик!', 'Квіточки!', 'Блиск!', 'Ням!', 'Ням-ням', 'Перекусимо?',
              'Поспимо?', 'Zzz… ой, привіт!', 'Потанцюймо!', 'Ля-ля-ля', 'Ців!', 'Му?', 'Кря!', 'Хрю!', 'Гав!', 'Няв!'],
     greetings=['Привіт! Граймо!', 'Привіт, друже!', 'Ти прийшов! Ура!', 'Радий тебе бачити!', 'Готовий грати?', 'Привіт-привіт! Ходи грати!', 'З поверненням!'],
+    title=("Пам'ять", 'гра для дітей'),
 )
 
 LANGS['pl'] = dict(
     strings=dict(
         app_name='Gra pamięciowa', sound_on='Dźwięk WŁ', sound_off='Dźwięk WYŁ', rate_this='Oceń', privacy_policy='Prywatność',
         language='Język', language_phone='Język telefonu', cd_language='Wybierz język',
+        difficulty_name_1='Nowicjusz', difficulty_name_2='Łatwy', difficulty_name_3='Średni', difficulty_name_4='Trudny', difficulty_name_5='Ekspert', difficulty_name_6='Mistrz', theme_animals='Zwierzęta', theme_monsters='Potwory', theme_emoji='Emoji', settings='Opcje', level_completed='Poziom zaliczony!', time='Czas', score='Punkty', play='graj',
         cd_quick_play='Graj', cd_map='Motywy i ścieżki', cd_settings='Ustawienia', cd_theme_animals='Motyw zwierzęta',
         cd_theme_monsters='Motyw potwory', cd_theme_emoji='Motyw emoji', cd_difficulty='Poziom %1$d', cd_back='Wstecz',
         cd_road_map='Rundy tego poziomu', cd_locked='Zablokowane', who_look='Patrz!', who_missing='Kogo brakuje?',
@@ -77,12 +82,14 @@ LANGS['pl'] = dict(
              'Słoneczny dzień!', 'Słonko!', 'Patrz, chmurka!', 'Tęcza!', 'Motylek!', 'Kwiatki!', 'Błysk!', 'Mniam!', 'Mniam mniam', 'Przekąska?',
              'Drzemka?', 'Zzz… o, cześć!', 'Zatańczmy!', 'La la la', 'Pi pi!', 'Muu?', 'Kwa!', 'Chrum!', 'Hau!', 'Miau!'],
     greetings=['Cześć! Zagrajmy!', 'Hej, przyjacielu!', 'Jesteś! Hura!', 'Miło cię widzieć!', 'Gotowy do gry?', 'Hej hej! Chodź grać!', 'Witaj z powrotem!'],
+    title=('Pamięć', 'gra dla dzieci'),
 )
 
 LANGS['nl'] = dict(
     strings=dict(
         app_name='Memoryspel', sound_on='Geluid AAN', sound_off='Geluid UIT', rate_this='Beoordelen', privacy_policy='Privacy',
         language='Taal', language_phone='Taal van de telefoon', cd_language='Kies de taal',
+        difficulty_name_1='Beginner', difficulty_name_2='Makkelijk', difficulty_name_3='Gemiddeld', difficulty_name_4='Moeilijk', difficulty_name_5='Expert', difficulty_name_6='Meester', theme_animals='Dieren', theme_monsters='Monsters', theme_emoji="Emoji's", settings='Opties', level_completed='Level gehaald!', time='Tijd', score='Score', play='spelen',
         cd_quick_play='Spelen', cd_map='Thema\'s en paden', cd_settings='Instellingen', cd_theme_animals='Thema dieren',
         cd_theme_monsters='Thema monsters', cd_theme_emoji='Thema emoji', cd_difficulty='Niveau %1$d', cd_back='Terug',
         cd_road_map='Rondes van dit niveau', cd_locked='Vergrendeld', who_look='Kijk!', who_missing='Wie mist er?',
@@ -103,12 +110,14 @@ LANGS['nl'] = dict(
              'Zonnige dag!', 'Zonnetje!', 'Kijk, een wolk!', 'Regenboog!', 'Vlinder!', 'Bloemen!', 'Glitter!', 'Mmm!', 'Nom nom', 'Snacktijd?',
              'Dutje doen?', 'Zzz… o, hoi!', 'Laten we dansen!', 'La la la', 'Piep!', 'Boe?', 'Kwak!', 'Knor!', 'Woef!', 'Miauw!'],
     greetings=['Hoi! Laten we spelen!', 'Hallo, vriend!', 'Je bent er! Joepie!', 'Leuk je te zien!', 'Klaar om te spelen?', 'Hoi hoi! Kom spelen!', 'Welkom terug!'],
+    title=('Memory', 'spel voor kinderen'),
 )
 
 LANGS['tr'] = dict(
     strings=dict(
         app_name='Hafıza Oyunu', sound_on='Ses AÇIK', sound_off='Ses KAPALI', rate_this='Puan ver', privacy_policy='Gizlilik',
         language='Dil', language_phone='Telefon dili', cd_language='Dil seç',
+        difficulty_name_1='Acemi', difficulty_name_2='Kolay', difficulty_name_3='Orta', difficulty_name_4='Zor', difficulty_name_5='Uzman', difficulty_name_6='Usta', theme_animals='Hayvanlar', theme_monsters='Canavarlar', theme_emoji='Emojiler', settings='Ayarlar', level_completed='Bölüm bitti!', time='Süre', score='Puan', play='oyna',
         cd_quick_play='Oyna', cd_map='Temalar ve yollar', cd_settings='Ayarlar', cd_theme_animals='Hayvanlar teması',
         cd_theme_monsters='Canavarlar teması', cd_theme_emoji='Emoji teması', cd_difficulty='Zorluk %1$d', cd_back='Geri',
         cd_road_map='Bu zorluğun turları', cd_locked='Kilitli', who_look='Bak!', who_missing='Kim eksik?',
@@ -129,4 +138,5 @@ LANGS['tr'] = dict(
              'Güneşli gün!', 'Güneş!', 'Bak, bir bulut!', 'Gökkuşağı!', 'Kelebek!', 'Çiçekler!', 'Pırıl pırıl!', 'Mmm!', 'Ham ham', 'Atıştırma vakti mi?',
              'Uyku vakti mi?', 'Zzz… a, selam!', 'Hadi dans edelim!', 'La la la', 'Cik!', 'Möö?', 'Vak!', 'Oink!', 'Hav!', 'Miyav!'],
     greetings=['Selam! Hadi oynayalım!', 'Merhaba arkadaşım!', 'Geldin! Yaşasın!', 'Seni görmek güzel!', 'Oynamaya hazır mısın?', 'Selam selam! Gel oyna!', 'Tekrar hoş geldin!'],
+    title=('Hafıza', 'çocuk oyunu'),
 )

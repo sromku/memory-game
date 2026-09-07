@@ -17,7 +17,7 @@ def esc(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace("'", "\\'").replace('"', '\\"')
 
 english = open(R + 'values/strings.xml').read()
-keys = re.findall(r'<string name="([a-z_]+)">', english)  # translatable ones only (the others carry translatable="false")
+keys = re.findall(r'<string name="([a-z_0-9]+)">', english)  # translatable ones only (the others carry translatable="false")
 
 data = {}
 for path in sorted(glob.glob(f'{S}/translations_*.py')):
@@ -31,7 +31,7 @@ if missing:
     print('no data yet for', missing)
 
 for loc in LOCALES:
-    if loc not in data:
+    if loc not in data or 'strings' not in data[loc]:
         continue
     t = data[loc]
     absent = [k for k in keys if k not in t['strings']]

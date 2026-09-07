@@ -85,6 +85,15 @@ class ArtPipeline(
                              else (asset.tabletDp.toDouble() * image.width / image.height).roundToInt() to asset.tabletDp
             (vectorTracer ?: error("Pass -Pvtracer=/path/to/vtracer to regenerate the UI vectors")).trace(m, target, wDp, hDp)
         }
+        // Titles drawn for other languages (tools/generate-titles.py): one density-independent bitmap
+        // each, scaled by the view, so twenty languages cost a couple of megabytes instead of twenty.
+        for (localized in original.listFiles { f -> f.name.startsWith("title-") && f.extension == "png" }.orEmpty().sorted()) {
+            // Resource folders still use the old code for Indonesian.
+            val locale = localized.nameWithoutExtension.removePrefix("title-").let { if (it == "id") "in" else it }
+            val target = res.resolve("drawable-$locale-nodpi/title.webp")
+            if (upToDate(target, master.resolve(localized.name))) continue
+            writeWebp(scaled(upscaled(localized), LOCALIZED_TITLE_WIDTH, -1), target)
+        }
         // The largest screens are 2560 px wide: 3x of 1024 covers them, and so does 2x of 1880.
         background("background", 3760)
         background("back_animals", 3072)
@@ -115,6 +124,9 @@ class ArtPipeline(
         if (upToDate(target, master.resolve("$name.png"))) return
         writeWebp(scaled(upscaled(original.resolve("$name.png")), width, -1), target)
     }
+
+    /** Localised titles are shown 400 dp wide on phones and 800 dp on big tablets; 1200 px serves both well. */
+    private val LOCALIZED_TITLE_WIDTH = 1200
 
     private val iconDp = intArrayOf(48, 72, 96, 144, 192)
     private val foregroundDp = intArrayOf(108, 162, 216, 324, 432)

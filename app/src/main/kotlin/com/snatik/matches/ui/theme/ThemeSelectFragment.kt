@@ -9,6 +9,8 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.snatik.matches.ui.image.Label
+import com.snatik.matches.ui.image.LabeledDrawable
 import com.snatik.matches.ui.image.loadDrawable
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -29,8 +31,9 @@ class ThemeSelectFragment : Fragment(R.layout.theme_select_fragment) {
         // The three cards appear together, then grow in as one.
         viewLifecycleOwner.lifecycleScope.launch {
             val drawables = arts.map { async { requireContext().loadDrawable(it) } }.awaitAll()
-            cards.forEachIndexed { index, (card, _) ->
-                card.setImageDrawable(drawables[index])
+            cards.forEachIndexed { index, (card, theme) ->
+                val name = Label(getString(THEME_NAMES.getValue(theme)), x = 0.5f, y = 0.078f, height = 0.062f, maxWidth = 0.5f)
+                card.setImageDrawable(LabeledDrawable(requireContext(), drawables[index], listOf(name)))
                 animateShow(card)
             }
         }
@@ -67,5 +70,13 @@ class ThemeSelectFragment : Fragment(R.layout.theme_select_fragment) {
             interpolator = DecelerateInterpolator(2f)
             start()
         }
+    }
+
+    private companion object {
+        val THEME_NAMES = mapOf(
+            GameTheme.ANIMALS to R.string.theme_animals,
+            GameTheme.MONSTERS to R.string.theme_monsters,
+            GameTheme.EMOJI to R.string.theme_emoji,
+        )
     }
 }

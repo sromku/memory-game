@@ -5,6 +5,7 @@ LANGS['ja'] = dict(
     strings=dict(
         app_name='メモリーゲーム', sound_on='おと オン', sound_off='おと オフ', rate_this='ひょうか', privacy_policy='プライバシー',
         language='ことば', language_phone='スマホのことば', cd_language='ことばをえらぶ',
+        difficulty_name_1='はじめて', difficulty_name_2='かんたん', difficulty_name_3='ふつう', difficulty_name_4='むずかしい', difficulty_name_5='げきむず', difficulty_name_6='たつじん', theme_animals='どうぶつ', theme_monsters='モンスター', theme_emoji='えもじ', settings='せってい', level_completed='クリア！', time='タイム', score='スコア', play='あそぶ',
         cd_quick_play='あそぶ', cd_map='テーマとみち', cd_settings='せってい', cd_theme_animals='どうぶつのテーマ',
         cd_theme_monsters='モンスターのテーマ', cd_theme_emoji='えもじのテーマ', cd_difficulty='むずかしさ %1$d', cd_back='もどる',
         cd_road_map='このむずかしさのラウンド', cd_locked='ロックちゅう', who_look='みて！', who_missing='だれがいない？',
@@ -25,12 +26,14 @@ LANGS['ja'] = dict(
              'いいてんき！', 'おひさま！', 'みて、くも！', 'にじ！', 'ちょうちょ！', 'おはな！', 'きらきら！', 'おいしい！', 'もぐもぐ', 'おやつのじかん？',
              'おひるね？', 'すやすや… あ、やあ！', 'おどろう！', 'ららら', 'ピヨ！', 'モー？', 'ガー！', 'ブー！', 'ワン！', 'ニャー！'],
     greetings=['やあ！あそぼう！', 'こんにちは、ともだち！', 'きたね！やったー！', 'あえてうれしい！', 'あそぶじゅんびはいい？', 'やあやあ！あそびにおいで！', 'おかえり！'],
+    title=('きおくゲーム', 'こどもむけ'),
 )
 
 LANGS['ko'] = dict(
     strings=dict(
         app_name='기억력 게임', sound_on='소리 켬', sound_off='소리 끔', rate_this='평가하기', privacy_policy='개인정보',
         language='언어', language_phone='휴대폰 언어', cd_language='언어 선택',
+        difficulty_name_1='초보', difficulty_name_2='쉬움', difficulty_name_3='보통', difficulty_name_4='어려움', difficulty_name_5='아주 어려움', difficulty_name_6='달인', theme_animals='동물', theme_monsters='괴물', theme_emoji='이모지', settings='설정', level_completed='클리어!', time='시간', score='점수', play='놀기',
         cd_quick_play='놀기', cd_map='테마와 길', cd_settings='설정', cd_theme_animals='동물 테마',
         cd_theme_monsters='괴물 테마', cd_theme_emoji='이모지 테마', cd_difficulty='난이도 %1$d', cd_back='뒤로',
         cd_road_map='이 난이도의 라운드', cd_locked='잠김', who_look='보세요!', who_missing='누가 없을까?',
@@ -51,12 +54,14 @@ LANGS['ko'] = dict(
              '맑은 날!', '햇살!', '봐, 구름이야!', '무지개!', '나비!', '꽃!', '반짝반짝!', '냠!', '냠냠', '간식 시간?',
              '낮잠 시간?', '쿨쿨… 어, 안녕!', '춤추자!', '라라라', '삐약!', '음매?', '꽥!', '꿀꿀!', '멍!', '야옹!'],
     greetings=['안녕! 같이 놀자!', '안녕, 친구야!', '왔구나! 야호!', '만나서 반가워!', '놀 준비 됐어?', '하이 하이! 놀러 와!', '다시 만나서 반가워!'],
+    title=('기억력 게임', '어린이용'),
 )
 
 LANGS['zh-rTW'] = dict(
     strings=dict(
         app_name='記憶遊戲', sound_on='聲音 開', sound_off='聲音 關', rate_this='評分', privacy_policy='隱私權',
         language='語言', language_phone='手機語言', cd_language='選擇語言',
+        difficulty_name_1='新手', difficulty_name_2='簡單', difficulty_name_3='中等', difficulty_name_4='困難', difficulty_name_5='超難', difficulty_name_6='大師', theme_animals='動物', theme_monsters='怪獸', theme_emoji='表情', settings='設定', level_completed='過關！', time='時間', score='分數', play='玩',
         cd_quick_play='開始玩', cd_map='主題與路線', cd_settings='設定', cd_theme_animals='動物主題',
         cd_theme_monsters='怪獸主題', cd_theme_emoji='表情符號主題', cd_difficulty='難度 %1$d', cd_back='返回',
         cd_road_map='這個難度的關卡', cd_locked='尚未解鎖', who_look='看！', who_missing='誰不見了？',
@@ -77,12 +82,14 @@ LANGS['zh-rTW'] = dict(
              '晴天！', '陽光！', '看，一朵雲！', '彩虹！', '蝴蝶！', '花花！', '閃亮亮！', '好吃！', '嗯嗯', '點心時間？',
              '午睡時間？', '呼嚕… 喔，嗨！', '一起跳舞！', '啦啦啦', '啾！', '哞？', '呱！', '哼哼！', '汪！', '喵！'],
     greetings=['嗨！來玩吧！', '你好，朋友！', '你來啦！耶！', '見到你真好！', '準備好玩了嗎？', '嗨嗨！來玩呀！', '歡迎回來！'],
+    title=('記憶遊戲', '兒童版'),
 )
 
 LANGS['zh-rCN'] = dict(
     strings=dict(
         app_name='记忆游戏', sound_on='声音 开', sound_off='声音 关', rate_this='评分', privacy_policy='隐私',
         language='语言', language_phone='手机语言', cd_language='选择语言',
+        difficulty_name_1='新手', difficulty_name_2='简单', difficulty_name_3='中等', difficulty_name_4='困难', difficulty_name_5='超难', difficulty_name_6='大师', theme_animals='动物', theme_monsters='怪兽', theme_emoji='表情', settings='设置', level_completed='过关！', time='时间', score='分数', play='玩',
         cd_quick_play='开始玩', cd_map='主题和路线', cd_settings='设置', cd_theme_animals='动物主题',
         cd_theme_monsters='怪兽主题', cd_theme_emoji='表情主题', cd_difficulty='难度 %1$d', cd_back='返回',
         cd_road_map='这个难度的关卡', cd_locked='尚未解锁', who_look='看！', who_missing='谁不见了？',
@@ -103,12 +110,14 @@ LANGS['zh-rCN'] = dict(
              '晴天！', '阳光！', '看，一朵云！', '彩虹！', '蝴蝶！', '花花！', '闪亮亮！', '好吃！', '嗯嗯', '点心时间？',
              '午睡时间？', '呼噜… 哦，嗨！', '一起跳舞！', '啦啦啦', '啾！', '哞？', '呱！', '哼哼！', '汪！', '喵！'],
     greetings=['嗨！来玩吧！', '你好，朋友！', '你来啦！耶！', '见到你真好！', '准备好玩了吗？', '嗨嗨！来玩呀！', '欢迎回来！'],
+    title=('记忆游戏', '儿童版'),
 )
 
 LANGS['ms'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Bunyi HIDUP', sound_off='Bunyi MATI', rate_this='Beri nilai', privacy_policy='Privasi',
         language='Bahasa', language_phone='Bahasa telefon', cd_language='Pilih bahasa',
+        difficulty_name_1='Baru', difficulty_name_2='Mudah', difficulty_name_3='Sederhana', difficulty_name_4='Sukar', difficulty_name_5='Pakar', difficulty_name_6='Mahir', theme_animals='Haiwan', theme_monsters='Raksasa', theme_emoji='Emoji', settings='Tetapan', level_completed='Selesai!', time='Masa', score='Skor', play='main',
         cd_quick_play='Main', cd_map='Tema dan laluan', cd_settings='Tetapan', cd_theme_animals='Tema haiwan',
         cd_theme_monsters='Tema raksasa', cd_theme_emoji='Tema emoji', cd_difficulty='Tahap %1$d', cd_back='Kembali',
         cd_road_map='Pusingan tahap ini', cd_locked='Berkunci', who_look='Tengok!', who_missing='Siapa yang hilang?',
@@ -129,4 +138,5 @@ LANGS['ms'] = dict(
              'Hari cerah!', 'Cahaya matahari!', 'Tengok, awan!', 'Pelangi!', 'Rama-rama!', 'Bunga!', 'Berkilau!', 'Sedap!', 'Nyam nyam', 'Masa makan?',
              'Masa tidur?', 'Zzz… oh, hai!', 'Jom menari!', 'La la la', 'Ciap!', 'Moo?', 'Kwek!', 'Oink!', 'Guk!', 'Meow!'],
     greetings=['Hai! Jom main!', 'Helo, kawan!', 'Awak datang! Yeay!', 'Seronok jumpa awak!', 'Sedia untuk main?', 'Hai hai! Jom main!', 'Selamat kembali!'],
+    title=('Memori', 'permainan kanak-kanak'),
 )

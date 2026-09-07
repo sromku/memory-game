@@ -40,3 +40,17 @@ which is right for a road and a row of characters.
 Words baked into pictures are not translated yet: the title, the "play" tooltip, the difficulty
 names (Beginner … Master), the theme names on the cards, "Settings", "Level Completed", "Time",
 "Score" and "BEST". They are the next step of the localisation work.
+
+## The art (done)
+
+The pictures carry no lettering any more. `tools/erase-lettering.py` keeps the lettered originals
+in `art/original/lettered/` and writes de-lettered ones to `art/original/` for the pipeline; the
+app writes the words at runtime with `LabeledDrawable`, placed by fractions of each picture
+(difficulty names, theme names, "Settings", "Language", "Level completed", "Time", "Score",
+"play"). Their strings are `difficulty_name_*`, `theme_*`, `settings`, `level_completed`,
+`time`, `score`, `play`; keep translations short, they shrink to fit but small text is worse.
+
+The title is the one picture drawn per language: `tools/generate-titles.py` renders
+`art/original/title-<locale>.png` in the English title's style from the `title` entry of the
+translation data, and the art pipeline emits `drawable-<locale>-nodpi/title.webp`. The English
+title stays the hand-made original.

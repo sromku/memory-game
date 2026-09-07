@@ -29,6 +29,9 @@ build when it can detect a violation; the rest is judgement.
   app/src/main/res/drawable*, mipmap-* or app/src/main/assets/characters by hand. UI art is traced
   vector drawables (tools/VectorArtTracer.kt); only title, the play-button glow and backgrounds are WebP. Card characters
   are traced vectors (tools/CharacterTracer.kt); fix wrong eye tagging in art/character-overrides.txt.
+  UI art carries no words: the lettered originals are in art/original/lettered, the app writes
+  the words over the art (LabeledDrawable), and the title is drawn per language by
+  tools/generate-titles.py. Never put text back into the pictures.
 - Preference keys and file name in GamePreferences are a compatibility contract with the 2019
   release; a test guards them.
 - Player progress (rounds, stars, times) lives in files/progress.txt via ProgressStore; the format

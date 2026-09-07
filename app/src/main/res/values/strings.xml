@@ -9,6 +9,22 @@
     <string name="language">Language</string>
     <string name="language_phone">Phone language</string>
     <string name="cd_language">Choose the language</string>
+
+    <!-- Words drawn over the art (the pictures carry no lettering of their own). -->
+    <string name="difficulty_name_1">Beginner</string>
+    <string name="difficulty_name_2">Easy</string>
+    <string name="difficulty_name_3">Medium</string>
+    <string name="difficulty_name_4">Hard</string>
+    <string name="difficulty_name_5">Hardest</string>
+    <string name="difficulty_name_6">Master</string>
+    <string name="theme_animals">Animals</string>
+    <string name="theme_monsters">Monsters</string>
+    <string name="theme_emoji">Emojis</string>
+    <string name="settings">Settings</string>
+    <string name="level_completed">Level completed</string>
+    <string name="time">Time</string>
+    <string name="score">Score</string>
+    <string name="play">play</string>
     <string name="privacy_policy_url" translatable="false">https://sromku.com/memory-game/privacy.html</string>
     <!-- rounds done, rounds on the road; the left-to-right mark keeps "15 / 40" in that order in Arabic -->
     <string name="road_progress_format" translatable="false">\u200e%1$d / %2$d</string>

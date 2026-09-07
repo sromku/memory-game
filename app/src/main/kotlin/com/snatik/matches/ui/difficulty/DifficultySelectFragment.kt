@@ -23,6 +23,8 @@ import com.snatik.matches.game.GameResult
 import com.snatik.matches.game.progression.Progress
 import com.snatik.matches.game.progression.Road
 import com.snatik.matches.ui.GameViewModel
+import com.snatik.matches.ui.image.Label
+import com.snatik.matches.ui.image.LabeledDrawable
 import com.snatik.matches.ui.image.loadDrawable
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
@@ -61,7 +63,10 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
         // All six buttons appear together, then bounce in as one.
         viewLifecycleOwner.lifecycleScope.launch {
             val drawables = arts.map { async { requireContext().loadDrawable(it) } }.awaitAll()
-            cells.forEachIndexed { index, cell -> cell.button.setImageDrawable(drawables[index]) }
+            cells.forEachIndexed { index, cell ->
+                val name = Label(getString(DIFFICULTY_NAMES[index]), x = 0.5f, y = 0.28f, height = 0.2f, maxWidth = 0.76f, uppercase = true)
+                cell.button.setImageDrawable(LabeledDrawable(requireContext(), drawables[index], listOf(name)))
+            }
             animate(cells.map { it.holder })
         }
         viewLifecycleOwner.lifecycleScope.launch { binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back)) }
@@ -133,6 +138,10 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
     }
 
     private companion object {
+        val DIFFICULTY_NAMES = listOf(
+            R.string.difficulty_name_1, R.string.difficulty_name_2, R.string.difficulty_name_3,
+            R.string.difficulty_name_4, R.string.difficulty_name_5, R.string.difficulty_name_6,
+        )
         const val LOCKED_ALPHA = 0.55f
         const val SHAKE_MS = 450L
         val GREY = ColorMatrixColorFilter(ColorMatrix().apply { setSaturation(0f) })

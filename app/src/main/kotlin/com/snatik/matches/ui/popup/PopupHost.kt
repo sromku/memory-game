@@ -11,6 +11,8 @@ import android.view.animation.DecelerateInterpolator
 import android.widget.FrameLayout
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import com.snatik.matches.ui.image.Label
+import com.snatik.matches.ui.image.LabeledDrawable
 import com.snatik.matches.ui.image.loadDrawable
 import com.snatik.matches.ui.image.warmDrawables
 import kotlinx.coroutines.CoroutineScope
@@ -48,7 +50,7 @@ class PopupHost(
     /** Popups carry traced vector frames with hundreds of paths; they are inflated off the main thread first. */
     fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit, onLanguage: () -> Unit) {
         scope.launch {
-            val frame = context.loadDrawable(R.drawable.settings_popup)
+            val frame = settingsFrame(context.getString(R.string.settings))
             val icons = listOf(R.drawable.button_music_on, R.drawable.button_music_off, R.drawable.button_rate).map { context.loadDrawable(it) }
             showFramed(PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onPrivacyPolicy, onLanguage))
         }
@@ -57,10 +59,13 @@ class PopupHost(
     /** The language list in the settings frame; picking one hands the tag back (null for the phone's language). */
     fun showLanguages(chosen: String?, onPick: (tag: String?) -> Unit) {
         scope.launch {
-            val frame = context.loadDrawable(R.drawable.settings_popup)
-            showFramed(PopupLanguageView(context, frame, chosen, onPick))
+            showFramed(PopupLanguageView(context, settingsFrame(context.getString(R.string.language)), chosen, onPick))
         }
     }
+
+    /** The settings frame with [title] written on its ribbon. */
+    private suspend fun settingsFrame(title: String): Drawable =
+        LabeledDrawable(context, context.loadDrawable(R.drawable.settings_popup), listOf(Label(title, x = 0.5f, y = 0.105f, height = 0.085f, maxWidth = 0.48f)))
 
     /** A popup in the settings frame, with a scrim behind it and the close button on its corner. */
     private fun showFramed(popup: View) {
@@ -97,7 +102,15 @@ class PopupHost(
 
     fun showWon(result: GameResult, onStar: () -> Unit, onBack: () -> Unit, onNext: () -> Unit) {
         scope.launch {
-            val frame = context.loadDrawable(R.drawable.level_complete)
+            val frame = LabeledDrawable(
+                context,
+                context.loadDrawable(R.drawable.level_complete),
+                listOf(
+                    Label(context.getString(R.string.level_completed), x = 0.5f, y = 0.065f, height = 0.058f, maxWidth = 0.72f),
+                    Label(context.getString(R.string.time), x = 0.255f, y = 0.468f, height = 0.058f, maxWidth = 0.23f),
+                    Label(context.getString(R.string.score), x = 0.255f, y = 0.612f, height = 0.058f, maxWidth = 0.23f),
+                ),
+            )
             context.warmDrawables(R.drawable.button_back, R.drawable.button_again, R.drawable.level_complete_star)
             showWon(frame, result, onStar, onBack, onNext)
         }

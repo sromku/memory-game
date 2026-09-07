@@ -17,6 +17,8 @@
     <color name="road_surface">#FFF3D0</color>
     <color name="road_edge">#7B3A1B</color>
     <color name="road_shadow">#40000000</color>
+    <!-- shadow under the words written on the art, the art's own dark brown -->
+    <color name="label_shadow">#5A2410</color>
     <color name="road_star_slot">#62D1FB</color>
     <color name="road_star_slot_rim">#3E9BCB</color>
 
