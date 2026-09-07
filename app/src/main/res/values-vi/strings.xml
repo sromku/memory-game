@@ -23,7 +23,8 @@
     <string name="score">Điểm</string>
     <string name="play">chơi</string>
     <string name="cd_quick_play">Chơi</string>
-    <string name="cd_map">Chủ đề và con đường</string>
+    <string name="cd_theme_picker">Đổi chủ đề</string>
+    <string name="cd_difficulty_picker">Đổi con đường</string>
     <string name="cd_settings">Cài đặt</string>
     <string name="cd_theme_animals">Chủ đề động vật</string>
     <string name="cd_theme_monsters">Chủ đề quái vật</string>

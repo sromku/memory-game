@@ -23,7 +23,8 @@
     <string name="score">Очки</string>
     <string name="play">играть</string>
     <string name="cd_quick_play">Играть</string>
-    <string name="cd_map">Темы и дорожки</string>
+    <string name="cd_theme_picker">Сменить тему</string>
+    <string name="cd_difficulty_picker">Сменить дорожку</string>
     <string name="cd_settings">Настройки</string>
     <string name="cd_theme_animals">Тема «Животные»</string>
     <string name="cd_theme_monsters">Тема «Монстры»</string>

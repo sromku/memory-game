@@ -28,18 +28,6 @@
         tools:src="@drawable/button_start" />
 
     <ImageView
-        android:id="@+id/map_game_button"
-        android:layout_width="@dimen/settings_game_button"
-        android:layout_height="@dimen/settings_game_button"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/settings_game_button_margin"
-        android:layout_toStartOf="@id/start_game_button"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/cd_map"
-        android:scaleType="centerCrop"
-        tools:src="@drawable/button_map" />
-
-    <ImageView
         android:id="@+id/settings_game_button"
         android:layout_width="@dimen/settings_game_button"
         android:layout_height="@dimen/settings_game_button"

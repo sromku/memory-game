@@ -8,7 +8,6 @@ import com.snatik.matches.audio.SoundPlayer
 import com.snatik.matches.data.GamePreferences
 import com.snatik.matches.data.ProgressStore
 import com.snatik.matches.game.progression.Progress
-import com.snatik.matches.game.progression.Road
 import com.snatik.matches.game.progression.RoundResult
 import com.snatik.matches.game.progression.RoundSpec
 import com.snatik.matches.game.Board
@@ -39,8 +38,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     /** Screen-level effects, consumed by the activity. */
     sealed interface UiEvent {
-        data object OpenThemeSelect : UiEvent
-        data object OpenDifficultySelect : UiEvent
+        data object OpenThemePicker : UiEvent
+        data object OpenDifficultyPicker : UiEvent
+        data object ClosePicker : UiEvent
         data object OpenRoadMap : UiEvent
         data object OpenGame : UiEvent
         data object OpenWhoWasHere : UiEvent
@@ -117,25 +117,34 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     /** Hands over the round that just finished, once, so the map can celebrate it. */
     fun consumeFinishedRound(): RoundSpec? = finishedRound.also { finishedRound = null }
 
-    fun openThemes() {
-        uiEvents.trySend(UiEvent.OpenThemeSelect)
-    }
-
-    /** One tap from the menu into a round: a random theme, the road's next round where play is. */
-    fun quickPlay() {
+    /**
+     * Play, from the menu: the map of the road the player was on last, with their theme, centred
+     * on the next round. A first-time player lands on the road where play is.
+     */
+    fun play() {
         val current = progress.value
-        val round = current.quickPlayRound()
-            ?: RoundSpec(Difficulty.entries.last(current::isUnlocked), Road.ROUNDS_PER_DIFFICULTY)
-        val theme = GameTheme.entries.random()
+        val theme = preferences.lastTheme ?: GameTheme.ANIMALS
+        val difficulty = preferences.lastDifficulty?.takeIf(current::isUnlocked)
+            ?: current.quickPlayRound()?.difficulty
+            ?: Difficulty.entries.last(current::isUnlocked)
         _selectedTheme.value = theme
-        _selectedDifficulty.value = round.difficulty
-        startRound(theme, round)
-        uiEvents.trySend(UiEvent.OpenGame)
+        _selectedDifficulty.value = difficulty
+        uiEvents.trySend(UiEvent.OpenRoadMap)
     }
 
+    fun openThemePicker() {
+        uiEvents.trySend(UiEvent.OpenThemePicker)
+    }
+
+    fun openDifficultyPicker() {
+        uiEvents.trySend(UiEvent.OpenDifficultyPicker)
+    }
+
+    /** From the theme picker: the map re-skins and comes back. */
     fun selectTheme(theme: GameTheme) {
         _selectedTheme.value = theme
-        uiEvents.trySend(UiEvent.OpenDifficultySelect)
+        preferences.lastTheme = theme
+        uiEvents.trySend(UiEvent.ClosePicker)
     }
 
     /** Called when the theme screen is showing, so the background returns to the default art. */
@@ -145,11 +154,12 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         miniGame = null
     }
 
-    /** Opens the difficulty's road; roads that have not opened yet are ignored. */
+    /** From the difficulty picker: the map shows that road and comes back. Roads not open yet are ignored. */
     fun selectDifficulty(difficulty: Difficulty) {
         if (!progress.value.isUnlocked(difficulty)) return
         _selectedDifficulty.value = difficulty
-        uiEvents.trySend(UiEvent.OpenRoadMap)
+        preferences.lastDifficulty = difficulty
+        uiEvents.trySend(UiEvent.ClosePicker)
     }
 
     /** Special rounds are mini-games; every other round is a board of cards. */

@@ -23,7 +23,8 @@
     <string name="score">分數</string>
     <string name="play">玩</string>
     <string name="cd_quick_play">開始玩</string>
-    <string name="cd_map">主題與路線</string>
+    <string name="cd_theme_picker">更換主題</string>
+    <string name="cd_difficulty_picker">更換路線</string>
     <string name="cd_settings">設定</string>
     <string name="cd_theme_animals">動物主題</string>
     <string name="cd_theme_monsters">怪獸主題</string>

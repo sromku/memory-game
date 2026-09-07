@@ -23,7 +23,8 @@
     <string name="score">Skor</string>
     <string name="play">main</string>
     <string name="cd_quick_play">Main</string>
-    <string name="cd_map">Tema dan laluan</string>
+    <string name="cd_theme_picker">Tukar tema</string>
+    <string name="cd_difficulty_picker">Tukar laluan</string>
     <string name="cd_settings">Tetapan</string>
     <string name="cd_theme_animals">Tema haiwan</string>
     <string name="cd_theme_monsters">Tema raksasa</string>

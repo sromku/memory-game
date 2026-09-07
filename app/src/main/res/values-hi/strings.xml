@@ -23,7 +23,8 @@
     <string name="score">अंक</string>
     <string name="play">खेलो</string>
     <string name="cd_quick_play">खेलो</string>
-    <string name="cd_map">थीम और रास्ते</string>
+    <string name="cd_theme_picker">थीम बदलें</string>
+    <string name="cd_difficulty_picker">रास्ता बदलें</string>
     <string name="cd_settings">सेटिंग</string>
     <string name="cd_theme_animals">जानवरों की थीम</string>
     <string name="cd_theme_monsters">राक्षसों की थीम</string>

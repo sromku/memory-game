@@ -23,7 +23,8 @@
     <string name="score">スコア</string>
     <string name="play">あそぶ</string>
     <string name="cd_quick_play">あそぶ</string>
-    <string name="cd_map">テーマとみち</string>
+    <string name="cd_theme_picker">テーマをかえる</string>
+    <string name="cd_difficulty_picker">みちをかえる</string>
     <string name="cd_settings">せってい</string>
     <string name="cd_theme_animals">どうぶつのテーマ</string>
     <string name="cd_theme_monsters">モンスターのテーマ</string>

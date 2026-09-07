@@ -23,7 +23,8 @@
     <string name="score">النقاط</string>
     <string name="play">العب</string>
     <string name="cd_quick_play">العب</string>
-    <string name="cd_map">المواضيع والطرق</string>
+    <string name="cd_theme_picker">تغيير الموضوع</string>
+    <string name="cd_difficulty_picker">تغيير الطريق</string>
     <string name="cd_settings">الإعدادات</string>
     <string name="cd_theme_animals">موضوع الحيوانات</string>
     <string name="cd_theme_monsters">موضوع الوحوش</string>

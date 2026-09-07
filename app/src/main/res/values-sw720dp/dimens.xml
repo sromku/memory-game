@@ -97,4 +97,6 @@
     <!-- text that shrinks to fit -->
     <dimen name="who_prompt_margin_side">110dp</dimen>
     <dimen name="popup_settings_row_end">26dp</dimen>
+
+    <dimen name="road_picker_margin_start">120dp</dimen>
 </resources>

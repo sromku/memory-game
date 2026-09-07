@@ -95,8 +95,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun handle(event: UiEvent) {
         when (event) {
-            UiEvent.OpenThemeSelect -> push(ThemeSelectFragment(), BACK_STACK_THEME)
-            UiEvent.OpenDifficultySelect -> push(DifficultySelectFragment(), BACK_STACK_DIFFICULTY)
+            UiEvent.OpenThemePicker -> push(ThemeSelectFragment(), BACK_STACK_PICKER)
+            UiEvent.OpenDifficultyPicker -> push(DifficultySelectFragment(), BACK_STACK_PICKER)
+            UiEvent.ClosePicker -> supportFragmentManager.popBackStack(BACK_STACK_PICKER, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             UiEvent.OpenRoadMap -> push(RoadMapFragment(), BACK_STACK_ROAD)
             UiEvent.OpenGame -> {
                 // "Play again" replaces the finished round instead of stacking on top of it.
@@ -179,8 +180,7 @@ class MainActivity : AppCompatActivity() {
     private companion object {
         /** The published application id (the debug build adds a suffix). */
         const val PLAY_STORE_PACKAGE = "com.snatik.matches"
-        const val BACK_STACK_THEME = "theme"
-        const val BACK_STACK_DIFFICULTY = "difficulty"
+        const val BACK_STACK_PICKER = "picker"
         const val BACK_STACK_ROAD = "road"
         const val BACK_STACK_GAME = "game"
     }

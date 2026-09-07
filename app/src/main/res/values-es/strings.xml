@@ -23,7 +23,8 @@
     <string name="score">Puntos</string>
     <string name="play">jugar</string>
     <string name="cd_quick_play">Jugar</string>
-    <string name="cd_map">Temas y caminos</string>
+    <string name="cd_theme_picker">Cambiar el tema</string>
+    <string name="cd_difficulty_picker">Cambiar el camino</string>
     <string name="cd_settings">Ajustes</string>
     <string name="cd_theme_animals">Tema de animales</string>
     <string name="cd_theme_monsters">Tema de monstruos</string>

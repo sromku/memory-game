@@ -41,12 +41,6 @@ class ThemeSelectFragment : Fragment(R.layout.theme_select_fragment) {
         binding.backButton.setOnClickListener { requireActivity().onBackPressedDispatcher.onBackPressed() }
     }
 
-    override fun onStart() {
-        super.onStart()
-        // Also reached by going back from the difficulty screen; the background returns to default.
-        viewModel.clearTheme()
-    }
-
     /** Wires the card and returns the picture it should show. */
     private fun bindCard(card: ImageView, theme: GameTheme): Int {
         val cards = resources.obtainTypedArray(theme.cardImagesRes)

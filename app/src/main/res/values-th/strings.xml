@@ -23,7 +23,8 @@
     <string name="score">คะแนน</string>
     <string name="play">เล่น</string>
     <string name="cd_quick_play">เล่น</string>
-    <string name="cd_map">ธีมและเส้นทาง</string>
+    <string name="cd_theme_picker">เปลี่ยนธีม</string>
+    <string name="cd_difficulty_picker">เปลี่ยนเส้นทาง</string>
     <string name="cd_settings">การตั้งค่า</string>
     <string name="cd_theme_animals">ธีมสัตว์</string>
     <string name="cd_theme_monsters">ธีมมอนสเตอร์</string>

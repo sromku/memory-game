@@ -50,8 +50,20 @@ class GamePreferences(private val prefs: SharedPreferences) {
         get() = prefs.getBoolean(KEY_SOUND_ENABLED, true)
         set(value) = prefs.edit { putBoolean(KEY_SOUND_ENABLED, value) }
 
+    /** The theme the player last chose, so Play resumes there. */
+    var lastTheme: GameTheme?
+        get() = prefs.getInt(KEY_LAST_THEME, 0).let { id -> GameTheme.entries.firstOrNull { it.id == id } }
+        set(value) = prefs.edit { putInt(KEY_LAST_THEME, value?.id ?: 0) }
+
+    /** The road the player last chose. */
+    var lastDifficulty: Difficulty?
+        get() = prefs.getInt(KEY_LAST_DIFFICULTY, 0).let { level -> Difficulty.entries.firstOrNull { it.level == level } }
+        set(value) = prefs.edit { putInt(KEY_LAST_DIFFICULTY, value?.level ?: 0) }
+
     companion object {
         const val FILE_NAME = "com.snatik.matches"
+        private const val KEY_LAST_THEME = "last_theme"
+        private const val KEY_LAST_DIFFICULTY = "last_difficulty"
         private const val NO_TIME = -1
         private const val KEY_SOUND_ENABLED = "sound_enabled"
 

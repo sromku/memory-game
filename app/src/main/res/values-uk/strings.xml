@@ -23,7 +23,8 @@
     <string name="score">Очки</string>
     <string name="play">грати</string>
     <string name="cd_quick_play">Грати</string>
-    <string name="cd_map">Теми та доріжки</string>
+    <string name="cd_theme_picker">Змінити тему</string>
+    <string name="cd_difficulty_picker">Змінити доріжку</string>
     <string name="cd_settings">Налаштування</string>
     <string name="cd_theme_animals">Тема «Тварини»</string>
     <string name="cd_theme_monsters">Тема «Монстри»</string>

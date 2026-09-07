@@ -23,7 +23,8 @@
     <string name="score">점수</string>
     <string name="play">놀기</string>
     <string name="cd_quick_play">놀기</string>
-    <string name="cd_map">테마와 길</string>
+    <string name="cd_theme_picker">테마 바꾸기</string>
+    <string name="cd_difficulty_picker">길 바꾸기</string>
     <string name="cd_settings">설정</string>
     <string name="cd_theme_animals">동물 테마</string>
     <string name="cd_theme_monsters">괴물 테마</string>

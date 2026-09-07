@@ -56,12 +56,14 @@ own time, so later rounds are judged more strictly.
 The map is a single custom view: `RoadGeometry` (pure) places the rounds, `RoadNode` (pure) says
 what state each is in, `RoadMapView` paints, scrolls and animates.
 
-## Quick play
+## Screen flow
 
-The big button on the menu starts a round at once: a random theme, and the next round of the
-highest open road that still has rounds left (`Progress.quickPlayRound`); when every road is
-finished, the last round of the hardest one. Leaving that round shows its road, and the road's
-back button returns to the menu. The smaller map button next to it leads to the themes and roads.
+The map is the hub. Play on the menu opens the map of the road the player was on last, with
+their theme (both remembered in preferences), centred on the next round; a first-time player
+lands on the road where play is (`Progress.quickPlayRound`). The map's header holds a small
+theme card and a small road button: tapping one opens the theme or difficulty screen as a
+picker, and choosing returns to the map. Rounds and mini-games return to the map; the map's
+back button returns to the menu.
 
 ## The well-done moment
 

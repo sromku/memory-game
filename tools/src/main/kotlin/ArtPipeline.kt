@@ -41,7 +41,6 @@ class ArtPipeline(
         add(Asset("button_start", 100, 200))
         add(Asset("button_start_lights", 150, 300))
         add(Asset("button_settings", 80, 160))
-        add(Asset("button_map", 80, 160))
         add(Asset("tooltip_play", 80, 160))
         add(Asset("time_bar", 120, 140))
         add(Asset("level_complete", 240, 400))
