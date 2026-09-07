@@ -14,6 +14,7 @@ import android.graphics.drawable.Drawable
 import android.view.animation.AccelerateDecelerateInterpolator
 import kotlin.math.PI
 import kotlin.math.sin
+import kotlin.random.Random
 
 /**
  * Draws a [RenderedCharacter] and brings it to life: an idle loop (breathing squash-and-stretch,
@@ -33,6 +34,10 @@ class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), A
     private var blink = 0f              // 1 = eyes fully closed
     private var hop = 0f                // 0 = on the ground, 1 = top of the hop
     private var hopRotation = 0f
+    private var hopHeight = 0.18f
+
+    /** Where the feet are, as a fraction of the drawable's height from the top. */
+    val feetFraction: Float get() = character.feetY / maxOf(character.width, character.height)
 
     private val idle = ValueAnimator.ofFloat(0f, 1f).apply {
         duration = IDLE_PERIOD_MS
@@ -64,7 +69,7 @@ class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), A
         val squash = if (hop > 0f) 1f + 0.12f * hop else 1f + 0.03f * breath
         val stretchX = if (hop > 0f) 1f - 0.08f * hop else 1f - 0.02f * breath
         val sway = if (hop > 0f) hopRotation else 2f * sin(phase * 2 * PI + 1).toFloat()
-        val lift = hop * drawnH * 0.18f
+        val lift = hop * drawnH * hopHeight
 
         matrix.reset()
         matrix.postTranslate(-character.width / 2, -character.height)          // pivot at the feet
@@ -101,14 +106,16 @@ class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), A
         }
     }
 
-    /** A quick joyful jump, used when the card's pair is found. */
+    /** A quick joyful jump, used when the card's pair is found. Each hop leans a random way and height. */
     fun hop() {
+        val lean = (if (Random.nextBoolean()) 1f else -1f) * (6f + Random.nextFloat() * 8f)
+        hopHeight = 0.12f + Random.nextFloat() * 0.1f
         ValueAnimator.ofFloat(0f, 1f, 0f).apply {
             duration = HOP_MS
             interpolator = AccelerateDecelerateInterpolator()
             addUpdateListener {
                 hop = it.animatedValue as Float
-                hopRotation = 12f * sin(it.animatedFraction * PI).toFloat()
+                hopRotation = lean * sin(it.animatedFraction * PI).toFloat()
                 invalidateSelf()
             }
             start()

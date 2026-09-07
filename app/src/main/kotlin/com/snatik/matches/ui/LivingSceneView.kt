@@ -119,7 +119,10 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         for (v in visitors) {
             val size = (height * VISITOR_HEIGHT * v.scale).toInt()
             val cx = left + v.x * drawnW
-            v.drawable.setBounds((cx - size / 2).toInt(), (grassY - size * 0.94f).toInt(), (cx + size / 2).toInt(), (grassY + size * 0.06f).toInt())
+            // Feet on the grass: the character box extends below the feet to hold the shadow.
+            val feet = v.drawable.feetFraction * size
+            val boxTop = grassY - feet + size * 0.02f
+            v.drawable.setBounds((cx - size / 2).toInt(), boxTop.toInt(), (cx + size / 2).toInt(), (boxTop + size).toInt())
             v.drawable.draw(canvas)
             if (running && t > v.nextHopAt) {
                 v.drawable.hop()

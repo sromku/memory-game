@@ -25,6 +25,9 @@ class Character(
 
     val hasEyes: Boolean get() = parts.any { it.group == Group.EYE || it.group == Group.PUPIL }
 
+    /** The lowest point of the body in character units; the drop shadow lies below it. */
+    val feetY: Float = parts.filter { it.group == Group.BODY }.maxOfOrNull { it.bounds.bottom } ?: height
+
     companion object {
         fun load(assets: AssetManager, name: String): Character? {
             val text = runCatching { assets.open("characters/$name.chr").bufferedReader().readText() }.getOrNull() ?: return null
