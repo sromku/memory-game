@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
         popups = PopupHost(binding.popupContainer, lifecycleScope) { shown -> popupBackCallback.isEnabled = shown }
         backgrounds = BackgroundCrossfader(binding.backgroundDefault, binding.backgroundTheme, lifecycleScope)
-        backgrounds.loadDefault()
+        backgrounds.loadDefault(assets)
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {

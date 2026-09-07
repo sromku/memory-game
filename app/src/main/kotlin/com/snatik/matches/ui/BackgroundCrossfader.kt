@@ -1,12 +1,19 @@
 package com.snatik.matches.ui
 
+import android.content.res.AssetManager
 import android.widget.ImageView
 import com.snatik.matches.R
 import com.snatik.matches.game.GameTheme
 import com.snatik.matches.ui.image.BitmapLoader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import com.snatik.matches.ui.character.Character
+import com.snatik.matches.ui.character.CharacterDrawable
+import com.snatik.matches.ui.character.RenderedCharacter
+import com.snatik.matches.ui.menu.MenuVisitors
 
 /**
  * The default background sits in [base]; a theme's background is decoded in the background and
@@ -23,9 +30,16 @@ class BackgroundCrossfader(
     private val screenWidth get() = base.resources.displayMetrics.widthPixels
     private val screenHeight get() = base.resources.displayMetrics.heightPixels
 
-    fun loadDefault() {
+    fun loadDefault(assets: AssetManager) {
         scope.launch {
             base.setScene(BitmapLoader.decodeSampled(base.resources, R.drawable.background, screenWidth, screenHeight))
+            // The menu's animals: a sixth of the screen tall, rasterised once each, off the main thread.
+            val placed = MenuVisitors.visitors.map { visitor ->
+                val character = withContext(Dispatchers.IO) { Character.load(assets, visitor.name) } ?: return@map null
+                val size = (screenHeight * 0.19f * visitor.scale * 1.2f).toInt()
+                visitor to CharacterDrawable(RenderedCharacter.render(character, size))
+            }.filterNotNull()
+            base.setVisitors(placed)
         }
     }
 

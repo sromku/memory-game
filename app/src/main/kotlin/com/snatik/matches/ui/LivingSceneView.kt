@@ -12,8 +12,11 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.graphics.withMatrix
 import androidx.core.graphics.withTranslation
+import com.snatik.matches.ui.character.CharacterDrawable
+import com.snatik.matches.ui.menu.MenuVisitor
 import kotlin.math.PI
 import kotlin.math.sin
+import kotlin.random.Random
 
 /**
  * The menu backdrop, gently alive: the trees lean a little in the wind (the band of the picture
@@ -38,6 +41,16 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
     private val treeTop = 0.33f
     private val grassLine = 0.825f
 
+    private companion object {
+        /** A visitor stands about a sixth of the screen tall. */
+        const val VISITOR_HEIGHT = 0.19f
+    }
+
+    /** An animal standing on the grass: its drawable animates itself; the view only places it and nudges a hop now and then. */
+    private class Visitor(val x: Float, val scale: Float, val drawable: CharacterDrawable, var nextHopAt: Float)
+    private val visitors = mutableListOf<Visitor>()
+    private val random = Random(System.nanoTime())
+
     private class Cloud(val y: Float, val size: Float, val speed: Float, val phase: Float)
     private val clouds = listOf(Cloud(0.07f, 0.085f, 0.014f, 0.15f), Cloud(0.17f, 0.06f, 0.010f, 0.62f), Cloud(0.11f, 0.045f, 0.019f, 0.90f))
 
@@ -46,8 +59,29 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         invalidate()
     }
 
-    fun start() { running = true; postInvalidateOnAnimation() }
-    fun stop() { running = false }
+    /** Puts animals on the grass; each keeps breathing and blinking through its own drawable. */
+    fun setVisitors(placed: List<Pair<MenuVisitor, CharacterDrawable>>) {
+        visitors.forEach { it.drawable.stop(); it.drawable.callback = null }
+        visitors.clear()
+        val now = (System.currentTimeMillis() - startMillis) / 1000f
+        for ((visitor, drawable) in placed) {
+            drawable.callback = this
+            visitors += Visitor(visitor.x, visitor.scale, drawable, now + 2f + random.nextFloat() * 6f)
+        }
+        if (running) visitors.forEach { it.drawable.start() }
+        invalidate()
+    }
+
+    fun start() {
+        running = true
+        visitors.forEach { it.drawable.start() }
+        postInvalidateOnAnimation()
+    }
+
+    fun stop() {
+        running = false
+        visitors.forEach { it.drawable.stop() }
+    }
 
     override fun onDetachedFromWindow() { stop(); super.onDetachedFromWindow() }
 
@@ -79,6 +113,19 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         val lean = 0.012f * sin(t * 2 * PI / 6.5).toFloat() + 0.004f * sin(t * 2 * PI / 1.7 + 1).toFloat()
         matrix.reset(); matrix.setSkew(lean, 0f, 0f, dst.bottom)
         canvas.withMatrix(matrix) { drawBitmap(bitmap, src, dst, paint) }
+
+        // 4. The animals, feet on the grass line, in front of the trees.
+        val grassY = top + grassLine * drawnH
+        for (v in visitors) {
+            val size = (height * VISITOR_HEIGHT * v.scale).toInt()
+            val cx = left + v.x * drawnW
+            v.drawable.setBounds((cx - size / 2).toInt(), (grassY - size * 0.94f).toInt(), (cx + size / 2).toInt(), (grassY + size * 0.06f).toInt())
+            v.drawable.draw(canvas)
+            if (running && t > v.nextHopAt) {
+                v.drawable.hop()
+                v.nextHopAt = t + 4f + random.nextFloat() * 8f
+            }
+        }
 
         if (running) postInvalidateOnAnimation()
     }
