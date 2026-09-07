@@ -6,6 +6,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.snatik.matches.audio.SoundPlayer
 import com.snatik.matches.data.GamePreferences
+import com.snatik.matches.data.ProgressStore
+import com.snatik.matches.game.progression.Progress
+import com.snatik.matches.game.progression.Road
+import com.snatik.matches.game.progression.RoundResult
+import com.snatik.matches.game.progression.RoundSpec
 import com.snatik.matches.game.Board
 import com.snatik.matches.game.Difficulty
 import com.snatik.matches.game.Game
@@ -49,7 +54,11 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private val preferences = GamePreferences(application)
+    private val progressStore = ProgressStore(application, viewModelScope)
     private val sounds = SoundPlayer(application)
+
+    /** The player's roads; screens observe this in later milestones. */
+    val progress: StateFlow<Progress> = progressStore.progress
 
     private val _selectedTheme = MutableStateFlow<GameTheme?>(null)
     val selectedTheme: StateFlow<GameTheme?> = _selectedTheme.asStateFlow()
@@ -186,9 +195,14 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         roundJob = Job()
         pausedAtMillis = null
         while (boardEvents.tryReceive().isSuccess) Unit // drop effects of the previous round
+        // Until the level map ships, every game plays as the next open round of its road; a finished
+        // road replays its last round.
+        val spec = progressStore.progress.value.nextRound(difficulty)
+            ?: RoundSpec(difficulty, Road.ROUNDS_PER_DIFFICULTY)
         val round = Game(
             theme = theme,
             difficulty = difficulty,
+            round = spec,
             board = Board.create(difficulty.tileCount, theme.characters.indices.toList()),
             startedAtMillis = SystemClock.elapsedRealtime(),
         )
@@ -201,6 +215,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         val result = GameResult.compute(game.difficulty, game.theme.id, passedSeconds(game))
         game.result = result
         preferences.recordResult(game.theme, game.difficulty, result.stars, result.passedSeconds)
+        progressStore.record(game.round, RoundResult(result.stars, result.passedSeconds))
         launchInRound {
             delay(WON_DELAY_MS)
             boardEvents.send(BoardEvent.Won(result))

@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.snatik.matches.game.Difficulty
 import com.snatik.matches.game.GameTheme
+import com.snatik.matches.game.progression.RoundResult
 
 /**
  * Best stars and times per theme and difficulty, plus the sound switch.
@@ -22,6 +23,12 @@ class GamePreferences(private val prefs: SharedPreferences) {
     /** Best completion time in seconds, or null if the level was never completed. */
     fun bestTimeSeconds(theme: GameTheme, difficulty: Difficulty): Int? =
         prefs.getInt(timeKey(theme.id, difficulty.level), NO_TIME).takeIf { it != NO_TIME }
+
+    /** The best 1.x result for a difficulty across all themes, for migration into the progress store. */
+    fun bestAcrossThemes(difficulty: Difficulty): RoundResult? =
+        GameTheme.entries.mapNotNull { theme ->
+            bestTimeSeconds(theme, difficulty)?.let { RoundResult(highStars(theme, difficulty), it) }
+        }.reduceOrNull { best, next -> best.improvedBy(next) }
 
     /** Average star count over all difficulties, 0..3, used for the theme card art. */
     fun averageStars(theme: GameTheme): Int =

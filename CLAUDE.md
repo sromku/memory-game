@@ -31,4 +31,9 @@ build when it can detect a violation; the rest is judgement.
   are traced vectors (tools/CharacterTracer.kt); fix wrong eye tagging in art/character-overrides.txt.
 - Preference keys and file name in GamePreferences are a compatibility contract with the 2019
   release; a test guards them.
+- Player progress (rounds, stars, times) lives in files/progress.txt via ProgressStore; the format
+  is ProgressCodec's and is versioned by its header. Game rules for roads and rounds are pure Kotlin
+  in game/progression with unit tests; see docs/design/progression.md before changing them.
+- Testing on the user's Pixel 10 Pro: `export ANDROID_SERIAL=57221FDCH009VC`; do not start emulators
+  unless the user asks for one.
 - Run the game on the MemoryGame_* emulators only, on a fixed port with ANDROID_SERIAL set.
