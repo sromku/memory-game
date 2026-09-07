@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menu button that opens the themes and roads: the settings button's round red face with a road of three stops. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#B22A05"
+        android:pathData="M50,3 a47,47 0 1,0 0.001,0 z" />
+    <path
+        android:fillColor="#FB4B0B"
+        android:pathData="M50,9 a41,41 0 1,0 0.001,0 z" />
+    <path
+        android:fillColor="#FF6A33"
+        android:pathData="M50,13 a37,37 0 0,1 37,37 a37,24 0 0,0 -74,0 a37,37 0 0,1 37,-37 z" />
+    <path
+        android:pathData="M27,70 C43,70 40,50 50,50 C60,50 57,30 73,30"
+        android:strokeColor="#FDFDFD"
+        android:strokeLineCap="round"
+        android:strokeWidth="7" />
+    <path
+        android:fillColor="#FDFDFD"
+        android:pathData="M27,70 a8.5,8.5 0 1,0 0.001,0 z M50,50 a8.5,8.5 0 1,0 0.001,0 z M73,30 a8.5,8.5 0 1,0 0.001,0 z" />
+    <path
+        android:fillColor="#FB4B0B"
+        android:pathData="M27,70 a4,4 0 1,0 0.001,0 z M50,50 a4,4 0 1,0 0.001,0 z" />
+    <path
+        android:fillColor="#FEDD09"
+        android:pathData="M73,30 a4.5,4.5 0 1,0 0.001,0 z" />
+</vector>

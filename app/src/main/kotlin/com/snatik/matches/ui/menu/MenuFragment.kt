@@ -31,16 +31,28 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
             // Traced vectors: inflate them off the main thread so the first frame is not held up.
             binding.startGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_start))
             binding.settingsGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_settings))
+            binding.mapGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_map))
             binding.tooltip.setImageDrawable(requireContext().loadDrawable(R.drawable.tooltip_play))
         }
         binding.settingsGameButton.isSoundEffectsEnabled = false
         binding.settingsGameButton.setOnClickListener { viewModel.openSettings() }
-        binding.startGameButton.setOnClickListener { button ->
-            button.isEnabled = false
-            animateAllAssetsOff(binding) { viewModel.startPressed() }
-        }
+        // The big button plays straight away; the map button is the way to themes and roads.
+        binding.startGameButton.setOnClickListener { leave(binding, viewModel::quickPlay) }
+        binding.mapGameButton.setOnClickListener { leave(binding, viewModel::openThemes) }
         startLightsAnimation(binding)
         startTooltipAnimation(binding)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Also reached by going back from a road or a quick game; the background returns to default.
+        viewModel.clearTheme()
+    }
+
+    private fun leave(binding: MenuFragmentBinding, then: () -> Unit) {
+        binding.startGameButton.isEnabled = false
+        binding.mapGameButton.isEnabled = false
+        animateAllAssetsOff(binding, then)
     }
 
     override fun onDestroyView() {
@@ -63,12 +75,16 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
             interpolator = slide
             duration = slideDuration
         }
+        val map = ObjectAnimator.ofFloat(binding.mapGameButton, View.TRANSLATION_Y, 120.dp(binding.root)).apply {
+            interpolator = slide
+            duration = slideDuration
+        }
         val start = ObjectAnimator.ofFloat(binding.startGameButton, View.TRANSLATION_Y, 130.dp(binding.root)).apply {
             interpolator = slide
             duration = slideDuration
         }
         AnimatorSet().apply {
-            playTogether(title, lightsX, lightsY, tooltip, settings, start)
+            playTogether(title, lightsX, lightsY, tooltip, settings, map, start)
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) = onEnd()
             })

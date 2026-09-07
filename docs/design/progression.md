@@ -56,8 +56,24 @@ own time, so later rounds are judged more strictly.
 The map is a single custom view: `RoadGeometry` (pure) places the rounds, `RoadNode` (pure) says
 what state each is in, `RoadMapView` paints, scrolls and animates.
 
+## Quick play
+
+The big button on the menu starts a round at once: a random theme, and the next round of the
+highest open road that still has rounds left (`Progress.quickPlayRound`); when every road is
+finished, the last round of the hardest one. Leaving that round shows its road, and the road's
+back button returns to the menu. The smaller map button next to it leads to the themes and roads.
+
+## The well-done moment
+
+When the last pair is found, confetti bursts from the middle of the screen and three of the
+round's characters come up onto the ground of the background and hop about under the "level
+complete" popup until the player moves on. `CelebrationView` draws both; the characters animate
+themselves as they do on cards and on the menu. Their feet stand on the theme's ground line
+(`GameTheme.groundLine`, a fraction of the background image, mapped through the centre-crop maths
+in `CenterCrop`).
+
 ## What ships when
 
 - Milestone 1 (this): model, store, migration, recording of results. Screens unchanged.
 - Milestone 2 (this): the level map, per-round time, special rounds marked on the map.
-- Milestone 3: quick play and the celebration between rounds.
+- Milestone 3 (this): quick play and the celebration between rounds.

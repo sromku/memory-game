@@ -19,4 +19,10 @@
     <color name="road_shadow">#40000000</color>
     <color name="road_star_slot">#62D1FB</color>
     <color name="road_star_slot_rim">#3E9BCB</color>
+
+    <!-- confetti, with the road colours above -->
+    <color name="confetti_red">#F0511E</color>
+    <color name="confetti_green">#7ED957</color>
+    <color name="confetti_orange">#FF9F1C</color>
+    <color name="confetti_pink">#FF6FAE</color>
 </resources>

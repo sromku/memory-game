@@ -8,6 +8,7 @@ import com.snatik.matches.audio.SoundPlayer
 import com.snatik.matches.data.GamePreferences
 import com.snatik.matches.data.ProgressStore
 import com.snatik.matches.game.progression.Progress
+import com.snatik.matches.game.progression.Road
 import com.snatik.matches.game.progression.RoundResult
 import com.snatik.matches.game.progression.RoundSpec
 import com.snatik.matches.game.Board
@@ -97,8 +98,20 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     /** Hands over the round that just finished, once, so the map can celebrate it. */
     fun consumeFinishedRound(): RoundSpec? = finishedRound.also { finishedRound = null }
 
-    fun startPressed() {
+    fun openThemes() {
         uiEvents.trySend(UiEvent.OpenThemeSelect)
+    }
+
+    /** One tap from the menu into a round: a random theme, the road's next round where play is. */
+    fun quickPlay() {
+        val current = progress.value
+        val round = current.quickPlayRound()
+            ?: RoundSpec(Difficulty.entries.last(current::isUnlocked), Road.ROUNDS_PER_DIFFICULTY)
+        val theme = GameTheme.entries.random()
+        _selectedTheme.value = theme
+        _selectedDifficulty.value = round.difficulty
+        startRound(theme, round)
+        uiEvents.trySend(UiEvent.OpenGame)
     }
 
     fun selectTheme(theme: GameTheme) {

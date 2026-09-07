@@ -91,8 +91,11 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                 push(GameFragment(), BACK_STACK_GAME)
             }
-            UiEvent.ReturnToRoadMap ->
+            UiEvent.ReturnToRoadMap -> {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                // A quick game came straight from the menu; its road is shown on the way back.
+                if (!isOnBackStack(BACK_STACK_ROAD)) push(RoadMapFragment(), BACK_STACK_ROAD)
+            }
             UiEvent.ShowSettings -> popups.showSettings(
                 soundEnabled = viewModel.soundEnabled.value,
                 onToggleSound = viewModel::toggleSound,
@@ -120,6 +123,9 @@ class MainActivity : AppCompatActivity() {
             addToBackStack(name)
         }
     }
+
+    private fun isOnBackStack(name: String): Boolean =
+        (0 until supportFragmentManager.backStackEntryCount).any { supportFragmentManager.getBackStackEntryAt(it).name == name }
 
     private val currentFragment: Fragment?
         get() = supportFragmentManager.findFragmentById(R.id.fragment_container)

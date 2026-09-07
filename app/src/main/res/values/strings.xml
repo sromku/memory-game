@@ -13,7 +13,8 @@
     <string name="clock_format">" %1$02d:%2$02d"</string>
     <string name="score_format">%1$d</string>
 
-    <string name="cd_start_game">Start game</string>
+    <string name="cd_quick_play">Play</string>
+    <string name="cd_map">Themes and roads</string>
     <string name="cd_settings">Settings</string>
     <string name="cd_theme_animals">Animals theme</string>
     <string name="cd_theme_monsters">Monsters theme</string>
