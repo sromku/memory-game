@@ -61,7 +61,13 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
     private val phrases = resources.getStringArray(R.array.animal_phrases)
     private var lastPhrase = -1
     private val bubblePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFFFFFFFF.toInt() }
-    private val bubbleRim = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFF8B2A0F.toInt(); style = Paint.Style.STROKE }
+    private val bubbleRim = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = 0xFF2EAED9.toInt() // the blue of the game's tooltip and text shadows
+        style = Paint.Style.STROKE
+        strokeJoin = Paint.Join.ROUND
+    }
+    private val bubbleShadow = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0x30000000 }
+    private val tailPath = Path()
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = 0xFF1E2D33.toInt()
         textAlign = Paint.Align.CENTER
@@ -181,7 +187,8 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         val alpha = if (age > BUBBLE_SECONDS - 0.4f) ((BUBBLE_SECONDS - age) / 0.4f).coerceIn(0f, 1f) else 1f
         textPaint.textSize = height * 0.045f
         textPaint.alpha = (255 * alpha).toInt(); bubblePaint.alpha = (255 * alpha).toInt(); bubbleRim.alpha = (255 * alpha).toInt()
-        bubbleRim.strokeWidth = height * 0.004f
+        bubbleShadow.alpha = (0x30 * alpha).toInt()
+        bubbleRim.strokeWidth = height * 0.0065f
         val padX = textPaint.textSize * 0.7f
         val bw = textPaint.measureText(text) + 2 * padX
         val bh = textPaint.textSize * 1.9f
@@ -190,10 +197,17 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         val bottom = v.box.top - tail - height * 0.01f
         val r = bh * 0.45f
         canvas.withScale(pop, pop, v.box.exactCenterX(), bottom + tail) {
+            // One outline around body and tail: the rounded box and a curved tail are merged into a single path.
             bubble.rewind()
             bubble.addRoundRect(cx - bw / 2, bottom - bh, cx + bw / 2, bottom, r, r, Path.Direction.CW)
             val tx = v.box.exactCenterX().coerceIn(cx - bw / 2 + r, cx + bw / 2 - r)
-            bubble.moveTo(tx - tail * 0.5f, bottom - 1f); bubble.lineTo(tx, bottom + tail); bubble.lineTo(tx + tail * 0.5f, bottom - 1f); bubble.close()
+            tailPath.rewind()
+            tailPath.moveTo(tx - tail * 0.7f, bottom - r * 0.5f)
+            tailPath.quadTo(tx - tail * 0.2f, bottom + tail * 0.45f, tx + tail * 0.05f, bottom + tail)
+            tailPath.quadTo(tx + tail * 0.3f, bottom + tail * 0.35f, tx + tail * 0.7f, bottom - r * 0.5f)
+            tailPath.close()
+            bubble.op(tailPath, Path.Op.UNION)
+            canvas.withTranslation(0f, height * 0.006f) { drawPath(bubble, bubbleShadow) }
             drawPath(bubble, bubblePaint)
             drawPath(bubble, bubbleRim)
             drawText(text, cx, bottom - bh / 2 - (textPaint.descent() + textPaint.ascent()) / 2, textPaint)
