@@ -32,6 +32,9 @@ class PopupWonView(
     init {
         scaleX = 0f
         scaleY = 0f
+        // The clock and star boxes are part of the picture, so the values stay where the picture puts them
+        // even in right-to-left languages.
+        layoutDirection = LAYOUT_DIRECTION_LTR
         background = frame
         binding.buttonBack.setOnClickListener { onBack() }
         binding.buttonNext.setOnClickListener { onNext() }

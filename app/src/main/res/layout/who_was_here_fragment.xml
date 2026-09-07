@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,9 +14,17 @@
     <TextView
         android:id="@+id/prompt"
         style="@style/RoadHeaderText"
+        android:layout_width="match_parent"
         android:layout_gravity="center_horizontal|top"
+        android:layout_marginStart="@dimen/who_prompt_margin_side"
         android:layout_marginTop="@dimen/who_prompt_margin_top"
+        android:layout_marginEnd="@dimen/who_prompt_margin_side"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
         android:textSize="@dimen/who_prompt_text_size"
+        app:autoSizeMaxTextSize="@dimen/who_prompt_text_size"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeTextType="uniform"
         android:visibility="invisible"
         tools:text="@string/who_missing"
         tools:visibility="visible" />

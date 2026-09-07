@@ -91,8 +91,9 @@ class ArtPipeline(
             // Resource folders still use the old code for Indonesian.
             val locale = localized.nameWithoutExtension.removePrefix("title-").let { if (it == "id") "in" else it }
             val target = res.resolve("drawable-$locale-nodpi/title.webp")
+            val m = upscaled(localized) // the master is made first, so a missing one never counts as up to date
             if (upToDate(target, master.resolve(localized.name))) continue
-            writeWebp(scaled(upscaled(localized), LOCALIZED_TITLE_WIDTH, -1), target)
+            writeWebp(scaled(m, LOCALIZED_TITLE_WIDTH, -1), target)
         }
         // The largest screens are 2560 px wide: 3x of 1024 covers them, and so does 2x of 1880.
         background("background", 3760)
@@ -152,7 +153,7 @@ class ArtPipeline(
     /** 4x Real-ESRGAN result, cached in art/master. */
     private fun upscaled(source: File): BufferedImage {
         val out = master.resolve(source.relativeTo(original).path)
-        if (!out.exists()) {
+        if (!out.exists() || out.lastModified() < source.lastModified()) { // a redrawn original gets a fresh master
             out.parentFile.mkdirs()
             run(realesrgan.path, "-i", source.path, "-o", out.path, "-n", "realesrgan-x4plus-anime", "-s", "4", "-m", realesrgan.parentFile.resolve("models").path)
             log("upscaled ${source.relativeTo(original)}")

@@ -95,4 +95,8 @@
     <!-- language popup -->
     <dimen name="popup_language_padding_bottom">34dp</dimen>
     <dimen name="popup_language_row_padding">5dp</dimen>
+
+    <!-- text that shrinks to fit -->
+    <dimen name="who_prompt_margin_side">90dp</dimen>
+    <dimen name="popup_settings_row_end">22dp</dimen>
 </resources>

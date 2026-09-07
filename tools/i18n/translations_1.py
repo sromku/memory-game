@@ -26,7 +26,7 @@ LANGS['es'] = dict(
              '¡Día de sol!', '¡Solecito!', '¡Mira, una nube!', '¡Arcoíris!', '¡Mariposa!', '¡Flores!', '¡Brilla!', '¡Ñam!', 'Ñam ñam', '¿Merienda?',
              '¿Siesta?', 'Zzz… ¡ah, hola!', '¡A bailar!', 'La la la', '¡Pío!', '¿Mu?', '¡Cuac!', '¡Oinc!', '¡Guau!', '¡Miau!'],
     greetings=['¡Hola! ¡A jugar!', '¡Hola, amigo!', '¡Estás aquí! ¡Bien!', '¡Qué alegría verte!', '¿Listo para jugar?', '¡Hola hola! ¡Ven a jugar!', '¡Bienvenido otra vez!'],
-    title=('Memoria', 'juego para niños'),
+    title=('Juego de memoria', 'para niños'),
 )
 
 LANGS['pt-rBR'] = dict(
@@ -54,7 +54,7 @@ LANGS['pt-rBR'] = dict(
              'Dia de sol!', 'Solzinho!', 'Olha, uma nuvem!', 'Arco-íris!', 'Borboleta!', 'Flores!', 'Brilha!', 'Hum!', 'Nhac nhac', 'Hora do lanche?',
              'Hora da soneca?', 'Zzz… ah, oi!', 'Vamos dançar!', 'La la la', 'Piu!', 'Muu?', 'Quá!', 'Oinc!', 'Au au!', 'Miau!'],
     greetings=['Oi! Vamos brincar!', 'Olá, amigo!', 'Você chegou! Eba!', 'Bom te ver!', 'Pronto para brincar?', 'Oi oi! Vem brincar!', 'Bem-vindo de volta!'],
-    title=('Memória', 'jogo para crianças'),
+    title=('Jogo da memória', 'para crianças'),
 )
 
 LANGS['fr'] = dict(
@@ -82,7 +82,7 @@ LANGS['fr'] = dict(
              'Il fait beau !', 'Du soleil !', 'Regarde, un nuage !', 'Arc-en-ciel !', 'Papillon !', 'Des fleurs !', 'Ça brille !', 'Miam !', 'Miam miam', 'Un goûter ?',
              'Une sieste ?', 'Zzz… oh, salut !', 'On danse !', 'La la la', 'Piou !', 'Meuh ?', 'Coin !', 'Groin !', 'Ouaf !', 'Miaou !'],
     greetings=['Salut ! On joue ?', 'Bonjour, l\'ami !', 'Tu es là ! Youpi !', 'Content de te voir !', 'Prêt à jouer ?', 'Coucou ! Viens jouer !', 'Bon retour !'],
-    title=('Mémoire', 'jeu pour enfants'),
+    title=('Jeu de mémoire', 'pour enfants'),
 )
 
 LANGS['de'] = dict(
@@ -110,7 +110,7 @@ LANGS['de'] = dict(
              'Sonniger Tag!', 'Sonnenschein!', 'Schau, eine Wolke!', 'Regenbogen!', 'Schmetterling!', 'Blumen!', 'Glitzer!', 'Lecker!', 'Mampf mampf', 'Snackzeit?',
              'Schlafenszeit?', 'Zzz… oh, hallo!', 'Lass uns tanzen!', 'La la la', 'Piep!', 'Muh?', 'Quak!', 'Oink!', 'Wau!', 'Miau!'],
     greetings=['Hi! Lass uns spielen!', 'Hallo, Freund!', 'Du bist da! Juhu!', 'Schön, dich zu sehen!', 'Bereit zum Spielen?', 'Hi hi! Komm spielen!', 'Willkommen zurück!'],
-    title=('Memory', 'Spiel für Kinder'),
+    title=('Memory-Spiel', 'für Kinder'),
 )
 
 LANGS['it'] = dict(
@@ -138,5 +138,5 @@ LANGS['it'] = dict(
              'Giornata di sole!', 'Sole!', 'Guarda, una nuvola!', 'Arcobaleno!', 'Farfalla!', 'Fiori!', 'Brilla!', 'Gnam!', 'Gnam gnam', 'Merenda?',
              'Pisolino?', 'Zzz… oh, ciao!', 'Balliamo!', 'La la la', 'Pio!', 'Muu?', 'Qua!', 'Oink!', 'Bau!', 'Miao!'],
     greetings=['Ciao! Giochiamo!', 'Ciao, amico!', 'Sei qui! Evviva!', 'Che bello vederti!', 'Pronto a giocare?', 'Ciao ciao! Vieni a giocare!', 'Bentornato!'],
-    title=('Memoria', 'gioco per bambini'),
+    title=('Gioco di memoria', 'per bambini'),
 )

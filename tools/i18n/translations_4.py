@@ -138,5 +138,5 @@ LANGS['ms'] = dict(
              'Hari cerah!', 'Cahaya matahari!', 'Tengok, awan!', 'Pelangi!', 'Rama-rama!', 'Bunga!', 'Berkilau!', 'Sedap!', 'Nyam nyam', 'Masa makan?',
              'Masa tidur?', 'Zzz… oh, hai!', 'Jom menari!', 'La la la', 'Ciap!', 'Moo?', 'Kwek!', 'Oink!', 'Guk!', 'Meow!'],
     greetings=['Hai! Jom main!', 'Helo, kawan!', 'Awak datang! Yeay!', 'Seronok jumpa awak!', 'Sedia untuk main?', 'Hai hai! Jom main!', 'Selamat kembali!'],
-    title=('Memori', 'permainan kanak-kanak'),
+    title=('Permainan Memori', 'untuk kanak-kanak'),
 )

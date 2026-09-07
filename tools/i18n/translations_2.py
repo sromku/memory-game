@@ -26,7 +26,7 @@ LANGS['ru'] = dict(
              'Солнечный день!', 'Солнышко!', 'Смотри, облако!', 'Радуга!', 'Бабочка!', 'Цветочки!', 'Блеск!', 'Ням!', 'Ням-ням', 'Перекусим?',
              'Поспим?', 'Zzz… ой, привет!', 'Потанцуем!', 'Ля-ля-ля', 'Пи-пи!', 'Му?', 'Кря!', 'Хрю!', 'Гав!', 'Мяу!'],
     greetings=['Привет! Давай играть!', 'Привет, дружок!', 'Ты пришёл! Ура!', 'Рад тебя видеть!', 'Готов играть?', 'Привет-привет! Иди играть!', 'С возвращением!'],
-    title=('Память', 'игра для детей'),
+    title=('Игра на память', 'для детей'),
 )
 
 LANGS['uk'] = dict(
@@ -54,7 +54,7 @@ LANGS['uk'] = dict(
              'Сонячний день!', 'Сонечко!', 'Дивись, хмаринка!', 'Веселка!', 'Метелик!', 'Квіточки!', 'Блиск!', 'Ням!', 'Ням-ням', 'Перекусимо?',
              'Поспимо?', 'Zzz… ой, привіт!', 'Потанцюймо!', 'Ля-ля-ля', 'Ців!', 'Му?', 'Кря!', 'Хрю!', 'Гав!', 'Няв!'],
     greetings=['Привіт! Граймо!', 'Привіт, друже!', 'Ти прийшов! Ура!', 'Радий тебе бачити!', 'Готовий грати?', 'Привіт-привіт! Ходи грати!', 'З поверненням!'],
-    title=("Пам'ять", 'гра для дітей'),
+    title=("Гра на пам'ять", 'для дітей'),
 )
 
 LANGS['pl'] = dict(
@@ -82,7 +82,7 @@ LANGS['pl'] = dict(
              'Słoneczny dzień!', 'Słonko!', 'Patrz, chmurka!', 'Tęcza!', 'Motylek!', 'Kwiatki!', 'Błysk!', 'Mniam!', 'Mniam mniam', 'Przekąska?',
              'Drzemka?', 'Zzz… o, cześć!', 'Zatańczmy!', 'La la la', 'Pi pi!', 'Muu?', 'Kwa!', 'Chrum!', 'Hau!', 'Miau!'],
     greetings=['Cześć! Zagrajmy!', 'Hej, przyjacielu!', 'Jesteś! Hura!', 'Miło cię widzieć!', 'Gotowy do gry?', 'Hej hej! Chodź grać!', 'Witaj z powrotem!'],
-    title=('Pamięć', 'gra dla dzieci'),
+    title=('Gra pamięciowa', 'dla dzieci'),
 )
 
 LANGS['nl'] = dict(
@@ -110,7 +110,7 @@ LANGS['nl'] = dict(
              'Zonnige dag!', 'Zonnetje!', 'Kijk, een wolk!', 'Regenboog!', 'Vlinder!', 'Bloemen!', 'Glitter!', 'Mmm!', 'Nom nom', 'Snacktijd?',
              'Dutje doen?', 'Zzz… o, hoi!', 'Laten we dansen!', 'La la la', 'Piep!', 'Boe?', 'Kwak!', 'Knor!', 'Woef!', 'Miauw!'],
     greetings=['Hoi! Laten we spelen!', 'Hallo, vriend!', 'Je bent er! Joepie!', 'Leuk je te zien!', 'Klaar om te spelen?', 'Hoi hoi! Kom spelen!', 'Welkom terug!'],
-    title=('Memory', 'spel voor kinderen'),
+    title=('Memoryspel', 'voor kinderen'),
 )
 
 LANGS['tr'] = dict(
@@ -138,5 +138,5 @@ LANGS['tr'] = dict(
              'Güneşli gün!', 'Güneş!', 'Bak, bir bulut!', 'Gökkuşağı!', 'Kelebek!', 'Çiçekler!', 'Pırıl pırıl!', 'Mmm!', 'Ham ham', 'Atıştırma vakti mi?',
              'Uyku vakti mi?', 'Zzz… a, selam!', 'Hadi dans edelim!', 'La la la', 'Cik!', 'Möö?', 'Vak!', 'Oink!', 'Hav!', 'Miyav!'],
     greetings=['Selam! Hadi oynayalım!', 'Merhaba arkadaşım!', 'Geldin! Yaşasın!', 'Seni görmek güzel!', 'Oynamaya hazır mısın?', 'Selam selam! Gel oyna!', 'Tekrar hoş geldin!'],
-    title=('Hafıza', 'çocuk oyunu'),
+    title=('Hafıza Oyunu', 'çocuklar için'),
 )

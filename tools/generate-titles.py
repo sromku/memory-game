@@ -61,15 +61,17 @@ def text_mask(text, font, skew, rise):
 
 
 def fit_mask(text, font_file, max_w, max_h, skew, rise):
-    """The largest font size whose sheared text fits the box."""
+    """The largest font size whose sheared letters fit the box (the small upward tilt is applied after)."""
     size = max_h
     while size > 8:
-        mask = text_mask(text, load_font(font_file, size), skew, rise)
-        box = mask.getbbox()
+        flat = text_mask(text, load_font(font_file, size), skew, 0)
+        box = flat.getbbox()
         if box and box[2] - box[0] <= max_w and box[3] - box[1] <= max_h:
-            return mask.crop(box)
-        size = int(size * 0.94)
-    return mask.crop(mask.getbbox())
+            tilted = text_mask(text, load_font(font_file, size), skew, rise)
+            return tilted.crop(tilted.getbbox())
+        size = int(size * 0.96)
+    tilted = text_mask(text, load_font(font_file, size), skew, rise)
+    return tilted.crop(tilted.getbbox())
 
 
 def paint(mask, top, bottom, hatch, outline_px, shadow_px, hatch_lines):
@@ -102,17 +104,33 @@ def paint(mask, top, bottom, hatch, outline_px, shadow_px, hatch_lines):
     return layer
 
 
+RTL = {'ar'}
+
+
 def render(locale, big, small, fonts_dir):
     file = font_path(locale, fonts_dir)
     canvas = Image.new('RGBA', (W * S, H * S), (0, 0, 0, 0))
-    skew, rise = -0.16, 3.0
-    big_mask = fit_mask(big.upper() if locale not in CJK else big, file, int(W * S * 0.9), int(H * S * 0.66), skew, rise)
+    rtl = locale in RTL
+    skew, rise = (0.16, -3.0) if rtl else (-0.16, 3.0)   # the lean and the tilt follow the reading direction
+    # The English original: the big line fills the height and about three quarters of the width, the
+    # small line sits under its right end. Long translations get narrower letters, never a third line.
+    big_mask = fit_mask(big.upper() if locale not in CJK else big, file, int(W * S * 0.96), int(H * S * 0.62), skew, rise)
     big_layer = paint(big_mask, FILL_TOP, FILL_BOTTOM, HATCH, outline_px=max(4, big_mask.height // 22), shadow_px=max(5, big_mask.height // 16), hatch_lines=True)
-    canvas.alpha_composite(big_layer, (int(W * S * 0.02), int(H * S * 0.01)))
-    small_mask = fit_mask(small.upper() if locale not in CJK else small, file, int(W * S * 0.55), int(H * S * 0.27), skew, rise)
+    small_mask = fit_mask(small.upper() if locale not in CJK else small, file, int(W * S * 0.5), int(H * S * 0.25), skew, rise)
     small_layer = paint(small_mask, SMALL_FILL, SMALL_FILL, HATCH, outline_px=max(2, small_mask.height // 20), shadow_px=max(3, small_mask.height // 14), hatch_lines=False)
-    x = int(W * S * 0.6) - small_layer.width // 2
-    canvas.alpha_composite(small_layer, (x, int(H * S * 0.66)))
+    # The small line tucks under the big one (overlapping a little, as in the original). The pair is
+    # composed on a roomy canvas, then the whole is scaled to fill the title box, so every language
+    # is as large as it can be and nothing is ever cut off.
+    overlap = int(small_layer.height * 0.22)
+    room = Image.new('RGBA', (W * S * 2, H * S * 3), (0, 0, 0, 0))
+    big_x = room.width - big_layer.width - W * S // 2 if rtl else W * S // 2
+    room.alpha_composite(big_layer, (big_x, H * S))
+    small_x = (big_x + int(big_layer.width * (0.38 if rtl else 0.62))) - small_layer.width // 2
+    room.alpha_composite(small_layer, (small_x, H * S + big_layer.height - overlap))
+    block = room.crop(room.getbbox())
+    scale = min(W * S * 0.98 / block.width, H * S * 0.98 / block.height)
+    block = block.resize((max(1, int(block.width * scale)), max(1, int(block.height * scale))), Image.LANCZOS)
+    canvas.alpha_composite(block, ((W * S - block.width) // 2, (H * S - block.height) // 2))
     out = canvas.resize((W, H), Image.LANCZOS)
     out.save(os.path.join(ORIGINAL, f'title-{locale}.png'))
     print('title', locale, big, '/', small)
