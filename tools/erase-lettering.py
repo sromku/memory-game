@@ -18,7 +18,7 @@ LETTERED = os.path.join(ORIGINAL, 'lettered')
 BOXES = {
     'tooltip_play': [((0.2, 0.12, 0.8, 0.56), 'blue')],
     'settings_popup': [((0.27, 0.05, 0.73, 0.165), 'flat')],
-    'level_complete': [((0.14, 0.03, 0.86, 0.105), 'flat'), ((0.08, 0.42, 0.395, 0.53), 'flat'), ((0.07, 0.545, 0.385, 0.67), 'flat')],
+    'level_complete': [((0.14, 0.03, 0.86, 0.105), 'flat'), ((0.08, 0.42, 0.345, 0.53), 'flat'), ((0.07, 0.545, 0.352, 0.67), 'flat')],
 }
 for theme in ('animals', 'monsters', 'emoji'):
     for stars in range(4):
