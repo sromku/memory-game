@@ -16,8 +16,8 @@ android {
         minSdk = 24
         targetSdk = 36
         // The last published build was versionCode 1007 (versionName 1.01.001007). Every upload must be higher.
-        versionCode = 1009
-        versionName = "1.1.1"
+        versionCode = 1010
+        versionName = "1.2.0"
     }
 
     signingConfigs {
