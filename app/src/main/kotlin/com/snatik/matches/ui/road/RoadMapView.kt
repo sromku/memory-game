@@ -294,7 +294,7 @@ class RoadMapView @JvmOverloads constructor(context: Context, attrs: AttributeSe
             drawShape(this, node, cx, cy, r, nodeFillPaint)
             drawShape(this, node, cx, cy, r, nodeRimPaint)
             textPaint.alpha = if (node.state == RoadNode.State.LOCKED) LOCKED_TEXT_ALPHA else 255
-            drawText(index.toString(), cx, cy + textOffset, textPaint)
+            drawText(if (node.round.isSpecial) SPECIAL_LABEL else index.toString(), cx, cy + textOffset, textPaint)
             if (node.state == RoadNode.State.DONE) drawStars(this, node, cx, cy + r + radius * 0.5f, if (index == celebratedIndex) popProgress else 1f)
         }
     }
@@ -395,6 +395,8 @@ class RoadMapView @JvmOverloads constructor(context: Context, attrs: AttributeSe
 
     private companion object {
         const val MAX_STARS = 3
+        /** Special rounds are the mini-game; the map keeps that a surprise. */
+        const val SPECIAL_LABEL = "?"
         const val CENTER_Y = 0.52f
         const val AMPLITUDE = 0.17f
         const val SPECIAL_SCALE = 1.3f

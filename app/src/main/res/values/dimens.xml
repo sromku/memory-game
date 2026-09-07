@@ -77,4 +77,12 @@
     <dimen name="road_header_group_gap">22dp</dimen>
     <dimen name="road_header_margin_end">20dp</dimen>
     <dimen name="difficulty_lock_size">44dp</dimen>
+
+    <!-- who was here -->
+    <dimen name="who_choice_size">96dp</dimen>
+    <dimen name="who_choice_padding">10dp</dimen>
+    <dimen name="who_choice_gap">18dp</dimen>
+    <dimen name="who_choices_margin_top">68dp</dimen>
+    <dimen name="who_prompt_margin_top">12dp</dimen>
+    <dimen name="who_prompt_text_size">26dp</dimen>
 </resources>

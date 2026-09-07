@@ -17,6 +17,7 @@ import com.snatik.matches.game.Game
 import com.snatik.matches.game.GameEngine
 import com.snatik.matches.game.GameResult
 import com.snatik.matches.game.GameTheme
+import com.snatik.matches.game.minigame.WhoWasHere
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
@@ -39,6 +40,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object OpenDifficultySelect : UiEvent
         data object OpenRoadMap : UiEvent
         data object OpenGame : UiEvent
+        data object OpenWhoWasHere : UiEvent
         data object ReturnToRoadMap : UiEvent
         data object ShowSettings : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
@@ -85,6 +87,18 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     var game: Game? = null
         private set
 
+    /** A special round in progress: "Who was here?" on a theme, with its rules and its clock. */
+    class MiniGame(val theme: GameTheme, val round: RoundSpec, val rules: WhoWasHere, val startedAtMillis: Long) {
+        var result: GameResult? = null
+            internal set
+    }
+
+    var miniGame: MiniGame? = null
+        private set
+
+    /** The round being played, whichever kind of game it is. */
+    private val currentRound: RoundSpec? get() = game?.round ?: miniGame?.round
+
     private var clockJob: Job? = null
 
     /** When the app left the screen mid-round, so the pause does not count against the player. */
@@ -123,6 +137,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     fun clearTheme() {
         _selectedTheme.value = null
         game = null
+        miniGame = null
     }
 
     /** Opens the difficulty's road; roads that have not opened yet are ignored. */
@@ -132,10 +147,40 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         uiEvents.trySend(UiEvent.OpenRoadMap)
     }
 
+    /** Special rounds are the mini-game; every other round is a board of cards. */
     fun selectRound(round: RoundSpec) {
         val theme = _selectedTheme.value ?: return
-        startRound(theme, round)
-        uiEvents.trySend(UiEvent.OpenGame)
+        if (round.isSpecial) {
+            startMiniGame(theme, round)
+            uiEvents.trySend(UiEvent.OpenWhoWasHere)
+        } else {
+            startRound(theme, round)
+            uiEvents.trySend(UiEvent.OpenGame)
+        }
+    }
+
+    /** Answers the mini-game's current turn; true when the card was the missing character. */
+    fun answerWhoWasHere(choice: Int): Boolean {
+        val rules = miniGame?.rules ?: return false
+        val right = rules.answer(choice)
+        if (right && _soundEnabled.value) sounds.playCorrect()
+        return right
+    }
+
+    /** The mini-game's last turn is done: stars from its mistakes, recorded like any round. */
+    fun finishMiniGame() {
+        val mini = miniGame ?: return
+        if (mini.result != null || !mini.rules.isOver) return
+        val passed = ((SystemClock.elapsedRealtime() - mini.startedAtMillis) / 1000).toInt()
+        val stars = mini.rules.stars
+        val result = GameResult(stars = stars, score = stars * MINI_GAME_STAR_SCORE * mini.round.difficulty.level, remainingSeconds = 0, passedSeconds = passed)
+        mini.result = result
+        progressStore.record(mini.round, RoundResult(stars, passed))
+        finishedRound = mini.round
+        launchInRound {
+            delay(WON_DELAY_MS)
+            uiEvents.send(UiEvent.ShowWon(result))
+        }
     }
 
     fun openSettings() {
@@ -144,7 +189,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     /** From the "won" popup: the next round of the road, or back to the map when the road is done. */
     fun nextGame() {
-        val next = game?.round?.next
+        val next = currentRound?.next
         if (next == null) backToRoadMap() else {
             uiEvents.trySend(UiEvent.ClosePopup)
             selectRound(next)
@@ -212,10 +257,20 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         return true
     }
 
+    private fun startMiniGame(theme: GameTheme, round: RoundSpec) {
+        roundJob.cancel()
+        roundJob = Job()
+        clockJob?.cancel()
+        pausedAtMillis = null
+        game = null
+        miniGame = MiniGame(theme, round, WhoWasHere.create(round, theme.characters.size), SystemClock.elapsedRealtime())
+    }
+
     private fun startRound(theme: GameTheme, round: RoundSpec) {
         roundJob.cancel()
         roundJob = Job()
         pausedAtMillis = null
+        miniGame = null
         while (boardEvents.tryReceive().isSuccess) Unit // drop effects of the previous round
         val started = Game(
             theme = theme,
@@ -271,5 +326,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
         /** Delay between the last match and the "won" popup. */
         const val WON_DELAY_MS = 1200L
+
+        /** Score per star in the mini-game, times the difficulty level. */
+        const val MINI_GAME_STAR_SCORE = 100
     }
 }

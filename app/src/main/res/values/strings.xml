@@ -23,6 +23,9 @@
     <string name="cd_back">Back</string>
     <string name="cd_road_map">Rounds of this difficulty</string>
     <string name="cd_locked">Locked</string>
+    <string name="who_look">Look!</string>
+    <string name="who_missing">Who is missing?</string>
+    <string name="cd_choice">Card %1$d</string>
     <string name="cd_play_again">Play again</string>
     <string name="cd_star">Star</string>
     <string name="cd_sound_toggle">Toggle sound</string>

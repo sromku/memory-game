@@ -24,6 +24,7 @@ import com.snatik.matches.ui.GameViewModel.UiEvent
 import com.snatik.matches.ui.difficulty.DifficultySelectFragment
 import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
+import com.snatik.matches.ui.minigame.WhoWasHereFragment
 import com.snatik.matches.ui.popup.PopupHost
 import com.snatik.matches.ui.road.RoadMapFragment
 import com.snatik.matches.ui.theme.ThemeSelectFragment
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         } else {
             viewModel.game?.result?.let { if (currentFragment is GameFragment) showWonPopup(it) }
+            viewModel.miniGame?.result?.let { if (currentFragment is WhoWasHereFragment) showWonPopup(it) }
         }
 
         lifecycleScope.launch {
@@ -90,6 +92,10 @@ class MainActivity : AppCompatActivity() {
                 // "Play again" replaces the finished round instead of stacking on top of it.
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                 push(GameFragment(), BACK_STACK_GAME)
+            }
+            UiEvent.OpenWhoWasHere -> {
+                supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                push(WhoWasHereFragment(), BACK_STACK_GAME)
             }
             UiEvent.ReturnToRoadMap -> {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
