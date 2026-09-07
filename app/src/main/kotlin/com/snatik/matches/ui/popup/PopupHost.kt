@@ -75,7 +75,7 @@ class PopupHost(
             // Centred on the frame's top-right corner. The ribbon rises above the frame, so the frame's
             // top edge sits at about 7% of the popup's height (measured in art/original/settings_popup.png).
             translationX = closeSize / 2f
-            translationY = popupParams.height * SETTINGS_FRAME_TOP - closeSize / 2f
+            translationY = popupParams.height * SETTINGS_FRAME_TOP - closeSize / 2f + 6f * context.resources.displayMetrics.density
             setOnClickListener { close() }
         }
         val holder = FrameLayout(context).apply {
