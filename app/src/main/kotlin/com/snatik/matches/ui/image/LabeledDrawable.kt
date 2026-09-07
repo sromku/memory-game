@@ -18,11 +18,14 @@ import com.snatik.matches.R
  */
 class Label(
     val text: String,
+    /** Horizontal anchor: the centre of the text, or its right edge when [endAligned]. */
     val x: Float,
     val y: Float,
     val height: Float,
     val maxWidth: Float,
     val uppercase: Boolean = false,
+    /** Grows to the left from [x], for words that sit beside a picture on their right. */
+    val endAligned: Boolean = false,
 )
 
 /** [art] with [labels] written on it, in the game's display font of the current language. */
@@ -52,6 +55,7 @@ class LabeledDrawable(context: Context, private val art: Drawable, private val l
                 paint.textSize = size
             }
             paint.setShadowLayer(size * 0.06f, size * 0.07f, size * 0.09f, shadowColor)
+            paint.textAlign = if (label.endAligned) Paint.Align.RIGHT else Paint.Align.CENTER
             val cx = b.left + b.width() * label.x
             val cy = b.top + b.height() * label.y - (paint.ascent() + paint.descent()) / 2f
             canvas.drawText(text, cx, cy, paint)
