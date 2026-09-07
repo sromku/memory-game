@@ -109,7 +109,7 @@ class PopupHost(
                 listOf(
                     Label(context.getString(R.string.level_completed), x = 0.5f, y = 0.065f, height = 0.058f, maxWidth = 0.72f),
                     Label(context.getString(R.string.time), x = 0.34f, y = 0.468f, height = 0.055f, maxWidth = 0.21f, endAligned = true),
-                    Label(context.getString(R.string.score), x = 0.34f, y = 0.612f, height = 0.055f, maxWidth = 0.21f, endAligned = true),
+                    Label(context.getString(R.string.score), x = 0.34f, y = 0.639f, height = 0.055f, maxWidth = 0.21f, endAligned = true),
                 ),
             )
             context.warmDrawables(R.drawable.button_back, R.drawable.button_again, R.drawable.level_complete_star)
