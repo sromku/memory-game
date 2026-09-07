@@ -1,6 +1,7 @@
 package com.snatik.matches.game.minigame
 
 import com.snatik.matches.game.Difficulty
+import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.progression.RoundSpec
 import kotlin.random.Random
 import org.junit.Assert.assertEquals
@@ -11,7 +12,9 @@ import org.junit.Test
 
 class WhoWasHereTest {
 
-    private fun round(index: Int) = RoundSpec(Difficulty.LEVEL_2, index)
+    private val T = GameTheme.ANIMALS
+
+    private fun round(index: Int) = RoundSpec(T, Difficulty.LEVEL_2, index)
 
     @Test
     fun `the party grows along the road from three to six`() {

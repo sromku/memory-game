@@ -19,7 +19,11 @@ enum class GameTheme(
 ) {
     ANIMALS(id = 1, R.drawable.back_animals, groundLine = 0.83f, R.array.theme_card_animals, characters("animals", 28)),
     MONSTERS(id = 2, R.drawable.back_horror, groundLine = 0.81f, R.array.theme_card_monsters, characters("mosters", 40)),
-    EMOJI(id = 3, R.drawable.background, groundLine = 0.86f, R.array.theme_card_emoji, characters("emoji", 48)),
+    EMOJI(id = 3, R.drawable.background, groundLine = 0.86f, R.array.theme_card_emoji, characters("emoji", 48));
+
+    companion object
 }
+
+fun GameTheme.Companion.fromId(id: Int): GameTheme? = GameTheme.entries.firstOrNull { it.id == id }
 
 private fun characters(prefix: String, count: Int) = List(count) { "${prefix}_${it + 1}" }

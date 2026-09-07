@@ -1,12 +1,15 @@
 package com.snatik.matches.game.progression
 
 import com.snatik.matches.game.Difficulty
+import com.snatik.matches.game.GameTheme
 
 /**
- * One round on a difficulty's road. Rounds are derived, never stored: the same (difficulty, index)
- * always describes the same round.
+ * One round on a road. A road is a theme and a difficulty, so every theme has its own six roads.
+ * Rounds are derived, never stored: the same (theme, difficulty, index) always describes the same
+ * round.
  */
 data class RoundSpec(
+    val theme: GameTheme,
     val difficulty: Difficulty,
     /** 1-based position on the road. */
     val index: Int,
@@ -42,10 +45,11 @@ object Road {
     const val SPECIAL_EVERY = 5
     const val LAST_ROUND_TIME_FRACTION = 0.7f
 
-    /** Rounds of the previous difficulty needed before the next one opens. */
+    /** Rounds of the previous difficulty needed before the next one opens, within a theme. */
     const val ROUNDS_TO_UNLOCK_NEXT = 10
 
-    fun rounds(difficulty: Difficulty): List<RoundSpec> = List(ROUNDS_PER_DIFFICULTY) { RoundSpec(difficulty, it + 1) }
+    fun rounds(theme: GameTheme, difficulty: Difficulty): List<RoundSpec> =
+        List(ROUNDS_PER_DIFFICULTY) { RoundSpec(theme, difficulty, it + 1) }
 }
 
 /** The games that special rounds play instead of a board of cards. */

@@ -93,7 +93,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         private set
 
     /** A special round in progress: a mini-game on a theme, with its rules and its clock. */
-    class MiniGame(val theme: GameTheme, val round: RoundSpec, val rules: MiniGameRules, val startedAtMillis: Long) {
+    class MiniGame(val round: RoundSpec, val rules: MiniGameRules, val startedAtMillis: Long) {
+        val theme: GameTheme get() = round.theme
+
         var result: GameResult? = null
             internal set
     }
@@ -112,7 +114,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     /** Parent of every delayed effect of the current round, cancelled when a new round starts. */
     private var roundJob: Job = Job()
 
-    fun averageStars(theme: GameTheme) = preferences.averageStars(theme)
+    /** The theme the next warm-up and the theme cards are about. */
+    val themeForArt: GameTheme get() = _selectedTheme.value ?: preferences.lastTheme ?: GameTheme.ANIMALS
 
     /** Hands over the round that just finished, once, so the map can celebrate it. */
     fun consumeFinishedRound(): RoundSpec? = finishedRound.also { finishedRound = null }
@@ -122,14 +125,18 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
      * on the next round. A first-time player lands on the road where play is.
      */
     fun play() {
-        val current = progress.value
         val theme = preferences.lastTheme ?: GameTheme.ANIMALS
-        val difficulty = preferences.lastDifficulty?.takeIf(current::isUnlocked)
-            ?: current.quickPlayRound()?.difficulty
-            ?: Difficulty.entries.last(current::isUnlocked)
         _selectedTheme.value = theme
-        _selectedDifficulty.value = difficulty
+        _selectedDifficulty.value = roadToShow(theme, preferences.lastDifficulty)
         uiEvents.trySend(UiEvent.OpenRoadMap)
+    }
+
+    /** [wanted] if it is open in [theme], else the theme's road where play is. */
+    private fun roadToShow(theme: GameTheme, wanted: Difficulty?): Difficulty {
+        val current = progress.value
+        return wanted?.takeIf { current.isUnlocked(theme, it) }
+            ?: current.quickPlayRound(theme)?.difficulty
+            ?: Difficulty.entries.last { current.isUnlocked(theme, it) }
     }
 
     fun openThemePicker() {
@@ -144,6 +151,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     fun selectTheme(theme: GameTheme) {
         _selectedTheme.value = theme
         preferences.lastTheme = theme
+        // Each theme has its own roads: the one shown may not be open here yet.
+        _selectedDifficulty.value = roadToShow(theme, _selectedDifficulty.value)
         uiEvents.trySend(UiEvent.ClosePicker)
     }
 
@@ -156,7 +165,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     /** From the difficulty picker: the map shows that road and comes back. Roads not open yet are ignored. */
     fun selectDifficulty(difficulty: Difficulty) {
-        if (!progress.value.isUnlocked(difficulty)) return
+        val theme = _selectedTheme.value ?: return
+        if (!progress.value.isUnlocked(theme, difficulty)) return
         _selectedDifficulty.value = difficulty
         preferences.lastDifficulty = difficulty
         uiEvents.trySend(UiEvent.ClosePicker)
@@ -164,18 +174,17 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     /** Special rounds are mini-games; every other round is a board of cards. */
     fun selectRound(round: RoundSpec) {
-        val theme = _selectedTheme.value ?: return
         when (round.miniGame) {
             MiniGameKind.WHO_WAS_HERE -> {
-                startMiniGame(theme, round, WhoWasHere.create(round, theme.characters.size))
+                startMiniGame(round, WhoWasHere.create(round, round.theme.characters.size))
                 uiEvents.trySend(UiEvent.OpenWhoWasHere)
             }
             MiniGameKind.FOLLOW_THE_SONG -> {
-                startMiniGame(theme, round, FollowTheSong.create(round))
+                startMiniGame(round, FollowTheSong.create(round))
                 uiEvents.trySend(UiEvent.OpenFollowTheSong)
             }
             null -> {
-                startRound(theme, round)
+                startRound(round)
                 uiEvents.trySend(UiEvent.OpenGame)
             }
         }
@@ -303,25 +312,24 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         return true
     }
 
-    private fun startMiniGame(theme: GameTheme, round: RoundSpec, rules: MiniGameRules) {
+    private fun startMiniGame(round: RoundSpec, rules: MiniGameRules) {
         roundJob.cancel()
         roundJob = Job()
         clockJob?.cancel()
         pausedAtMillis = null
         game = null
-        miniGame = MiniGame(theme, round, rules, SystemClock.elapsedRealtime())
+        miniGame = MiniGame(round, rules, SystemClock.elapsedRealtime())
     }
 
-    private fun startRound(theme: GameTheme, round: RoundSpec) {
+    private fun startRound(round: RoundSpec) {
         roundJob.cancel()
         roundJob = Job()
         pausedAtMillis = null
         miniGame = null
         while (boardEvents.tryReceive().isSuccess) Unit // drop effects of the previous round
         val started = Game(
-            theme = theme,
             round = round,
-            board = Board.create(round.difficulty.tileCount, theme.characters.indices.toList()),
+            board = Board.create(round.difficulty.tileCount, round.theme.characters.indices.toList()),
             startedAtMillis = SystemClock.elapsedRealtime(),
         )
         game = started

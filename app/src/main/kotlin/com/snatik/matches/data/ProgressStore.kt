@@ -2,6 +2,7 @@ package com.snatik.matches.data
 
 import android.content.Context
 import com.snatik.matches.game.Difficulty
+import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.progression.Progress
 import com.snatik.matches.game.progression.RoundResult
 import com.snatik.matches.game.progression.RoundSpec
@@ -25,14 +26,14 @@ import kotlinx.coroutines.sync.withLock
  */
 class ProgressStore(
     private val file: File,
-    /** Best 1.x result per difficulty, consulted only when no progress file exists yet. */
-    private val legacy: (Difficulty) -> RoundResult?,
+    /** Best 1.x result per theme and difficulty, consulted only when no progress file exists yet. */
+    private val legacy: (GameTheme, Difficulty) -> RoundResult?,
     private val scope: CoroutineScope,
     /** Where file writes run; tests pass their test dispatcher so writes finish deterministically. */
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
 ) {
     constructor(context: Context, scope: CoroutineScope) :
-        this(File(context.filesDir, FILE_NAME), GamePreferences(context)::bestAcrossThemes, scope)
+        this(File(context.filesDir, FILE_NAME), GamePreferences(context)::bestOf, scope)
 
     private val writes = Mutex()
     private val _progress = MutableStateFlow(load())
@@ -55,11 +56,14 @@ class ProgressStore(
         return migrated
     }
 
-    /** 1.x kept best stars and time per difficulty; that result becomes the difficulty's round 1. */
-    private fun migrate(): Progress =
-        Difficulty.entries.fold(Progress.EMPTY) { progress, difficulty ->
-            legacy(difficulty)?.let { progress.record(RoundSpec(difficulty, 1), it) } ?: progress
+    /** 1.x kept best stars and time per theme and difficulty; that result becomes the road's round 1. */
+    private fun migrate(): Progress {
+        var progress = Progress.EMPTY
+        for (theme in GameTheme.entries) for (difficulty in Difficulty.entries) {
+            legacy(theme, difficulty)?.let { progress = progress.record(RoundSpec(theme, difficulty, 1), it) }
         }
+        return progress
+    }
 
     private fun persist(progress: Progress) {
         scope.launch(ioDispatcher) { writes.withLock { write(progress) } }

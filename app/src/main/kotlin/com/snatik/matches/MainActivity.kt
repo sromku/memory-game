@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 launch {
                     // Every screen's art, rendered ahead of time; already-rendered art costs nothing here.
                     viewModel.progress.collect { progress ->
-                        ArtCache.warm(applicationContext, ArtWarmup.plan(resources, progress, viewModel::averageStars))
+                        ArtCache.warm(applicationContext, ArtWarmup.plan(resources, progress, viewModel.themeForArt))
                     }
                 }
             }

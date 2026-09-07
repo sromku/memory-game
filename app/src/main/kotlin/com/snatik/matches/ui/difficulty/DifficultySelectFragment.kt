@@ -20,6 +20,7 @@ import com.snatik.matches.R
 import com.snatik.matches.databinding.DifficultySelectFragmentBinding
 import com.snatik.matches.game.Difficulty
 import com.snatik.matches.game.GameResult
+import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.progression.Progress
 import com.snatik.matches.game.progression.Road
 import com.snatik.matches.ui.GameViewModel
@@ -51,11 +52,12 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
             )
         }
         val progress = viewModel.progress.value
+        val theme = viewModel.selectedTheme.value ?: return
         val buttonArt = resources.obtainTypedArray(R.array.difficulty_buttons)
         val arts = try {
             Difficulty.entries.mapIndexed { index, difficulty ->
                 fitButtonToCell(cells[index])
-                bind(cells[index], buttonArt, difficulty, progress)
+                bind(cells[index], buttonArt, theme, difficulty, progress)
             }
         } finally {
             buttonArt.recycle()
@@ -74,9 +76,9 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
     }
 
     /** Binds everything but the button's picture, and returns the picture to load. */
-    private fun bind(cell: Cell, buttonArt: TypedArray, difficulty: Difficulty, progress: Progress): Int {
-        val unlocked = progress.isUnlocked(difficulty)
-        val stars = if (unlocked) progress.averageStars(difficulty) else 0
+    private fun bind(cell: Cell, buttonArt: TypedArray, theme: GameTheme, difficulty: Difficulty, progress: Progress): Int {
+        val unlocked = progress.isUnlocked(theme, difficulty)
+        val stars = if (unlocked) progress.averageStars(theme, difficulty) else 0
         val artIndex = (difficulty.level - 1) * (GameResult.MAX_STARS + 1) + stars
         val art = buttonArt.getResourceId(artIndex, 0)
         cell.holder.scaleX = 0.8f
@@ -86,7 +88,7 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
         cell.button.colorFilter = if (unlocked) null else GREY
         cell.button.alpha = if (unlocked) 1f else LOCKED_ALPHA
         // Locked roads keep the footer's space so the buttons line up, but say nothing.
-        cell.footer.text = getString(R.string.road_progress_format, progress.completedCount(difficulty), Road.ROUNDS_PER_DIFFICULTY)
+        cell.footer.text = getString(R.string.road_progress_format, progress.completedCount(theme, difficulty), Road.ROUNDS_PER_DIFFICULTY)
         cell.footer.isInvisible = !unlocked
         cell.button.setOnClickListener {
             if (unlocked) viewModel.selectDifficulty(difficulty) else shakeHead(cell.holder)

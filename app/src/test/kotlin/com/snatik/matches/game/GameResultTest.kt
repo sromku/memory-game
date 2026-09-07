@@ -6,7 +6,9 @@ import org.junit.Test
 
 class GameResultTest {
 
-    private val level1 = RoundSpec(Difficulty.LEVEL_1, 1) // 60 seconds
+    private val T = GameTheme.ANIMALS
+
+    private val level1 = RoundSpec(T, Difficulty.LEVEL_1, 1) // 60 seconds
 
     @Test
     fun `three stars within half the time`() {
@@ -34,7 +36,7 @@ class GameResultTest {
 
     @Test
     fun `score is level times remaining seconds times theme multiplier`() {
-        val result = GameResult.compute(RoundSpec(Difficulty.LEVEL_4, 1), themeMultiplier = 3, passedSeconds = 50)
+        val result = GameResult.compute(RoundSpec(T, Difficulty.LEVEL_4, 1), themeMultiplier = 3, passedSeconds = 50)
         assertEquals(100, result.remainingSeconds)
         assertEquals(4 * 100 * 3, result.score)
         assertEquals(50, result.passedSeconds)
@@ -49,7 +51,7 @@ class GameResultTest {
 
     @Test
     fun `later rounds judge against their tighter time`() {
-        val last = RoundSpec(Difficulty.LEVEL_1, 40) // 42 seconds
+        val last = RoundSpec(T, Difficulty.LEVEL_1, 40) // 42 seconds
         assertEquals(3, GameResult.compute(last, 1, passedSeconds = 21).stars)
         assertEquals(2, GameResult.compute(last, 1, passedSeconds = 22).stars)
         assertEquals(0, GameResult.compute(last, 1, passedSeconds = 42).stars)

@@ -45,7 +45,7 @@ class ThemeSelectFragment : Fragment(R.layout.theme_select_fragment) {
     private fun bindCard(card: ImageView, theme: GameTheme): Int {
         val cards = resources.obtainTypedArray(theme.cardImagesRes)
         val art = try {
-            cards.getResourceId(viewModel.averageStars(theme), 0)
+            cards.getResourceId(viewModel.progress.value.themeStars(theme), 0)
         } finally {
             cards.recycle()
         }

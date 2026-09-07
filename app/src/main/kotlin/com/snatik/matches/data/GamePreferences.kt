@@ -24,11 +24,9 @@ class GamePreferences(private val prefs: SharedPreferences) {
     fun bestTimeSeconds(theme: GameTheme, difficulty: Difficulty): Int? =
         prefs.getInt(timeKey(theme.id, difficulty.level), NO_TIME).takeIf { it != NO_TIME }
 
-    /** The best 1.x result for a difficulty across all themes, for migration into the progress store. */
-    fun bestAcrossThemes(difficulty: Difficulty): RoundResult? =
-        GameTheme.entries.mapNotNull { theme ->
-            bestTimeSeconds(theme, difficulty)?.let { RoundResult(highStars(theme, difficulty), it) }
-        }.reduceOrNull { best, next -> best.improvedBy(next) }
+    /** The best 1.x result on a theme and difficulty, for migration into the progress store. */
+    fun bestOf(theme: GameTheme, difficulty: Difficulty): RoundResult? =
+        bestTimeSeconds(theme, difficulty)?.let { RoundResult(highStars(theme, difficulty), it) }
 
     /** Average star count over all difficulties, 0..3, used for the theme card art. */
     fun averageStars(theme: GameTheme): Int =

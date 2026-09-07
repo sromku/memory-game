@@ -14,11 +14,12 @@ A round is fully described by its difficulty and its index (1..40), see `RoundSp
   keep the same thresholds relative to the round's time.
 - **Special** rounds, every fifth (5, 10, ... 40), are mini-games, alternating between
   "Who was here?" (who-was-here.md) and "Follow the song" (follow-the-song.md).
-- **Theme** stays the player's choice; it is the skin of the road, not part of progression.
+- **Theme**: every theme has its own six roads. Progress, stars and unlocking are per theme, so a
+  child who finished Beginner with the animals starts the monsters from their first round.
 
 ## Progress
 
-`Progress` is an immutable value: a map from (difficulty, index) to the best result of that round.
+`Progress` is an immutable value: a map from (theme, difficulty, index) to the best result of that round.
 Everything else is derived: rounds completed on a difficulty, stars on a difficulty, whether a
 difficulty is unlocked, the next round to play, the round quick play should pick (the next round of
 the highest unlocked difficulty that still has rounds left).
@@ -28,9 +29,11 @@ the highest unlocked difficulty that still has rounds left).
 `ProgressStore` keeps the progress in one small text file in the app's private storage:
 
 ```
-memory-game-progress 1
-<difficulty level> <round index> <stars> <best time seconds or ->
+memory-game-progress 2
+<theme id> <difficulty level> <round index> <stars> <best time seconds>
 ```
+
+Version 1 lines (no theme) are read as the animals theme.
 
 Writes go to a temporary file first and are renamed into place, so a crash mid-write cannot leave a
 half-written file. A file that cannot be read is treated as empty progress, never as a crash.
@@ -38,8 +41,8 @@ half-written file. A file that cannot be read is treated as empty progress, neve
 ## Migration
 
 Players of version 1.x have best stars and times per theme and difficulty in SharedPreferences.
-On the first start with the new store, the best of each difficulty across themes becomes the
-result of that difficulty's round 1, so their stars stay visible on the road.
+On the first start with the new store, each theme's best per difficulty becomes the result of
+that road's round 1, so their stars stay visible on the roads.
 
 ## Level map
 

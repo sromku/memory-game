@@ -1,6 +1,7 @@
 package com.snatik.matches.game.minigame
 
 import com.snatik.matches.game.Difficulty
+import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.minigame.FollowTheSong.Outcome
 import com.snatik.matches.game.progression.RoundSpec
 import kotlin.random.Random
@@ -11,7 +12,9 @@ import org.junit.Test
 
 class FollowTheSongTest {
 
-    private fun round(index: Int) = RoundSpec(Difficulty.LEVEL_3, index)
+    private val T = GameTheme.ANIMALS
+
+    private fun round(index: Int) = RoundSpec(T, Difficulty.LEVEL_3, index)
 
     @Test
     fun `the song and the party grow along the road`() {

@@ -37,18 +37,18 @@ class RoadMapFragment : Fragment(R.layout.road_map_fragment) {
             binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back))
             binding.starsIcon.setImageDrawable(requireContext().loadDrawable(R.drawable.level_complete_star))
             binding.themePicker.setImageDrawable(themeThumb(theme))
-            binding.difficultyPicker.setImageDrawable(difficultyThumb(difficulty, viewModel.progress.value))
+            binding.difficultyPicker.setImageDrawable(difficultyThumb(theme, difficulty, viewModel.progress.value))
         }
 
         // A round finished just before this screen came back is celebrated on the map, once.
-        var celebrate = viewModel.consumeFinishedRound()?.takeIf { it.difficulty == difficulty }
+        var celebrate = viewModel.consumeFinishedRound()?.takeIf { it.theme == theme && it.difficulty == difficulty }
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.progress.collect { progress ->
-                    binding.roadMap.show(RoadNode.road(difficulty, progress), celebrate)
+                    binding.roadMap.show(RoadNode.road(theme, difficulty, progress), celebrate)
                     celebrate = null
-                    binding.starsText.text = getString(R.string.score_format, progress.starsOn(difficulty))
-                    binding.roundsText.text = getString(R.string.road_progress_format, progress.completedCount(difficulty), Road.ROUNDS_PER_DIFFICULTY)
+                    binding.starsText.text = getString(R.string.score_format, progress.starsOn(theme, difficulty))
+                    binding.roundsText.text = getString(R.string.road_progress_format, progress.completedCount(theme, difficulty), Road.ROUNDS_PER_DIFFICULTY)
                 }
             }
         }
@@ -57,15 +57,15 @@ class RoadMapFragment : Fragment(R.layout.road_map_fragment) {
     /** The theme's card, small, as the button that changes the theme. */
     private suspend fun themeThumb(theme: GameTheme): LabeledDrawable {
         val cards = resources.obtainTypedArray(theme.cardImagesRes)
-        val art = try { cards.getResourceId(viewModel.averageStars(theme), 0) } finally { cards.recycle() }
+        val art = try { cards.getResourceId(viewModel.progress.value.themeStars(theme), 0) } finally { cards.recycle() }
         val name = Label(getString(THEME_NAMES.getValue(theme)), x = 0.5f, y = 0.078f, height = 0.062f, maxWidth = 0.5f)
         return LabeledDrawable(requireContext(), requireContext().loadDrawable(art), listOf(name))
     }
 
     /** The road's button, small, as the button that changes the road. */
-    private suspend fun difficultyThumb(difficulty: Difficulty, progress: Progress): LabeledDrawable {
+    private suspend fun difficultyThumb(theme: GameTheme, difficulty: Difficulty, progress: Progress): LabeledDrawable {
         val buttons = resources.obtainTypedArray(R.array.difficulty_buttons)
-        val index = (difficulty.level - 1) * (GameResult.MAX_STARS + 1) + progress.averageStars(difficulty)
+        val index = (difficulty.level - 1) * (GameResult.MAX_STARS + 1) + progress.averageStars(theme, difficulty)
         val art = try { buttons.getResourceId(index, 0) } finally { buttons.recycle() }
         val name = Label(getString(DIFFICULTY_NAMES[difficulty.ordinal]), x = 0.5f, y = 0.28f, height = 0.2f, maxWidth = 0.76f, uppercase = true)
         return LabeledDrawable(requireContext(), requireContext().loadDrawable(art), listOf(name))
