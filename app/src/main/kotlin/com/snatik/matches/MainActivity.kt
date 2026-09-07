@@ -19,6 +19,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.snatik.matches.databinding.ActivityMainBinding
 import com.snatik.matches.game.GameResult
 import com.snatik.matches.ui.BackgroundCrossfader
+import com.snatik.matches.ui.image.ArtCache
+import com.snatik.matches.ui.image.ArtWarmup
 import com.snatik.matches.ui.GameViewModel
 import com.snatik.matches.ui.GameViewModel.UiEvent
 import com.snatik.matches.ui.difficulty.DifficultySelectFragment
@@ -68,6 +70,12 @@ class MainActivity : AppCompatActivity() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch { viewModel.uiEventFlow.collect(::handle) }
                 launch { viewModel.selectedTheme.collect(backgrounds::show) }
+                launch {
+                    // Every screen's art, rendered ahead of time; already-rendered art costs nothing here.
+                    viewModel.progress.collect { progress ->
+                        ArtCache.warm(applicationContext, ArtWarmup.plan(resources, progress, viewModel::averageStars))
+                    }
+                }
             }
         }
     }

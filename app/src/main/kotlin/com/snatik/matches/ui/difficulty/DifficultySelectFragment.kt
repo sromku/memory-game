@@ -24,6 +24,8 @@ import com.snatik.matches.game.progression.Progress
 import com.snatik.matches.game.progression.Road
 import com.snatik.matches.ui.GameViewModel
 import com.snatik.matches.ui.image.loadDrawable
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
 
 /** The six roads: each button shows the road's stars and how far along it the player is. */
@@ -48,25 +50,32 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
         }
         val progress = viewModel.progress.value
         val buttonArt = resources.obtainTypedArray(R.array.difficulty_buttons)
-        try {
-            Difficulty.entries.forEachIndexed { index, difficulty ->
-                bind(cells[index], buttonArt, difficulty, progress)
+        val arts = try {
+            Difficulty.entries.mapIndexed { index, difficulty ->
                 fitButtonToCell(cells[index])
+                bind(cells[index], buttonArt, difficulty, progress)
             }
         } finally {
             buttonArt.recycle()
         }
-        animate(cells.map { it.holder })
+        // All six buttons appear together, then bounce in as one.
+        viewLifecycleOwner.lifecycleScope.launch {
+            val drawables = arts.map { async { requireContext().loadDrawable(it) } }.awaitAll()
+            cells.forEachIndexed { index, cell -> cell.button.setImageDrawable(drawables[index]) }
+            animate(cells.map { it.holder })
+        }
         viewLifecycleOwner.lifecycleScope.launch { binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back)) }
         binding.backButton.setOnClickListener { requireActivity().onBackPressedDispatcher.onBackPressed() }
     }
 
-    private fun bind(cell: Cell, buttonArt: TypedArray, difficulty: Difficulty, progress: Progress) {
+    /** Binds everything but the button's picture, and returns the picture to load. */
+    private fun bind(cell: Cell, buttonArt: TypedArray, difficulty: Difficulty, progress: Progress): Int {
         val unlocked = progress.isUnlocked(difficulty)
         val stars = if (unlocked) progress.averageStars(difficulty) else 0
         val artIndex = (difficulty.level - 1) * (GameResult.MAX_STARS + 1) + stars
         val art = buttonArt.getResourceId(artIndex, 0)
-        viewLifecycleOwner.lifecycleScope.launch { cell.button.setImageDrawable(requireContext().loadDrawable(art)) }
+        cell.holder.scaleX = 0.8f
+        cell.holder.scaleY = 0.8f
         cell.button.contentDescription = getString(R.string.cd_difficulty, difficulty.level)
         cell.lock.isVisible = !unlocked
         cell.button.colorFilter = if (unlocked) null else GREY
@@ -77,6 +86,7 @@ class DifficultySelectFragment : Fragment(R.layout.difficulty_select_fragment) {
         cell.button.setOnClickListener {
             if (unlocked) viewModel.selectDifficulty(difficulty) else shakeHead(cell.holder)
         }
+        return art
     }
 
     /**
