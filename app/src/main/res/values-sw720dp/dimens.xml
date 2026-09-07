@@ -85,4 +85,8 @@
     <dimen name="who_choices_margin_top">120dp</dimen>
     <dimen name="who_prompt_margin_top">22dp</dimen>
     <dimen name="who_prompt_text_size">40dp</dimen>
+
+    <!-- follow the song -->
+    <dimen name="song_progress_height">48dp</dimen>
+    <dimen name="song_progress_margin_top">110dp</dimen>
 </resources>

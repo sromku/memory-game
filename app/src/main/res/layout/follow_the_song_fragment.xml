@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.snatik.matches.ui.minigame.PartySceneView
+        android:id="@+id/scene"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/cd_singers" />
+
+    <TextView
+        android:id="@+id/prompt"
+        style="@style/RoadHeaderText"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="@dimen/who_prompt_margin_top"
+        android:textSize="@dimen/who_prompt_text_size"
+        android:visibility="invisible"
+        tools:text="@string/song_listen"
+        tools:visibility="visible" />
+
+    <com.snatik.matches.ui.minigame.SongProgressView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/song_progress_height"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="@dimen/song_progress_margin_top"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/screen_back_button"
+        android:layout_height="@dimen/screen_back_button"
+        android:layout_gravity="start|top"
+        android:layout_marginStart="@dimen/screen_back_margin"
+        android:layout_marginTop="@dimen/screen_back_margin"
+        android:contentDescription="@string/cd_back"
+        android:padding="4dp"
+        tools:src="@drawable/button_back" />
+
+</FrameLayout>

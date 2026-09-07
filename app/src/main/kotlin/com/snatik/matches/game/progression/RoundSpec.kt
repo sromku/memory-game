@@ -26,6 +26,14 @@ data class RoundSpec(
     /** Every fifth round is reserved for a mini-game. */
     val isSpecial: Boolean get() = index % Road.SPECIAL_EVERY == 0
 
+    /** The mini-game of a special round: the two alternate along the road. */
+    val miniGame: MiniGame?
+        get() = when {
+            index % (2 * Road.SPECIAL_EVERY) == 0 -> MiniGame.FOLLOW_THE_SONG
+            isSpecial -> MiniGame.WHO_WAS_HERE
+            else -> null
+        }
+
     val next: RoundSpec? get() = if (index < Road.ROUNDS_PER_DIFFICULTY) copy(index = index + 1) else null
 }
 
@@ -39,3 +47,6 @@ object Road {
 
     fun rounds(difficulty: Difficulty): List<RoundSpec> = List(ROUNDS_PER_DIFFICULTY) { RoundSpec(difficulty, it + 1) }
 }
+
+/** The games that special rounds play instead of a board of cards. */
+enum class MiniGame { WHO_WAS_HERE, FOLLOW_THE_SONG }

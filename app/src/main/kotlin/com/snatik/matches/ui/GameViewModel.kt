@@ -17,7 +17,10 @@ import com.snatik.matches.game.Game
 import com.snatik.matches.game.GameEngine
 import com.snatik.matches.game.GameResult
 import com.snatik.matches.game.GameTheme
+import com.snatik.matches.game.minigame.FollowTheSong
+import com.snatik.matches.game.minigame.MiniGameRules
 import com.snatik.matches.game.minigame.WhoWasHere
+import com.snatik.matches.game.progression.MiniGame as MiniGameKind
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
@@ -41,6 +44,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object OpenRoadMap : UiEvent
         data object OpenGame : UiEvent
         data object OpenWhoWasHere : UiEvent
+        data object OpenFollowTheSong : UiEvent
         data object ReturnToRoadMap : UiEvent
         data object ShowSettings : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
@@ -87,8 +91,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     var game: Game? = null
         private set
 
-    /** A special round in progress: "Who was here?" on a theme, with its rules and its clock. */
-    class MiniGame(val theme: GameTheme, val round: RoundSpec, val rules: WhoWasHere, val startedAtMillis: Long) {
+    /** A special round in progress: a mini-game on a theme, with its rules and its clock. */
+    class MiniGame(val theme: GameTheme, val round: RoundSpec, val rules: MiniGameRules, val startedAtMillis: Long) {
         var result: GameResult? = null
             internal set
     }
@@ -147,24 +151,51 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         uiEvents.trySend(UiEvent.OpenRoadMap)
     }
 
-    /** Special rounds are the mini-game; every other round is a board of cards. */
+    /** Special rounds are mini-games; every other round is a board of cards. */
     fun selectRound(round: RoundSpec) {
         val theme = _selectedTheme.value ?: return
-        if (round.isSpecial) {
-            startMiniGame(theme, round)
-            uiEvents.trySend(UiEvent.OpenWhoWasHere)
-        } else {
-            startRound(theme, round)
-            uiEvents.trySend(UiEvent.OpenGame)
+        when (round.miniGame) {
+            MiniGameKind.WHO_WAS_HERE -> {
+                startMiniGame(theme, round, WhoWasHere.create(round, theme.characters.size))
+                uiEvents.trySend(UiEvent.OpenWhoWasHere)
+            }
+            MiniGameKind.FOLLOW_THE_SONG -> {
+                startMiniGame(theme, round, FollowTheSong.create(round))
+                uiEvents.trySend(UiEvent.OpenFollowTheSong)
+            }
+            null -> {
+                startRound(theme, round)
+                uiEvents.trySend(UiEvent.OpenGame)
+            }
         }
     }
 
     /** Answers the mini-game's current turn; true when the card was the missing character. */
     fun answerWhoWasHere(choice: Int): Boolean {
-        val rules = miniGame?.rules ?: return false
+        val rules = miniGame?.rules as? WhoWasHere ?: return false
         val right = rules.answer(choice)
         if (right && _soundEnabled.value) sounds.playCorrect()
         return right
+    }
+
+    /** The note of a singer at [position] in a party of [partySize], spread over the scale. */
+    fun noteOf(position: Int, partySize: Int): Int =
+        if (partySize <= 1) 0 else position * (sounds.noteCount - 1) / (partySize - 1)
+
+    /** A singer sings, during the song or when tapped. */
+    fun sing(position: Int) {
+        val rules = miniGame?.rules as? FollowTheSong ?: return
+        if (_soundEnabled.value) sounds.playNote(noteOf(position, rules.partySize))
+    }
+
+    /** The player tapped a singer; the note or the "oops" plays here. */
+    fun tapSinger(position: Int): FollowTheSong.Outcome {
+        val rules = miniGame?.rules as? FollowTheSong ?: return FollowTheSong.Outcome.IGNORED
+        val outcome = rules.tap(position)
+        if (_soundEnabled.value) {
+            if (outcome == FollowTheSong.Outcome.MISTAKE) sounds.playWrong() else if (outcome != FollowTheSong.Outcome.IGNORED) sounds.playNote(noteOf(position, rules.partySize))
+        }
+        return outcome
     }
 
     /** The mini-game's last turn is done: stars from its mistakes, recorded like any round. */
@@ -257,13 +288,13 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         return true
     }
 
-    private fun startMiniGame(theme: GameTheme, round: RoundSpec) {
+    private fun startMiniGame(theme: GameTheme, round: RoundSpec, rules: MiniGameRules) {
         roundJob.cancel()
         roundJob = Job()
         clockJob?.cancel()
         pausedAtMillis = null
         game = null
-        miniGame = MiniGame(theme, round, WhoWasHere.create(round, theme.characters.size), SystemClock.elapsedRealtime())
+        miniGame = MiniGame(theme, round, rules, SystemClock.elapsedRealtime())
     }
 
     private fun startRound(theme: GameTheme, round: RoundSpec) {

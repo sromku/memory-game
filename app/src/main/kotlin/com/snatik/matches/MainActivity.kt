@@ -24,6 +24,7 @@ import com.snatik.matches.ui.GameViewModel.UiEvent
 import com.snatik.matches.ui.difficulty.DifficultySelectFragment
 import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
+import com.snatik.matches.ui.minigame.FollowTheSongFragment
 import com.snatik.matches.ui.minigame.WhoWasHereFragment
 import com.snatik.matches.ui.popup.PopupHost
 import com.snatik.matches.ui.road.RoadMapFragment
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         } else {
             viewModel.game?.result?.let { if (currentFragment is GameFragment) showWonPopup(it) }
-            viewModel.miniGame?.result?.let { if (currentFragment is WhoWasHereFragment) showWonPopup(it) }
+            viewModel.miniGame?.result?.let { if (currentFragment is WhoWasHereFragment || currentFragment is FollowTheSongFragment) showWonPopup(it) }
         }
 
         lifecycleScope.launch {
@@ -96,6 +97,10 @@ class MainActivity : AppCompatActivity() {
             UiEvent.OpenWhoWasHere -> {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                 push(WhoWasHereFragment(), BACK_STACK_GAME)
+            }
+            UiEvent.OpenFollowTheSong -> {
+                supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+                push(FollowTheSongFragment(), BACK_STACK_GAME)
             }
             UiEvent.ReturnToRoadMap -> {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)

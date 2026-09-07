@@ -27,6 +27,19 @@ class RoundSpecTest {
     }
 
     @Test
+    fun `special rounds alternate between the two mini-games`() {
+        val games = Road.rounds(Difficulty.LEVEL_1).mapNotNull { it.miniGame }
+        assertEquals(
+            listOf(
+                MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG, MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG,
+                MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG, MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG,
+            ),
+            games,
+        )
+        assertNull(RoundSpec(Difficulty.LEVEL_1, 7).miniGame)
+    }
+
+    @Test
     fun `rounds link to the next one and stop at the end of the road`() {
         assertEquals(RoundSpec(Difficulty.LEVEL_3, 2), RoundSpec(Difficulty.LEVEL_3, 1).next)
         assertNull(RoundSpec(Difficulty.LEVEL_3, Road.ROUNDS_PER_DIFFICULTY).next)

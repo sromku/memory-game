@@ -12,8 +12,8 @@ A round is fully described by its difficulty and its index (1..40), see `RoundSp
 - **Board**: the difficulty's card count and grid, unchanged.
 - **Time**: the difficulty's time at round 1, tightening steadily to 70% of it by round 40. Stars
   keep the same thresholds relative to the round's time.
-- **Special** rounds, every fifth (5, 10, ... 40), are mini-games: "Who was here?" (see
-  who-was-here.md).
+- **Special** rounds, every fifth (5, 10, ... 40), are mini-games, alternating between
+  "Who was here?" (who-was-here.md) and "Follow the song" (follow-the-song.md).
 - **Theme** stays the player's choice; it is the skin of the road, not part of progression.
 
 ## Progress
@@ -77,4 +77,5 @@ in `CenterCrop`).
 - Milestone 1 (this): model, store, migration, recording of results. Screens unchanged.
 - Milestone 2 (this): the level map, per-round time, special rounds marked on the map.
 - Milestone 3: quick play and the celebration between rounds.
-- Milestone 4 (this): "Who was here?" on the special rounds.
+- Milestone 4: "Who was here?" on the special rounds.
+- Milestone 5 (this): "Follow the song" on every other special round, with synthesised notes.

@@ -6,8 +6,10 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.LinearInterpolator
@@ -31,7 +33,15 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
     private class Guest(val drawable: CharacterDrawable, val x: Float) {
         var visible = 0f
         var animator: ValueAnimator? = null
+
+        /** 1 while the character sings, fading to 0. */
+        var glow = 0f
+        var glowAnimator: ValueAnimator? = null
+        val bounds = Rect()
     }
+
+    /** Set to receive taps on characters (their 0-based position); null leaves the scene passive. */
+    var onGuestTapped: ((Int) -> Unit)? = null
 
     private val guests = mutableListOf<Guest>()
     private var groundY = 0f
@@ -45,6 +55,7 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         interpolator = LinearInterpolator()
         addUpdateListener { markerPhase = it.animatedValue as Float; invalidate() }
     }
+    private val glowPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = ContextCompat.getColor(context, R.color.road_gold) }
     private val markerFill = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = ContextCompat.getColor(context, R.color.road_gold) }
     private val markerRim = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
@@ -108,8 +119,39 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         }
     }
 
+    /** The character at [position] sings: a glow blooms behind it and it hops. */
+    fun spotlight(position: Int, durationMs: Long) {
+        val guest = guests.getOrNull(position) ?: return
+        guest.glowAnimator?.cancel()
+        guest.drawable.hop()
+        guest.glowAnimator = ValueAnimator.ofFloat(1f, 0f).apply {
+            duration = durationMs
+            interpolator = AccelerateInterpolator(1.2f)
+            addUpdateListener { guest.glow = it.animatedValue as Float; invalidate() }
+            start()
+        }
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        val listener = onGuestTapped ?: return false
+        if (event.action != MotionEvent.ACTION_DOWN) return true
+        val x = event.x.toInt()
+        val y = event.y.toInt()
+        val hit = guests.indexOfFirst { it.visible > 0.5f && it.bounds.contains(x, y) }
+        if (hit >= 0) {
+            performClick()
+            listener(hit)
+        }
+        return true
+    }
+
+    override fun performClick(): Boolean {
+        super.performClick()
+        return true
+    }
+
     fun clear() {
-        guests.forEach { it.animator?.cancel(); it.drawable.stop(); it.drawable.callback = null }
+        guests.forEach { it.animator?.cancel(); it.glowAnimator?.cancel(); it.drawable.stop(); it.drawable.callback = null }
         guests.clear()
         gap = null
         markerAnimator.cancel()
@@ -151,7 +193,16 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
                 val left = (width * guest.x - size / 2f).toInt()
                 val feet = groundY + (1f - guest.visible) * size * SINK_DEPTH
                 val top = (feet - size * drawable.feetFraction).toInt()
-                drawable.setBounds(left, top, left + size, top + size)
+                guest.bounds.set(left, top, left + size, top + size)
+                if (guest.glow > 0f) {
+                    val cx = left + size / 2f
+                    val cy = feet - size * drawable.feetFraction / 2f
+                    glowPaint.alpha = (GLOW_ALPHA * guest.glow).toInt()
+                    canvas.drawCircle(cx, cy, size * (GLOW_RADIUS + 0.12f * (1 - guest.glow)), glowPaint)
+                    glowPaint.alpha = (GLOW_ALPHA * 0.6f * guest.glow).toInt()
+                    canvas.drawCircle(cx, cy, size * (GLOW_RADIUS + 0.28f * (1 - guest.glow)), glowPaint)
+                }
+                drawable.bounds = guest.bounds
                 drawable.draw(canvas)
             }
         }
@@ -173,7 +224,7 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
     override fun verifyDrawable(who: Drawable): Boolean = guests.any { it.drawable === who } || super.verifyDrawable(who)
 
     override fun onDetachedFromWindow() {
-        guests.forEach { it.animator?.cancel(); it.drawable.stop() }
+        guests.forEach { it.animator?.cancel(); it.glowAnimator?.cancel(); it.drawable.stop() }
         markerAnimator.cancel()
         super.onDetachedFromWindow()
     }
@@ -185,6 +236,8 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         const val SHORT_GUEST = 0.23f
         const val SINK_DEPTH = 1.3f
         const val FEET_SLACK = 0.08f
+        const val GLOW_RADIUS = 0.42f
+        const val GLOW_ALPHA = 150
         const val MARKER_RADIUS = 0.2f
         const val MARKER_HEIGHT = 0.55f
         const val MARKER_BOB = 0.06f

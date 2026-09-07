@@ -7,7 +7,7 @@ import kotlin.random.Random
  * Rules of "Who was here?": a party of characters shows itself, hides, and comes back one short;
  * the player picks who is missing from a few cards. Characters are the theme's image indices.
  */
-class WhoWasHere private constructor(val turns: List<Turn>) {
+class WhoWasHere private constructor(val turns: List<Turn>) : MiniGameRules {
 
     /** One party. [choices] holds [missing] exactly once, the rest are strangers to the party. */
     class Turn(val party: List<Int>, val missing: Int, val choices: List<Int>) {
@@ -29,7 +29,7 @@ class WhoWasHere private constructor(val turns: List<Turn>) {
 
     val currentTurn: Turn? get() = turns.getOrNull(turnIndex)
 
-    val isOver: Boolean get() = turnIndex >= turns.size
+    override val isOver: Boolean get() = turnIndex >= turns.size
 
     /** Answers the current turn. True when [choice] is the missing character; that ends the turn. */
     fun answer(choice: Int): Boolean {
@@ -43,7 +43,7 @@ class WhoWasHere private constructor(val turns: List<Turn>) {
     }
 
     /** No mistakes earn three stars, one mistake two, anything more one: nobody leaves empty-handed. */
-    val stars: Int get() = (3 - mistakes).coerceAtLeast(1)
+    override val stars: Int get() = (3 - mistakes).coerceAtLeast(1)
 
     companion object {
         const val TURNS = 3

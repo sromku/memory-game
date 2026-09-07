@@ -34,7 +34,8 @@ build when it can detect a violation; the rest is judgement.
 - Player progress (rounds, stars, times) lives in files/progress.txt via ProgressStore; the format
   is ProgressCodec's and is versioned by its header. Game rules for roads and rounds are pure Kotlin
   in game/progression with unit tests; see docs/design/progression.md before changing them.
-  Mini-game rules live in game/minigame the same way; see docs/design/who-was-here.md.
+  Mini-game rules live in game/minigame the same way; see docs/design/who-was-here.md and
+  docs/design/follow-the-song.md. Mini-game sounds are synthesised by tools/generate-sounds.py.
 - Testing on the user's Pixel 10 Pro: `export ANDROID_SERIAL=57221FDCH009VC`; do not start emulators
   unless the user asks for one.
 - Run the game on the MemoryGame_* emulators only, on a fixed port with ANDROID_SERIAL set.

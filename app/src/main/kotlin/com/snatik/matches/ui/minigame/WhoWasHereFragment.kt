@@ -41,7 +41,7 @@ class WhoWasHereFragment : Fragment(R.layout.who_was_here_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val binding = WhoWasHereFragmentBinding.bind(view)
-        val mini = viewModel.miniGame ?: run { viewModel.backToRoadMap(); return }
+        val mini = viewModel.miniGame?.takeIf { it.rules is WhoWasHere } ?: run { viewModel.backToRoadMap(); return }
         binding.backButton.setOnClickListener { viewModel.backToRoadMap() }
         viewLifecycleOwner.lifecycleScope.launch {
             binding.backButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_back))
@@ -54,7 +54,7 @@ class WhoWasHereFragment : Fragment(R.layout.who_was_here_fragment) {
 
     private suspend fun play(binding: WhoWasHereFragmentBinding, mini: GameViewModel.MiniGame) {
         val theme = mini.theme
-        val rules = mini.rules
+        val rules = mini.rules as WhoWasHere
         val root = binding.root
         val choiceViews = listOf(binding.choice1, binding.choice2, binding.choice3)
 
