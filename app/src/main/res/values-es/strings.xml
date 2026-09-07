@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Juego de memoria</string>
+    <string name="sound_on">Sonido SÍ</string>
+    <string name="sound_off">Sonido NO</string>
+    <string name="rate_this">Valorar</string>
+    <string name="privacy_policy">Privacidad</string>
+    <string name="cd_quick_play">Jugar</string>
+    <string name="cd_map">Temas y caminos</string>
+    <string name="cd_settings">Ajustes</string>
+    <string name="cd_theme_animals">Tema de animales</string>
+    <string name="cd_theme_monsters">Tema de monstruos</string>
+    <string name="cd_theme_emoji">Tema de emojis</string>
+    <string name="cd_difficulty">Dificultad %1$d</string>
+    <string name="cd_back">Atrás</string>
+    <string name="cd_road_map">Rondas de esta dificultad</string>
+    <string name="cd_locked">Bloqueado</string>
+    <string name="who_look">¡Mira!</string>
+    <string name="who_missing">¿Quién falta?</string>
+    <string name="cd_choice">Carta %1$d</string>
+    <string name="song_listen">¡Escucha!</string>
+    <string name="song_again">¡Escucha otra vez!</string>
+    <string name="song_your_turn">¡Te toca!</string>
+    <string name="cd_singers">Los cantantes</string>
+    <string name="round_format">Ronda %1$d</string>
+    <string name="cd_round_next">Ronda %1$d, la siguiente</string>
+    <string name="cd_round_locked">Ronda %1$d, aún no abierta</string>
+    <string name="cd_friend">Amigo %1$d</string>
+    <string name="cd_play_again">Jugar otra vez</string>
+    <string name="cd_star">Estrella</string>
+    <string name="cd_sound_toggle">Activar o desactivar el sonido</string>
+    <string name="cd_rate">Valorar en Google Play</string>
+    <string name="cd_close">Cerrar</string>
+    <string name="cd_privacy_policy">Abrir la política de privacidad</string>
+    <string name="cd_tile">Carta</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Ronda %1$d, completada con %2$d estrella</item>
+        <item quantity="other">Ronda %1$d, completada con %2$d estrellas</item>
+    </plurals>
+</resources>

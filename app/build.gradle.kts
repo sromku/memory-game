@@ -46,6 +46,11 @@ android {
         }
     }
 
+    androidResources {
+        // Only the languages the app is translated into; drops the support libraries' other locales.
+        localeFilters += listOf("en", "es", "pt-rBR", "fr", "de", "it", "ru", "uk", "pl", "nl", "tr", "ar", "hi", "in", "vi", "th", "ja", "ko", "zh-rTW", "zh-rCN", "ms")
+    }
+
     buildFeatures {
         viewBinding = true
     }

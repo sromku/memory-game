@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Привіт!</item>
+        <item>Вітаю!</item>
+        <item>Привітик!</item>
+        <item>Привіт, друже!</item>
+        <item>Привіт-привіт!</item>
+        <item>Здоров!</item>
+        <item>Гей-гей!</item>
+        <item>Ей-ей!</item>
+        <item>Доброго ранку!</item>
+        <item>Добраніч!</item>
+        <item>Солодких снів!</item>
+        <item>Буп!</item>
+        <item>Буп-буп!</item>
+        <item>Ку-ку!</item>
+        <item>Ти мене знайшов!</item>
+        <item>Я тут!</item>
+        <item>Сюди!</item>
+        <item>Дожени мене!</item>
+        <item>Ти водиш!</item>
+        <item>У хованки?</item>
+        <item>Граймо!</item>
+        <item>Пограй зі мною!</item>
+        <item>Пограємо?</item>
+        <item>Ще разок?</item>
+        <item>Ще!</item>
+        <item>Готовий?</item>
+        <item>Поїхали!</item>
+        <item>Уперед!</item>
+        <item>Обери мене!</item>
+        <item>Мене, мене!</item>
+        <item>Ура!</item>
+        <item>Ура-а!</item>
+        <item>Вау-ху!</item>
+        <item>Йіппі!</item>
+        <item>Уіії!</item>
+        <item>Ух!</item>
+        <item>Та-дам!</item>
+        <item>Боінг!</item>
+        <item>Плиг-скок!</item>
+        <item>Стриб!</item>
+        <item>Виляю!</item>
+        <item>Стрибай!</item>
+        <item>Плюсь!</item>
+        <item>Ого!</item>
+        <item>Вау!</item>
+        <item>О-о!</item>
+        <item>Клас!</item>
+        <item>Супер!</item>
+        <item>Неймовірно!</item>
+        <item>Фантастично!</item>
+        <item>Блискуче!</item>
+        <item>Чудово!</item>
+        <item>Гарно!</item>
+        <item>Молодець!</item>
+        <item>У тебе вийшло!</item>
+        <item>Дуже добре!</item>
+        <item>Браво!</item>
+        <item>Розумник!</item>
+        <item>Розумна голівка!</item>
+        <item>Ти крутий!</item>
+        <item>Зірка!</item>
+        <item>Дай п\'ять!</item>
+        <item>Ти найкращий!</item>
+        <item>Найкращий день!</item>
+        <item>Так весело!</item>
+        <item>Веселощі!</item>
+        <item>Я радий!</item>
+        <item>Радість!</item>
+        <item>І я!</item>
+        <item>Хі-хі-хі</item>
+        <item>Хе-хе!</item>
+        <item>Хе-хе-хе</item>
+        <item>Ох я дурненький!</item>
+        <item>Ой!</item>
+        <item>Лоскотки!</item>
+        <item>Обіймемось?</item>
+        <item>Міцно обійму!</item>
+        <item>Ти мені подобаєшся!</item>
+        <item>Радий тебе бачити!</item>
+        <item>Привіт, друже!</item>
+        <item>Сонячний день!</item>
+        <item>Сонечко!</item>
+        <item>Дивись, хмаринка!</item>
+        <item>Веселка!</item>
+        <item>Метелик!</item>
+        <item>Квіточки!</item>
+        <item>Блиск!</item>
+        <item>Ням!</item>
+        <item>Ням-ням</item>
+        <item>Перекусимо?</item>
+        <item>Поспимо?</item>
+        <item>Zzz… ой, привіт!</item>
+        <item>Потанцюймо!</item>
+        <item>Ля-ля-ля</item>
+        <item>Ців!</item>
+        <item>Му?</item>
+        <item>Кря!</item>
+        <item>Хрю!</item>
+        <item>Гав!</item>
+        <item>Няв!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Привіт! Граймо!</item>
+        <item>Привіт, друже!</item>
+        <item>Ти прийшов! Ура!</item>
+        <item>Радий тебе бачити!</item>
+        <item>Готовий грати?</item>
+        <item>Привіт-привіт! Ходи грати!</item>
+        <item>З поверненням!</item>
+    </string-array>
+</resources>

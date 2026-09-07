@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">मेमोरी गेम</string>
+    <string name="sound_on">आवाज़ चालू</string>
+    <string name="sound_off">आवाज़ बंद</string>
+    <string name="rate_this">रेटिंग दें</string>
+    <string name="privacy_policy">गोपनीयता</string>
+    <string name="cd_quick_play">खेलो</string>
+    <string name="cd_map">थीम और रास्ते</string>
+    <string name="cd_settings">सेटिंग</string>
+    <string name="cd_theme_animals">जानवरों की थीम</string>
+    <string name="cd_theme_monsters">राक्षसों की थीम</string>
+    <string name="cd_theme_emoji">इमोजी थीम</string>
+    <string name="cd_difficulty">स्तर %1$d</string>
+    <string name="cd_back">वापस</string>
+    <string name="cd_road_map">इस स्तर के राउंड</string>
+    <string name="cd_locked">बंद है</string>
+    <string name="who_look">देखो!</string>
+    <string name="who_missing">कौन गायब है?</string>
+    <string name="cd_choice">कार्ड %1$d</string>
+    <string name="song_listen">सुनो!</string>
+    <string name="song_again">फिर से सुनो!</string>
+    <string name="song_your_turn">तुम्हारी बारी!</string>
+    <string name="cd_singers">गायक</string>
+    <string name="round_format">राउंड %1$d</string>
+    <string name="cd_round_next">राउंड %1$d, अगला</string>
+    <string name="cd_round_locked">राउंड %1$d, अभी बंद है</string>
+    <string name="cd_friend">दोस्त %1$d</string>
+    <string name="cd_play_again">फिर से खेलो</string>
+    <string name="cd_star">तारा</string>
+    <string name="cd_sound_toggle">आवाज़ चालू या बंद करें</string>
+    <string name="cd_rate">Google Play पर रेटिंग दें</string>
+    <string name="cd_close">बंद करें</string>
+    <string name="cd_privacy_policy">गोपनीयता नीति खोलें</string>
+    <string name="cd_tile">कार्ड</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">राउंड %1$d, %2$d तारे के साथ पूरा</item>
+        <item quantity="other">राउंड %1$d, %2$d तारों के साथ पूरा</item>
+    </plurals>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">เกมความจำ</string>
+    <string name="sound_on">เสียง เปิด</string>
+    <string name="sound_off">เสียง ปิด</string>
+    <string name="rate_this">ให้คะแนน</string>
+    <string name="privacy_policy">ความเป็นส่วนตัว</string>
+    <string name="cd_quick_play">เล่น</string>
+    <string name="cd_map">ธีมและเส้นทาง</string>
+    <string name="cd_settings">การตั้งค่า</string>
+    <string name="cd_theme_animals">ธีมสัตว์</string>
+    <string name="cd_theme_monsters">ธีมมอนสเตอร์</string>
+    <string name="cd_theme_emoji">ธีมอีโมจิ</string>
+    <string name="cd_difficulty">ระดับ %1$d</string>
+    <string name="cd_back">กลับ</string>
+    <string name="cd_road_map">รอบของระดับนี้</string>
+    <string name="cd_locked">ล็อกอยู่</string>
+    <string name="who_look">ดูนะ!</string>
+    <string name="who_missing">ใครหายไป?</string>
+    <string name="cd_choice">การ์ด %1$d</string>
+    <string name="song_listen">ฟังนะ!</string>
+    <string name="song_again">ฟังอีกครั้ง!</string>
+    <string name="song_your_turn">ตาหนูแล้ว!</string>
+    <string name="cd_singers">นักร้อง</string>
+    <string name="round_format">รอบ %1$d</string>
+    <string name="cd_round_next">รอบ %1$d รอบถัดไป</string>
+    <string name="cd_round_locked">รอบ %1$d ยังไม่เปิด</string>
+    <string name="cd_friend">เพื่อน %1$d</string>
+    <string name="cd_play_again">เล่นอีกครั้ง</string>
+    <string name="cd_star">ดาว</string>
+    <string name="cd_sound_toggle">เปิดหรือปิดเสียง</string>
+    <string name="cd_rate">ให้คะแนนใน Google Play</string>
+    <string name="cd_close">ปิด</string>
+    <string name="cd_privacy_policy">เปิดนโยบายความเป็นส่วนตัว</string>
+    <string name="cd_tile">การ์ด</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">รอบ %1$d ผ่านแล้วได้ %2$d ดาว</item>
+    </plurals>
+</resources>

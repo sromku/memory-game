@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Trò chơi trí nhớ</string>
+    <string name="sound_on">Âm thanh BẬT</string>
+    <string name="sound_off">Âm thanh TẮT</string>
+    <string name="rate_this">Đánh giá</string>
+    <string name="privacy_policy">Quyền riêng tư</string>
+    <string name="cd_quick_play">Chơi</string>
+    <string name="cd_map">Chủ đề và con đường</string>
+    <string name="cd_settings">Cài đặt</string>
+    <string name="cd_theme_animals">Chủ đề động vật</string>
+    <string name="cd_theme_monsters">Chủ đề quái vật</string>
+    <string name="cd_theme_emoji">Chủ đề emoji</string>
+    <string name="cd_difficulty">Độ khó %1$d</string>
+    <string name="cd_back">Quay lại</string>
+    <string name="cd_road_map">Các vòng của độ khó này</string>
+    <string name="cd_locked">Đã khóa</string>
+    <string name="who_look">Nhìn nhé!</string>
+    <string name="who_missing">Ai vắng mặt?</string>
+    <string name="cd_choice">Thẻ %1$d</string>
+    <string name="song_listen">Nghe nhé!</string>
+    <string name="song_again">Nghe lại nhé!</string>
+    <string name="song_your_turn">Đến lượt bạn!</string>
+    <string name="cd_singers">Các ca sĩ</string>
+    <string name="round_format">Vòng %1$d</string>
+    <string name="cd_round_next">Vòng %1$d, tiếp theo</string>
+    <string name="cd_round_locked">Vòng %1$d, chưa mở</string>
+    <string name="cd_friend">Bạn %1$d</string>
+    <string name="cd_play_again">Chơi lại</string>
+    <string name="cd_star">Ngôi sao</string>
+    <string name="cd_sound_toggle">Bật hoặc tắt âm thanh</string>
+    <string name="cd_rate">Đánh giá trên Google Play</string>
+    <string name="cd_close">Đóng</string>
+    <string name="cd_privacy_policy">Mở chính sách quyền riêng tư</string>
+    <string name="cd_tile">Thẻ</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">Vòng %1$d, hoàn thành với %2$d sao</item>
+    </plurals>
+</resources>

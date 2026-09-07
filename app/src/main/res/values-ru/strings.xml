@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Игра на память</string>
+    <string name="sound_on">Звук ВКЛ</string>
+    <string name="sound_off">Звук ВЫКЛ</string>
+    <string name="rate_this">Оценить</string>
+    <string name="privacy_policy">Конфиденциальность</string>
+    <string name="cd_quick_play">Играть</string>
+    <string name="cd_map">Темы и дорожки</string>
+    <string name="cd_settings">Настройки</string>
+    <string name="cd_theme_animals">Тема «Животные»</string>
+    <string name="cd_theme_monsters">Тема «Монстры»</string>
+    <string name="cd_theme_emoji">Тема «Эмодзи»</string>
+    <string name="cd_difficulty">Сложность %1$d</string>
+    <string name="cd_back">Назад</string>
+    <string name="cd_road_map">Раунды этой сложности</string>
+    <string name="cd_locked">Закрыто</string>
+    <string name="who_look">Смотри!</string>
+    <string name="who_missing">Кого не хватает?</string>
+    <string name="cd_choice">Карточка %1$d</string>
+    <string name="song_listen">Слушай!</string>
+    <string name="song_again">Слушай ещё раз!</string>
+    <string name="song_your_turn">Твой ход!</string>
+    <string name="cd_singers">Певцы</string>
+    <string name="round_format">Раунд %1$d</string>
+    <string name="cd_round_next">Раунд %1$d, следующий</string>
+    <string name="cd_round_locked">Раунд %1$d, ещё закрыт</string>
+    <string name="cd_friend">Друг %1$d</string>
+    <string name="cd_play_again">Играть снова</string>
+    <string name="cd_star">Звезда</string>
+    <string name="cd_sound_toggle">Включить или выключить звук</string>
+    <string name="cd_rate">Оценить в Google Play</string>
+    <string name="cd_close">Закрыть</string>
+    <string name="cd_privacy_policy">Открыть политику конфиденциальности</string>
+    <string name="cd_tile">Карточка</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Раунд %1$d, пройден с %2$d звездой</item>
+        <item quantity="few">Раунд %1$d, пройден с %2$d звёздами</item>
+        <item quantity="many">Раунд %1$d, пройден с %2$d звёздами</item>
+        <item quantity="other">Раунд %1$d, пройден с %2$d звёздами</item>
+    </plurals>
+</resources>

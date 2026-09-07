@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">기억력 게임</string>
+    <string name="sound_on">소리 켬</string>
+    <string name="sound_off">소리 끔</string>
+    <string name="rate_this">평가하기</string>
+    <string name="privacy_policy">개인정보</string>
+    <string name="cd_quick_play">놀기</string>
+    <string name="cd_map">테마와 길</string>
+    <string name="cd_settings">설정</string>
+    <string name="cd_theme_animals">동물 테마</string>
+    <string name="cd_theme_monsters">괴물 테마</string>
+    <string name="cd_theme_emoji">이모지 테마</string>
+    <string name="cd_difficulty">난이도 %1$d</string>
+    <string name="cd_back">뒤로</string>
+    <string name="cd_road_map">이 난이도의 라운드</string>
+    <string name="cd_locked">잠김</string>
+    <string name="who_look">보세요!</string>
+    <string name="who_missing">누가 없을까?</string>
+    <string name="cd_choice">카드 %1$d</string>
+    <string name="song_listen">들어 봐!</string>
+    <string name="song_again">다시 들어 봐!</string>
+    <string name="song_your_turn">네 차례야!</string>
+    <string name="cd_singers">노래하는 친구들</string>
+    <string name="round_format">라운드 %1$d</string>
+    <string name="cd_round_next">라운드 %1$d, 다음 차례</string>
+    <string name="cd_round_locked">라운드 %1$d, 아직 안 열림</string>
+    <string name="cd_friend">친구 %1$d</string>
+    <string name="cd_play_again">다시 하기</string>
+    <string name="cd_star">별</string>
+    <string name="cd_sound_toggle">소리 켜기 또는 끄기</string>
+    <string name="cd_rate">Google Play에서 평가</string>
+    <string name="cd_close">닫기</string>
+    <string name="cd_privacy_policy">개인정보 처리방침 열기</string>
+    <string name="cd_tile">카드</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">라운드 %1$d, 별 %2$d개로 완료</item>
+    </plurals>
+</resources>

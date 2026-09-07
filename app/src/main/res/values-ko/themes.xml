@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GameText">
+        <item name="android:fontFamily">@font/game</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Hai!</item>
+        <item>Halo!</item>
+        <item>Hai kamu!</item>
+        <item>Hei, teman!</item>
+        <item>Halo semua!</item>
+        <item>Apa kabar!</item>
+        <item>Hai hai!</item>
+        <item>Hei hei!</item>
+        <item>Selamat pagi!</item>
+        <item>Selamat malam!</item>
+        <item>Mimpi indah!</item>
+        <item>Bup!</item>
+        <item>Bup bup!</item>
+        <item>Cilukba!</item>
+        <item>Kamu menemukanku!</item>
+        <item>Aku di sini!</item>
+        <item>Di sini!</item>
+        <item>Tangkap aku!</item>
+        <item>Kena, kamu jaga!</item>
+        <item>Petak umpet?</item>
+        <item>Ayo main!</item>
+        <item>Main sama aku!</item>
+        <item>Kita main?</item>
+        <item>Satu lagi?</item>
+        <item>Lagi!</item>
+        <item>Siap?</item>
+        <item>Ayo!</item>
+        <item>Ayo lakukan!</item>
+        <item>Pilih aku!</item>
+        <item>Aku, aku!</item>
+        <item>Yeay!</item>
+        <item>Hore!</item>
+        <item>Wuhu!</item>
+        <item>Yippi!</item>
+        <item>Wiii!</item>
+        <item>Wuu!</item>
+        <item>Ta-da!</item>
+        <item>Boing!</item>
+        <item>Lompat lompat!</item>
+        <item>Mantul!</item>
+        <item>Goyang!</item>
+        <item>Lompat!</item>
+        <item>Byur!</item>
+        <item>Wah!</item>
+        <item>Wow!</item>
+        <item>Ooh!</item>
+        <item>Keren!</item>
+        <item>Super!</item>
+        <item>Luar biasa!</item>
+        <item>Fantastis!</item>
+        <item>Hebat!</item>
+        <item>Asyik!</item>
+        <item>Bagus!</item>
+        <item>Kerja bagus!</item>
+        <item>Kamu berhasil!</item>
+        <item>Bagus sekali!</item>
+        <item>Bravo!</item>
+        <item>Pintar!</item>
+        <item>Anak pintar!</item>
+        <item>Kamu hebat!</item>
+        <item>Pemain bintang!</item>
+        <item>Tos!</item>
+        <item>Kamu yang terbaik!</item>
+        <item>Hari terbaik!</item>
+        <item>Seru banget!</item>
+        <item>Seru seru seru!</item>
+        <item>Aku senang!</item>
+        <item>Senang!</item>
+        <item>Aku juga!</item>
+        <item>Hihi hihi</item>
+        <item>Hehe!</item>
+        <item>Hehehe</item>
+        <item>Aku konyol!</item>
+        <item>Ups!</item>
+        <item>Geli geli!</item>
+        <item>Peluk?</item>
+        <item>Peluk erat!</item>
+        <item>Aku suka kamu!</item>
+        <item>Senang bertemu kamu!</item>
+        <item>Hai teman!</item>
+        <item>Hari cerah!</item>
+        <item>Sinar matahari!</item>
+        <item>Lihat, awan!</item>
+        <item>Pelangi!</item>
+        <item>Kupu-kupu!</item>
+        <item>Bunga!</item>
+        <item>Kelap-kelip!</item>
+        <item>Enak!</item>
+        <item>Nyam nyam</item>
+        <item>Waktunya camilan?</item>
+        <item>Waktunya tidur?</item>
+        <item>Zzz… oh, hai!</item>
+        <item>Ayo menari!</item>
+        <item>La la la</item>
+        <item>Cip!</item>
+        <item>Moo?</item>
+        <item>Kwek!</item>
+        <item>Oink!</item>
+        <item>Guk!</item>
+        <item>Meong!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Hai! Ayo main!</item>
+        <item>Halo, teman!</item>
+        <item>Kamu datang! Yeay!</item>
+        <item>Senang bertemu kamu!</item>
+        <item>Siap main?</item>
+        <item>Hai hai! Ayo main!</item>
+        <item>Selamat datang kembali!</item>
+    </string-array>
+</resources>

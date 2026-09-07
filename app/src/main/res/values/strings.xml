@@ -7,11 +7,11 @@
     <string name="rate_this">Rate this</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_policy_url" translatable="false">https://sromku.com/memory-game/privacy.html</string>
-    <!-- rounds done, rounds on the road -->
-    <string name="road_progress_format">%1$d / %2$d</string>
+    <!-- rounds done, rounds on the road; the left-to-right mark keeps "15 / 40" in that order in Arabic -->
+    <string name="road_progress_format" translatable="false">\u200e%1$d / %2$d</string>
     <!-- minutes, seconds -->
-    <string name="clock_format">" %1$02d:%2$02d"</string>
-    <string name="score_format">%1$d</string>
+    <string name="clock_format" translatable="false">" %1$02d:%2$02d"</string>
+    <string name="score_format" translatable="false">%1$d</string>
 
     <string name="cd_quick_play">Play</string>
     <string name="cd_map">Themes and roads</string>

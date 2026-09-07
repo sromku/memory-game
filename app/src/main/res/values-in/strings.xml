@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Permainan Memori</string>
+    <string name="sound_on">Suara NYALA</string>
+    <string name="sound_off">Suara MATI</string>
+    <string name="rate_this">Beri nilai</string>
+    <string name="privacy_policy">Privasi</string>
+    <string name="cd_quick_play">Main</string>
+    <string name="cd_map">Tema dan jalur</string>
+    <string name="cd_settings">Pengaturan</string>
+    <string name="cd_theme_animals">Tema hewan</string>
+    <string name="cd_theme_monsters">Tema monster</string>
+    <string name="cd_theme_emoji">Tema emoji</string>
+    <string name="cd_difficulty">Tingkat %1$d</string>
+    <string name="cd_back">Kembali</string>
+    <string name="cd_road_map">Ronde tingkat ini</string>
+    <string name="cd_locked">Terkunci</string>
+    <string name="who_look">Lihat!</string>
+    <string name="who_missing">Siapa yang hilang?</string>
+    <string name="cd_choice">Kartu %1$d</string>
+    <string name="song_listen">Dengar!</string>
+    <string name="song_again">Dengar lagi!</string>
+    <string name="song_your_turn">Giliranmu!</string>
+    <string name="cd_singers">Para penyanyi</string>
+    <string name="round_format">Ronde %1$d</string>
+    <string name="cd_round_next">Ronde %1$d, berikutnya</string>
+    <string name="cd_round_locked">Ronde %1$d, belum terbuka</string>
+    <string name="cd_friend">Teman %1$d</string>
+    <string name="cd_play_again">Main lagi</string>
+    <string name="cd_star">Bintang</string>
+    <string name="cd_sound_toggle">Nyalakan atau matikan suara</string>
+    <string name="cd_rate">Beri nilai di Google Play</string>
+    <string name="cd_close">Tutup</string>
+    <string name="cd_privacy_policy">Buka kebijakan privasi</string>
+    <string name="cd_tile">Kartu</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">Ronde %1$d, selesai dengan %2$d bintang</item>
+    </plurals>
+</resources>

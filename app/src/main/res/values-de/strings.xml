@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Memory-Spiel</string>
+    <string name="sound_on">Ton AN</string>
+    <string name="sound_off">Ton AUS</string>
+    <string name="rate_this">Bewerten</string>
+    <string name="privacy_policy">Datenschutz</string>
+    <string name="cd_quick_play">Spielen</string>
+    <string name="cd_map">Themen und Wege</string>
+    <string name="cd_settings">Einstellungen</string>
+    <string name="cd_theme_animals">Thema Tiere</string>
+    <string name="cd_theme_monsters">Thema Monster</string>
+    <string name="cd_theme_emoji">Thema Emojis</string>
+    <string name="cd_difficulty">Schwierigkeit %1$d</string>
+    <string name="cd_back">Zurück</string>
+    <string name="cd_road_map">Runden dieser Schwierigkeit</string>
+    <string name="cd_locked">Gesperrt</string>
+    <string name="who_look">Schau!</string>
+    <string name="who_missing">Wer fehlt?</string>
+    <string name="cd_choice">Karte %1$d</string>
+    <string name="song_listen">Hör zu!</string>
+    <string name="song_again">Hör noch mal zu!</string>
+    <string name="song_your_turn">Du bist dran!</string>
+    <string name="cd_singers">Die Sänger</string>
+    <string name="round_format">Runde %1$d</string>
+    <string name="cd_round_next">Runde %1$d, als Nächstes</string>
+    <string name="cd_round_locked">Runde %1$d, noch nicht offen</string>
+    <string name="cd_friend">Freund %1$d</string>
+    <string name="cd_play_again">Noch mal spielen</string>
+    <string name="cd_star">Stern</string>
+    <string name="cd_sound_toggle">Ton an- oder ausschalten</string>
+    <string name="cd_rate">Bei Google Play bewerten</string>
+    <string name="cd_close">Schließen</string>
+    <string name="cd_privacy_policy">Datenschutzerklärung öffnen</string>
+    <string name="cd_tile">Karte</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Runde %1$d, geschafft mit %2$d Stern</item>
+        <item quantity="other">Runde %1$d, geschafft mit %2$d Sternen</item>
+    </plurals>
+</resources>

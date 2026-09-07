@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Hoi!</item>
+        <item>Hallo!</item>
+        <item>Hé daar!</item>
+        <item>Hé, vriend!</item>
+        <item>Hallo daar!</item>
+        <item>Hoi hoi!</item>
+        <item>Hoi hoi!</item>
+        <item>Hé hé!</item>
+        <item>Goedemorgen!</item>
+        <item>Welterusten!</item>
+        <item>Slaap lekker!</item>
+        <item>Boep!</item>
+        <item>Boep boep!</item>
+        <item>Kiekeboe!</item>
+        <item>Je hebt me gevonden!</item>
+        <item>Ik ben hier!</item>
+        <item>Hierzo!</item>
+        <item>Pak me dan!</item>
+        <item>Tikkie, jij bent \'m!</item>
+        <item>Verstoppertje?</item>
+        <item>Laten we spelen!</item>
+        <item>Speel met me!</item>
+        <item>Zullen we spelen?</item>
+        <item>Nog eentje?</item>
+        <item>Nog een keer!</item>
+        <item>Klaar?</item>
+        <item>Daar gaan we!</item>
+        <item>Kom op!</item>
+        <item>Kies mij!</item>
+        <item>Mij, mij!</item>
+        <item>Joepie!</item>
+        <item>Hoera!</item>
+        <item>Woehoe!</item>
+        <item>Jippie!</item>
+        <item>Wiii!</item>
+        <item>Woe!</item>
+        <item>Tada!</item>
+        <item>Boing!</item>
+        <item>Hup hup!</item>
+        <item>Stuiter!</item>
+        <item>Wiebel!</item>
+        <item>Spring!</item>
+        <item>Plons!</item>
+        <item>Wauw!</item>
+        <item>Wow!</item>
+        <item>Ooh!</item>
+        <item>Cool!</item>
+        <item>Super!</item>
+        <item>Geweldig!</item>
+        <item>Fantastisch!</item>
+        <item>Briljant!</item>
+        <item>Tof!</item>
+        <item>Mooi!</item>
+        <item>Goed gedaan!</item>
+        <item>Het is je gelukt!</item>
+        <item>Knap gedaan!</item>
+        <item>Bravo!</item>
+        <item>Slim!</item>
+        <item>Slimmerik!</item>
+        <item>Je bent top!</item>
+        <item>Sterspeler!</item>
+        <item>High five!</item>
+        <item>Jij bent de beste!</item>
+        <item>Beste dag ooit!</item>
+        <item>Zo leuk!</item>
+        <item>Pret pret pret!</item>
+        <item>Ik ben blij!</item>
+        <item>Blij!</item>
+        <item>Ik ook!</item>
+        <item>Giechel giechel</item>
+        <item>Hihi!</item>
+        <item>Hihihi</item>
+        <item>Domme ik!</item>
+        <item>Oeps!</item>
+        <item>Kietel kietel!</item>
+        <item>Knuffel?</item>
+        <item>Dikke knuffel!</item>
+        <item>Ik vind je lief!</item>
+        <item>Leuk je te zien!</item>
+        <item>Hoi, vriend!</item>
+        <item>Zonnige dag!</item>
+        <item>Zonnetje!</item>
+        <item>Kijk, een wolk!</item>
+        <item>Regenboog!</item>
+        <item>Vlinder!</item>
+        <item>Bloemen!</item>
+        <item>Glitter!</item>
+        <item>Mmm!</item>
+        <item>Nom nom</item>
+        <item>Snacktijd?</item>
+        <item>Dutje doen?</item>
+        <item>Zzz… o, hoi!</item>
+        <item>Laten we dansen!</item>
+        <item>La la la</item>
+        <item>Piep!</item>
+        <item>Boe?</item>
+        <item>Kwak!</item>
+        <item>Knor!</item>
+        <item>Woef!</item>
+        <item>Miauw!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Hoi! Laten we spelen!</item>
+        <item>Hallo, vriend!</item>
+        <item>Je bent er! Joepie!</item>
+        <item>Leuk je te zien!</item>
+        <item>Klaar om te spelen?</item>
+        <item>Hoi hoi! Kom spelen!</item>
+        <item>Welkom terug!</item>
+    </string-array>
+</resources>

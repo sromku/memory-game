@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Gioco di memoria</string>
+    <string name="sound_on">Suono SÌ</string>
+    <string name="sound_off">Suono NO</string>
+    <string name="rate_this">Valuta</string>
+    <string name="privacy_policy">Privacy</string>
+    <string name="cd_quick_play">Gioca</string>
+    <string name="cd_map">Temi e sentieri</string>
+    <string name="cd_settings">Impostazioni</string>
+    <string name="cd_theme_animals">Tema animali</string>
+    <string name="cd_theme_monsters">Tema mostri</string>
+    <string name="cd_theme_emoji">Tema emoji</string>
+    <string name="cd_difficulty">Difficoltà %1$d</string>
+    <string name="cd_back">Indietro</string>
+    <string name="cd_road_map">Turni di questa difficoltà</string>
+    <string name="cd_locked">Bloccato</string>
+    <string name="who_look">Guarda!</string>
+    <string name="who_missing">Chi manca?</string>
+    <string name="cd_choice">Carta %1$d</string>
+    <string name="song_listen">Ascolta!</string>
+    <string name="song_again">Ascolta ancora!</string>
+    <string name="song_your_turn">Tocca a te!</string>
+    <string name="cd_singers">I cantanti</string>
+    <string name="round_format">Turno %1$d</string>
+    <string name="cd_round_next">Turno %1$d, il prossimo</string>
+    <string name="cd_round_locked">Turno %1$d, non ancora aperto</string>
+    <string name="cd_friend">Amico %1$d</string>
+    <string name="cd_play_again">Gioca ancora</string>
+    <string name="cd_star">Stella</string>
+    <string name="cd_sound_toggle">Attiva o disattiva il suono</string>
+    <string name="cd_rate">Valuta su Google Play</string>
+    <string name="cd_close">Chiudi</string>
+    <string name="cd_privacy_policy">Apri l\'informativa sulla privacy</string>
+    <string name="cd_tile">Carta</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Turno %1$d, completato con %2$d stella</item>
+        <item quantity="other">Turno %1$d, completato con %2$d stelle</item>
+    </plurals>
+</resources>

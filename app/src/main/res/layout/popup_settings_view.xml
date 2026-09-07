@@ -22,12 +22,12 @@
             tools:src="@drawable/button_music_on" />
 
         <TextView
+            style="@style/GameText"
             android:id="@+id/sound_off_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/grobold"
-            android:shadowColor="@color/text_shadow"
+                        android:shadowColor="@color/text_shadow"
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="4"
@@ -56,12 +56,12 @@
             tools:src="@drawable/button_rate" />
 
         <TextView
+            style="@style/GameText"
             android:id="@+id/rate_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/grobold"
-            android:shadowColor="@color/text_shadow"
+                        android:shadowColor="@color/text_shadow"
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="4"
@@ -90,12 +90,12 @@
             android:src="@drawable/ic_privacy" />
 
         <TextView
+            style="@style/GameText"
             android:id="@+id/privacy_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/grobold"
-            android:shadowColor="@color/text_shadow"
+                        android:shadowColor="@color/text_shadow"
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="4"

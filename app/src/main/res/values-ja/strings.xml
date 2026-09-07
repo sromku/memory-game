@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">メモリーゲーム</string>
+    <string name="sound_on">おと オン</string>
+    <string name="sound_off">おと オフ</string>
+    <string name="rate_this">ひょうか</string>
+    <string name="privacy_policy">プライバシー</string>
+    <string name="cd_quick_play">あそぶ</string>
+    <string name="cd_map">テーマとみち</string>
+    <string name="cd_settings">せってい</string>
+    <string name="cd_theme_animals">どうぶつのテーマ</string>
+    <string name="cd_theme_monsters">モンスターのテーマ</string>
+    <string name="cd_theme_emoji">えもじのテーマ</string>
+    <string name="cd_difficulty">むずかしさ %1$d</string>
+    <string name="cd_back">もどる</string>
+    <string name="cd_road_map">このむずかしさのラウンド</string>
+    <string name="cd_locked">ロックちゅう</string>
+    <string name="who_look">みて！</string>
+    <string name="who_missing">だれがいない？</string>
+    <string name="cd_choice">カード %1$d</string>
+    <string name="song_listen">きいて！</string>
+    <string name="song_again">もういちど きいて！</string>
+    <string name="song_your_turn">きみのばん！</string>
+    <string name="cd_singers">うたうなかまたち</string>
+    <string name="round_format">ラウンド %1$d</string>
+    <string name="cd_round_next">ラウンド %1$d、つぎにあそぶ</string>
+    <string name="cd_round_locked">ラウンド %1$d、まだあそべない</string>
+    <string name="cd_friend">なかま %1$d</string>
+    <string name="cd_play_again">もういちど あそぶ</string>
+    <string name="cd_star">ほし</string>
+    <string name="cd_sound_toggle">おとを オン・オフ</string>
+    <string name="cd_rate">Google Play で ひょうか</string>
+    <string name="cd_close">とじる</string>
+    <string name="cd_privacy_policy">プライバシーポリシーをひらく</string>
+    <string name="cd_tile">カード</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">ラウンド %1$d、ほし %2$d こで クリア</item>
+    </plurals>
+</resources>

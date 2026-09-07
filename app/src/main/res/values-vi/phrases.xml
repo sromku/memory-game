@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Chào!</item>
+        <item>Xin chào!</item>
+        <item>Chào bạn!</item>
+        <item>Ê, bạn ơi!</item>
+        <item>Chào nha!</item>
+        <item>Khỏe không!</item>
+        <item>Hi hi!</item>
+        <item>Ê ê!</item>
+        <item>Chào buổi sáng!</item>
+        <item>Ngủ ngon!</item>
+        <item>Mơ đẹp nhé!</item>
+        <item>Bụp!</item>
+        <item>Bụp bụp!</item>
+        <item>Ú òa!</item>
+        <item>Bạn tìm thấy tớ rồi!</item>
+        <item>Tớ ở đây!</item>
+        <item>Bên này!</item>
+        <item>Bắt tớ đi!</item>
+        <item>Đến lượt bạn đuổi!</item>
+        <item>Chơi trốn tìm nhé?</item>
+        <item>Chơi thôi!</item>
+        <item>Chơi với tớ nhé!</item>
+        <item>Mình chơi nhé?</item>
+        <item>Thêm ván nữa?</item>
+        <item>Nữa đi!</item>
+        <item>Sẵn sàng chưa?</item>
+        <item>Đi nào!</item>
+        <item>Làm thôi!</item>
+        <item>Chọn tớ đi!</item>
+        <item>Tớ, tớ!</item>
+        <item>Yay!</item>
+        <item>Hoan hô!</item>
+        <item>Woohoo!</item>
+        <item>Yippee!</item>
+        <item>Wiii!</item>
+        <item>Woo!</item>
+        <item>Ta-da!</item>
+        <item>Boing!</item>
+        <item>Nhảy nhảy!</item>
+        <item>Tưng tưng!</item>
+        <item>Lắc lư!</item>
+        <item>Nhảy lên!</item>
+        <item>Tõm!</item>
+        <item>Ối chà!</item>
+        <item>Wow!</item>
+        <item>Ooh!</item>
+        <item>Tuyệt!</item>
+        <item>Siêu!</item>
+        <item>Đỉnh quá!</item>
+        <item>Tuyệt vời!</item>
+        <item>Xuất sắc!</item>
+        <item>Hay quá!</item>
+        <item>Tốt lắm!</item>
+        <item>Làm tốt lắm!</item>
+        <item>Bạn làm được rồi!</item>
+        <item>Giỏi lắm!</item>
+        <item>Hoan hô!</item>
+        <item>Thông minh!</item>
+        <item>Bé thông minh!</item>
+        <item>Bạn đỉnh lắm!</item>
+        <item>Ngôi sao!</item>
+        <item>Đập tay nào!</item>
+        <item>Bạn là số một!</item>
+        <item>Ngày tuyệt nhất!</item>
+        <item>Vui quá!</item>
+        <item>Vui vui vui!</item>
+        <item>Tớ vui lắm!</item>
+        <item>Vui!</item>
+        <item>Tớ cũng vậy!</item>
+        <item>Khúc khích</item>
+        <item>Hì hì!</item>
+        <item>Hì hì hì</item>
+        <item>Tớ ngốc quá!</item>
+        <item>Ối!</item>
+        <item>Cù lét!</item>
+        <item>Ôm cái nhé?</item>
+        <item>Ôm thật chặt!</item>
+        <item>Tớ thích bạn!</item>
+        <item>Gặp bạn vui quá!</item>
+        <item>Chào bạn ơi!</item>
+        <item>Trời nắng đẹp!</item>
+        <item>Nắng!</item>
+        <item>Nhìn kìa, mây!</item>
+        <item>Cầu vồng!</item>
+        <item>Bươm bướm!</item>
+        <item>Hoa!</item>
+        <item>Lấp lánh!</item>
+        <item>Ngon!</item>
+        <item>Măm măm</item>
+        <item>Ăn vặt không?</item>
+        <item>Ngủ trưa không?</item>
+        <item>Zzz… ơ, chào!</item>
+        <item>Nhảy múa thôi!</item>
+        <item>La la la</item>
+        <item>Chíp!</item>
+        <item>Bò?</item>
+        <item>Quạc!</item>
+        <item>Ụt ịt!</item>
+        <item>Gâu!</item>
+        <item>Meo!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Chào! Chơi thôi!</item>
+        <item>Chào bạn ơi!</item>
+        <item>Bạn đến rồi! Yay!</item>
+        <item>Gặp bạn vui quá!</item>
+        <item>Sẵn sàng chơi chưa?</item>
+        <item>Hi hi! Vào chơi nào!</item>
+        <item>Chào mừng trở lại!</item>
+    </string-array>
+</resources>

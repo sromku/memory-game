@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Jeu de mémoire</string>
+    <string name="sound_on">Son ON</string>
+    <string name="sound_off">Son OFF</string>
+    <string name="rate_this">Noter</string>
+    <string name="privacy_policy">Confidentialité</string>
+    <string name="cd_quick_play">Jouer</string>
+    <string name="cd_map">Thèmes et chemins</string>
+    <string name="cd_settings">Réglages</string>
+    <string name="cd_theme_animals">Thème animaux</string>
+    <string name="cd_theme_monsters">Thème monstres</string>
+    <string name="cd_theme_emoji">Thème émojis</string>
+    <string name="cd_difficulty">Difficulté %1$d</string>
+    <string name="cd_back">Retour</string>
+    <string name="cd_road_map">Manches de cette difficulté</string>
+    <string name="cd_locked">Verrouillé</string>
+    <string name="who_look">Regarde !</string>
+    <string name="who_missing">Qui manque ?</string>
+    <string name="cd_choice">Carte %1$d</string>
+    <string name="song_listen">Écoute !</string>
+    <string name="song_again">Écoute encore !</string>
+    <string name="song_your_turn">À toi !</string>
+    <string name="cd_singers">Les chanteurs</string>
+    <string name="round_format">Manche %1$d</string>
+    <string name="cd_round_next">Manche %1$d, la prochaine</string>
+    <string name="cd_round_locked">Manche %1$d, pas encore ouverte</string>
+    <string name="cd_friend">Ami %1$d</string>
+    <string name="cd_play_again">Rejouer</string>
+    <string name="cd_star">Étoile</string>
+    <string name="cd_sound_toggle">Activer ou couper le son</string>
+    <string name="cd_rate">Noter sur Google Play</string>
+    <string name="cd_close">Fermer</string>
+    <string name="cd_privacy_policy">Ouvrir la politique de confidentialité</string>
+    <string name="cd_tile">Carte</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Manche %1$d, réussie avec %2$d étoile</item>
+        <item quantity="other">Manche %1$d, réussie avec %2$d étoiles</item>
+    </plurals>
+</resources>

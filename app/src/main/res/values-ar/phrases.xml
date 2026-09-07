@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>مرحبًا!</item>
+        <item>أهلًا!</item>
+        <item>أهلًا بك!</item>
+        <item>يا صديقي!</item>
+        <item>أهلًا وسهلًا!</item>
+        <item>هلا!</item>
+        <item>هاي هاي!</item>
+        <item>هيه هيه!</item>
+        <item>صباح الخير!</item>
+        <item>تصبح على خير!</item>
+        <item>أحلامًا سعيدة!</item>
+        <item>بوب!</item>
+        <item>بوب بوب!</item>
+        <item>بيكابو!</item>
+        <item>وجدتني!</item>
+        <item>أنا هنا!</item>
+        <item>من هنا!</item>
+        <item>أمسك بي!</item>
+        <item>أنت الحرامي!</item>
+        <item>نلعب الغميضة؟</item>
+        <item>هيا نلعب!</item>
+        <item>العب معي!</item>
+        <item>نلعب؟</item>
+        <item>مرة أخرى؟</item>
+        <item>كمان!</item>
+        <item>جاهز؟</item>
+        <item>هيا بنا!</item>
+        <item>لنفعلها!</item>
+        <item>اخترني!</item>
+        <item>أنا، أنا!</item>
+        <item>يااااي!</item>
+        <item>هيب هيب هوراي!</item>
+        <item>ووهوو!</item>
+        <item>يبّي!</item>
+        <item>ويييي!</item>
+        <item>وو!</item>
+        <item>تا-دا!</item>
+        <item>بوينغ!</item>
+        <item>نط نط!</item>
+        <item>ارتد!</item>
+        <item>تمايل!</item>
+        <item>اقفز!</item>
+        <item>سبلاش!</item>
+        <item>واو!</item>
+        <item>واااو!</item>
+        <item>أووه!</item>
+        <item>رائع!</item>
+        <item>سوبر!</item>
+        <item>مذهل!</item>
+        <item>خيالي!</item>
+        <item>عبقري!</item>
+        <item>حلو!</item>
+        <item>جميل!</item>
+        <item>أحسنت!</item>
+        <item>فعلتها!</item>
+        <item>ممتاز!</item>
+        <item>برافو!</item>
+        <item>ذكي!</item>
+        <item>عقل ذكي!</item>
+        <item>أنت بطل!</item>
+        <item>نجم اللعبة!</item>
+        <item>هات خمسة!</item>
+        <item>أنت الأفضل!</item>
+        <item>أجمل يوم!</item>
+        <item>ممتع جدًا!</item>
+        <item>مرح مرح مرح!</item>
+        <item>أنا سعيد!</item>
+        <item>سعيد!</item>
+        <item>وأنا أيضًا!</item>
+        <item>هي هي هي</item>
+        <item>هيهي!</item>
+        <item>هيهيهي</item>
+        <item>يا لغبائي!</item>
+        <item>أوبس!</item>
+        <item>دغدغة!</item>
+        <item>حضن؟</item>
+        <item>حضن كبير!</item>
+        <item>أحبك!</item>
+        <item>سعيد برؤيتك!</item>
+        <item>مرحبًا يا صديقي!</item>
+        <item>يوم مشمس!</item>
+        <item>شمس!</item>
+        <item>انظر، غيمة!</item>
+        <item>قوس قزح!</item>
+        <item>فراشة!</item>
+        <item>زهور!</item>
+        <item>لمعان!</item>
+        <item>لذيذ!</item>
+        <item>نم نم</item>
+        <item>وقت الأكل؟</item>
+        <item>وقت القيلولة؟</item>
+        <item>زززز… أوه، مرحبًا!</item>
+        <item>هيا نرقص!</item>
+        <item>لا لا لا</item>
+        <item>صوصو!</item>
+        <item>مو؟</item>
+        <item>كواك!</item>
+        <item>نخ نخ!</item>
+        <item>هو هو!</item>
+        <item>مياو!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>مرحبًا! هيا نلعب!</item>
+        <item>أهلًا يا صديقي!</item>
+        <item>أنت هنا! ياي!</item>
+        <item>سعيد برؤيتك!</item>
+        <item>جاهز للعب؟</item>
+        <item>هاي هاي! تعال نلعب!</item>
+        <item>أهلًا بعودتك!</item>
+    </string-array>
+</resources>

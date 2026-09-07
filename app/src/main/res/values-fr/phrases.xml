@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Salut !</item>
+        <item>Bonjour !</item>
+        <item>Coucou !</item>
+        <item>Hé, l\'ami !</item>
+        <item>Bonjour, bonjour !</item>
+        <item>Salut toi !</item>
+        <item>Coucou coucou !</item>
+        <item>Hé hé !</item>
+        <item>Bonjour !</item>
+        <item>Bonne nuit !</item>
+        <item>Fais de beaux rêves !</item>
+        <item>Boup !</item>
+        <item>Boup boup !</item>
+        <item>Coucou, me voilà !</item>
+        <item>Tu m\'as trouvé !</item>
+        <item>Je suis là !</item>
+        <item>Par ici !</item>
+        <item>Attrape-moi !</item>
+        <item>Touché, c\'est toi !</item>
+        <item>On joue à cache-cache ?</item>
+        <item>On joue !</item>
+        <item>Joue avec moi !</item>
+        <item>On joue ?</item>
+        <item>Encore une ?</item>
+        <item>Encore !</item>
+        <item>Prêt ?</item>
+        <item>C\'est parti !</item>
+        <item>Allons-y !</item>
+        <item>Choisis-moi !</item>
+        <item>Moi, moi !</item>
+        <item>Youpi !</item>
+        <item>Hourra !</item>
+        <item>Ouais !</item>
+        <item>Yiiipi !</item>
+        <item>Ouiii !</item>
+        <item>Ouh !</item>
+        <item>Tada !</item>
+        <item>Boing !</item>
+        <item>Hop hop !</item>
+        <item>Bondis !</item>
+        <item>Tortille !</item>
+        <item>Saute !</item>
+        <item>Plouf !</item>
+        <item>Oh là là !</item>
+        <item>Waouh !</item>
+        <item>Ooh !</item>
+        <item>Cool !</item>
+        <item>Super !</item>
+        <item>Incroyable !</item>
+        <item>Fantastique !</item>
+        <item>Génial !</item>
+        <item>Chouette !</item>
+        <item>Bien !</item>
+        <item>Bon travail !</item>
+        <item>Tu as réussi !</item>
+        <item>Bravo !</item>
+        <item>Bravo !</item>
+        <item>Malin !</item>
+        <item>Petit futé !</item>
+        <item>Tu assures !</item>
+        <item>Une étoile !</item>
+        <item>Tape m\'en cinq !</item>
+        <item>Tu es le meilleur !</item>
+        <item>La plus belle journée !</item>
+        <item>Trop drôle !</item>
+        <item>Rigolo rigolo !</item>
+        <item>Je suis content !</item>
+        <item>Content !</item>
+        <item>Moi aussi !</item>
+        <item>Hi hi hi</item>
+        <item>Héhé !</item>
+        <item>Héhéhé</item>
+        <item>Que je suis bête !</item>
+        <item>Oups !</item>
+        <item>Guili guili !</item>
+        <item>Un câlin ?</item>
+        <item>Gros câlin !</item>
+        <item>Je t\'aime bien !</item>
+        <item>Content de te voir !</item>
+        <item>Salut l\'ami !</item>
+        <item>Il fait beau !</item>
+        <item>Du soleil !</item>
+        <item>Regarde, un nuage !</item>
+        <item>Arc-en-ciel !</item>
+        <item>Papillon !</item>
+        <item>Des fleurs !</item>
+        <item>Ça brille !</item>
+        <item>Miam !</item>
+        <item>Miam miam</item>
+        <item>Un goûter ?</item>
+        <item>Une sieste ?</item>
+        <item>Zzz… oh, salut !</item>
+        <item>On danse !</item>
+        <item>La la la</item>
+        <item>Piou !</item>
+        <item>Meuh ?</item>
+        <item>Coin !</item>
+        <item>Groin !</item>
+        <item>Ouaf !</item>
+        <item>Miaou !</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Salut ! On joue ?</item>
+        <item>Bonjour, l\'ami !</item>
+        <item>Tu es là ! Youpi !</item>
+        <item>Content de te voir !</item>
+        <item>Prêt à jouer ?</item>
+        <item>Coucou ! Viens jouer !</item>
+        <item>Bon retour !</item>
+    </string-array>
+</resources>

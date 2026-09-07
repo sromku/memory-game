@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>หวัดดี!</item>
+        <item>สวัสดี!</item>
+        <item>หวัดดีจ้า!</item>
+        <item>เฮ้ เพื่อน!</item>
+        <item>สวัสดีจ้า!</item>
+        <item>ว่าไง!</item>
+        <item>หวัดดี หวัดดี!</item>
+        <item>เฮ้ เฮ้!</item>
+        <item>อรุณสวัสดิ์!</item>
+        <item>ราตรีสวัสดิ์!</item>
+        <item>ฝันดีนะ!</item>
+        <item>บุ๊บ!</item>
+        <item>บุ๊บ บุ๊บ!</item>
+        <item>จ๊ะเอ๋!</item>
+        <item>เจอฉันแล้ว!</item>
+        <item>ฉันอยู่นี่!</item>
+        <item>ทางนี้!</item>
+        <item>จับฉันสิ!</item>
+        <item>โดนแล้ว ตาเธอ!</item>
+        <item>เล่นซ่อนหาไหม?</item>
+        <item>มาเล่นกัน!</item>
+        <item>เล่นกับฉันนะ!</item>
+        <item>เล่นกันไหม?</item>
+        <item>อีกรอบไหม?</item>
+        <item>อีกที!</item>
+        <item>พร้อมไหม?</item>
+        <item>ไปกันเลย!</item>
+        <item>ลุยเลย!</item>
+        <item>เลือกฉันสิ!</item>
+        <item>ฉัน ฉัน!</item>
+        <item>เย้!</item>
+        <item>ไชโย!</item>
+        <item>วู้ฮู!</item>
+        <item>ยิปปี้!</item>
+        <item>วี้!</item>
+        <item>วู้!</item>
+        <item>แท่นแท๊น!</item>
+        <item>บอยง์!</item>
+        <item>กระโดด กระโดด!</item>
+        <item>เด้ง!</item>
+        <item>ดุ๊กดิ๊ก!</item>
+        <item>กระโดด!</item>
+        <item>จ๋อม!</item>
+        <item>โอ้โห!</item>
+        <item>ว้าว!</item>
+        <item>อู้!</item>
+        <item>เจ๋ง!</item>
+        <item>สุดยอด!</item>
+        <item>เยี่ยมมาก!</item>
+        <item>มหัศจรรย์!</item>
+        <item>ยอดเยี่ยม!</item>
+        <item>เท่!</item>
+        <item>ดีจัง!</item>
+        <item>เก่งมาก!</item>
+        <item>ทำได้แล้ว!</item>
+        <item>ดีมาก!</item>
+        <item>บราโว่!</item>
+        <item>ฉลาด!</item>
+        <item>หัวไว!</item>
+        <item>เธอเจ๋งมาก!</item>
+        <item>นักเล่นดาวเด่น!</item>
+        <item>ไฮไฟว์!</item>
+        <item>เธอเก่งที่สุด!</item>
+        <item>วันที่ดีที่สุด!</item>
+        <item>สนุกจัง!</item>
+        <item>สนุก สนุก สนุก!</item>
+        <item>ฉันมีความสุข!</item>
+        <item>มีความสุข!</item>
+        <item>ฉันด้วย!</item>
+        <item>คิกๆ</item>
+        <item>ฮิฮิ!</item>
+        <item>ฮิฮิฮิ</item>
+        <item>ฉันนี่ซนจัง!</item>
+        <item>อุ๊ปส์!</item>
+        <item>จั๊กจี้!</item>
+        <item>กอดหน่อยไหม?</item>
+        <item>กอดแน่นๆ!</item>
+        <item>ฉันชอบเธอ!</item>
+        <item>ดีใจที่ได้เจอ!</item>
+        <item>หวัดดี เพื่อน!</item>
+        <item>วันแดดดี!</item>
+        <item>แสงแดด!</item>
+        <item>ดูสิ ก้อนเมฆ!</item>
+        <item>สายรุ้ง!</item>
+        <item>ผีเสื้อ!</item>
+        <item>ดอกไม้!</item>
+        <item>วิบวับ!</item>
+        <item>อร่อย!</item>
+        <item>หม่ำ หม่ำ</item>
+        <item>ถึงเวลาขนมหรือยัง?</item>
+        <item>ถึงเวลานอนหรือยัง?</item>
+        <item>ซซซ… อ้าว หวัดดี!</item>
+        <item>มาเต้นกัน!</item>
+        <item>ลา ลา ลา</item>
+        <item>จิ๊บ!</item>
+        <item>มอ?</item>
+        <item>ก้าบ!</item>
+        <item>อู๊ด!</item>
+        <item>โฮ่ง!</item>
+        <item>เหมียว!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>หวัดดี! มาเล่นกัน!</item>
+        <item>สวัสดี เพื่อน!</item>
+        <item>มาแล้ว! เย้!</item>
+        <item>ดีใจที่ได้เจอ!</item>
+        <item>พร้อมเล่นหรือยัง?</item>
+        <item>หวัดดี หวัดดี! มาเล่นกัน!</item>
+        <item>ยินดีต้อนรับกลับมา!</item>
+    </string-array>
+</resources>

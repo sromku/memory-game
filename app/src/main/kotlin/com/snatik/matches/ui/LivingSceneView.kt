@@ -80,7 +80,8 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = 0xFF1E2D33.toInt()
         textAlign = Paint.Align.CENTER
-        typeface = ResourcesCompat.getFont(context, R.font.grobold)
+        typeface = ResourcesCompat.getFont(context, R.font.game)
+        isFakeBoldText = resources.getBoolean(R.bool.game_text_fake_bold)
     }
     private val bubble = Path()
     private val visitors = mutableListOf<Visitor>()

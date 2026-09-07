@@ -5,10 +5,15 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <style name="RoadHeaderText">
+    <!-- The game's display text. Languages drawn by the system font override it (see values-ja etc.). -->
+    <style name="GameText">
+        <item name="android:fontFamily">@font/game</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="RoadHeaderText" parent="GameText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/grobold</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/road_header_text_size</item>
         <item name="android:shadowColor">@color/text_shadow</item>

@@ -33,14 +33,14 @@
             tools:text="Round 12" />
 
         <TextView
+            style="@style/GameText"
             android:id="@+id/time_bar_text"
             android:layout_width="@dimen/clock_width"
             android:layout_height="@dimen/clock_height"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/clock_text_margin_right"
-            android:fontFamily="@font/grobold"
-            android:gravity="center"
+                        android:gravity="center"
             android:shadowColor="@color/text_shadow"
             android:shadowDx="4"
             android:shadowDy="4"

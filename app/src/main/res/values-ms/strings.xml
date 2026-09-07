@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Permainan Memori</string>
+    <string name="sound_on">Bunyi HIDUP</string>
+    <string name="sound_off">Bunyi MATI</string>
+    <string name="rate_this">Beri nilai</string>
+    <string name="privacy_policy">Privasi</string>
+    <string name="cd_quick_play">Main</string>
+    <string name="cd_map">Tema dan laluan</string>
+    <string name="cd_settings">Tetapan</string>
+    <string name="cd_theme_animals">Tema haiwan</string>
+    <string name="cd_theme_monsters">Tema raksasa</string>
+    <string name="cd_theme_emoji">Tema emoji</string>
+    <string name="cd_difficulty">Tahap %1$d</string>
+    <string name="cd_back">Kembali</string>
+    <string name="cd_road_map">Pusingan tahap ini</string>
+    <string name="cd_locked">Berkunci</string>
+    <string name="who_look">Tengok!</string>
+    <string name="who_missing">Siapa yang hilang?</string>
+    <string name="cd_choice">Kad %1$d</string>
+    <string name="song_listen">Dengar!</string>
+    <string name="song_again">Dengar sekali lagi!</string>
+    <string name="song_your_turn">Giliran kamu!</string>
+    <string name="cd_singers">Para penyanyi</string>
+    <string name="round_format">Pusingan %1$d</string>
+    <string name="cd_round_next">Pusingan %1$d, seterusnya</string>
+    <string name="cd_round_locked">Pusingan %1$d, belum dibuka</string>
+    <string name="cd_friend">Kawan %1$d</string>
+    <string name="cd_play_again">Main lagi</string>
+    <string name="cd_star">Bintang</string>
+    <string name="cd_sound_toggle">Hidupkan atau matikan bunyi</string>
+    <string name="cd_rate">Beri nilai di Google Play</string>
+    <string name="cd_close">Tutup</string>
+    <string name="cd_privacy_policy">Buka dasar privasi</string>
+    <string name="cd_tile">Kad</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">Pusingan %1$d, selesai dengan %2$d bintang</item>
+    </plurals>
+</resources>

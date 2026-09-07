@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Memoryspel</string>
+    <string name="sound_on">Geluid AAN</string>
+    <string name="sound_off">Geluid UIT</string>
+    <string name="rate_this">Beoordelen</string>
+    <string name="privacy_policy">Privacy</string>
+    <string name="cd_quick_play">Spelen</string>
+    <string name="cd_map">Thema\'s en paden</string>
+    <string name="cd_settings">Instellingen</string>
+    <string name="cd_theme_animals">Thema dieren</string>
+    <string name="cd_theme_monsters">Thema monsters</string>
+    <string name="cd_theme_emoji">Thema emoji</string>
+    <string name="cd_difficulty">Niveau %1$d</string>
+    <string name="cd_back">Terug</string>
+    <string name="cd_road_map">Rondes van dit niveau</string>
+    <string name="cd_locked">Vergrendeld</string>
+    <string name="who_look">Kijk!</string>
+    <string name="who_missing">Wie mist er?</string>
+    <string name="cd_choice">Kaart %1$d</string>
+    <string name="song_listen">Luister!</string>
+    <string name="song_again">Luister nog eens!</string>
+    <string name="song_your_turn">Jouw beurt!</string>
+    <string name="cd_singers">De zangers</string>
+    <string name="round_format">Ronde %1$d</string>
+    <string name="cd_round_next">Ronde %1$d, de volgende</string>
+    <string name="cd_round_locked">Ronde %1$d, nog niet open</string>
+    <string name="cd_friend">Vriend %1$d</string>
+    <string name="cd_play_again">Nog eens spelen</string>
+    <string name="cd_star">Ster</string>
+    <string name="cd_sound_toggle">Geluid aan- of uitzetten</string>
+    <string name="cd_rate">Beoordelen op Google Play</string>
+    <string name="cd_close">Sluiten</string>
+    <string name="cd_privacy_policy">Privacybeleid openen</string>
+    <string name="cd_tile">Kaart</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Ronde %1$d, gehaald met %2$d ster</item>
+        <item quantity="other">Ronde %1$d, gehaald met %2$d sterren</item>
+    </plurals>
+</resources>

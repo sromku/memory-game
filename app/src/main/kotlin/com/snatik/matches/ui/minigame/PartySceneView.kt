@@ -67,7 +67,8 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
     }
     private val markerText = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = ContextCompat.getColor(context, R.color.white)
-        typeface = ResourcesCompat.getFont(context, R.font.grobold)
+        typeface = ResourcesCompat.getFont(context, R.font.game)
+        isFakeBoldText = resources.getBoolean(R.bool.game_text_fake_bold)
         textAlign = Paint.Align.CENTER
     }
 

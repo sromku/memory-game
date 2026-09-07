@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>안녕!</item>
+        <item>안녕하세요!</item>
+        <item>안녕 안녕!</item>
+        <item>친구야!</item>
+        <item>반가워!</item>
+        <item>잘 지내?</item>
+        <item>하이 하이!</item>
+        <item>야 야!</item>
+        <item>좋은 아침!</item>
+        <item>잘 자!</item>
+        <item>좋은 꿈 꿔!</item>
+        <item>뿅!</item>
+        <item>뿅 뿅!</item>
+        <item>까꿍!</item>
+        <item>날 찾았네!</item>
+        <item>나 여기 있어!</item>
+        <item>이쪽이야!</item>
+        <item>잡아 봐!</item>
+        <item>술래는 너야!</item>
+        <item>숨바꼭질할까?</item>
+        <item>같이 놀자!</item>
+        <item>나랑 놀자!</item>
+        <item>놀까?</item>
+        <item>한 판 더?</item>
+        <item>또!</item>
+        <item>준비됐어?</item>
+        <item>가자!</item>
+        <item>해 보자!</item>
+        <item>나를 골라 줘!</item>
+        <item>나, 나!</item>
+        <item>야호!</item>
+        <item>만세!</item>
+        <item>우후!</item>
+        <item>이야!</item>
+        <item>위이!</item>
+        <item>우!</item>
+        <item>짜잔!</item>
+        <item>보잉!</item>
+        <item>깡충깡충!</item>
+        <item>통통!</item>
+        <item>흔들흔들!</item>
+        <item>점프!</item>
+        <item>첨벙!</item>
+        <item>우와!</item>
+        <item>와!</item>
+        <item>오오!</item>
+        <item>멋져!</item>
+        <item>최고!</item>
+        <item>굉장해!</item>
+        <item>환상적이야!</item>
+        <item>훌륭해!</item>
+        <item>근사해!</item>
+        <item>좋아!</item>
+        <item>잘했어!</item>
+        <item>해냈어!</item>
+        <item>아주 잘했어!</item>
+        <item>브라보!</item>
+        <item>똑똑해!</item>
+        <item>똑똑이!</item>
+        <item>넌 최고야!</item>
+        <item>스타 플레이어!</item>
+        <item>하이파이브!</item>
+        <item>네가 최고야!</item>
+        <item>최고의 날!</item>
+        <item>재밌다!</item>
+        <item>신난다 신난다!</item>
+        <item>나 행복해!</item>
+        <item>행복해!</item>
+        <item>나도!</item>
+        <item>킥킥</item>
+        <item>헤헤!</item>
+        <item>헤헤헤</item>
+        <item>바보 같은 나!</item>
+        <item>앗!</item>
+        <item>간질간질!</item>
+        <item>안아 줄까?</item>
+        <item>꼭 안아 줄게!</item>
+        <item>네가 좋아!</item>
+        <item>만나서 반가워!</item>
+        <item>안녕, 친구야!</item>
+        <item>맑은 날!</item>
+        <item>햇살!</item>
+        <item>봐, 구름이야!</item>
+        <item>무지개!</item>
+        <item>나비!</item>
+        <item>꽃!</item>
+        <item>반짝반짝!</item>
+        <item>냠!</item>
+        <item>냠냠</item>
+        <item>간식 시간?</item>
+        <item>낮잠 시간?</item>
+        <item>쿨쿨… 어, 안녕!</item>
+        <item>춤추자!</item>
+        <item>라라라</item>
+        <item>삐약!</item>
+        <item>음매?</item>
+        <item>꽥!</item>
+        <item>꿀꿀!</item>
+        <item>멍!</item>
+        <item>야옹!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>안녕! 같이 놀자!</item>
+        <item>안녕, 친구야!</item>
+        <item>왔구나! 야호!</item>
+        <item>만나서 반가워!</item>
+        <item>놀 준비 됐어?</item>
+        <item>하이 하이! 놀러 와!</item>
+        <item>다시 만나서 반가워!</item>
+    </string-array>
+</resources>

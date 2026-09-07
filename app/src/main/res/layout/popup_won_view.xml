@@ -61,6 +61,7 @@
         android:visibility="invisible" />
 
     <TextView
+        style="@style/GameText"
         android:id="@+id/time_bar_text"
         android:layout_width="@dimen/popup_button_time_width"
         android:layout_height="@dimen/popup_button_time_height"
@@ -68,8 +69,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="@dimen/popup_button_time_margin_right"
         android:layout_marginBottom="@dimen/popup_button_time_margin_bottom"
-        android:fontFamily="@font/grobold"
-        android:gravity="center"
+                android:gravity="center"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="4"
@@ -79,6 +79,7 @@
         tools:text="00:42" />
 
     <TextView
+        style="@style/GameText"
         android:id="@+id/score_bar_text"
         android:layout_width="@dimen/popup_button_time_width"
         android:layout_height="@dimen/popup_button_time_height"
@@ -86,8 +87,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="@dimen/popup_button_time_margin_right"
         android:layout_marginBottom="@dimen/popup_button_score_margin_bottom"
-        android:fontFamily="@font/grobold"
-        android:gravity="center"
+                android:gravity="center"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="4"

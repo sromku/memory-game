@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">記憶遊戲</string>
+    <string name="sound_on">聲音 開</string>
+    <string name="sound_off">聲音 關</string>
+    <string name="rate_this">評分</string>
+    <string name="privacy_policy">隱私權</string>
+    <string name="cd_quick_play">開始玩</string>
+    <string name="cd_map">主題與路線</string>
+    <string name="cd_settings">設定</string>
+    <string name="cd_theme_animals">動物主題</string>
+    <string name="cd_theme_monsters">怪獸主題</string>
+    <string name="cd_theme_emoji">表情符號主題</string>
+    <string name="cd_difficulty">難度 %1$d</string>
+    <string name="cd_back">返回</string>
+    <string name="cd_road_map">這個難度的關卡</string>
+    <string name="cd_locked">尚未解鎖</string>
+    <string name="who_look">看！</string>
+    <string name="who_missing">誰不見了？</string>
+    <string name="cd_choice">卡片 %1$d</string>
+    <string name="song_listen">聽！</string>
+    <string name="song_again">再聽一次！</string>
+    <string name="song_your_turn">換你了！</string>
+    <string name="cd_singers">唱歌的朋友</string>
+    <string name="round_format">第 %1$d 關</string>
+    <string name="cd_round_next">第 %1$d 關，下一關</string>
+    <string name="cd_round_locked">第 %1$d 關，尚未開放</string>
+    <string name="cd_friend">朋友 %1$d</string>
+    <string name="cd_play_again">再玩一次</string>
+    <string name="cd_star">星星</string>
+    <string name="cd_sound_toggle">開啟或關閉聲音</string>
+    <string name="cd_rate">在 Google Play 評分</string>
+    <string name="cd_close">關閉</string>
+    <string name="cd_privacy_policy">開啟隱私權政策</string>
+    <string name="cd_tile">卡片</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">第 %1$d 關，獲得 %2$d 顆星星</item>
+    </plurals>
+</resources>

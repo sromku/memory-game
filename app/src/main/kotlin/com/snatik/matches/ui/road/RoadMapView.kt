@@ -74,7 +74,8 @@ class RoadMapView @JvmOverloads constructor(context: Context, attrs: AttributeSe
     private val markerRimPaint = strokePaint(color(R.color.road_rim), radius * 0.1f)
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = color(R.color.white)
-        typeface = ResourcesCompat.getFont(context, R.font.grobold)
+        typeface = ResourcesCompat.getFont(context, R.font.game)
+        isFakeBoldText = resources.getBoolean(R.bool.game_text_fake_bold)
         textAlign = Paint.Align.CENTER
         textSize = radius * 0.95f
         setShadowLayer(radius * 0.1f, 0f, radius * 0.07f, color(R.color.text_shadow))

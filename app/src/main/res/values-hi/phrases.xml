@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>हाय!</item>
+        <item>नमस्ते!</item>
+        <item>हैलो!</item>
+        <item>हे दोस्त!</item>
+        <item>नमस्ते जी!</item>
+        <item>क्या हाल!</item>
+        <item>हाय हाय!</item>
+        <item>हे हे!</item>
+        <item>सुप्रभात!</item>
+        <item>शुभ रात्रि!</item>
+        <item>मीठे सपने!</item>
+        <item>बूप!</item>
+        <item>बूप बूप!</item>
+        <item>पीका-बू!</item>
+        <item>तुमने मुझे ढूंढ लिया!</item>
+        <item>मैं यहाँ हूँ!</item>
+        <item>इधर!</item>
+        <item>पकड़ो मुझे!</item>
+        <item>छू लिया, अब तुम्हारी बारी!</item>
+        <item>छुपन-छुपाई?</item>
+        <item>चलो खेलें!</item>
+        <item>मेरे साथ खेलो!</item>
+        <item>खेलें?</item>
+        <item>एक और?</item>
+        <item>फिर से!</item>
+        <item>तैयार?</item>
+        <item>चलो!</item>
+        <item>करते हैं!</item>
+        <item>मुझे चुनो!</item>
+        <item>मुझे, मुझे!</item>
+        <item>याय!</item>
+        <item>हुर्रे!</item>
+        <item>वूहू!</item>
+        <item>यिप्पी!</item>
+        <item>वीई!</item>
+        <item>वू!</item>
+        <item>टा-डा!</item>
+        <item>बोइंग!</item>
+        <item>हॉप हॉप!</item>
+        <item>उछलो!</item>
+        <item>हिलो-डुलो!</item>
+        <item>कूदो!</item>
+        <item>छपाक!</item>
+        <item>अरे वाह!</item>
+        <item>वाह!</item>
+        <item>ओह!</item>
+        <item>मस्त!</item>
+        <item>सुपर!</item>
+        <item>कमाल!</item>
+        <item>शानदार!</item>
+        <item>बहुत बढ़िया!</item>
+        <item>बढ़िया!</item>
+        <item>अच्छा!</item>
+        <item>शाबाश!</item>
+        <item>तुमने कर दिखाया!</item>
+        <item>बहुत अच्छे!</item>
+        <item>वाह वाह!</item>
+        <item>होशियार!</item>
+        <item>तेज़ दिमाग!</item>
+        <item>तुम कमाल हो!</item>
+        <item>स्टार खिलाड़ी!</item>
+        <item>हाई फाइव!</item>
+        <item>तुम सबसे अच्छे हो!</item>
+        <item>सबसे अच्छा दिन!</item>
+        <item>कितना मज़ा!</item>
+        <item>मज़ा मज़ा मज़ा!</item>
+        <item>मैं खुश हूँ!</item>
+        <item>खुश!</item>
+        <item>मैं भी!</item>
+        <item>खी खी खी</item>
+        <item>हीही!</item>
+        <item>हीहीही</item>
+        <item>मैं भी ना!</item>
+        <item>ओहो!</item>
+        <item>गुदगुदी!</item>
+        <item>गले लगोगे?</item>
+        <item>बड़ी सी झप्पी!</item>
+        <item>तुम मुझे पसंद हो!</item>
+        <item>तुमसे मिलकर अच्छा लगा!</item>
+        <item>हाय दोस्त!</item>
+        <item>धूप वाला दिन!</item>
+        <item>धूप!</item>
+        <item>देखो, बादल!</item>
+        <item>इंद्रधनुष!</item>
+        <item>तितली!</item>
+        <item>फूल!</item>
+        <item>चमक!</item>
+        <item>यम!</item>
+        <item>नम नम</item>
+        <item>नाश्ते का समय?</item>
+        <item>सोने का समय?</item>
+        <item>ज़्ज़्ज़… अरे, हाय!</item>
+        <item>चलो नाचें!</item>
+        <item>ला ला ला</item>
+        <item>चीं!</item>
+        <item>मू?</item>
+        <item>क्वैक!</item>
+        <item>ओइंक!</item>
+        <item>भौं!</item>
+        <item>म्याऊँ!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>हाय! चलो खेलें!</item>
+        <item>नमस्ते दोस्त!</item>
+        <item>तुम आ गए! याय!</item>
+        <item>तुमसे मिलकर अच्छा लगा!</item>
+        <item>खेलने के लिए तैयार?</item>
+        <item>हाय हाय! खेलने आओ!</item>
+        <item>वापसी पर स्वागत है!</item>
+    </string-array>
+</resources>

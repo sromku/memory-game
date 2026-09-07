@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">لعبة الذاكرة</string>
+    <string name="sound_on">الصوت مفعّل</string>
+    <string name="sound_off">الصوت مغلق</string>
+    <string name="rate_this">قيّمنا</string>
+    <string name="privacy_policy">الخصوصية</string>
+    <string name="cd_quick_play">العب</string>
+    <string name="cd_map">المواضيع والطرق</string>
+    <string name="cd_settings">الإعدادات</string>
+    <string name="cd_theme_animals">موضوع الحيوانات</string>
+    <string name="cd_theme_monsters">موضوع الوحوش</string>
+    <string name="cd_theme_emoji">موضوع الإيموجي</string>
+    <string name="cd_difficulty">المستوى %1$d</string>
+    <string name="cd_back">رجوع</string>
+    <string name="cd_road_map">جولات هذا المستوى</string>
+    <string name="cd_locked">مقفل</string>
+    <string name="who_look">انظر!</string>
+    <string name="who_missing">من الغائب؟</string>
+    <string name="cd_choice">بطاقة %1$d</string>
+    <string name="song_listen">اسمع!</string>
+    <string name="song_again">اسمع مرة أخرى!</string>
+    <string name="song_your_turn">دورك!</string>
+    <string name="cd_singers">المغنون</string>
+    <string name="round_format">الجولة %1$d</string>
+    <string name="cd_round_next">الجولة %1$d، التالية</string>
+    <string name="cd_round_locked">الجولة %1$d، لم تُفتح بعد</string>
+    <string name="cd_friend">الصديق %1$d</string>
+    <string name="cd_play_again">العب مجددًا</string>
+    <string name="cd_star">نجمة</string>
+    <string name="cd_sound_toggle">تشغيل الصوت أو إيقافه</string>
+    <string name="cd_rate">قيّم على Google Play</string>
+    <string name="cd_close">إغلاق</string>
+    <string name="cd_privacy_policy">فتح سياسة الخصوصية</string>
+    <string name="cd_tile">بطاقة</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="zero">الجولة %1$d، أُنجزت بلا نجوم</item>
+        <item quantity="one">الجولة %1$d، أُنجزت بنجمة واحدة</item>
+        <item quantity="two">الجولة %1$d، أُنجزت بنجمتين</item>
+        <item quantity="few">الجولة %1$d، أُنجزت بـ %2$d نجوم</item>
+        <item quantity="many">الجولة %1$d، أُنجزت بـ %2$d نجمة</item>
+        <item quantity="other">الجولة %1$d، أُنجزت بـ %2$d نجمة</item>
+    </plurals>
+</resources>

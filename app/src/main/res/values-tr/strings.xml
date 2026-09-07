@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Hafıza Oyunu</string>
+    <string name="sound_on">Ses AÇIK</string>
+    <string name="sound_off">Ses KAPALI</string>
+    <string name="rate_this">Puan ver</string>
+    <string name="privacy_policy">Gizlilik</string>
+    <string name="cd_quick_play">Oyna</string>
+    <string name="cd_map">Temalar ve yollar</string>
+    <string name="cd_settings">Ayarlar</string>
+    <string name="cd_theme_animals">Hayvanlar teması</string>
+    <string name="cd_theme_monsters">Canavarlar teması</string>
+    <string name="cd_theme_emoji">Emoji teması</string>
+    <string name="cd_difficulty">Zorluk %1$d</string>
+    <string name="cd_back">Geri</string>
+    <string name="cd_road_map">Bu zorluğun turları</string>
+    <string name="cd_locked">Kilitli</string>
+    <string name="who_look">Bak!</string>
+    <string name="who_missing">Kim eksik?</string>
+    <string name="cd_choice">Kart %1$d</string>
+    <string name="song_listen">Dinle!</string>
+    <string name="song_again">Tekrar dinle!</string>
+    <string name="song_your_turn">Sıra sende!</string>
+    <string name="cd_singers">Şarkıcılar</string>
+    <string name="round_format">Tur %1$d</string>
+    <string name="cd_round_next">Tur %1$d, sıradaki</string>
+    <string name="cd_round_locked">Tur %1$d, henüz açık değil</string>
+    <string name="cd_friend">Arkadaş %1$d</string>
+    <string name="cd_play_again">Tekrar oyna</string>
+    <string name="cd_star">Yıldız</string>
+    <string name="cd_sound_toggle">Sesi aç veya kapat</string>
+    <string name="cd_rate">Google Play\'de puan ver</string>
+    <string name="cd_close">Kapat</string>
+    <string name="cd_privacy_policy">Gizlilik politikasını aç</string>
+    <string name="cd_tile">Kart</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Tur %1$d, %2$d yıldızla tamamlandı</item>
+        <item quantity="other">Tur %1$d, %2$d yıldızla tamamlandı</item>
+    </plurals>
+</resources>

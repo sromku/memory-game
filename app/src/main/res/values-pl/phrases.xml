@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Cześć!</item>
+        <item>Hej!</item>
+        <item>Witaj!</item>
+        <item>Hej, przyjacielu!</item>
+        <item>Cześć, cześć!</item>
+        <item>Siemka!</item>
+        <item>Hej hej!</item>
+        <item>Ej ej!</item>
+        <item>Dzień dobry!</item>
+        <item>Dobranoc!</item>
+        <item>Kolorowych snów!</item>
+        <item>Bup!</item>
+        <item>Bup bup!</item>
+        <item>A kuku!</item>
+        <item>Znalazłeś mnie!</item>
+        <item>Jestem tu!</item>
+        <item>Tutaj!</item>
+        <item>Złap mnie!</item>
+        <item>Berek, ty gonisz!</item>
+        <item>W chowanego?</item>
+        <item>Zagrajmy!</item>
+        <item>Pobaw się ze mną!</item>
+        <item>Pogramy?</item>
+        <item>Jeszcze raz?</item>
+        <item>Jeszcze!</item>
+        <item>Gotowy?</item>
+        <item>Ruszamy!</item>
+        <item>Do dzieła!</item>
+        <item>Wybierz mnie!</item>
+        <item>Mnie, mnie!</item>
+        <item>Hura!</item>
+        <item>Hurra!</item>
+        <item>Juhu!</item>
+        <item>Jupi!</item>
+        <item>Łiii!</item>
+        <item>Łu!</item>
+        <item>Ta-dam!</item>
+        <item>Boing!</item>
+        <item>Hop hop!</item>
+        <item>Skok!</item>
+        <item>Wierć wierć!</item>
+        <item>Skacz!</item>
+        <item>Plusk!</item>
+        <item>O rany!</item>
+        <item>Wow!</item>
+        <item>Ooo!</item>
+        <item>Fajnie!</item>
+        <item>Super!</item>
+        <item>Niesamowite!</item>
+        <item>Fantastycznie!</item>
+        <item>Świetnie!</item>
+        <item>Ekstra!</item>
+        <item>Ładnie!</item>
+        <item>Dobra robota!</item>
+        <item>Udało ci się!</item>
+        <item>Brawo ty!</item>
+        <item>Brawo!</item>
+        <item>Sprytnie!</item>
+        <item>Mądra główka!</item>
+        <item>Jesteś super!</item>
+        <item>Gwiazda!</item>
+        <item>Przybij piątkę!</item>
+        <item>Jesteś najlepszy!</item>
+        <item>Najlepszy dzień!</item>
+        <item>Ale fajnie!</item>
+        <item>Zabawa, zabawa!</item>
+        <item>Cieszę się!</item>
+        <item>Radość!</item>
+        <item>Ja też!</item>
+        <item>Chi chi chi</item>
+        <item>Hehe!</item>
+        <item>Hehehe</item>
+        <item>Ale ze mnie głuptas!</item>
+        <item>Ups!</item>
+        <item>Łaskotki!</item>
+        <item>Przytulas?</item>
+        <item>Wielki przytulas!</item>
+        <item>Lubię cię!</item>
+        <item>Miło cię widzieć!</item>
+        <item>Cześć, przyjacielu!</item>
+        <item>Słoneczny dzień!</item>
+        <item>Słonko!</item>
+        <item>Patrz, chmurka!</item>
+        <item>Tęcza!</item>
+        <item>Motylek!</item>
+        <item>Kwiatki!</item>
+        <item>Błysk!</item>
+        <item>Mniam!</item>
+        <item>Mniam mniam</item>
+        <item>Przekąska?</item>
+        <item>Drzemka?</item>
+        <item>Zzz… o, cześć!</item>
+        <item>Zatańczmy!</item>
+        <item>La la la</item>
+        <item>Pi pi!</item>
+        <item>Muu?</item>
+        <item>Kwa!</item>
+        <item>Chrum!</item>
+        <item>Hau!</item>
+        <item>Miau!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Cześć! Zagrajmy!</item>
+        <item>Hej, przyjacielu!</item>
+        <item>Jesteś! Hura!</item>
+        <item>Miło cię widzieć!</item>
+        <item>Gotowy do gry?</item>
+        <item>Hej hej! Chodź grać!</item>
+        <item>Witaj z powrotem!</item>
+    </string-array>
+</resources>

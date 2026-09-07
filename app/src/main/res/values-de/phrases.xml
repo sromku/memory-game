@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Hi!</item>
+        <item>Hallo!</item>
+        <item>Hallo du!</item>
+        <item>Hey, Freund!</item>
+        <item>Hallo, hallo!</item>
+        <item>Grüß dich!</item>
+        <item>Hi hi!</item>
+        <item>Hey hey!</item>
+        <item>Guten Morgen!</item>
+        <item>Gute Nacht!</item>
+        <item>Träum süß!</item>
+        <item>Bup!</item>
+        <item>Bup bup!</item>
+        <item>Kuckuck!</item>
+        <item>Du hast mich gefunden!</item>
+        <item>Ich bin hier!</item>
+        <item>Hier drüben!</item>
+        <item>Fang mich!</item>
+        <item>Du bist dran!</item>
+        <item>Verstecken spielen?</item>
+        <item>Lass uns spielen!</item>
+        <item>Spiel mit mir!</item>
+        <item>Spielen wir?</item>
+        <item>Noch eins?</item>
+        <item>Noch mal!</item>
+        <item>Bereit?</item>
+        <item>Los geht\'s!</item>
+        <item>Auf geht\'s!</item>
+        <item>Nimm mich!</item>
+        <item>Wähl mich!</item>
+        <item>Juhu!</item>
+        <item>Hurra!</item>
+        <item>Wuhu!</item>
+        <item>Jippie!</item>
+        <item>Wiii!</item>
+        <item>Wuu!</item>
+        <item>Tada!</item>
+        <item>Boing!</item>
+        <item>Hops hops!</item>
+        <item>Hüpf!</item>
+        <item>Wackel wackel!</item>
+        <item>Spring!</item>
+        <item>Platsch!</item>
+        <item>Wow!</item>
+        <item>Wow!</item>
+        <item>Ooh!</item>
+        <item>Cool!</item>
+        <item>Super!</item>
+        <item>Unglaublich!</item>
+        <item>Fantastisch!</item>
+        <item>Toll!</item>
+        <item>Prima!</item>
+        <item>Schön!</item>
+        <item>Gut gemacht!</item>
+        <item>Du hast es geschafft!</item>
+        <item>Sehr gut!</item>
+        <item>Bravo!</item>
+        <item>Schlau!</item>
+        <item>Schlaues Köpfchen!</item>
+        <item>Du bist spitze!</item>
+        <item>Sternspieler!</item>
+        <item>Gib mir fünf!</item>
+        <item>Du bist der Beste!</item>
+        <item>Bester Tag!</item>
+        <item>So lustig!</item>
+        <item>Spaß, Spaß, Spaß!</item>
+        <item>Ich bin froh!</item>
+        <item>Froh!</item>
+        <item>Ich auch!</item>
+        <item>Kicher kicher</item>
+        <item>Hihi!</item>
+        <item>Hihihi</item>
+        <item>Ich Dummerchen!</item>
+        <item>Huch!</item>
+        <item>Kitzel kitzel!</item>
+        <item>Umarmung?</item>
+        <item>Große Umarmung!</item>
+        <item>Ich mag dich!</item>
+        <item>Schön, dich zu sehen!</item>
+        <item>Hi, Freund!</item>
+        <item>Sonniger Tag!</item>
+        <item>Sonnenschein!</item>
+        <item>Schau, eine Wolke!</item>
+        <item>Regenbogen!</item>
+        <item>Schmetterling!</item>
+        <item>Blumen!</item>
+        <item>Glitzer!</item>
+        <item>Lecker!</item>
+        <item>Mampf mampf</item>
+        <item>Snackzeit?</item>
+        <item>Schlafenszeit?</item>
+        <item>Zzz… oh, hallo!</item>
+        <item>Lass uns tanzen!</item>
+        <item>La la la</item>
+        <item>Piep!</item>
+        <item>Muh?</item>
+        <item>Quak!</item>
+        <item>Oink!</item>
+        <item>Wau!</item>
+        <item>Miau!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Hi! Lass uns spielen!</item>
+        <item>Hallo, Freund!</item>
+        <item>Du bist da! Juhu!</item>
+        <item>Schön, dich zu sehen!</item>
+        <item>Bereit zum Spielen?</item>
+        <item>Hi hi! Komm spielen!</item>
+        <item>Willkommen zurück!</item>
+    </string-array>
+</resources>

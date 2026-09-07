@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Gra pamięciowa</string>
+    <string name="sound_on">Dźwięk WŁ</string>
+    <string name="sound_off">Dźwięk WYŁ</string>
+    <string name="rate_this">Oceń</string>
+    <string name="privacy_policy">Prywatność</string>
+    <string name="cd_quick_play">Graj</string>
+    <string name="cd_map">Motywy i ścieżki</string>
+    <string name="cd_settings">Ustawienia</string>
+    <string name="cd_theme_animals">Motyw zwierzęta</string>
+    <string name="cd_theme_monsters">Motyw potwory</string>
+    <string name="cd_theme_emoji">Motyw emoji</string>
+    <string name="cd_difficulty">Poziom %1$d</string>
+    <string name="cd_back">Wstecz</string>
+    <string name="cd_road_map">Rundy tego poziomu</string>
+    <string name="cd_locked">Zablokowane</string>
+    <string name="who_look">Patrz!</string>
+    <string name="who_missing">Kogo brakuje?</string>
+    <string name="cd_choice">Karta %1$d</string>
+    <string name="song_listen">Słuchaj!</string>
+    <string name="song_again">Posłuchaj jeszcze raz!</string>
+    <string name="song_your_turn">Twoja kolej!</string>
+    <string name="cd_singers">Śpiewacy</string>
+    <string name="round_format">Runda %1$d</string>
+    <string name="cd_round_next">Runda %1$d, następna</string>
+    <string name="cd_round_locked">Runda %1$d, jeszcze zamknięta</string>
+    <string name="cd_friend">Przyjaciel %1$d</string>
+    <string name="cd_play_again">Zagraj jeszcze raz</string>
+    <string name="cd_star">Gwiazdka</string>
+    <string name="cd_sound_toggle">Włącz lub wyłącz dźwięk</string>
+    <string name="cd_rate">Oceń w Google Play</string>
+    <string name="cd_close">Zamknij</string>
+    <string name="cd_privacy_policy">Otwórz politykę prywatności</string>
+    <string name="cd_tile">Karta</string>
+    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Runda %1$d, ukończona z %2$d gwiazdką</item>
+        <item quantity="few">Runda %1$d, ukończona z %2$d gwiazdkami</item>
+        <item quantity="many">Runda %1$d, ukończona z %2$d gwiazdkami</item>
+        <item quantity="other">Runda %1$d, ukończona z %2$d gwiazdkami</item>
+    </plurals>
+</resources>

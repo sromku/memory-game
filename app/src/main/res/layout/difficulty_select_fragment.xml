@@ -64,12 +64,12 @@
                     </FrameLayout>
 
                     <TextView
+                        style="@style/GameText"
                         android:id="@+id/progress_difficulty_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
-                        android:fontFamily="@font/grobold"
-                        android:gravity="center"
+                                                android:gravity="center"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="3"
                         android:shadowDy="3"
@@ -120,12 +120,12 @@
                     </FrameLayout>
 
                     <TextView
+                        style="@style/GameText"
                         android:id="@+id/progress_difficulty_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
-                        android:fontFamily="@font/grobold"
-                        android:gravity="center"
+                                                android:gravity="center"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="3"
                         android:shadowDy="3"
@@ -186,12 +186,12 @@
                     </FrameLayout>
 
                     <TextView
+                        style="@style/GameText"
                         android:id="@+id/progress_difficulty_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
-                        android:fontFamily="@font/grobold"
-                        android:gravity="center"
+                                                android:gravity="center"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="3"
                         android:shadowDy="3"
@@ -242,12 +242,12 @@
                     </FrameLayout>
 
                     <TextView
+                        style="@style/GameText"
                         android:id="@+id/progress_difficulty_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
-                        android:fontFamily="@font/grobold"
-                        android:gravity="center"
+                                                android:gravity="center"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="3"
                         android:shadowDy="3"
@@ -308,12 +308,12 @@
                     </FrameLayout>
 
                     <TextView
+                        style="@style/GameText"
                         android:id="@+id/progress_difficulty_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
-                        android:fontFamily="@font/grobold"
-                        android:gravity="center"
+                                                android:gravity="center"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="3"
                         android:shadowDy="3"
@@ -364,12 +364,12 @@
                     </FrameLayout>
 
                     <TextView
+                        style="@style/GameText"
                         android:id="@+id/progress_difficulty_6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/difficulty_best_gap"
-                        android:fontFamily="@font/grobold"
-                        android:gravity="center"
+                                                android:gravity="center"
                         android:shadowColor="@color/text_shadow"
                         android:shadowDx="3"
                         android:shadowDy="3"

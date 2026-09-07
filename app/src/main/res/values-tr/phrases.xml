@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Selam!</item>
+        <item>Merhaba!</item>
+        <item>Selam sana!</item>
+        <item>Hey, arkadaşım!</item>
+        <item>Merhaba merhaba!</item>
+        <item>Naber!</item>
+        <item>Selam selam!</item>
+        <item>Hey hey!</item>
+        <item>Günaydın!</item>
+        <item>İyi geceler!</item>
+        <item>Tatlı rüyalar!</item>
+        <item>Bup!</item>
+        <item>Bup bup!</item>
+        <item>Ce-e!</item>
+        <item>Beni buldun!</item>
+        <item>Buradayım!</item>
+        <item>Bu tarafta!</item>
+        <item>Yakala beni!</item>
+        <item>Ebe sensin!</item>
+        <item>Saklambaç?</item>
+        <item>Hadi oynayalım!</item>
+        <item>Benimle oyna!</item>
+        <item>Oynayalım mı?</item>
+        <item>Bir tane daha?</item>
+        <item>Bir daha!</item>
+        <item>Hazır mısın?</item>
+        <item>Hadi gidelim!</item>
+        <item>Hadi yapalım!</item>
+        <item>Beni seç!</item>
+        <item>Beni, beni!</item>
+        <item>Yaşasın!</item>
+        <item>Hurra!</item>
+        <item>Vuhuu!</item>
+        <item>Yupi!</item>
+        <item>Viii!</item>
+        <item>Vuu!</item>
+        <item>Ta-da!</item>
+        <item>Boing!</item>
+        <item>Hop hop!</item>
+        <item>Zıpla!</item>
+        <item>Kıpır kıpır!</item>
+        <item>Atla!</item>
+        <item>Şap!</item>
+        <item>Vay!</item>
+        <item>Vay canına!</item>
+        <item>Ooo!</item>
+        <item>Süper!</item>
+        <item>Harika!</item>
+        <item>İnanılmaz!</item>
+        <item>Muhteşem!</item>
+        <item>Mükemmel!</item>
+        <item>Güzel!</item>
+        <item>Hoş!</item>
+        <item>Aferin!</item>
+        <item>Başardın!</item>
+        <item>Çok iyi!</item>
+        <item>Bravo!</item>
+        <item>Zeki!</item>
+        <item>Akıllı kafa!</item>
+        <item>Sen bir harikasın!</item>
+        <item>Yıldız oyuncu!</item>
+        <item>Çak bir beşlik!</item>
+        <item>Sen en iyisisin!</item>
+        <item>En güzel gün!</item>
+        <item>Çok eğlenceli!</item>
+        <item>Eğlence eğlence!</item>
+        <item>Mutluyum!</item>
+        <item>Mutlu!</item>
+        <item>Ben de!</item>
+        <item>Kıkır kıkır</item>
+        <item>Hihi!</item>
+        <item>Hihihi</item>
+        <item>Şapşal ben!</item>
+        <item>Ay!</item>
+        <item>Gıdı gıdı!</item>
+        <item>Sarılalım mı?</item>
+        <item>Kocaman sarıl!</item>
+        <item>Seni seviyorum!</item>
+        <item>Seni görmek güzel!</item>
+        <item>Selam arkadaşım!</item>
+        <item>Güneşli gün!</item>
+        <item>Güneş!</item>
+        <item>Bak, bir bulut!</item>
+        <item>Gökkuşağı!</item>
+        <item>Kelebek!</item>
+        <item>Çiçekler!</item>
+        <item>Pırıl pırıl!</item>
+        <item>Mmm!</item>
+        <item>Ham ham</item>
+        <item>Atıştırma vakti mi?</item>
+        <item>Uyku vakti mi?</item>
+        <item>Zzz… a, selam!</item>
+        <item>Hadi dans edelim!</item>
+        <item>La la la</item>
+        <item>Cik!</item>
+        <item>Möö?</item>
+        <item>Vak!</item>
+        <item>Oink!</item>
+        <item>Hav!</item>
+        <item>Miyav!</item>
+    </string-array>
+    <string-array name="animal_greetings">
+        <item>Selam! Hadi oynayalım!</item>
+        <item>Merhaba arkadaşım!</item>
+        <item>Geldin! Yaşasın!</item>
+        <item>Seni görmek güzel!</item>
+        <item>Oynamaya hazır mısın?</item>
+        <item>Selam selam! Gel oyna!</item>
+        <item>Tekrar hoş geldin!</item>
+    </string-array>
+</resources>
