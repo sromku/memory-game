@@ -5,6 +5,9 @@
     <string name="sound_off">الصوت مغلق</string>
     <string name="rate_this">قيّمنا</string>
     <string name="privacy_policy">الخصوصية</string>
+    <string name="language">اللغة</string>
+    <string name="language_phone">لغة الهاتف</string>
+    <string name="cd_language">اختيار اللغة</string>
     <string name="cd_quick_play">العب</string>
     <string name="cd_map">المواضيع والطرق</string>
     <string name="cd_settings">الإعدادات</string>

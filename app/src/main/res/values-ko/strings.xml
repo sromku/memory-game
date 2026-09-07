@@ -5,6 +5,9 @@
     <string name="sound_off">소리 끔</string>
     <string name="rate_this">평가하기</string>
     <string name="privacy_policy">개인정보</string>
+    <string name="language">언어</string>
+    <string name="language_phone">휴대폰 언어</string>
+    <string name="cd_language">언어 선택</string>
     <string name="cd_quick_play">놀기</string>
     <string name="cd_map">테마와 길</string>
     <string name="cd_settings">설정</string>

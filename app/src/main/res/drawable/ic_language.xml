@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Round button in the popup's own style with a speech bubble and a globe, for the language row. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="50"
+    android:viewportHeight="50">
+    <path android:fillColor="#8B2A0F" android:pathData="M25,2 a23,23 0 1,0 0.001,0 z" />
+    <path android:fillColor="#F0511E" android:pathData="M25,5.5 a19.5,19.5 0 1,0 0.001,0 z" />
+    <path android:fillColor="#FF7A45" android:pathData="M25,7.5 a17.5,17.5 0 0,1 17.5,17.5 a17.5,11 0 0,0 -35,0 a17.5,17.5 0 0,1 17.5,-17.5 z" />
+    <path android:fillColor="#FFFFFF" android:pathData="M25,14 a10.5,10.5 0 1,0 0.001,0 z" />
+    <path
+        android:pathData="M14.5,24.5 h21 M25,14 c-4,4 -4,17 0,21 M25,14 c4,4 4,17 0,21 M16.5,19.5 c4,2.5 13,2.5 17,0 M16.5,29.5 c4,-2.5 13,-2.5 17,0"
+        android:strokeColor="#F0511E"
+        android:strokeWidth="1.8" />
+    <path android:fillColor="#F0511E" android:pathData="M25,14 a10.5,10.5 0 0,1 10.5,10.5 a10.5,10.5 0 0,1 -10.5,10.5 a10.5,10.5 0 0,1 -10.5,-10.5 a10.5,10.5 0 0,1 10.5,-10.5 z M25,16 a8.5,8.5 0 1,0 0.001,0 z" />
+</vector>

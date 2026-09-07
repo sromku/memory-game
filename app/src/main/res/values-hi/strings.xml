@@ -5,6 +5,9 @@
     <string name="sound_off">आवाज़ बंद</string>
     <string name="rate_this">रेटिंग दें</string>
     <string name="privacy_policy">गोपनीयता</string>
+    <string name="language">भाषा</string>
+    <string name="language_phone">फ़ोन की भाषा</string>
+    <string name="cd_language">भाषा चुनें</string>
     <string name="cd_quick_play">खेलो</string>
     <string name="cd_map">थीम और रास्ते</string>
     <string name="cd_settings">सेटिंग</string>

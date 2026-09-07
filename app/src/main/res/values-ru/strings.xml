@@ -5,6 +5,9 @@
     <string name="sound_off">Звук ВЫКЛ</string>
     <string name="rate_this">Оценить</string>
     <string name="privacy_policy">Конфиденциальность</string>
+    <string name="language">Язык</string>
+    <string name="language_phone">Язык телефона</string>
+    <string name="cd_language">Выбрать язык</string>
     <string name="cd_quick_play">Играть</string>
     <string name="cd_map">Темы и дорожки</string>
     <string name="cd_settings">Настройки</string>

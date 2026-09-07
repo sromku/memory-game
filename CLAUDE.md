@@ -10,7 +10,7 @@ Families policy. Every change must keep the following true. The `checkChildSafet
 build when it can detect a violation; the rest is judgement.
 
 - No personal data is collected, stored off-device, or shared. The only persisted data is game
-  progress and the sound switch, in SharedPreferences.
+  progress, the sound switch and the chosen language, in SharedPreferences.
 - No network access. The manifest declares no permissions at all; adding one (INTERNET included)
   is a product decision that needs a policy review first.
 - No third-party SDKs: no analytics, crash reporting, advertising, attribution, social login, or

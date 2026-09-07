@@ -5,6 +5,9 @@
     <string name="sound_off">おと オフ</string>
     <string name="rate_this">ひょうか</string>
     <string name="privacy_policy">プライバシー</string>
+    <string name="language">ことば</string>
+    <string name="language_phone">スマホのことば</string>
+    <string name="cd_language">ことばをえらぶ</string>
     <string name="cd_quick_play">あそぶ</string>
     <string name="cd_map">テーマとみち</string>
     <string name="cd_settings">せってい</string>

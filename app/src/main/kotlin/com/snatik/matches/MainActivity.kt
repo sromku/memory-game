@@ -28,6 +28,7 @@ import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
 import com.snatik.matches.ui.minigame.FollowTheSongFragment
 import com.snatik.matches.ui.minigame.WhoWasHereFragment
+import com.snatik.matches.ui.popup.AppLanguages
 import com.snatik.matches.ui.popup.PopupHost
 import com.snatik.matches.ui.road.RoadMapFragment
 import com.snatik.matches.ui.theme.ThemeSelectFragment
@@ -120,7 +121,12 @@ class MainActivity : AppCompatActivity() {
                 onToggleSound = viewModel::toggleSound,
                 onRate = ::openStoreListing,
                 onPrivacyPolicy = ::openPrivacyPolicy,
+                onLanguage = viewModel::openLanguages,
             )
+            UiEvent.ShowLanguages -> popups.showLanguages(AppLanguages.chosen) { tag ->
+                popups.close()
+                AppLanguages.choose(tag) // AppCompat recreates the activity in the new language
+            }
             is UiEvent.ShowWon -> showWonPopup(event.result)
             UiEvent.ClosePopup -> popups.close()
         }

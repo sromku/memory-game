@@ -5,6 +5,9 @@
     <string name="sound_off">Âm thanh TẮT</string>
     <string name="rate_this">Đánh giá</string>
     <string name="privacy_policy">Quyền riêng tư</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="language_phone">Ngôn ngữ điện thoại</string>
+    <string name="cd_language">Chọn ngôn ngữ</string>
     <string name="cd_quick_play">Chơi</string>
     <string name="cd_map">Chủ đề và con đường</string>
     <string name="cd_settings">Cài đặt</string>

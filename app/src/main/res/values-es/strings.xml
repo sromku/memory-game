@@ -5,6 +5,9 @@
     <string name="sound_off">Sonido NO</string>
     <string name="rate_this">Valorar</string>
     <string name="privacy_policy">Privacidad</string>
+    <string name="language">Idioma</string>
+    <string name="language_phone">Idioma del teléfono</string>
+    <string name="cd_language">Elegir el idioma</string>
     <string name="cd_quick_play">Jugar</string>
     <string name="cd_map">Temas y caminos</string>
     <string name="cd_settings">Ajustes</string>

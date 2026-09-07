@@ -4,6 +4,7 @@ LANGS = {}
 LANGS['ja'] = dict(
     strings=dict(
         app_name='メモリーゲーム', sound_on='おと オン', sound_off='おと オフ', rate_this='ひょうか', privacy_policy='プライバシー',
+        language='ことば', language_phone='スマホのことば', cd_language='ことばをえらぶ',
         cd_quick_play='あそぶ', cd_map='テーマとみち', cd_settings='せってい', cd_theme_animals='どうぶつのテーマ',
         cd_theme_monsters='モンスターのテーマ', cd_theme_emoji='えもじのテーマ', cd_difficulty='むずかしさ %1$d', cd_back='もどる',
         cd_road_map='このむずかしさのラウンド', cd_locked='ロックちゅう', who_look='みて！', who_missing='だれがいない？',
@@ -29,6 +30,7 @@ LANGS['ja'] = dict(
 LANGS['ko'] = dict(
     strings=dict(
         app_name='기억력 게임', sound_on='소리 켬', sound_off='소리 끔', rate_this='평가하기', privacy_policy='개인정보',
+        language='언어', language_phone='휴대폰 언어', cd_language='언어 선택',
         cd_quick_play='놀기', cd_map='테마와 길', cd_settings='설정', cd_theme_animals='동물 테마',
         cd_theme_monsters='괴물 테마', cd_theme_emoji='이모지 테마', cd_difficulty='난이도 %1$d', cd_back='뒤로',
         cd_road_map='이 난이도의 라운드', cd_locked='잠김', who_look='보세요!', who_missing='누가 없을까?',
@@ -54,6 +56,7 @@ LANGS['ko'] = dict(
 LANGS['zh-rTW'] = dict(
     strings=dict(
         app_name='記憶遊戲', sound_on='聲音 開', sound_off='聲音 關', rate_this='評分', privacy_policy='隱私權',
+        language='語言', language_phone='手機語言', cd_language='選擇語言',
         cd_quick_play='開始玩', cd_map='主題與路線', cd_settings='設定', cd_theme_animals='動物主題',
         cd_theme_monsters='怪獸主題', cd_theme_emoji='表情符號主題', cd_difficulty='難度 %1$d', cd_back='返回',
         cd_road_map='這個難度的關卡', cd_locked='尚未解鎖', who_look='看！', who_missing='誰不見了？',
@@ -79,6 +82,7 @@ LANGS['zh-rTW'] = dict(
 LANGS['zh-rCN'] = dict(
     strings=dict(
         app_name='记忆游戏', sound_on='声音 开', sound_off='声音 关', rate_this='评分', privacy_policy='隐私',
+        language='语言', language_phone='手机语言', cd_language='选择语言',
         cd_quick_play='开始玩', cd_map='主题和路线', cd_settings='设置', cd_theme_animals='动物主题',
         cd_theme_monsters='怪兽主题', cd_theme_emoji='表情主题', cd_difficulty='难度 %1$d', cd_back='返回',
         cd_road_map='这个难度的关卡', cd_locked='尚未解锁', who_look='看！', who_missing='谁不见了？',
@@ -104,6 +108,7 @@ LANGS['zh-rCN'] = dict(
 LANGS['ms'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Bunyi HIDUP', sound_off='Bunyi MATI', rate_this='Beri nilai', privacy_policy='Privasi',
+        language='Bahasa', language_phone='Bahasa telefon', cd_language='Pilih bahasa',
         cd_quick_play='Main', cd_map='Tema dan laluan', cd_settings='Tetapan', cd_theme_animals='Tema haiwan',
         cd_theme_monsters='Tema raksasa', cd_theme_emoji='Tema emoji', cd_difficulty='Tahap %1$d', cd_back='Kembali',
         cd_road_map='Pusingan tahap ini', cd_locked='Berkunci', who_look='Tengok!', who_missing='Siapa yang hilang?',

@@ -2,9 +2,10 @@
 
 The app ships in English and twenty more languages: Spanish, Brazilian Portuguese, French, German,
 Italian, Russian, Ukrainian, Polish, Dutch, Turkish, Arabic, Hindi, Indonesian, Vietnamese, Thai,
-Japanese, Korean, Traditional and Simplified Chinese, and Malay. Android 13 and later offer them
-per app under Settings > Apps > Memory Game > Language (`res/xml/locales_config.xml`); older
-versions follow the system language.
+Japanese, Korean, Traditional and Simplified Chinese, and Malay. The game's settings popup has a
+Language row that lists them by their own names (`AppLanguages`, `PopupLanguageView`); the choice
+goes through AppCompat's per-app locales, which Android 13+ also shows under Settings > Apps >
+Memory Game > Language (`res/xml/locales_config.xml`) and older versions store for the app.
 
 ## Strings
 

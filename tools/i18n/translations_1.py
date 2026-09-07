@@ -4,6 +4,7 @@ LANGS = {}
 LANGS['es'] = dict(
     strings=dict(
         app_name='Juego de memoria', sound_on='Sonido SÍ', sound_off='Sonido NO', rate_this='Valorar', privacy_policy='Privacidad',
+        language='Idioma', language_phone='Idioma del teléfono', cd_language='Elegir el idioma',
         cd_quick_play='Jugar', cd_map='Temas y caminos', cd_settings='Ajustes', cd_theme_animals='Tema de animales',
         cd_theme_monsters='Tema de monstruos', cd_theme_emoji='Tema de emojis', cd_difficulty='Dificultad %1$d', cd_back='Atrás',
         cd_road_map='Rondas de esta dificultad', cd_locked='Bloqueado', who_look='¡Mira!', who_missing='¿Quién falta?',
@@ -29,6 +30,7 @@ LANGS['es'] = dict(
 LANGS['pt-rBR'] = dict(
     strings=dict(
         app_name='Jogo da memória', sound_on='Som LIGADO', sound_off='Som DESLIGADO', rate_this='Avaliar', privacy_policy='Privacidade',
+        language='Idioma', language_phone='Idioma do celular', cd_language='Escolher o idioma',
         cd_quick_play='Jogar', cd_map='Temas e caminhos', cd_settings='Configurações', cd_theme_animals='Tema de animais',
         cd_theme_monsters='Tema de monstros', cd_theme_emoji='Tema de emojis', cd_difficulty='Dificuldade %1$d', cd_back='Voltar',
         cd_road_map='Rodadas desta dificuldade', cd_locked='Bloqueado', who_look='Olhe!', who_missing='Quem sumiu?',
@@ -54,6 +56,7 @@ LANGS['pt-rBR'] = dict(
 LANGS['fr'] = dict(
     strings=dict(
         app_name='Jeu de mémoire', sound_on='Son ON', sound_off='Son OFF', rate_this='Noter', privacy_policy='Confidentialité',
+        language='Langue', language_phone='Langue du téléphone', cd_language='Choisir la langue',
         cd_quick_play='Jouer', cd_map='Thèmes et chemins', cd_settings='Réglages', cd_theme_animals='Thème animaux',
         cd_theme_monsters='Thème monstres', cd_theme_emoji='Thème émojis', cd_difficulty='Difficulté %1$d', cd_back='Retour',
         cd_road_map='Manches de cette difficulté', cd_locked='Verrouillé', who_look='Regarde !', who_missing='Qui manque ?',
@@ -79,6 +82,7 @@ LANGS['fr'] = dict(
 LANGS['de'] = dict(
     strings=dict(
         app_name='Memory-Spiel', sound_on='Ton AN', sound_off='Ton AUS', rate_this='Bewerten', privacy_policy='Datenschutz',
+        language='Sprache', language_phone='Sprache des Telefons', cd_language='Sprache wählen',
         cd_quick_play='Spielen', cd_map='Themen und Wege', cd_settings='Einstellungen', cd_theme_animals='Thema Tiere',
         cd_theme_monsters='Thema Monster', cd_theme_emoji='Thema Emojis', cd_difficulty='Schwierigkeit %1$d', cd_back='Zurück',
         cd_road_map='Runden dieser Schwierigkeit', cd_locked='Gesperrt', who_look='Schau!', who_missing='Wer fehlt?',
@@ -104,6 +108,7 @@ LANGS['de'] = dict(
 LANGS['it'] = dict(
     strings=dict(
         app_name='Gioco di memoria', sound_on='Suono SÌ', sound_off='Suono NO', rate_this='Valuta', privacy_policy='Privacy',
+        language='Lingua', language_phone='Lingua del telefono', cd_language='Scegli la lingua',
         cd_quick_play='Gioca', cd_map='Temi e sentieri', cd_settings='Impostazioni', cd_theme_animals='Tema animali',
         cd_theme_monsters='Tema mostri', cd_theme_emoji='Tema emoji', cd_difficulty='Difficoltà %1$d', cd_back='Indietro',
         cd_road_map='Turni di questa difficoltà', cd_locked='Bloccato', who_look='Guarda!', who_missing='Chi manca?',

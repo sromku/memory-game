@@ -5,6 +5,9 @@
     <string name="sound_off">Som DESLIGADO</string>
     <string name="rate_this">Avaliar</string>
     <string name="privacy_policy">Privacidade</string>
+    <string name="language">Idioma</string>
+    <string name="language_phone">Idioma do celular</string>
+    <string name="cd_language">Escolher o idioma</string>
     <string name="cd_quick_play">Jogar</string>
     <string name="cd_map">Temas e caminhos</string>
     <string name="cd_settings">Configurações</string>

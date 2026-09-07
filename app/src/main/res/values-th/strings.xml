@@ -5,6 +5,9 @@
     <string name="sound_off">เสียง ปิด</string>
     <string name="rate_this">ให้คะแนน</string>
     <string name="privacy_policy">ความเป็นส่วนตัว</string>
+    <string name="language">ภาษา</string>
+    <string name="language_phone">ภาษาของโทรศัพท์</string>
+    <string name="cd_language">เลือกภาษา</string>
     <string name="cd_quick_play">เล่น</string>
     <string name="cd_map">ธีมและเส้นทาง</string>
     <string name="cd_settings">การตั้งค่า</string>

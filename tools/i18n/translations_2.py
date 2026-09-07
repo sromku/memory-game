@@ -4,6 +4,7 @@ LANGS = {}
 LANGS['ru'] = dict(
     strings=dict(
         app_name='Игра на память', sound_on='Звук ВКЛ', sound_off='Звук ВЫКЛ', rate_this='Оценить', privacy_policy='Конфиденциальность',
+        language='Язык', language_phone='Язык телефона', cd_language='Выбрать язык',
         cd_quick_play='Играть', cd_map='Темы и дорожки', cd_settings='Настройки', cd_theme_animals='Тема «Животные»',
         cd_theme_monsters='Тема «Монстры»', cd_theme_emoji='Тема «Эмодзи»', cd_difficulty='Сложность %1$d', cd_back='Назад',
         cd_road_map='Раунды этой сложности', cd_locked='Закрыто', who_look='Смотри!', who_missing='Кого не хватает?',
@@ -29,6 +30,7 @@ LANGS['ru'] = dict(
 LANGS['uk'] = dict(
     strings=dict(
         app_name='Гра на пам\'ять', sound_on='Звук УВІМК', sound_off='Звук ВИМК', rate_this='Оцінити', privacy_policy='Конфіденційність',
+        language='Мова', language_phone='Мова телефону', cd_language='Вибрати мову',
         cd_quick_play='Грати', cd_map='Теми та доріжки', cd_settings='Налаштування', cd_theme_animals='Тема «Тварини»',
         cd_theme_monsters='Тема «Монстри»', cd_theme_emoji='Тема «Емодзі»', cd_difficulty='Складність %1$d', cd_back='Назад',
         cd_road_map='Раунди цієї складності', cd_locked='Зачинено', who_look='Дивись!', who_missing='Кого бракує?',
@@ -54,6 +56,7 @@ LANGS['uk'] = dict(
 LANGS['pl'] = dict(
     strings=dict(
         app_name='Gra pamięciowa', sound_on='Dźwięk WŁ', sound_off='Dźwięk WYŁ', rate_this='Oceń', privacy_policy='Prywatność',
+        language='Język', language_phone='Język telefonu', cd_language='Wybierz język',
         cd_quick_play='Graj', cd_map='Motywy i ścieżki', cd_settings='Ustawienia', cd_theme_animals='Motyw zwierzęta',
         cd_theme_monsters='Motyw potwory', cd_theme_emoji='Motyw emoji', cd_difficulty='Poziom %1$d', cd_back='Wstecz',
         cd_road_map='Rundy tego poziomu', cd_locked='Zablokowane', who_look='Patrz!', who_missing='Kogo brakuje?',
@@ -79,6 +82,7 @@ LANGS['pl'] = dict(
 LANGS['nl'] = dict(
     strings=dict(
         app_name='Memoryspel', sound_on='Geluid AAN', sound_off='Geluid UIT', rate_this='Beoordelen', privacy_policy='Privacy',
+        language='Taal', language_phone='Taal van de telefoon', cd_language='Kies de taal',
         cd_quick_play='Spelen', cd_map='Thema\'s en paden', cd_settings='Instellingen', cd_theme_animals='Thema dieren',
         cd_theme_monsters='Thema monsters', cd_theme_emoji='Thema emoji', cd_difficulty='Niveau %1$d', cd_back='Terug',
         cd_road_map='Rondes van dit niveau', cd_locked='Vergrendeld', who_look='Kijk!', who_missing='Wie mist er?',
@@ -104,6 +108,7 @@ LANGS['nl'] = dict(
 LANGS['tr'] = dict(
     strings=dict(
         app_name='Hafıza Oyunu', sound_on='Ses AÇIK', sound_off='Ses KAPALI', rate_this='Puan ver', privacy_policy='Gizlilik',
+        language='Dil', language_phone='Telefon dili', cd_language='Dil seç',
         cd_quick_play='Oyna', cd_map='Temalar ve yollar', cd_settings='Ayarlar', cd_theme_animals='Hayvanlar teması',
         cd_theme_monsters='Canavarlar teması', cd_theme_emoji='Emoji teması', cd_difficulty='Zorluk %1$d', cd_back='Geri',
         cd_road_map='Bu zorluğun turları', cd_locked='Kilitli', who_look='Bak!', who_missing='Kim eksik?',

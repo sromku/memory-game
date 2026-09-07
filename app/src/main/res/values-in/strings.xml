@@ -5,6 +5,9 @@
     <string name="sound_off">Suara MATI</string>
     <string name="rate_this">Beri nilai</string>
     <string name="privacy_policy">Privasi</string>
+    <string name="language">Bahasa</string>
+    <string name="language_phone">Bahasa ponsel</string>
+    <string name="cd_language">Pilih bahasa</string>
     <string name="cd_quick_play">Main</string>
     <string name="cd_map">Tema dan jalur</string>
     <string name="cd_settings">Pengaturan</string>

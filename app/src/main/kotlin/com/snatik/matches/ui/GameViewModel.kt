@@ -47,6 +47,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object OpenFollowTheSong : UiEvent
         data object ReturnToRoadMap : UiEvent
         data object ShowSettings : UiEvent
+        data object ShowLanguages : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
         data object ClosePopup : UiEvent
     }
@@ -216,6 +217,10 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     fun openSettings() {
         uiEvents.trySend(UiEvent.ShowSettings)
+    }
+
+    fun openLanguages() {
+        uiEvents.trySend(UiEvent.ShowLanguages)
     }
 
     /** From the "won" popup: the next round of the road, or back to the map when the road is done. */

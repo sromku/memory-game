@@ -4,6 +4,7 @@ LANGS = {}
 LANGS['ar'] = dict(
     strings=dict(
         app_name='لعبة الذاكرة', sound_on='الصوت مفعّل', sound_off='الصوت مغلق', rate_this='قيّمنا', privacy_policy='الخصوصية',
+        language='اللغة', language_phone='لغة الهاتف', cd_language='اختيار اللغة',
         cd_quick_play='العب', cd_map='المواضيع والطرق', cd_settings='الإعدادات', cd_theme_animals='موضوع الحيوانات',
         cd_theme_monsters='موضوع الوحوش', cd_theme_emoji='موضوع الإيموجي', cd_difficulty='المستوى %1$d', cd_back='رجوع',
         cd_road_map='جولات هذا المستوى', cd_locked='مقفل', who_look='انظر!', who_missing='من الغائب؟',
@@ -29,6 +30,7 @@ LANGS['ar'] = dict(
 LANGS['hi'] = dict(
     strings=dict(
         app_name='मेमोरी गेम', sound_on='आवाज़ चालू', sound_off='आवाज़ बंद', rate_this='रेटिंग दें', privacy_policy='गोपनीयता',
+        language='भाषा', language_phone='फ़ोन की भाषा', cd_language='भाषा चुनें',
         cd_quick_play='खेलो', cd_map='थीम और रास्ते', cd_settings='सेटिंग', cd_theme_animals='जानवरों की थीम',
         cd_theme_monsters='राक्षसों की थीम', cd_theme_emoji='इमोजी थीम', cd_difficulty='स्तर %1$d', cd_back='वापस',
         cd_road_map='इस स्तर के राउंड', cd_locked='बंद है', who_look='देखो!', who_missing='कौन गायब है?',
@@ -54,6 +56,7 @@ LANGS['hi'] = dict(
 LANGS['id'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Suara NYALA', sound_off='Suara MATI', rate_this='Beri nilai', privacy_policy='Privasi',
+        language='Bahasa', language_phone='Bahasa ponsel', cd_language='Pilih bahasa',
         cd_quick_play='Main', cd_map='Tema dan jalur', cd_settings='Pengaturan', cd_theme_animals='Tema hewan',
         cd_theme_monsters='Tema monster', cd_theme_emoji='Tema emoji', cd_difficulty='Tingkat %1$d', cd_back='Kembali',
         cd_road_map='Ronde tingkat ini', cd_locked='Terkunci', who_look='Lihat!', who_missing='Siapa yang hilang?',
@@ -79,6 +82,7 @@ LANGS['id'] = dict(
 LANGS['vi'] = dict(
     strings=dict(
         app_name='Trò chơi trí nhớ', sound_on='Âm thanh BẬT', sound_off='Âm thanh TẮT', rate_this='Đánh giá', privacy_policy='Quyền riêng tư',
+        language='Ngôn ngữ', language_phone='Ngôn ngữ điện thoại', cd_language='Chọn ngôn ngữ',
         cd_quick_play='Chơi', cd_map='Chủ đề và con đường', cd_settings='Cài đặt', cd_theme_animals='Chủ đề động vật',
         cd_theme_monsters='Chủ đề quái vật', cd_theme_emoji='Chủ đề emoji', cd_difficulty='Độ khó %1$d', cd_back='Quay lại',
         cd_road_map='Các vòng của độ khó này', cd_locked='Đã khóa', who_look='Nhìn nhé!', who_missing='Ai vắng mặt?',
@@ -104,6 +108,7 @@ LANGS['vi'] = dict(
 LANGS['th'] = dict(
     strings=dict(
         app_name='เกมความจำ', sound_on='เสียง เปิด', sound_off='เสียง ปิด', rate_this='ให้คะแนน', privacy_policy='ความเป็นส่วนตัว',
+        language='ภาษา', language_phone='ภาษาของโทรศัพท์', cd_language='เลือกภาษา',
         cd_quick_play='เล่น', cd_map='ธีมและเส้นทาง', cd_settings='การตั้งค่า', cd_theme_animals='ธีมสัตว์',
         cd_theme_monsters='ธีมมอนสเตอร์', cd_theme_emoji='ธีมอีโมจิ', cd_difficulty='ระดับ %1$d', cd_back='กลับ',
         cd_road_map='รอบของระดับนี้', cd_locked='ล็อกอยู่', who_look='ดูนะ!', who_missing='ใครหายไป?',

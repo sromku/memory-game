@@ -61,10 +61,10 @@
     <dimen name="popup_close_size">44dp</dimen>
     <dimen name="popup_settings_width">300dp</dimen>
     <dimen name="popup_settings_height">200dp</dimen>
-    <dimen name="popup_settings_row_height">38dp</dimen>
-    <dimen name="popup_settings_row_gap">6dp</dimen>
-    <dimen name="popup_settings_sound_text_size">20dp</dimen>
-    <dimen name="popup_settings_padding_top">46dp</dimen>
+    <dimen name="popup_settings_row_height">30dp</dimen>
+    <dimen name="popup_settings_row_gap">3dp</dimen>
+    <dimen name="popup_settings_sound_text_size">17dp</dimen>
+    <dimen name="popup_settings_padding_top">44dp</dimen>
     <dimen name="popup_settings_padding_left">20dp</dimen>
 
     <!-- road map -->
@@ -89,4 +89,8 @@
     <!-- follow the song -->
     <dimen name="song_progress_height">28dp</dimen>
     <dimen name="song_progress_margin_top">64dp</dimen>
+
+    <!-- language popup -->
+    <dimen name="popup_language_padding_bottom">26dp</dimen>
+    <dimen name="popup_language_row_padding">3dp</dimen>
 </resources>

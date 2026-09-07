@@ -5,6 +5,9 @@
     <string name="sound_off">Geluid UIT</string>
     <string name="rate_this">Beoordelen</string>
     <string name="privacy_policy">Privacy</string>
+    <string name="language">Taal</string>
+    <string name="language_phone">Taal van de telefoon</string>
+    <string name="cd_language">Kies de taal</string>
     <string name="cd_quick_play">Spelen</string>
     <string name="cd_map">Thema\'s en paden</string>
     <string name="cd_settings">Instellingen</string>

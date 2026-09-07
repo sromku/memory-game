@@ -46,15 +46,24 @@ class PopupHost(
     val isWonShown: Boolean get() = shown?.popup is PopupWonView
 
     /** Popups carry traced vector frames with hundreds of paths; they are inflated off the main thread first. */
-    fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
+    fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit, onLanguage: () -> Unit) {
         scope.launch {
             val frame = context.loadDrawable(R.drawable.settings_popup)
             val icons = listOf(R.drawable.button_music_on, R.drawable.button_music_off, R.drawable.button_rate).map { context.loadDrawable(it) }
-            showSettings(frame, icons, soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
+            showFramed(PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onPrivacyPolicy, onLanguage))
         }
     }
 
-    private fun showSettings(frame: Drawable, icons: List<Drawable>, soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit) {
+    /** The language list in the settings frame; picking one hands the tag back (null for the phone's language). */
+    fun showLanguages(chosen: String?, onPick: (tag: String?) -> Unit) {
+        scope.launch {
+            val frame = context.loadDrawable(R.drawable.settings_popup)
+            showFramed(PopupLanguageView(context, frame, chosen, onPick))
+        }
+    }
+
+    /** A popup in the settings frame, with a scrim behind it and the close button on its corner. */
+    private fun showFramed(popup: View) {
         reset()
         val scrim = View(context).apply {
             alpha = 0f
@@ -62,8 +71,6 @@ class PopupHost(
             setOnClickListener { close() } // tapping outside the popup dismisses it
         }
         container.addView(scrim, FrameLayout.LayoutParams(MATCH, MATCH))
-
-        val popup = PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
         val popupParams = centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height)
 
         // The popup and its close button live in one holder that is scaled as a whole, so the button

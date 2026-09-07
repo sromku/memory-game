@@ -5,6 +5,9 @@
     <string name="sound_off">Ses KAPALI</string>
     <string name="rate_this">Puan ver</string>
     <string name="privacy_policy">Gizlilik</string>
+    <string name="language">Dil</string>
+    <string name="language_phone">Telefon dili</string>
+    <string name="cd_language">Dil seç</string>
     <string name="cd_quick_play">Oyna</string>
     <string name="cd_map">Temalar ve yollar</string>
     <string name="cd_settings">Ayarlar</string>

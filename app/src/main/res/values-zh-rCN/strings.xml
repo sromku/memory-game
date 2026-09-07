@@ -5,6 +5,9 @@
     <string name="sound_off">声音 关</string>
     <string name="rate_this">评分</string>
     <string name="privacy_policy">隐私</string>
+    <string name="language">语言</string>
+    <string name="language_phone">手机语言</string>
+    <string name="cd_language">选择语言</string>
     <string name="cd_quick_play">开始玩</string>
     <string name="cd_map">主题和路线</string>
     <string name="cd_settings">设置</string>
