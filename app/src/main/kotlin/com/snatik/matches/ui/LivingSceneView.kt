@@ -9,7 +9,11 @@ import android.graphics.Path
 import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.withScale
+import com.snatik.matches.R
 import androidx.core.graphics.withMatrix
 import androidx.core.graphics.withTranslation
 import com.snatik.matches.ui.character.CharacterDrawable
@@ -42,12 +46,28 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
     private val grassLine = 0.825f
 
     private companion object {
-        /** A visitor stands about a sixth of the screen tall. */
+        /** A visitor stands about a fifth of the screen tall. */
         const val VISITOR_HEIGHT = 0.19f
+        const val BUBBLE_SECONDS = 2.4f
     }
 
     /** An animal standing on the grass: its drawable animates itself; the view only places it and nudges a hop now and then. */
-    private class Visitor(val x: Float, val scale: Float, val drawable: CharacterDrawable, var nextHopAt: Float)
+    private class Visitor(val x: Float, val scale: Float, val drawable: CharacterDrawable, var nextHopAt: Float) {
+        val box = Rect()
+        var phrase: String? = null
+        var spokeAt = 0f
+    }
+
+    private val phrases = resources.getStringArray(R.array.animal_phrases)
+    private var lastPhrase = -1
+    private val bubblePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFFFFFFFF.toInt() }
+    private val bubbleRim = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFF8B2A0F.toInt(); style = Paint.Style.STROKE }
+    private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = 0xFF1E2D33.toInt()
+        textAlign = Paint.Align.CENTER
+        typeface = ResourcesCompat.getFont(context, R.font.grobold)
+    }
+    private val bubble = Path()
     private val visitors = mutableListOf<Visitor>()
     private val random = Random(System.nanoTime())
 
@@ -122,8 +142,10 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
             // Feet on the grass: the character box extends below the feet to hold the shadow.
             val feet = v.drawable.feetFraction * size
             val boxTop = grassY - feet + size * 0.02f
-            v.drawable.setBounds((cx - size / 2).toInt(), boxTop.toInt(), (cx + size / 2).toInt(), (boxTop + size).toInt())
+            v.box.set((cx - size / 2).toInt(), boxTop.toInt(), (cx + size / 2).toInt(), (boxTop + size).toInt())
+            v.drawable.bounds = v.box
             v.drawable.draw(canvas)
+            v.phrase?.let { drawBubble(canvas, v, it, t - v.spokeAt) }
             if (running && t > v.nextHopAt) {
                 v.drawable.hop()
                 v.nextHopAt = t + 4f + random.nextFloat() * 8f
@@ -131,6 +153,51 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         }
 
         if (running) postInvalidateOnAnimation()
+    }
+
+    /** Tapping an animal makes it hop and say something. */
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        if (event.actionMasked != MotionEvent.ACTION_DOWN) return false
+        val hit = visitors.lastOrNull { it.box.contains(event.x.toInt(), event.y.toInt()) } ?: return false
+        var pick = random.nextInt(phrases.size)
+        if (pick == lastPhrase) pick = (pick + 1) % phrases.size
+        lastPhrase = pick
+        hit.phrase = phrases[pick]
+        hit.spokeAt = (System.currentTimeMillis() - startMillis) / 1000f
+        hit.drawable.hop()
+        performClick()
+        return true
+    }
+
+    override fun performClick(): Boolean {
+        super.performClick()
+        return true
+    }
+
+    /** A speech bubble above the animal: pops in, holds, fades out. */
+    private fun drawBubble(canvas: Canvas, v: Visitor, text: String, age: Float) {
+        if (age > BUBBLE_SECONDS) { v.phrase = null; return }
+        val pop = (age / 0.18f).coerceAtMost(1f).let { 1.1f - 0.1f * it }.coerceAtLeast(1f) * (if (age < 0.18f) 0.6f + 0.4f * (age / 0.18f) else 1f)
+        val alpha = if (age > BUBBLE_SECONDS - 0.4f) ((BUBBLE_SECONDS - age) / 0.4f).coerceIn(0f, 1f) else 1f
+        textPaint.textSize = height * 0.045f
+        textPaint.alpha = (255 * alpha).toInt(); bubblePaint.alpha = (255 * alpha).toInt(); bubbleRim.alpha = (255 * alpha).toInt()
+        bubbleRim.strokeWidth = height * 0.004f
+        val padX = textPaint.textSize * 0.7f
+        val bw = textPaint.measureText(text) + 2 * padX
+        val bh = textPaint.textSize * 1.9f
+        val tail = bh * 0.35f
+        val cx = v.box.exactCenterX().coerceIn(bw / 2 + 8f, width - bw / 2 - 8f)
+        val bottom = v.box.top - tail - height * 0.01f
+        val r = bh * 0.45f
+        canvas.withScale(pop, pop, v.box.exactCenterX(), bottom + tail) {
+            bubble.rewind()
+            bubble.addRoundRect(cx - bw / 2, bottom - bh, cx + bw / 2, bottom, r, r, Path.Direction.CW)
+            val tx = v.box.exactCenterX().coerceIn(cx - bw / 2 + r, cx + bw / 2 - r)
+            bubble.moveTo(tx - tail * 0.5f, bottom - 1f); bubble.lineTo(tx, bottom + tail); bubble.lineTo(tx + tail * 0.5f, bottom - 1f); bubble.close()
+            drawPath(bubble, bubblePaint)
+            drawPath(bubble, bubbleRim)
+            drawText(text, cx, bottom - bh / 2 - (textPaint.descent() + textPaint.ascent()) / 2, textPaint)
+        }
     }
 
     /** A flat cartoon cloud: four overlapping circles on a flat base, in the style of the game's art. */

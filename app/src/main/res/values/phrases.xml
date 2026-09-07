@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- What the animals on the menu say when tapped. Short, cheerful, for children. -->
+    <string-array name="animal_phrases" tools:ignore="Typos">
+        <item>Hi!</item>
+        <item>Hello!</item>
+        <item>Hi there!</item>
+        <item>Hey friend!</item>
+        <item>Hello there!</item>
+        <item>Howdy!</item>
+        <item>Hi hi!</item>
+        <item>Hey hey!</item>
+        <item>Good morning!</item>
+        <item>Good night!</item>
+        <item>Sweet dreams!</item>
+        <item>Boop!</item>
+        <item>Boop boop!</item>
+        <item>Peekaboo!</item>
+        <item>You found me!</item>
+        <item>I\'m here!</item>
+        <item>Over here!</item>
+        <item>Catch me!</item>
+        <item>Tag, you\'re it!</item>
+        <item>Hide and seek?</item>
+        <item>Let\'s play!</item>
+        <item>Play with me!</item>
+        <item>Can we play?</item>
+        <item>One more?</item>
+        <item>Again!</item>
+        <item>Ready?</item>
+        <item>Let\'s go!</item>
+        <item>Let\'s do it!</item>
+        <item>Pick me!</item>
+        <item>Choose me!</item>
+        <item>Yay!</item>
+        <item>Hooray!</item>
+        <item>Woohoo!</item>
+        <item>Yippee!</item>
+        <item>Whee!</item>
+        <item>Woo!</item>
+        <item>Ta-da!</item>
+        <item>Boing!</item>
+        <item>Hop hop!</item>
+        <item>Bounce!</item>
+        <item>Wiggle!</item>
+        <item>Jump!</item>
+        <item>Splash!</item>
+        <item>Whoa!</item>
+        <item>Wow!</item>
+        <item>Ooh!</item>
+        <item>Cool!</item>
+        <item>Super!</item>
+        <item>Amazing!</item>
+        <item>Fantastic!</item>
+        <item>Brilliant!</item>
+        <item>Neat!</item>
+        <item>Nice!</item>
+        <item>Good job!</item>
+        <item>You did it!</item>
+        <item>Well done!</item>
+        <item>Bravo!</item>
+        <item>Clever!</item>
+        <item>Smart cookie!</item>
+        <item>You rock!</item>
+        <item>Star player!</item>
+        <item>High five!</item>
+        <item>You\'re the best!</item>
+        <item>Best day ever!</item>
+        <item>So fun!</item>
+        <item>Fun fun fun!</item>
+        <item>I\'m happy!</item>
+        <item>Happy!</item>
+        <item>Me too!</item>
+        <item>Giggle giggle</item>
+        <item>Hehe!</item>
+        <item>Hehehe</item>
+        <item>Silly me!</item>
+        <item>Oopsie!</item>
+        <item>Tickle tickle!</item>
+        <item>Hug?</item>
+        <item>Big hug!</item>
+        <item>I like you!</item>
+        <item>Nice to see you!</item>
+        <item>Hi friend!</item>
+        <item>Sunny day!</item>
+        <item>Sunshine!</item>
+        <item>Look, a cloud!</item>
+        <item>Rainbow!</item>
+        <item>Butterfly!</item>
+        <item>Flowers!</item>
+        <item>Sparkle!</item>
+        <item>Yum!</item>
+        <item>Nom nom</item>
+        <item>Snack time?</item>
+        <item>Nap time?</item>
+        <item>Zzz… oh, hi!</item>
+        <item>Let\'s dance!</item>
+        <item>La la la</item>
+        <item>Cheep!</item>
+        <item>Moo?</item>
+        <item>Quack!</item>
+        <item>Oink!</item>
+        <item>Woof!</item>
+        <item>Meow!</item>
+    </string-array>
+</resources>
