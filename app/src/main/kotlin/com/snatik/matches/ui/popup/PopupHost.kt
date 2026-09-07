@@ -33,6 +33,12 @@ class PopupHost(
 
     private val context get() = container.context
     private var shown: Shown? = null
+
+    init {
+        // The settings popup's close button overhangs its corner.
+        container.clipChildren = false
+        container.clipToPadding = false
+    }
     private var closing = false
 
     val isShown: Boolean get() = shown != null
@@ -59,21 +65,25 @@ class PopupHost(
 
         val popup = PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onPrivacyPolicy)
         val popupParams = centered(R.dimen.popup_settings_width, R.dimen.popup_settings_height)
-        container.addView(popup, popupParams)
 
-        // Close button sitting on the popup's top-right corner, scaled in and out together with it.
+        // The popup and its close button live in one holder that is scaled as a whole, so the button
+        // stays glued to the popup's corner throughout the open and close animations.
         val closeSize = context.resources.getDimensionPixelSize(R.dimen.popup_close_size)
         val close = ImageView(context).apply {
-            scaleX = 0f
-            scaleY = 0f
             setImageResource(R.drawable.ic_popup_close)
             contentDescription = context.getString(R.string.cd_close)
-            translationX = (popupParams.width - closeSize) / 2f
-            translationY = -(popupParams.height - closeSize) / 2f
+            translationX = closeSize / 2f
+            translationY = -closeSize / 2f
             setOnClickListener { close() }
         }
-        container.addView(close, FrameLayout.LayoutParams(closeSize, closeSize, Gravity.CENTER))
-        present(Shown(popup, scrim, listOf(close)))
+        val holder = FrameLayout(context).apply {
+            clipChildren = false
+            clipToPadding = false
+            addView(popup, FrameLayout.LayoutParams(popupParams.width, popupParams.height))
+            addView(close, FrameLayout.LayoutParams(closeSize, closeSize, Gravity.TOP or Gravity.END))
+        }
+        container.addView(holder, FrameLayout.LayoutParams(popupParams.width, popupParams.height, Gravity.CENTER))
+        present(Shown(holder, scrim, emptyList()))
     }
 
     fun showWon(result: GameResult, onStar: () -> Unit, onBack: () -> Unit, onNext: () -> Unit) {
@@ -110,6 +120,7 @@ class PopupHost(
     private fun present(next: Shown) {
         shown = next
         onShownChanged(true)
+        (listOf(next.popup) + next.companions).forEach { it.scaleX = 0f; it.scaleY = 0f }
         AnimatorSet().apply {
             playTogether(scaleAnimators(next, 1f) + listOfNotNull(next.scrim?.let { ObjectAnimator.ofFloat(it, View.ALPHA, 1f) }))
             duration = OPEN_DURATION_MS

@@ -56,13 +56,17 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         val box = Rect()
         var phrase: String? = null
         var spokeAt = 0f
+        var rimColor = 0
     }
+
+    /** Bubble rim colours, taken from the game's own art: tooltip blue, play-button gold, ribbon orange, tree green, pig pink, monster purple. */
+    private val rimColors = intArrayOf(0xFF2EAED9.toInt(), 0xFFF5B400.toInt(), 0xFFF0511E.toInt(), 0xFF5DB822.toInt(), 0xFFF06292.toInt(), 0xFF9C5FD0.toInt())
+    private var lastRim = -1
 
     private val phrases = resources.getStringArray(R.array.animal_phrases)
     private var lastPhrase = -1
     private val bubblePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFFFFFFFF.toInt() }
     private val bubbleRim = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = 0xFF2EAED9.toInt() // the blue of the game's tooltip and text shadows
         style = Paint.Style.STROKE
         strokeJoin = Paint.Join.ROUND
     }
@@ -169,6 +173,10 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         if (pick == lastPhrase) pick = (pick + 1) % phrases.size
         lastPhrase = pick
         hit.phrase = phrases[pick]
+        var rim = random.nextInt(rimColors.size)
+        if (rim == lastRim) rim = (rim + 1) % rimColors.size
+        lastRim = rim
+        hit.rimColor = rimColors[rim]
         hit.spokeAt = (System.currentTimeMillis() - startMillis) / 1000f
         hit.drawable.hop()
         performClick()
@@ -186,6 +194,7 @@ class LivingSceneView @JvmOverloads constructor(context: Context, attrs: Attribu
         val pop = (age / 0.18f).coerceAtMost(1f).let { 1.1f - 0.1f * it }.coerceAtLeast(1f) * (if (age < 0.18f) 0.6f + 0.4f * (age / 0.18f) else 1f)
         val alpha = if (age > BUBBLE_SECONDS - 0.4f) ((BUBBLE_SECONDS - age) / 0.4f).coerceIn(0f, 1f) else 1f
         textPaint.textSize = height * 0.045f
+        bubbleRim.color = v.rimColor
         textPaint.alpha = (255 * alpha).toInt(); bubblePaint.alpha = (255 * alpha).toInt(); bubbleRim.alpha = (255 * alpha).toInt()
         bubbleShadow.alpha = (0x30 * alpha).toInt()
         bubbleRim.strokeWidth = height * 0.0065f
