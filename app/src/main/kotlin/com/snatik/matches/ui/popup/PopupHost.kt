@@ -72,8 +72,9 @@ class PopupHost(
         val close = ImageView(context).apply {
             setImageResource(R.drawable.ic_popup_close)
             contentDescription = context.getString(R.string.cd_close)
-            translationX = closeSize / 2f
-            translationY = -closeSize / 2f
+            // Sits in the panel's top-right corner, under the ribbon's wing, overhanging the frame a little.
+            translationX = closeSize * 0.2f
+            translationY = closeSize * 0.62f
             setOnClickListener { close() }
         }
         val holder = FrameLayout(context).apply {
