@@ -105,7 +105,7 @@ class ArtPipeline(
         for (tile in original.resolve("tiles").listFiles { f -> f.extension == "png" }.orEmpty().sorted()) {
             val target = root.resolve("app/src/main/assets/characters/${tile.nameWithoutExtension}.chr")
             val m = master.resolve("tiles/${tile.name}")
-            if (upToDate(target, m)) continue
+            if (upToDate(target, m) && upToDate(m, tile)) continue // a redrawn tile invalidates its master and its character
             upscaled(tile)
             (tracer ?: error("Pass -Pvtracer=/path/to/vtracer to regenerate the card characters")).trace(m, target)
         }

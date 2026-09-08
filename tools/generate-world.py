@@ -70,14 +70,17 @@ def generate(prompt, references, size, background, api_key, attempts=3):
             time.sleep(10 * (attempt + 1))
 
 
-def clean_alpha(image, threshold=48):
-    """Drops the faint haze the model leaves around a transparent picture, which would trace as a
-    pale rectangle on the card; edges keep their anti-aliasing above the threshold."""
+def clean_alpha(image, threshold=48, halo=128, reach=4):
+    """Drops the haze the model leaves around a transparent picture, which would trace as a pale
+    rectangle on the card: everything fainter than [threshold], and everything fainter than [halo]
+    that is not within [reach] pixels of solid paint. Edges keep their anti-aliasing."""
     import numpy as np
-    from PIL import Image
+    from PIL import Image, ImageFilter
     a = np.array(image)
-    faint = a[..., 3] < threshold
-    a[faint] = 0
+    alpha = a[..., 3]
+    solid = Image.fromarray(((alpha >= 200) * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(2 * reach + 1))
+    near = np.array(solid) > 0
+    a[(alpha < threshold) | ((alpha < halo) & ~near)] = 0
     return Image.fromarray(a, 'RGBA')
 
 
