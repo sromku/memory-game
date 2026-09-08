@@ -75,14 +75,10 @@ class AlbumFragment : Fragment(R.layout.album_fragment) {
                     view.setImageDrawable(drawable)
                 } else {
                     drawable.colorFilter = PorterDuffColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN)
-                    drawable.alpha = SHADOW_ALPHA
+                    drawable.alpha = CharacterDrawable.SHADOW_ALPHA
                     view.setImageDrawable(drawable)
                 }
             }
         }
-    }
-
-    private companion object {
-        const val SHADOW_ALPHA = 110
     }
 }

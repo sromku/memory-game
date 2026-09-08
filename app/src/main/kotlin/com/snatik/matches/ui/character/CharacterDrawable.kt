@@ -30,6 +30,7 @@ class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), A
     private val partMatrix = Matrix()
     private val scratch = Path()
 
+    private var alpha = 255
     private var phase = 0f              // 0..1 through the idle loop
     private var blink = 0f              // 1 = eyes fully closed
     private var hop = 0f                // 0 = on the ground, 1 = top of the hop
@@ -57,6 +58,14 @@ class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), A
     }
 
     override fun draw(canvas: Canvas) {
+        // A translucent character (the album's shadows) is composed opaque in a layer and faded as
+        // a whole, so overlapping parts (shadow under body, eyes on body) do not stack up darker.
+        val layer = if (alpha < 255) canvas.saveLayerAlpha(null, alpha) else -1
+        drawParts(canvas)
+        if (layer >= 0) canvas.restoreToCount(layer)
+    }
+
+    private fun drawParts(canvas: Canvas) {
         val b = bounds
         val scale = minOf(b.width() / character.width, b.height() / character.height)
         val drawnW = character.width * scale
@@ -136,11 +145,15 @@ class CharacterDrawable(private val rendered: RenderedCharacter) : Drawable(), A
 
     override fun isRunning(): Boolean = idle.isRunning
 
-    override fun setAlpha(alpha: Int) { bitmapPaint.alpha = alpha; eyePaint.alpha = alpha }
+    override fun setAlpha(alpha: Int) { if (this.alpha != alpha) { this.alpha = alpha; invalidateSelf() } }
+    override fun getAlpha(): Int = alpha
     override fun setColorFilter(colorFilter: ColorFilter?) { bitmapPaint.colorFilter = colorFilter; eyePaint.colorFilter = colorFilter }
     @Deprecated("Deprecated in Java") override fun getOpacity(): Int = PixelFormat.TRANSLUCENT
 
-    private companion object {
+    companion object {
+        /** How dark a friend still to meet is drawn, as a black silhouette over the card, in the album and its popup. */
+        const val SHADOW_ALPHA = 170
+
         const val IDLE_PERIOD_MS = 2600L
         const val BLINK_MS = 180L
         const val HOP_MS = 520L

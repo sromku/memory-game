@@ -43,7 +43,7 @@ class PopupFriendView(
                 setOnClickListener { character.start(); character.hop() }
             } else {
                 character.colorFilter = PorterDuffColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN)
-                character.alpha = SHADOW_ALPHA
+                character.alpha = CharacterDrawable.SHADOW_ALPHA
             }
         }
         addView(image)
@@ -72,10 +72,5 @@ class PopupFriendView(
     override fun onDetachedFromWindow() {
         character.stop()
         super.onDetachedFromWindow()
-    }
-
-    private companion object {
-        /** The same shadow as the album's cards. */
-        const val SHADOW_ALPHA = 110
     }
 }
