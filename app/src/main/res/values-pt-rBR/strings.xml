@@ -39,6 +39,10 @@
     <string name="changed_prompt">O que mudou?</string>
     <string name="shadow_prompt">De quem é a sombra?</string>
     <string name="odd_prompt">Qual é o diferente?</string>
+    <string name="shop_remember">Lembre destes!</string>
+    <string name="shop_again">Mais uma vez!</string>
+    <string name="shop_tap">Toque neles em ordem!</string>
+    <string name="peek_find">Onde está…</string>
     <string name="song_listen">Escute!</string>
     <string name="song_again">Escute de novo!</string>
     <string name="song_your_turn">Sua vez!</string>

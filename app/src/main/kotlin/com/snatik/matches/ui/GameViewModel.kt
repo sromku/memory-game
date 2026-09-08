@@ -19,6 +19,8 @@ import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.minigame.FollowTheSong
 import com.snatik.matches.game.minigame.MiniGameRules
 import com.snatik.matches.game.minigame.OddOneOut
+import com.snatik.matches.game.minigame.PeekAndFind
+import com.snatik.matches.game.minigame.ShoppingList
 import com.snatik.matches.game.minigame.ShadowMatch
 import com.snatik.matches.game.minigame.WhatChanged
 import com.snatik.matches.game.minigame.WhoWasHere
@@ -189,6 +191,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             MiniGameKind.WHAT_CHANGED -> WhatChanged.create(round, characters)
             MiniGameKind.SHADOW_MATCH -> ShadowMatch.create(round, characters)
             MiniGameKind.ODD_ONE_OUT -> OddOneOut.create(round, characters)
+            MiniGameKind.SHOPPING_LIST -> ShoppingList.create(round, characters)
+            MiniGameKind.PEEK_AND_FIND -> PeekAndFind.create(round, characters)
         }
         startMiniGame(round, rules)
         uiEvents.trySend(UiEvent.OpenMiniGame(kind))

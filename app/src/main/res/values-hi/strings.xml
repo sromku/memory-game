@@ -39,6 +39,10 @@
     <string name="changed_prompt">क्या बदला?</string>
     <string name="shadow_prompt">यह किसकी परछाई है?</string>
     <string name="odd_prompt">कौन सा अलग है?</string>
+    <string name="shop_remember">इन्हें याद रखो!</string>
+    <string name="shop_again">एक बार और!</string>
+    <string name="shop_tap">अब क्रम से छुओ!</string>
+    <string name="peek_find">कहाँ है…</string>
     <string name="song_listen">सुनो!</string>
     <string name="song_again">फिर से सुनो!</string>
     <string name="song_your_turn">तुम्हारी बारी!</string>

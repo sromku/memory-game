@@ -101,4 +101,8 @@
     <dimen name="popup_settings_row_end">22dp</dimen>
 
     <dimen name="road_picker_margin_start">100dp</dimen>
+
+    <!-- peek and find -->
+    <dimen name="peek_target_size">60dp</dimen>
+    <dimen name="peek_target_padding">7dp</dimen>
 </resources>

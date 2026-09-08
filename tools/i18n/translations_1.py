@@ -5,6 +5,7 @@ LANGS['es'] = dict(
     strings=dict(
         app_name='Juego de memoria', sound_on='Sonido SÍ', sound_off='Sonido NO', rate_this='Valorar', privacy_policy='Privacidad',
         language='Idioma', language_phone='Idioma del teléfono', cd_language='Elegir el idioma',
+        shop_remember='¡Recuerda estos!', shop_again='¡Otra vez!', shop_tap='¡Tócalos en orden!', peek_find='¿Dónde está…',
         shadow_prompt='¿De quién es la sombra?', odd_prompt='¿Cuál es diferente?',
         changed_prompt='¿Qué cambió?',
         cd_theme_picker='Cambiar el tema', cd_difficulty_picker='Cambiar el camino',
@@ -36,6 +37,7 @@ LANGS['pt-rBR'] = dict(
     strings=dict(
         app_name='Jogo da memória', sound_on='Som LIGADO', sound_off='Som DESLIGADO', rate_this='Avaliar', privacy_policy='Privacidade',
         language='Idioma', language_phone='Idioma do celular', cd_language='Escolher o idioma',
+        shop_remember='Lembre destes!', shop_again='Mais uma vez!', shop_tap='Toque neles em ordem!', peek_find='Onde está…',
         shadow_prompt='De quem é a sombra?', odd_prompt='Qual é o diferente?',
         changed_prompt='O que mudou?',
         cd_theme_picker='Mudar o tema', cd_difficulty_picker='Mudar o caminho',
@@ -67,6 +69,7 @@ LANGS['fr'] = dict(
     strings=dict(
         app_name='Jeu de mémoire', sound_on='Son ON', sound_off='Son OFF', rate_this='Noter', privacy_policy='Confidentialité',
         language='Langue', language_phone='Langue du téléphone', cd_language='Choisir la langue',
+        shop_remember='Retiens-les !', shop_again='Encore une fois !', shop_tap="Touche-les dans l'ordre !", peek_find='Où est…',
         shadow_prompt='À qui est cette ombre ?', odd_prompt='Lequel est différent ?',
         changed_prompt="Qu'est-ce qui a changé ?",
         cd_theme_picker='Changer de thème', cd_difficulty_picker='Changer de chemin',
@@ -98,6 +101,7 @@ LANGS['de'] = dict(
     strings=dict(
         app_name='Memory-Spiel', sound_on='Ton AN', sound_off='Ton AUS', rate_this='Bewerten', privacy_policy='Datenschutz',
         language='Sprache', language_phone='Sprache des Telefons', cd_language='Sprache wählen',
+        shop_remember='Merk sie dir!', shop_again='Noch einmal!', shop_tap='Tippe sie der Reihe nach an!', peek_find='Wo ist…',
         shadow_prompt='Wessen Schatten ist das?', odd_prompt='Welches ist anders?',
         changed_prompt='Was ist anders?',
         cd_theme_picker='Thema wechseln', cd_difficulty_picker='Weg wechseln',
@@ -129,6 +133,7 @@ LANGS['it'] = dict(
     strings=dict(
         app_name='Gioco di memoria', sound_on='Suono SÌ', sound_off='Suono NO', rate_this='Valuta', privacy_policy='Privacy',
         language='Lingua', language_phone='Lingua del telefono', cd_language='Scegli la lingua',
+        shop_remember='Ricordali!', shop_again='Ancora una volta!', shop_tap='Toccali in ordine!', peek_find="Dov'è…",
         shadow_prompt='Di chi è questa ombra?', odd_prompt='Qual è diverso?',
         changed_prompt='Cosa è cambiato?',
         cd_theme_picker='Cambia tema', cd_difficulty_picker='Cambia sentiero',

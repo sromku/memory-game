@@ -39,6 +39,10 @@
     <string name="changed_prompt">อะไรเปลี่ยนไป?</string>
     <string name="shadow_prompt">เงาของใคร?</string>
     <string name="odd_prompt">ตัวไหนไม่เหมือน?</string>
+    <string name="shop_remember">จำไว้นะ!</string>
+    <string name="shop_again">อีกครั้ง!</string>
+    <string name="shop_tap">แตะตามลำดับ!</string>
+    <string name="peek_find">อยู่ไหน…</string>
     <string name="song_listen">ฟังนะ!</string>
     <string name="song_again">ฟังอีกครั้ง!</string>
     <string name="song_your_turn">ตาหนูแล้ว!</string>

@@ -39,6 +39,10 @@
     <string name="changed_prompt">Що змінилося?</string>
     <string name="shadow_prompt">Чия це тінь?</string>
     <string name="odd_prompt">Хто тут інший?</string>
+    <string name="shop_remember">Запам\'ятай їх!</string>
+    <string name="shop_again">Ще раз!</string>
+    <string name="shop_tap">Торкнись їх по черзі!</string>
+    <string name="peek_find">Де…</string>
     <string name="song_listen">Слухай!</string>
     <string name="song_again">Слухай ще раз!</string>
     <string name="song_your_turn">Твій хід!</string>

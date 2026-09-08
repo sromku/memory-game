@@ -31,6 +31,8 @@ import com.snatik.matches.ui.minigame.FollowTheSongFragment
 import com.snatik.matches.ui.minigame.OddOneOutFragment
 import com.snatik.matches.ui.minigame.ShadowMatchFragment
 import com.snatik.matches.ui.minigame.PartyGameFragment
+import com.snatik.matches.ui.minigame.PeekAndFindFragment
+import com.snatik.matches.ui.minigame.ShoppingListFragment
 import com.snatik.matches.ui.minigame.WhatChangedFragment
 import com.snatik.matches.ui.minigame.WhoWasHereFragment
 import com.snatik.matches.ui.popup.AppLanguages
@@ -69,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         } else {
             viewModel.game?.result?.let { if (currentFragment is GameFragment) showWonPopup(it) }
-            viewModel.miniGame?.result?.let { if (currentFragment is PartyGameFragment) showWonPopup(it) }
+            viewModel.miniGame?.result?.let { if (currentFragment is PartyGameFragment || currentFragment is PeekAndFindFragment) showWonPopup(it) }
         }
 
         lifecycleScope.launch {
@@ -157,6 +159,8 @@ class MainActivity : AppCompatActivity() {
         MiniGame.WHAT_CHANGED -> WhatChangedFragment()
         MiniGame.SHADOW_MATCH -> ShadowMatchFragment()
         MiniGame.ODD_ONE_OUT -> OddOneOutFragment()
+        MiniGame.SHOPPING_LIST -> ShoppingListFragment()
+        MiniGame.PEEK_AND_FIND -> PeekAndFindFragment()
     }
 
     private fun isOnBackStack(name: String): Boolean =

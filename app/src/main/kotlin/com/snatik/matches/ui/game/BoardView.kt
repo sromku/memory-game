@@ -8,6 +8,7 @@ import android.view.animation.BounceInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.widget.LinearLayout
 import com.snatik.matches.R
+import com.snatik.matches.game.Difficulty
 import com.snatik.matches.game.Game
 import com.snatik.matches.ui.character.CharacterDrawable
 import kotlin.math.max
@@ -35,11 +36,17 @@ class BoardView(context: Context) : LinearLayout(context) {
     }
 
     /** Builds the tiles for [game]. Must be called after this view has been laid out. */
-    fun setBoard(game: Game) {
+    fun setBoard(game: Game) =
+        setBoard(game.difficulty, isGone = game.engine::isMatched, faceUp = game.engine.faceUpTile)
+
+    /**
+     * Builds a [difficulty]'s grid of tiles; [isGone] tiles are already taken off the board and
+     * [faceUp] shows its picture from the start. Must be called after this view has been laid out.
+     */
+    fun setBoard(difficulty: Difficulty, isGone: (Int) -> Boolean = { false }, faceUp: Int? = null) {
         removeAllViews()
         tiles.clear()
 
-        val difficulty = game.difficulty
         val density = resources.displayMetrics.density
         val baseMargin = resources.getDimensionPixelSize(R.dimen.card_margin)
         val margin = max(density.toInt(), (baseMargin - difficulty.level * 2 * density).toInt())
@@ -65,8 +72,8 @@ class BoardView(context: Context) : LinearLayout(context) {
                     setOnClickListener { onTileClick?.invoke(tile) }
                 }
                 when {
-                    game.engine.isMatched(tile) -> tileView.visibility = INVISIBLE
-                    game.engine.faceUpTile == tile -> tileView.showFaceUp()
+                    isGone(tile) -> tileView.visibility = INVISIBLE
+                    faceUp == tile -> tileView.showFaceUp()
                 }
                 rowLayout.addView(tileView)
                 tiles += tileView
