@@ -1,18 +1,21 @@
 # Memory Game
 
-A simple memory game for kids aged 4+. No ads, no accounts, no complicated screens: pick a theme,
-pick a difficulty, find the pairs before the clock runs out.
+A memory game for kids aged 4+. No ads, no accounts, nothing collected: press Play, walk a road of
+rounds, find the pairs before the clock runs out, collect stars.
 
 <p align="center">
   <img src="docs/screenshots/menu.png" width="49%" alt="Main menu" />
-  <img src="docs/screenshots/themes.png" width="49%" alt="Theme selection" />
+  <img src="docs/screenshots/map.png" width="49%" alt="The road of rounds" />
   <img src="docs/screenshots/game.png" width="49%" alt="Playing the animals theme" />
-  <img src="docs/screenshots/level-complete.png" width="49%" alt="Level completed with three stars" />
+  <img src="docs/screenshots/level-complete.png" width="49%" alt="Level completed with stars" />
 </p>
 
-- 3 themes: Animals, Monsters and Emojis
-- 6 difficulties, from 3x2 up to 10x5 cards
-- Stars and best times per level, sounds on winning
+- 3 themes: Animals, Monsters and Emojis, each with its own progress
+- 6 roads per theme, from 3x2 up to 10x5 cards, 40 rounds each; the next road opens as you play
+- Every fifth round is a mini-game: "Who was here?" and "Follow the song"
+- Stars per round, confetti and hopping friends when a round is done, a friend of the day on the menu
+- 21 languages, switchable in the game's settings
+- Works on phones and tablets, in landscape, offline
 
 ## The story
 
@@ -25,7 +28,10 @@ up with its developer policies, and the code sat still while Android moved on by
 
 **2026.** The revival. The whole app was converted from Java to Kotlin, restructured, debugged,
 tested and prepared for release purely with AI (Claude Code), with the original artwork and gameplay
-kept intact. It is on its way back to the store.
+kept intact. Then it grew: the single round per difficulty became roads of forty rounds, two
+mini-games arrived on the special rounds, the menu came alive, and the game learned twenty new
+languages, with the words lifted out of the artwork so every picture could speak them. It is on its
+way back to the store.
 
 ## Building
 
@@ -55,9 +61,12 @@ task, so a change to an original is a rerun and a commit:
   corrected in `art/character-overrides.txt`.
 - **UI art** (buttons, popups, theme cards) becomes one vector drawable per asset: colours are bled
   into the transparent area, the silhouette is traced from the alpha channel and used as a clip
-  path, and the soft drop shadow becomes one translucent path. The title (a hatched texture) and
-  the play-button glow (a translucent gradient) do not trace well and stay WebP, rendered at the
-  exact pixel size for every density bucket. Backgrounds stay WebP too.
+  path, and the soft drop shadow becomes one translucent path. The pictures carry no words: the
+  lettered originals are kept in `art/original/lettered`, `tools/erase-lettering.py` writes
+  de-lettered copies, and the app draws the words at runtime in the language of the player.
+- **The title** is a hatched texture that does not trace well and stays WebP. English keeps the
+  hand-made original; `tools/generate-titles.py` draws the other languages in the same style.
+  The play-button glow and the backgrounds stay WebP too.
 - **Launcher and Play Store icons** come from `art/original/app_icon.png` the same way.
 
 ```
@@ -65,6 +74,14 @@ brew install webp
 # download realesrgan-ncnn-vulkan and vtracer for macOS from their GitHub releases
 ./gradlew regenerateArt -Prealesrgan=/path/to/realesrgan-ncnn-vulkan -Pvtracer=/path/to/vtracer
 ```
+
+## Languages
+
+English plus twenty languages. The translations are Python data in `tools/i18n`, one dictionary per
+language, and `tools/i18n/generate.py` writes the `values-<locale>` resources from them. Grobold,
+the display font, has Latin letters only, so `@font/game` resolves per language to Rubik, Baloo 2
+or Mitr (all Open Font License), and Chinese, Japanese and Korean use the system font. See
+[docs/design/localisation.md](docs/design/localisation.md).
 
 ## Rules for changes
 
@@ -74,12 +91,17 @@ SDKs; `CLAUDE.md` spells this out and the `checkChildSafety` task fails the buil
 
 ## Code layout
 
-- `game/` pure Kotlin rules: `Difficulty`, `Board` (shuffled pairs), `GameEngine` (flip state machine), `GameResult` (stars and score)
-- `data/GamePreferences` best stars and times, key-compatible with the 2019 release
-- `ui/GameViewModel` the round in progress, its clock, and the timing of every effect
-- `ui/...` one fragment per screen, the board and tile views, the popups
+- `game/` pure Kotlin rules: `Difficulty`, `Board`, `GameEngine` (flip state machine), `GameResult` (stars and score)
+- `game/progression/` roads and rounds (`RoundSpec`, `Road`) and the player's `Progress`
+- `game/minigame/` the rules of "Who was here?" and "Follow the song"
+- `data/` `ProgressStore` (the versioned progress file) and `GamePreferences` (sound, language, last road; keys compatible with 2019)
+- `ui/GameViewModel` the screen flow, the round in progress, its clock, and the timing of every effect
+- `ui/road/` the map: `RoadGeometry` places rounds, `RoadNode` states them, `RoadMapView` draws them
+- `ui/minigame/` the mini-game screens and the party scene they share
+- `ui/image/` `ArtCache` (traced vectors rendered once), `LabeledDrawable` (words on art)
 - `ui/character/` the vector card characters and their animation
-- `audio/SoundPlayer` sound effects through `SoundPool`
+- `audio/SoundPlayer` sound effects and the mini-game notes (`tools/generate-sounds.py`)
+- Design notes for every feature are in `docs/design`.
 
 ## License
 
@@ -89,3 +111,4 @@ SDKs; `CLAUDE.md` spells this out and the `checkChildSafety` task fails the buil
   - http://graphicriver.net/item/monster-creation-kit-and-large-pack/8851390
   - http://graphicriver.net/item/10-fresh-game-backgrounds/9137937
   - http://graphicriver.net/item/cartoon-games-gui-pack-11-/6056785
+- Fonts Rubik, Baloo 2 and Mitr: SIL Open Font License, see `docs/licenses`
