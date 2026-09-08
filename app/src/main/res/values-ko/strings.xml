@@ -45,6 +45,8 @@
     <string name="cd_album">친구 앨범</string>
     <string name="cd_friend_found">친구</string>
     <string name="cd_friend_hidden">아직 만나지 못한 친구</string>
+    <string name="album_hint">10라운드마다 새 친구</string>
+    <string name="friend_hidden_title">나는 누구일까?</string>
     <string name="song_listen">들어 봐!</string>
     <string name="song_again">다시 들어 봐!</string>
     <string name="song_your_turn">네 차례야!</string>
@@ -69,5 +71,8 @@
     <string name="cd_tile">카드</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">라운드 %1$d, 별 %2$d개로 완료</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">%1$d라운드만 더 하면 만나요</item>
     </plurals>
 </resources>

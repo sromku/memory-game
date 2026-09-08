@@ -20,6 +20,12 @@ import kotlinx.coroutines.launch
 import androidx.core.content.ContextCompat
 import com.snatik.matches.R
 import com.snatik.matches.game.GameResult
+import com.snatik.matches.game.GameTheme
+import com.snatik.matches.ui.character.Character
+import com.snatik.matches.ui.character.CharacterDrawable
+import com.snatik.matches.ui.character.RenderedCharacter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * Shows at most one popup over the game inside [container], with the scale-in and scale-out
@@ -60,6 +66,21 @@ class PopupHost(
     fun showParents(onPrivacyPolicy: () -> Unit, onReset: () -> Unit) {
         scope.launch {
             showFramed(PopupParentsView(context, settingsFrame(context.getString(R.string.parents)), onPrivacyPolicy, onReset))
+        }
+    }
+
+    /**
+     * A friend from the album, big, with its name on the ribbon; a friend still to meet is a shadow
+     * that says how many rounds away it is ([roundsAway], null once met).
+     */
+    fun showFriend(theme: GameTheme, image: Int, roundsAway: Int?) {
+        scope.launch {
+            val character = withContext(Dispatchers.IO) { Character.load(context.assets, theme.characters[image]) } ?: return@launch
+            val size = context.resources.getDimensionPixelSize(if (roundsAway == null) R.dimen.popup_friend_size else R.dimen.popup_friend_shadow_size)
+            val drawable = CharacterDrawable(RenderedCharacter.render(character, size))
+            val title = if (roundsAway == null) context.resources.getStringArray(theme.namesRes)[image] else context.getString(R.string.friend_hidden_title)
+            val hint = roundsAway?.let { context.resources.getQuantityString(R.plurals.friend_rounds_left, it, it) }
+            showFramed(PopupFriendView(context, settingsFrame(title), drawable, hint))
         }
     }
 

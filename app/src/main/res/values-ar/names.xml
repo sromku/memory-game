@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>دجاجة</item>
+        <item>ديك</item>
+        <item>فرخة</item>
+        <item>ديك رومي</item>
+        <item>حصان</item>
+        <item>بقرة</item>
+        <item>ثور</item>
+        <item>ماعز</item>
+        <item>خروف</item>
+        <item>كلب</item>
+        <item>أرنب</item>
+        <item>حمار</item>
+        <item>خنزير</item>
+        <item>بطة</item>
+        <item>نحلة</item>
+        <item>إوزة</item>
+        <item>كتكوت</item>
+        <item>ببغاء</item>
+        <item>ذبابة</item>
+        <item>شحرور</item>
+        <item>قطة</item>
+        <item>جرذ</item>
+        <item>فأر</item>
+        <item>هامستر</item>
+        <item>سلحفاة</item>
+        <item>قطة صغيرة</item>
+        <item>قندس</item>
+        <item>حرباء</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>كاكا</item>
+        <item>تمام</item>
+        <item>تاكو</item>
+        <item>إبهام</item>
+        <item>خجول</item>
+        <item>لذيذ</item>
+        <item>صمت</item>
+        <item>رائع</item>
+        <item>شقي</item>
+        <item>بيتزا</item>
+        <item>قلب</item>
+        <item>قلبان</item>
+        <item>ابتسامة كبيرة</item>
+        <item>ابتسامة</item>
+        <item>أوبس</item>
+        <item>قطة سعيدة</item>
+        <item>صرخة</item>
+        <item>ملاك</item>
+        <item>نيرد</item>
+        <item>ضحكة</item>
+        <item>عناق</item>
+        <item>بيكابو</item>
+        <item>آذان</item>
+        <item>راعي بقر</item>
+        <item>نجمة</item>
+        <item>وجه مبتسم</item>
+        <item>هات خمسة</item>
+        <item>سلام</item>
+        <item>ملل</item>
+        <item>غثيان</item>
+        <item>سحّاب</item>
+        <item>تفكير</item>
+        <item>مريض</item>
+        <item>قبلة</item>
+        <item>هوت دوغ</item>
+        <item>قطة</item>
+        <item>حظًا سعيدًا</item>
+        <item>قرد</item>
+        <item>إشارة</item>
+        <item>هوراي</item>
+        <item>واحد</item>
+        <item>نعسان</item>
+        <item>واو</item>
+        <item>بوسة</item>
+        <item>عطسة</item>
+        <item>كذّاب صغير</item>
+        <item>مهرج</item>
+        <item>هووش</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>سمكة المهرج</item>
+        <item>حوت</item>
+        <item>أخطبوط</item>
+        <item>سلطعون</item>
+        <item>حصان البحر</item>
+        <item>سلحفاة</item>
+        <item>دلفين</item>
+        <item>نجم البحر</item>
+        <item>قنديل البحر</item>
+        <item>فقمة</item>
+        <item>بطريق</item>
+        <item>فظ</item>
+        <item>كركند</item>
+        <item>جمبري</item>
+        <item>سمكة منتفخة</item>
+        <item>حبار</item>
+        <item>راي</item>
+        <item>كركدن البحر</item>
+        <item>أوركا</item>
+        <item>قضاعة</item>
+        <item>سلطعون ناسك</item>
+        <item>محارة</item>
+        <item>سمكة الملاك</item>
+        <item>سمكة ذهبية</item>
+        <item>قرش</item>
+        <item>ثعبان البحر</item>
+        <item>حلزون</item>
+        <item>مانتا</item>
+        <item>فلامنغو</item>
+        <item>بجعة</item>
+        <item>نورس</item>
+        <item>ضفدع</item>
+        <item>بطة</item>
+        <item>كوي</item>
+        <item>سمكة الفانوس</item>
+        <item>قنفذ البحر</item>
+    </string-array>
+</resources>

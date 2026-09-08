@@ -8,7 +8,7 @@ import com.snatik.matches.R
 /**
  * A card set. [id] is persisted in the score store and used as the score multiplier, so the
  * values must stay as they were in the released app. [characters] are the names of the vector
- * characters in assets/characters. [groundLine] is where feet stand on the background art, as a
+ * characters in assets/characters, [namesRes] their names. [groundLine] is where feet stand on the background art, as a
  * fraction of the image height.
  */
 enum class GameTheme(
@@ -17,12 +17,14 @@ enum class GameTheme(
     val groundLine: Float,
     @ArrayRes val cardImagesRes: Int,
     @StringRes val nameRes: Int,
+    /** The characters' names, in [characters] order. */
+    @ArrayRes val namesRes: Int,
     val characters: List<String>,
 ) {
-    ANIMALS(id = 1, R.drawable.back_animals, groundLine = 0.83f, R.array.theme_card_animals, R.string.theme_animals, characters("animals", 28)),
-    MONSTERS(id = 2, R.drawable.back_horror, groundLine = 0.81f, R.array.theme_card_monsters, R.string.theme_monsters, characters("mosters", 40)),
-    EMOJI(id = 3, R.drawable.background, groundLine = 0.825f, R.array.theme_card_emoji, R.string.theme_emoji, characters("emoji", 48)),
-    OCEAN(id = 4, R.drawable.back_ocean, groundLine = 0.78f, R.array.theme_card_ocean, R.string.theme_ocean, characters("ocean", 36));
+    ANIMALS(id = 1, R.drawable.back_animals, groundLine = 0.83f, R.array.theme_card_animals, R.string.theme_animals, R.array.names_animals, characters("animals", 28)),
+    MONSTERS(id = 2, R.drawable.back_horror, groundLine = 0.81f, R.array.theme_card_monsters, R.string.theme_monsters, R.array.names_mosters, characters("mosters", 40)),
+    EMOJI(id = 3, R.drawable.background, groundLine = 0.825f, R.array.theme_card_emoji, R.string.theme_emoji, R.array.names_emoji, characters("emoji", 48)),
+    OCEAN(id = 4, R.drawable.back_ocean, groundLine = 0.78f, R.array.theme_card_ocean, R.string.theme_ocean, R.array.names_ocean, characters("ocean", 36));
 
     companion object
 }

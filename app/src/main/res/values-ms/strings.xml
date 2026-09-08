@@ -45,6 +45,8 @@
     <string name="cd_album">Album kawan</string>
     <string name="cd_friend_found">Seorang kawan</string>
     <string name="cd_friend_hidden">Kawan yang belum ditemui</string>
+    <string name="album_hint">Kawan baru setiap 10 pusingan</string>
+    <string name="friend_hidden_title">Siapa saya?</string>
     <string name="song_listen">Dengar!</string>
     <string name="song_again">Dengar sekali lagi!</string>
     <string name="song_your_turn">Giliran kamu!</string>
@@ -69,5 +71,8 @@
     <string name="cd_tile">Kad</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">Pusingan %1$d, selesai dengan %2$d bintang</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">%1$d pusingan lagi dan kita berjumpa</item>
     </plurals>
 </resources>

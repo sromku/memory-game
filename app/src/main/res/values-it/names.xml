@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Gallina</item>
+        <item>Gallo</item>
+        <item>Pollo</item>
+        <item>Tacchino</item>
+        <item>Cavallo</item>
+        <item>Mucca</item>
+        <item>Toro</item>
+        <item>Capra</item>
+        <item>Pecora</item>
+        <item>Cane</item>
+        <item>Coniglietto</item>
+        <item>Asino</item>
+        <item>Maiale</item>
+        <item>Anatra</item>
+        <item>Ape</item>
+        <item>Oca</item>
+        <item>Pulcino</item>
+        <item>Pappagallo</item>
+        <item>Mosca</item>
+        <item>Merlo</item>
+        <item>Gatto</item>
+        <item>Ratto</item>
+        <item>Topo</item>
+        <item>Criceto</item>
+        <item>Tartaruga</item>
+        <item>Gattino</item>
+        <item>Castoro</item>
+        <item>Camaleonte</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Cacca</item>
+        <item>Okay</item>
+        <item>Taco</item>
+        <item>Pollice su</item>
+        <item>Imbarazzo</item>
+        <item>Gnam</item>
+        <item>Silenzio</item>
+        <item>Forte</item>
+        <item>Birichino</item>
+        <item>Pizza</item>
+        <item>Cuore</item>
+        <item>Due cuori</item>
+        <item>Sorrisone</item>
+        <item>Sorriso</item>
+        <item>Ops</item>
+        <item>Gatto felice</item>
+        <item>Urlo</item>
+        <item>Angelo</item>
+        <item>Secchione</item>
+        <item>Risata</item>
+        <item>Abbraccio</item>
+        <item>Cucù</item>
+        <item>Orecchie</item>
+        <item>Cowboy</item>
+        <item>Stella</item>
+        <item>Faccina</item>
+        <item>Batti il cinque</item>
+        <item>Pace</item>
+        <item>Annoiato</item>
+        <item>Nausea</item>
+        <item>Zip</item>
+        <item>Pensieroso</item>
+        <item>Malato</item>
+        <item>Bacio</item>
+        <item>Hot dog</item>
+        <item>Gatto</item>
+        <item>Buona fortuna</item>
+        <item>Scimmia</item>
+        <item>Ditino</item>
+        <item>Evviva</item>
+        <item>Uno</item>
+        <item>Sonnolento</item>
+        <item>Wow</item>
+        <item>Bacino</item>
+        <item>Etciù</item>
+        <item>Bugiardino</item>
+        <item>Pagliaccio</item>
+        <item>Vuuush</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Pesce pagliaccio</item>
+        <item>Balena</item>
+        <item>Polpo</item>
+        <item>Granchio</item>
+        <item>Cavalluccio</item>
+        <item>Tartaruga</item>
+        <item>Delfino</item>
+        <item>Stella marina</item>
+        <item>Medusa</item>
+        <item>Foca</item>
+        <item>Pinguino</item>
+        <item>Tricheco</item>
+        <item>Aragosta</item>
+        <item>Gambero</item>
+        <item>Pesce palla</item>
+        <item>Calamaro</item>
+        <item>Razza</item>
+        <item>Narvalo</item>
+        <item>Orca</item>
+        <item>Lontra</item>
+        <item>Paguro</item>
+        <item>Conchiglia</item>
+        <item>Pesce angelo</item>
+        <item>Pesce rosso</item>
+        <item>Squalo</item>
+        <item>Anguilla</item>
+        <item>Lumaca</item>
+        <item>Manta</item>
+        <item>Fenicottero</item>
+        <item>Pellicano</item>
+        <item>Gabbiano</item>
+        <item>Rana</item>
+        <item>Anatra</item>
+        <item>Koi</item>
+        <item>Pesce lanterna</item>
+        <item>Riccio di mare</item>
+    </string-array>
+</resources>

@@ -22,13 +22,27 @@
             android:paddingEnd="@dimen/album_padding_side" />
     </ScrollView>
 
-    <TextView
-        android:id="@+id/title"
-        style="@style/RoadHeaderText"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="@dimen/screen_back_margin"
-        android:textSize="@dimen/who_prompt_text_size"
-        tools:text="@string/album_title" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/RoadHeaderText"
+            android:textSize="@dimen/who_prompt_text_size"
+            tools:text="@string/album_title" />
+
+        <TextView
+            android:id="@+id/hint"
+            style="@style/RoadHeaderText"
+            android:alpha="0.85"
+            android:text="@string/album_hint"
+            android:textSize="@dimen/album_hint_text_size" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/back_button"

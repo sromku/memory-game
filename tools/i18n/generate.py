@@ -26,6 +26,28 @@ for path in sorted(glob.glob(f'{S}/translations_*.py')):
     spec.loader.exec_module(mod)
     data.update(mod.LANGS)
 
+names_spec = importlib.util.spec_from_file_location('names', f'{S}/names.py')
+names_mod = importlib.util.module_from_spec(names_spec)
+names_spec.loader.exec_module(names_mod)
+NAMES, EXTRA, MONSTERS = names_mod.NAMES, names_mod.EXTRA, names_mod.MONSTERS
+
+
+def names_xml(names, monsters=None):  # the monsters' names are not translated: default resources only
+    lines = ['<?xml version="1.0" encoding="utf-8"?>', '<resources>']
+    for theme, key in (('animals', 'animals'), ('mosters', None), ('emoji', 'emoji'), ('ocean', 'ocean')):
+        if key is None and monsters is None:
+            continue
+        items = monsters if key is None else names[key]
+        attr = ' translatable="false"' if key is None else ''
+        lines.append(f'    <string-array name="names_{theme}"{attr}>')
+        lines += [f'        <item>{esc(n)}</item>' for n in items]
+        lines.append('    </string-array>')
+    lines.append('</resources>')
+    return '\n'.join(lines) + '\n'
+
+
+write(R + 'values/names.xml', names_xml(NAMES['en'], MONSTERS))
+
 missing = [l for l in LOCALES if l not in data]
 if missing:
     print('no data yet for', missing)
@@ -33,7 +55,10 @@ if missing:
 for loc in LOCALES:
     if loc not in data or 'strings' not in data[loc]:
         continue
-    t = data[loc]
+    t = dict(data[loc])
+    t['strings'] = dict(t['strings'], **EXTRA[loc]['strings'])
+    for theme in ('animals', 'emoji', 'ocean'):
+        assert len(NAMES[loc][theme]) == len(NAMES['en'][theme]), (loc, theme, len(NAMES[loc][theme]))
     absent = [k for k in keys if k not in t['strings']]
     assert not absent, (loc, absent)
     assert len(t['phrases']) == 100, (loc, len(t['phrases']))
@@ -43,6 +68,10 @@ for loc in LOCALES:
         lines.append(f'    <string name="{k}">{esc(t["strings"][k])}</string>')
     lines.append('    <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">')
     for q, text in t['plurals'].items():
+        lines.append(f'        <item quantity="{q}">{esc(text)}</item>')
+    lines.append('    </plurals>')
+    lines.append('    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">')
+    for q, text in EXTRA[loc]['plurals'].items():
         lines.append(f'        <item quantity="{q}">{esc(text)}</item>')
     lines.append('    </plurals>')
     lines.append('</resources>')
@@ -55,4 +84,5 @@ for loc in LOCALES:
     plines += [f'        <item>{esc(p)}</item>' for p in t['greetings']]
     plines += ['    </string-array>', '</resources>']
     write(R + f'values-{folder}/phrases.xml', '\n'.join(plines) + '\n')
+    write(R + f'values-{folder}/names.xml', names_xml(NAMES[loc]))
     print('wrote', loc)

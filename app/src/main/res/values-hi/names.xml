@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>मुर्गी</item>
+        <item>मुर्गा</item>
+        <item>चूज़ा</item>
+        <item>टर्की</item>
+        <item>घोड़ा</item>
+        <item>गाय</item>
+        <item>बैल</item>
+        <item>बकरी</item>
+        <item>भेड़</item>
+        <item>कुत्ता</item>
+        <item>खरगोश</item>
+        <item>गधा</item>
+        <item>सूअर</item>
+        <item>बत्तख</item>
+        <item>मधुमक्खी</item>
+        <item>हंस</item>
+        <item>नन्हा चूज़ा</item>
+        <item>तोता</item>
+        <item>मक्खी</item>
+        <item>काली चिड़िया</item>
+        <item>बिल्ली</item>
+        <item>चूहा</item>
+        <item>चुहिया</item>
+        <item>हैम्स्टर</item>
+        <item>कछुआ</item>
+        <item>बिल्ली का बच्चा</item>
+        <item>ऊदबिलाव</item>
+        <item>गिरगिट</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>पॉटी</item>
+        <item>ठीक है</item>
+        <item>टाको</item>
+        <item>थम्स अप</item>
+        <item>शर्मीला</item>
+        <item>स्वादिष्ट</item>
+        <item>चुप</item>
+        <item>कूल</item>
+        <item>शरारती</item>
+        <item>पिज़्ज़ा</item>
+        <item>दिल</item>
+        <item>दो दिल</item>
+        <item>बड़ी मुस्कान</item>
+        <item>मुस्कान</item>
+        <item>उफ़</item>
+        <item>खुश बिल्ली</item>
+        <item>चीख</item>
+        <item>फ़रिश्ता</item>
+        <item>पढ़ाकू</item>
+        <item>हँसी</item>
+        <item>गले लगना</item>
+        <item>पीका-बू</item>
+        <item>कान</item>
+        <item>काउबॉय</item>
+        <item>तारा</item>
+        <item>स्माइली</item>
+        <item>हाई फाइव</item>
+        <item>शांति</item>
+        <item>बोर</item>
+        <item>जी मिचलाना</item>
+        <item>ज़िप</item>
+        <item>सोच</item>
+        <item>बीमार</item>
+        <item>चुम्मी</item>
+        <item>हॉट डॉग</item>
+        <item>बिल्ली</item>
+        <item>शुभकामना</item>
+        <item>बंदर</item>
+        <item>इशारा</item>
+        <item>हुर्रे</item>
+        <item>एक</item>
+        <item>नींद</item>
+        <item>वाह</item>
+        <item>पप्पी</item>
+        <item>छींक</item>
+        <item>झूठा</item>
+        <item>जोकर</item>
+        <item>फुर्र</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>क्लाउनफ़िश</item>
+        <item>व्हेल</item>
+        <item>ऑक्टोपस</item>
+        <item>केकड़ा</item>
+        <item>समुद्री घोड़ा</item>
+        <item>कछुआ</item>
+        <item>डॉल्फ़िन</item>
+        <item>तारामछली</item>
+        <item>जेलीफ़िश</item>
+        <item>सील</item>
+        <item>पेंगुइन</item>
+        <item>वालरस</item>
+        <item>लॉबस्टर</item>
+        <item>झींगा</item>
+        <item>पफ़रफ़िश</item>
+        <item>स्क्विड</item>
+        <item>स्टिंगरे</item>
+        <item>नारव्हाल</item>
+        <item>ऑर्का</item>
+        <item>ऊदबिलाव</item>
+        <item>हर्मिट केकड़ा</item>
+        <item>सीप</item>
+        <item>एंजेलफ़िश</item>
+        <item>सुनहरी मछली</item>
+        <item>शार्क</item>
+        <item>ईल</item>
+        <item>घोंघा</item>
+        <item>मंटा रे</item>
+        <item>फ़्लेमिंगो</item>
+        <item>पेलिकन</item>
+        <item>सीगल</item>
+        <item>मेंढक</item>
+        <item>बत्तख</item>
+        <item>कोई</item>
+        <item>लालटेन मछली</item>
+        <item>समुद्री अर्चिन</item>
+    </string-array>
+</resources>

@@ -73,9 +73,22 @@ class Progress private constructor(private val results: Map<RoundSpec, RoundResu
      * The theme's friends: one character joins the album for every [Friends.ROUNDS_PER_FRIEND]
      * rounds done on any of the theme's roads, in the theme's fixed order.
      */
-    fun friendsOf(theme: GameTheme): List<Int> {
-        val earned = Difficulty.entries.sumOf { completedCount(theme, it) / Friends.ROUNDS_PER_FRIEND }
-        return Friends.order(theme).take(earned)
+    fun friendsOf(theme: GameTheme): List<Int> = Friends.order(theme).take(friendsEarned(theme))
+
+    private fun friendsEarned(theme: GameTheme): Int = Difficulty.entries.sumOf { completedCount(theme, it) / Friends.ROUNDS_PER_FRIEND }
+
+    /**
+     * The fewest rounds that still have to be played for the character [image] of [theme] to join
+     * the album: the rounds to the next friend on the road closest to giving one, plus a full
+     * batch for every friend queued ahead of it. Null when it is already a friend.
+     */
+    fun roundsToFriend(theme: GameTheme, image: Int): Int? {
+        val earned = friendsEarned(theme)
+        val position = Friends.order(theme).indexOf(image)
+        if (position < earned) return null
+        val toNext = Difficulty.entries.filter { isUnlocked(theme, it) }
+            .minOf { Friends.ROUNDS_PER_FRIEND - completedCount(theme, it) % Friends.ROUNDS_PER_FRIEND }
+        return toNext + (position - earned) * Friends.ROUNDS_PER_FRIEND
     }
 
     fun record(round: RoundSpec, result: RoundResult): Progress {

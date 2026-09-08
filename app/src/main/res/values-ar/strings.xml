@@ -45,6 +45,8 @@
     <string name="cd_album">ألبوم الأصدقاء</string>
     <string name="cd_friend_found">صديق</string>
     <string name="cd_friend_hidden">صديق لم تقابله بعد</string>
+    <string name="album_hint">صديق جديد كل 10 جولات</string>
+    <string name="friend_hidden_title">من أنا؟</string>
     <string name="song_listen">اسمع!</string>
     <string name="song_again">اسمع مرة أخرى!</string>
     <string name="song_your_turn">دورك!</string>
@@ -74,5 +76,13 @@
         <item quantity="few">الجولة %1$d، أُنجزت بـ %2$d نجوم</item>
         <item quantity="many">الجولة %1$d، أُنجزت بـ %2$d نجمة</item>
         <item quantity="other">الجولة %1$d، أُنجزت بـ %2$d نجمة</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="zero">نلتقي بعد %1$d جولة</item>
+        <item quantity="one">جولة واحدة ونلتقي</item>
+        <item quantity="two">جولتان ونلتقي</item>
+        <item quantity="few">%1$d جولات ونلتقي</item>
+        <item quantity="many">%1$d جولة ونلتقي</item>
+        <item quantity="other">%1$d جولة ونلتقي</item>
     </plurals>
 </resources>

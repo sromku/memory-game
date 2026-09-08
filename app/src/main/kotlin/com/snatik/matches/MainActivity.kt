@@ -130,6 +130,7 @@ class MainActivity : AppCompatActivity() {
                 onParents = viewModel::openParents,
                 onLanguage = viewModel::openLanguages,
             )
+            is UiEvent.ShowFriend -> popups.showFriend(event.theme, event.image, viewModel.progress.value.roundsToFriend(event.theme, event.image))
             UiEvent.ShowParents -> popups.showParents(onPrivacyPolicy = ::openPrivacyPolicy, onReset = viewModel::resetProgress)
             UiEvent.ShowLanguages -> popups.showLanguages(AppLanguages.chosen) { tag ->
                 popups.close()

@@ -45,6 +45,8 @@
     <string name="cd_album">Альбом друзів</string>
     <string name="cd_friend_found">Друг</string>
     <string name="cd_friend_hidden">Друг, з яким ще належить зустрітися</string>
+    <string name="album_hint">Новий друг кожні 10 раундів</string>
+    <string name="friend_hidden_title">Хто я?</string>
     <string name="song_listen">Слухай!</string>
     <string name="song_again">Слухай ще раз!</string>
     <string name="song_your_turn">Твій хід!</string>
@@ -72,5 +74,11 @@
         <item quantity="few">Раунд %1$d, пройдено з %2$d зірками</item>
         <item quantity="many">Раунд %1$d, пройдено з %2$d зірками</item>
         <item quantity="other">Раунд %1$d, пройдено з %2$d зірками</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Ще %1$d раунд, і ми зустрінемось</item>
+        <item quantity="few">Ще %1$d раунди, і ми зустрінемось</item>
+        <item quantity="many">Ще %1$d раундів, і ми зустрінемось</item>
+        <item quantity="other">Ще %1$d раундів, і ми зустрінемось</item>
     </plurals>
 </resources>

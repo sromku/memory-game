@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Henne</item>
+        <item>Hahn</item>
+        <item>Hühnchen</item>
+        <item>Truthahn</item>
+        <item>Pferd</item>
+        <item>Kuh</item>
+        <item>Stier</item>
+        <item>Ziege</item>
+        <item>Schaf</item>
+        <item>Hund</item>
+        <item>Hase</item>
+        <item>Esel</item>
+        <item>Schwein</item>
+        <item>Ente</item>
+        <item>Biene</item>
+        <item>Gans</item>
+        <item>Küken</item>
+        <item>Papagei</item>
+        <item>Fliege</item>
+        <item>Amsel</item>
+        <item>Katze</item>
+        <item>Ratte</item>
+        <item>Maus</item>
+        <item>Hamster</item>
+        <item>Schildkröte</item>
+        <item>Kätzchen</item>
+        <item>Biber</item>
+        <item>Chamäleon</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Kacki</item>
+        <item>Okay</item>
+        <item>Taco</item>
+        <item>Daumen hoch</item>
+        <item>Verlegen</item>
+        <item>Lecker</item>
+        <item>Pssst</item>
+        <item>Cool</item>
+        <item>Frech</item>
+        <item>Pizza</item>
+        <item>Herz</item>
+        <item>Zwei Herzen</item>
+        <item>Grinsen</item>
+        <item>Lächeln</item>
+        <item>Ups</item>
+        <item>Frohe Katze</item>
+        <item>Schrei</item>
+        <item>Engel</item>
+        <item>Streber</item>
+        <item>Lachen</item>
+        <item>Umarmung</item>
+        <item>Kuckuck</item>
+        <item>Ohren</item>
+        <item>Cowboy</item>
+        <item>Stern</item>
+        <item>Smiley</item>
+        <item>Gib fünf</item>
+        <item>Frieden</item>
+        <item>Gelangweilt</item>
+        <item>Übel</item>
+        <item>Reißverschluss</item>
+        <item>Nachdenklich</item>
+        <item>Krank</item>
+        <item>Kuss</item>
+        <item>Hotdog</item>
+        <item>Katze</item>
+        <item>Viel Glück</item>
+        <item>Affe</item>
+        <item>Zeigefinger</item>
+        <item>Hurra</item>
+        <item>Eins</item>
+        <item>Schläfrig</item>
+        <item>Wow</item>
+        <item>Küsschen</item>
+        <item>Hatschi</item>
+        <item>Flunkerer</item>
+        <item>Clown</item>
+        <item>Wusch</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Clownfisch</item>
+        <item>Wal</item>
+        <item>Krake</item>
+        <item>Krabbe</item>
+        <item>Seepferdchen</item>
+        <item>Schildkröte</item>
+        <item>Delfin</item>
+        <item>Seestern</item>
+        <item>Qualle</item>
+        <item>Robbe</item>
+        <item>Pinguin</item>
+        <item>Walross</item>
+        <item>Hummer</item>
+        <item>Garnele</item>
+        <item>Kugelfisch</item>
+        <item>Tintenfisch</item>
+        <item>Rochen</item>
+        <item>Narwal</item>
+        <item>Orca</item>
+        <item>Otter</item>
+        <item>Einsiedlerkrebs</item>
+        <item>Muschel</item>
+        <item>Engelfisch</item>
+        <item>Goldfisch</item>
+        <item>Hai</item>
+        <item>Aal</item>
+        <item>Schnecke</item>
+        <item>Mantarochen</item>
+        <item>Flamingo</item>
+        <item>Pelikan</item>
+        <item>Möwe</item>
+        <item>Frosch</item>
+        <item>Ente</item>
+        <item>Koi</item>
+        <item>Laternenfisch</item>
+        <item>Seeigel</item>
+    </string-array>
+</resources>

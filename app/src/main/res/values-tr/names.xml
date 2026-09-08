@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Tavuk</item>
+        <item>Horoz</item>
+        <item>Piliç</item>
+        <item>Hindi</item>
+        <item>At</item>
+        <item>İnek</item>
+        <item>Boğa</item>
+        <item>Keçi</item>
+        <item>Koyun</item>
+        <item>Köpek</item>
+        <item>Tavşan</item>
+        <item>Eşek</item>
+        <item>Domuz</item>
+        <item>Ördek</item>
+        <item>Arı</item>
+        <item>Kaz</item>
+        <item>Civciv</item>
+        <item>Papağan</item>
+        <item>Sinek</item>
+        <item>Karatavuk</item>
+        <item>Kedi</item>
+        <item>Sıçan</item>
+        <item>Fare</item>
+        <item>Hamster</item>
+        <item>Kaplumbağa</item>
+        <item>Kedicik</item>
+        <item>Kunduz</item>
+        <item>Bukalemun</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Kaka</item>
+        <item>Tamam</item>
+        <item>Taco</item>
+        <item>Başparmak</item>
+        <item>Utangaç</item>
+        <item>Leziz</item>
+        <item>Şşş</item>
+        <item>Havalı</item>
+        <item>Yaramaz</item>
+        <item>Pizza</item>
+        <item>Kalp</item>
+        <item>İki kalp</item>
+        <item>Sırıtış</item>
+        <item>Gülümseme</item>
+        <item>Tüh</item>
+        <item>Mutlu kedi</item>
+        <item>Çığlık</item>
+        <item>Melek</item>
+        <item>İnek</item>
+        <item>Kahkaha</item>
+        <item>Sarılma</item>
+        <item>Ce-e</item>
+        <item>Kulaklar</item>
+        <item>Kovboy</item>
+        <item>Yıldız</item>
+        <item>Gülen yüz</item>
+        <item>Çak bir beşlik</item>
+        <item>Barış</item>
+        <item>Sıkılmış</item>
+        <item>Mide bulantısı</item>
+        <item>Fermuar</item>
+        <item>Düşünceli</item>
+        <item>Hasta</item>
+        <item>Öpücük</item>
+        <item>Sosisli</item>
+        <item>Kedi</item>
+        <item>Bol şans</item>
+        <item>Maymun</item>
+        <item>İşaret</item>
+        <item>Yaşasın</item>
+        <item>Bir</item>
+        <item>Uykucu</item>
+        <item>Vay</item>
+        <item>Öpücük</item>
+        <item>Hapşu</item>
+        <item>Yalancı</item>
+        <item>Palyaço</item>
+        <item>Vuuş</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Palyaço balığı</item>
+        <item>Balina</item>
+        <item>Ahtapot</item>
+        <item>Yengeç</item>
+        <item>Denizatı</item>
+        <item>Kaplumbağa</item>
+        <item>Yunus</item>
+        <item>Denizyıldızı</item>
+        <item>Denizanası</item>
+        <item>Fok</item>
+        <item>Penguen</item>
+        <item>Mors</item>
+        <item>Deniz böceği</item>
+        <item>Karides</item>
+        <item>Balon balığı</item>
+        <item>Kalamar</item>
+        <item>Vatoz</item>
+        <item>Deniz gergedanı</item>
+        <item>Orka</item>
+        <item>Su samuru</item>
+        <item>Keşiş yengeci</item>
+        <item>Deniz kabuğu</item>
+        <item>Melek balığı</item>
+        <item>Japon balığı</item>
+        <item>Köpekbalığı</item>
+        <item>Yılan balığı</item>
+        <item>Salyangoz</item>
+        <item>Manta</item>
+        <item>Flamingo</item>
+        <item>Pelikan</item>
+        <item>Martı</item>
+        <item>Kurbağa</item>
+        <item>Ördek</item>
+        <item>Koi</item>
+        <item>Fener balığı</item>
+        <item>Deniz kestanesi</item>
+    </string-array>
+</resources>

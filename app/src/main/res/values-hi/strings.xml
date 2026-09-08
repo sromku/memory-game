@@ -45,6 +45,8 @@
     <string name="cd_album">दोस्तों का एल्बम</string>
     <string name="cd_friend_found">एक दोस्त</string>
     <string name="cd_friend_hidden">एक दोस्त जिससे मिलना बाकी है</string>
+    <string name="album_hint">हर 10 राउंड पर एक नया दोस्त</string>
+    <string name="friend_hidden_title">मैं कौन हूँ?</string>
     <string name="song_listen">सुनो!</string>
     <string name="song_again">फिर से सुनो!</string>
     <string name="song_your_turn">तुम्हारी बारी!</string>
@@ -70,5 +72,9 @@
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">राउंड %1$d, %2$d तारे के साथ पूरा</item>
         <item quantity="other">राउंड %1$d, %2$d तारों के साथ पूरा</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">बस %1$d राउंड और, फिर मिलेंगे</item>
+        <item quantity="other">बस %1$d राउंड और, फिर मिलेंगे</item>
     </plurals>
 </resources>

@@ -45,6 +45,8 @@
     <string name="cd_album">Vriendenalbum</string>
     <string name="cd_friend_found">Een vriend</string>
     <string name="cd_friend_hidden">Een vriend om nog te ontmoeten</string>
+    <string name="album_hint">Elke 10 rondes een nieuwe vriend</string>
+    <string name="friend_hidden_title">Wie ben ik?</string>
     <string name="song_listen">Luister!</string>
     <string name="song_again">Luister nog eens!</string>
     <string name="song_your_turn">Jouw beurt!</string>
@@ -70,5 +72,9 @@
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Ronde %1$d, gehaald met %2$d ster</item>
         <item quantity="other">Ronde %1$d, gehaald met %2$d sterren</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Nog %1$d ronde en we ontmoeten elkaar</item>
+        <item quantity="other">Nog %1$d rondes en we ontmoeten elkaar</item>
     </plurals>
 </resources>

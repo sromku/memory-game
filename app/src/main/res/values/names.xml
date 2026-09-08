@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Hen</item>
+        <item>Rooster</item>
+        <item>Chicken</item>
+        <item>Turkey</item>
+        <item>Horse</item>
+        <item>Cow</item>
+        <item>Bull</item>
+        <item>Goat</item>
+        <item>Sheep</item>
+        <item>Dog</item>
+        <item>Bunny</item>
+        <item>Donkey</item>
+        <item>Pig</item>
+        <item>Duck</item>
+        <item>Bee</item>
+        <item>Goose</item>
+        <item>Chick</item>
+        <item>Parrot</item>
+        <item>Fly</item>
+        <item>Blackbird</item>
+        <item>Cat</item>
+        <item>Rat</item>
+        <item>Mouse</item>
+        <item>Hamster</item>
+        <item>Turtle</item>
+        <item>Kitten</item>
+        <item>Beaver</item>
+        <item>Chameleon</item>
+    </string-array>
+    <string-array name="names_mosters" translatable="false">
+        <item>Pinky</item>
+        <item>Fluffo</item>
+        <item>Grog</item>
+        <item>Professor Lime</item>
+        <item>Pumpko</item>
+        <item>Wizzy</item>
+        <item>Bruno</item>
+        <item>Boo</item>
+        <item>Hairy</item>
+        <item>Zombo</item>
+        <item>Skully</item>
+        <item>Ghosty</item>
+        <item>Rusty</item>
+        <item>Bunso</item>
+        <item>Buggy</item>
+        <item>Squiddy</item>
+        <item>Frosty</item>
+        <item>Draco</item>
+        <item>Drooly</item>
+        <item>Blaze</item>
+        <item>Tongo</item>
+        <item>Trioc</item>
+        <item>Huggy</item>
+        <item>Coral</item>
+        <item>Sleepy</item>
+        <item>Violet</item>
+        <item>Yelly</item>
+        <item>Sludge</item>
+        <item>Patch</item>
+        <item>Spiky</item>
+        <item>Hornbeard</item>
+        <item>Cyclo</item>
+        <item>Grumpy</item>
+        <item>Growly</item>
+        <item>Howler</item>
+        <item>Greeny</item>
+        <item>Tusky</item>
+        <item>Frank</item>
+        <item>Bitey</item>
+        <item>Reddy</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Poop</item>
+        <item>Okay</item>
+        <item>Taco</item>
+        <item>Thumbs up</item>
+        <item>Blush</item>
+        <item>Yummy</item>
+        <item>Hush</item>
+        <item>Cool</item>
+        <item>Cheeky</item>
+        <item>Pizza</item>
+        <item>Heart</item>
+        <item>Two hearts</item>
+        <item>Grin</item>
+        <item>Smile</item>
+        <item>Oops</item>
+        <item>Happy cat</item>
+        <item>Scream</item>
+        <item>Angel</item>
+        <item>Nerd</item>
+        <item>Laugh</item>
+        <item>Hug</item>
+        <item>Peekaboo</item>
+        <item>Ears</item>
+        <item>Cowboy</item>
+        <item>Star</item>
+        <item>Smiley</item>
+        <item>High five</item>
+        <item>Peace</item>
+        <item>Bored</item>
+        <item>Sick</item>
+        <item>Zipped</item>
+        <item>Thinking</item>
+        <item>Ill</item>
+        <item>Kiss</item>
+        <item>Hot dog</item>
+        <item>Cat</item>
+        <item>Good luck</item>
+        <item>Monkey</item>
+        <item>Pointing</item>
+        <item>Hooray</item>
+        <item>One</item>
+        <item>Sleepy</item>
+        <item>Wow</item>
+        <item>Kissy</item>
+        <item>Sneeze</item>
+        <item>Fibber</item>
+        <item>Clown</item>
+        <item>Whoosh</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Clownfish</item>
+        <item>Whale</item>
+        <item>Octopus</item>
+        <item>Crab</item>
+        <item>Seahorse</item>
+        <item>Turtle</item>
+        <item>Dolphin</item>
+        <item>Starfish</item>
+        <item>Jellyfish</item>
+        <item>Seal</item>
+        <item>Penguin</item>
+        <item>Walrus</item>
+        <item>Lobster</item>
+        <item>Shrimp</item>
+        <item>Pufferfish</item>
+        <item>Squid</item>
+        <item>Stingray</item>
+        <item>Narwhal</item>
+        <item>Orca</item>
+        <item>Otter</item>
+        <item>Hermit crab</item>
+        <item>Clam</item>
+        <item>Angelfish</item>
+        <item>Goldfish</item>
+        <item>Shark</item>
+        <item>Eel</item>
+        <item>Snail</item>
+        <item>Manta ray</item>
+        <item>Flamingo</item>
+        <item>Pelican</item>
+        <item>Seagull</item>
+        <item>Frog</item>
+        <item>Duck</item>
+        <item>Koi</item>
+        <item>Lanternfish</item>
+        <item>Sea urchin</item>
+    </string-array>
+</resources>

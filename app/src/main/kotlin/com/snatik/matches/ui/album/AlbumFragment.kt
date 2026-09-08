@@ -26,8 +26,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
- * The friends album: every character of every theme as a card, the collected ones in colour
- * (tap one and it hops), the rest as shadows waiting for their ten rounds.
+ * The friends album: every character of every theme as a card, the collected ones in colour, the
+ * rest as shadows waiting for their ten rounds. A tap opens the friend's popup: the character big
+ * with its name, or the shadow telling how many rounds away it is.
  */
 class AlbumFragment : Fragment(R.layout.album_fragment) {
 
@@ -54,11 +55,13 @@ class AlbumFragment : Fragment(R.layout.album_fragment) {
         val padding = resources.getDimensionPixelSize(R.dimen.album_card_padding)
         val gap = resources.getDimensionPixelSize(R.dimen.road_header_gap)
         section.grid.columnCount = ((binding.sections.width - binding.sections.paddingLeft - binding.sections.paddingRight) / (card + gap)).coerceAtLeast(1)
+        val names = resources.getStringArray(theme.namesRes)
         val cards = theme.characters.indices.map { image ->
             ImageView(requireContext()).apply {
                 setBackgroundResource(R.drawable.tile)
                 setPadding(padding, padding, padding, padding)
-                contentDescription = getString(if (image in friends) R.string.cd_friend_found else R.string.cd_friend_hidden)
+                contentDescription = if (image in friends) names[image] else getString(R.string.cd_friend_hidden)
+                setOnClickListener { viewModel.openFriend(theme, image) }
                 section.grid.addView(this, GridLayout.LayoutParams().apply { width = card; height = card; setMargins(gap / 2, gap / 2, gap / 2, gap / 2) })
             }
         }
@@ -70,7 +73,6 @@ class AlbumFragment : Fragment(R.layout.album_fragment) {
                 val view = cards[image]
                 if (image in friends) {
                     view.setImageDrawable(drawable)
-                    view.setOnClickListener { drawable.start(); drawable.hop() }
                 } else {
                     drawable.colorFilter = PorterDuffColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN)
                     drawable.alpha = SHADOW_ALPHA

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Kura</item>
+        <item>Kogut</item>
+        <item>Kurczak</item>
+        <item>Indyk</item>
+        <item>Koń</item>
+        <item>Krowa</item>
+        <item>Byk</item>
+        <item>Koza</item>
+        <item>Owca</item>
+        <item>Pies</item>
+        <item>Króliczek</item>
+        <item>Osiołek</item>
+        <item>Świnka</item>
+        <item>Kaczka</item>
+        <item>Pszczoła</item>
+        <item>Gęś</item>
+        <item>Kurczaczek</item>
+        <item>Papuga</item>
+        <item>Mucha</item>
+        <item>Kos</item>
+        <item>Kot</item>
+        <item>Szczur</item>
+        <item>Myszka</item>
+        <item>Chomik</item>
+        <item>Żółw</item>
+        <item>Kotek</item>
+        <item>Bóbr</item>
+        <item>Kameleon</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Kupka</item>
+        <item>Okej</item>
+        <item>Taco</item>
+        <item>Kciuk w górę</item>
+        <item>Rumieniec</item>
+        <item>Pychota</item>
+        <item>Ciii</item>
+        <item>Fajnie</item>
+        <item>Łobuz</item>
+        <item>Pizza</item>
+        <item>Serce</item>
+        <item>Dwa serca</item>
+        <item>Uśmiech od ucha</item>
+        <item>Uśmiech</item>
+        <item>Ups</item>
+        <item>Wesoły kot</item>
+        <item>Krzyk</item>
+        <item>Aniołek</item>
+        <item>Kujon</item>
+        <item>Śmiech</item>
+        <item>Przytulas</item>
+        <item>A kuku</item>
+        <item>Uszy</item>
+        <item>Kowboj</item>
+        <item>Gwiazda</item>
+        <item>Buźka</item>
+        <item>Piątka</item>
+        <item>Pokój</item>
+        <item>Nuda</item>
+        <item>Niedobrze</item>
+        <item>Zamek</item>
+        <item>Myślę</item>
+        <item>Chory</item>
+        <item>Buziak</item>
+        <item>Hot dog</item>
+        <item>Kot</item>
+        <item>Powodzenia</item>
+        <item>Małpka</item>
+        <item>Palec</item>
+        <item>Hura</item>
+        <item>Jeden</item>
+        <item>Śpioch</item>
+        <item>Wow</item>
+        <item>Całusek</item>
+        <item>Apsik</item>
+        <item>Kłamczuszek</item>
+        <item>Klaun</item>
+        <item>Szuuu</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Błazenek</item>
+        <item>Wieloryb</item>
+        <item>Ośmiornica</item>
+        <item>Krab</item>
+        <item>Konik morski</item>
+        <item>Żółw</item>
+        <item>Delfin</item>
+        <item>Rozgwiazda</item>
+        <item>Meduza</item>
+        <item>Foka</item>
+        <item>Pingwin</item>
+        <item>Mors</item>
+        <item>Homar</item>
+        <item>Krewetka</item>
+        <item>Rozdymka</item>
+        <item>Kałamarnica</item>
+        <item>Płaszczka</item>
+        <item>Narwal</item>
+        <item>Orka</item>
+        <item>Wydra</item>
+        <item>Pustelnik</item>
+        <item>Muszla</item>
+        <item>Skalar</item>
+        <item>Złota rybka</item>
+        <item>Rekin</item>
+        <item>Węgorz</item>
+        <item>Ślimak</item>
+        <item>Manta</item>
+        <item>Flaming</item>
+        <item>Pelikan</item>
+        <item>Mewa</item>
+        <item>Żaba</item>
+        <item>Kaczka</item>
+        <item>Karp koi</item>
+        <item>Rybka latarnia</item>
+        <item>Jeżowiec</item>
+    </string-array>
+</resources>

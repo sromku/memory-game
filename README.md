@@ -15,7 +15,7 @@ rounds, find the pairs before the clock runs out, collect stars.
 - Every fifth round is one of seven mini-games: "Who was here?", "Follow the song", "What changed?",
   "Shadow match", "Odd one out", "Shopping list" and "Peek and find"
 - Stars per round, confetti and hopping friends when a round is done, a friend of the day on the menu
-- A friends album: every ten rounds a character joins it, and the collected friends visit the menu
+- A friends album: every ten rounds a character joins it, tap one to meet it by name, and the collected friends visit the menu
 - A parents' corner behind a hold-to-open gate, with the privacy policy and a start-over
 - 21 languages, switchable in the game's settings
 - Works on phones and tablets, in landscape, offline

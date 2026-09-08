@@ -45,6 +45,8 @@
     <string name="cd_album">ともだちアルバム</string>
     <string name="cd_friend_found">ともだち</string>
     <string name="cd_friend_hidden">まだあっていないともだち</string>
+    <string name="album_hint">10ラウンドごとに あたらしい なかま</string>
+    <string name="friend_hidden_title">だれかな？</string>
     <string name="song_listen">きいて！</string>
     <string name="song_again">もういちど きいて！</string>
     <string name="song_your_turn">きみのばん！</string>
@@ -69,5 +71,8 @@
     <string name="cd_tile">カード</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">ラウンド %1$d、ほし %2$d こで クリア</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">あと %1$d ラウンドで あえるよ</item>
     </plurals>
 </resources>

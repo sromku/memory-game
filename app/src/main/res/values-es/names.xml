@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Gallina</item>
+        <item>Gallo</item>
+        <item>Pollo</item>
+        <item>Pavo</item>
+        <item>Caballo</item>
+        <item>Vaca</item>
+        <item>Toro</item>
+        <item>Cabra</item>
+        <item>Oveja</item>
+        <item>Perro</item>
+        <item>Conejito</item>
+        <item>Burro</item>
+        <item>Cerdo</item>
+        <item>Pato</item>
+        <item>Abeja</item>
+        <item>Ganso</item>
+        <item>Pollito</item>
+        <item>Loro</item>
+        <item>Mosca</item>
+        <item>Mirlo</item>
+        <item>Gato</item>
+        <item>Rata</item>
+        <item>Ratón</item>
+        <item>Hámster</item>
+        <item>Tortuga</item>
+        <item>Gatito</item>
+        <item>Castor</item>
+        <item>Camaleón</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Caca</item>
+        <item>Vale</item>
+        <item>Taco</item>
+        <item>Pulgar arriba</item>
+        <item>Sonrojo</item>
+        <item>Rico</item>
+        <item>Silencio</item>
+        <item>Genial</item>
+        <item>Pícaro</item>
+        <item>Pizza</item>
+        <item>Corazón</item>
+        <item>Dos corazones</item>
+        <item>Sonrisota</item>
+        <item>Sonrisa</item>
+        <item>Ups</item>
+        <item>Gato feliz</item>
+        <item>Grito</item>
+        <item>Ángel</item>
+        <item>Empollón</item>
+        <item>Risa</item>
+        <item>Abrazo</item>
+        <item>Cucú</item>
+        <item>Orejas</item>
+        <item>Vaquero</item>
+        <item>Estrella</item>
+        <item>Carita</item>
+        <item>Choca esos cinco</item>
+        <item>Paz</item>
+        <item>Aburrido</item>
+        <item>Mareado</item>
+        <item>Cremallera</item>
+        <item>Pensando</item>
+        <item>Enfermo</item>
+        <item>Beso</item>
+        <item>Perrito caliente</item>
+        <item>Gato</item>
+        <item>Buena suerte</item>
+        <item>Mono</item>
+        <item>Señalando</item>
+        <item>Hurra</item>
+        <item>Uno</item>
+        <item>Dormilón</item>
+        <item>Guau</item>
+        <item>Besito</item>
+        <item>Achís</item>
+        <item>Mentirosillo</item>
+        <item>Payaso</item>
+        <item>Fuuu</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Pez payaso</item>
+        <item>Ballena</item>
+        <item>Pulpo</item>
+        <item>Cangrejo</item>
+        <item>Caballito de mar</item>
+        <item>Tortuga</item>
+        <item>Delfín</item>
+        <item>Estrella de mar</item>
+        <item>Medusa</item>
+        <item>Foca</item>
+        <item>Pingüino</item>
+        <item>Morsa</item>
+        <item>Langosta</item>
+        <item>Gamba</item>
+        <item>Pez globo</item>
+        <item>Calamar</item>
+        <item>Raya</item>
+        <item>Narval</item>
+        <item>Orca</item>
+        <item>Nutria</item>
+        <item>Cangrejo ermitaño</item>
+        <item>Almeja</item>
+        <item>Pez ángel</item>
+        <item>Pez dorado</item>
+        <item>Tiburón</item>
+        <item>Anguila</item>
+        <item>Caracol</item>
+        <item>Mantarraya</item>
+        <item>Flamenco</item>
+        <item>Pelícano</item>
+        <item>Gaviota</item>
+        <item>Rana</item>
+        <item>Pato</item>
+        <item>Koi</item>
+        <item>Pez linterna</item>
+        <item>Erizo de mar</item>
+    </string-array>
+</resources>

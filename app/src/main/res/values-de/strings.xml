@@ -45,6 +45,8 @@
     <string name="cd_album">Freundealbum</string>
     <string name="cd_friend_found">Ein Freund</string>
     <string name="cd_friend_hidden">Ein Freund, den du noch triffst</string>
+    <string name="album_hint">Alle 10 Runden ein neuer Freund</string>
+    <string name="friend_hidden_title">Wer bin ich?</string>
     <string name="song_listen">Hör zu!</string>
     <string name="song_again">Hör noch mal zu!</string>
     <string name="song_your_turn">Du bist dran!</string>
@@ -70,5 +72,9 @@
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Runde %1$d, geschafft mit %2$d Stern</item>
         <item quantity="other">Runde %1$d, geschafft mit %2$d Sternen</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="one">Noch %1$d Runde, dann treffen wir uns</item>
+        <item quantity="other">Noch %1$d Runden, dann treffen wir uns</item>
     </plurals>
 </resources>

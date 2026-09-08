@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Gà mái</item>
+        <item>Gà trống</item>
+        <item>Gà</item>
+        <item>Gà tây</item>
+        <item>Ngựa</item>
+        <item>Bò</item>
+        <item>Bò đực</item>
+        <item>Dê</item>
+        <item>Cừu</item>
+        <item>Chó</item>
+        <item>Thỏ</item>
+        <item>Lừa</item>
+        <item>Heo</item>
+        <item>Vịt</item>
+        <item>Ong</item>
+        <item>Ngỗng</item>
+        <item>Gà con</item>
+        <item>Vẹt</item>
+        <item>Ruồi</item>
+        <item>Chim sáo</item>
+        <item>Mèo</item>
+        <item>Chuột cống</item>
+        <item>Chuột</item>
+        <item>Chuột hamster</item>
+        <item>Rùa</item>
+        <item>Mèo con</item>
+        <item>Hải ly</item>
+        <item>Tắc kè</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Phân</item>
+        <item>Ổn</item>
+        <item>Taco</item>
+        <item>Ngón cái</item>
+        <item>Ngại</item>
+        <item>Ngon</item>
+        <item>Suỵt</item>
+        <item>Ngầu</item>
+        <item>Nghịch</item>
+        <item>Pizza</item>
+        <item>Trái tim</item>
+        <item>Hai trái tim</item>
+        <item>Cười toe</item>
+        <item>Mỉm cười</item>
+        <item>Ối</item>
+        <item>Mèo vui</item>
+        <item>Hét</item>
+        <item>Thiên thần</item>
+        <item>Mọt sách</item>
+        <item>Cười</item>
+        <item>Ôm</item>
+        <item>Ú òa</item>
+        <item>Tai</item>
+        <item>Cao bồi</item>
+        <item>Ngôi sao</item>
+        <item>Mặt cười</item>
+        <item>Đập tay</item>
+        <item>Hòa bình</item>
+        <item>Chán</item>
+        <item>Buồn nôn</item>
+        <item>Kéo khóa</item>
+        <item>Suy nghĩ</item>
+        <item>Ốm</item>
+        <item>Hôn</item>
+        <item>Hot dog</item>
+        <item>Mèo</item>
+        <item>Chúc may mắn</item>
+        <item>Khỉ</item>
+        <item>Chỉ tay</item>
+        <item>Hoan hô</item>
+        <item>Một</item>
+        <item>Buồn ngủ</item>
+        <item>Wow</item>
+        <item>Thơm</item>
+        <item>Hắt xì</item>
+        <item>Nói dối</item>
+        <item>Chú hề</item>
+        <item>Vèo</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Cá hề</item>
+        <item>Cá voi</item>
+        <item>Bạch tuộc</item>
+        <item>Cua</item>
+        <item>Cá ngựa</item>
+        <item>Rùa biển</item>
+        <item>Cá heo</item>
+        <item>Sao biển</item>
+        <item>Sứa</item>
+        <item>Hải cẩu</item>
+        <item>Chim cánh cụt</item>
+        <item>Hải mã</item>
+        <item>Tôm hùm</item>
+        <item>Tôm</item>
+        <item>Cá nóc</item>
+        <item>Mực</item>
+        <item>Cá đuối</item>
+        <item>Kỳ lân biển</item>
+        <item>Cá voi sát thủ</item>
+        <item>Rái cá</item>
+        <item>Ốc mượn hồn</item>
+        <item>Ngao</item>
+        <item>Cá thần tiên</item>
+        <item>Cá vàng</item>
+        <item>Cá mập</item>
+        <item>Lươn</item>
+        <item>Ốc sên</item>
+        <item>Cá đuối manta</item>
+        <item>Hồng hạc</item>
+        <item>Bồ nông</item>
+        <item>Mòng biển</item>
+        <item>Ếch</item>
+        <item>Vịt</item>
+        <item>Cá koi</item>
+        <item>Cá đèn lồng</item>
+        <item>Nhím biển</item>
+    </string-array>
+</resources>

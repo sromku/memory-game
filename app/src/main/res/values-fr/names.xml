@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Poule</item>
+        <item>Coq</item>
+        <item>Poulet</item>
+        <item>Dinde</item>
+        <item>Cheval</item>
+        <item>Vache</item>
+        <item>Taureau</item>
+        <item>Chèvre</item>
+        <item>Mouton</item>
+        <item>Chien</item>
+        <item>Lapin</item>
+        <item>Âne</item>
+        <item>Cochon</item>
+        <item>Canard</item>
+        <item>Abeille</item>
+        <item>Oie</item>
+        <item>Poussin</item>
+        <item>Perroquet</item>
+        <item>Mouche</item>
+        <item>Merle</item>
+        <item>Chat</item>
+        <item>Rat</item>
+        <item>Souris</item>
+        <item>Hamster</item>
+        <item>Tortue</item>
+        <item>Chaton</item>
+        <item>Castor</item>
+        <item>Caméléon</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Caca</item>
+        <item>D\'accord</item>
+        <item>Taco</item>
+        <item>Pouce levé</item>
+        <item>Timide</item>
+        <item>Miam</item>
+        <item>Chut</item>
+        <item>Cool</item>
+        <item>Coquin</item>
+        <item>Pizza</item>
+        <item>Cœur</item>
+        <item>Deux cœurs</item>
+        <item>Grand sourire</item>
+        <item>Sourire</item>
+        <item>Oups</item>
+        <item>Chat content</item>
+        <item>Cri</item>
+        <item>Ange</item>
+        <item>Intello</item>
+        <item>Rire</item>
+        <item>Câlin</item>
+        <item>Coucou</item>
+        <item>Oreilles</item>
+        <item>Cowboy</item>
+        <item>Étoile</item>
+        <item>Bonhomme</item>
+        <item>Tape m\'en cinq</item>
+        <item>Paix</item>
+        <item>Blasé</item>
+        <item>Malade</item>
+        <item>Bouche cousue</item>
+        <item>Réflexion</item>
+        <item>Fièvre</item>
+        <item>Bisou</item>
+        <item>Hot-dog</item>
+        <item>Chat</item>
+        <item>Bonne chance</item>
+        <item>Singe</item>
+        <item>Doigt</item>
+        <item>Hourra</item>
+        <item>Un</item>
+        <item>Dodo</item>
+        <item>Ouah</item>
+        <item>Gros bisou</item>
+        <item>Atchoum</item>
+        <item>Menteur</item>
+        <item>Clown</item>
+        <item>Vroum</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Poisson-clown</item>
+        <item>Baleine</item>
+        <item>Pieuvre</item>
+        <item>Crabe</item>
+        <item>Hippocampe</item>
+        <item>Tortue</item>
+        <item>Dauphin</item>
+        <item>Étoile de mer</item>
+        <item>Méduse</item>
+        <item>Phoque</item>
+        <item>Manchot</item>
+        <item>Morse</item>
+        <item>Homard</item>
+        <item>Crevette</item>
+        <item>Poisson-globe</item>
+        <item>Calmar</item>
+        <item>Raie</item>
+        <item>Narval</item>
+        <item>Orque</item>
+        <item>Loutre</item>
+        <item>Bernard-l\'ermite</item>
+        <item>Coquillage</item>
+        <item>Poisson-ange</item>
+        <item>Poisson rouge</item>
+        <item>Requin</item>
+        <item>Anguille</item>
+        <item>Escargot</item>
+        <item>Raie manta</item>
+        <item>Flamant</item>
+        <item>Pélican</item>
+        <item>Mouette</item>
+        <item>Grenouille</item>
+        <item>Canard</item>
+        <item>Carpe koï</item>
+        <item>Poisson-lanterne</item>
+        <item>Oursin</item>
+    </string-array>
+</resources>

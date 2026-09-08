@@ -45,6 +45,8 @@
     <string name="cd_album">朋友相册</string>
     <string name="cd_friend_found">朋友</string>
     <string name="cd_friend_hidden">还没见到的朋友</string>
+    <string name="album_hint">每 10 关多一位新朋友</string>
+    <string name="friend_hidden_title">我是谁？</string>
     <string name="song_listen">听！</string>
     <string name="song_again">再听一次！</string>
     <string name="song_your_turn">该你了！</string>
@@ -69,5 +71,8 @@
     <string name="cd_tile">卡片</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">第 %1$d 关，获得 %2$d 颗星星</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">再玩 %1$d 关就能见到我</item>
     </plurals>
 </resources>

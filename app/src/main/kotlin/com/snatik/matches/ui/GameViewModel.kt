@@ -54,6 +54,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object ShowSettings : UiEvent
         data object ShowParents : UiEvent
         data object ShowLanguages : UiEvent
+        /** A friend's card in the album was tapped. */
+        data class ShowFriend(val theme: GameTheme, val image: Int) : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
         data object ClosePopup : UiEvent
     }
@@ -258,6 +260,11 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     fun openParents() {
         uiEvents.trySend(UiEvent.ShowParents)
+    }
+
+    /** From the album: the popup with the character's name, or how far away it still is. */
+    fun openFriend(theme: GameTheme, image: Int) {
+        uiEvents.trySend(UiEvent.ShowFriend(theme, image))
     }
 
     /** From the parents' corner: every road back to its first round, in every theme. */

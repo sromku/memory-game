@@ -45,6 +45,8 @@
     <string name="cd_album">Album bạn bè</string>
     <string name="cd_friend_found">Một người bạn</string>
     <string name="cd_friend_hidden">Một người bạn chưa gặp</string>
+    <string name="album_hint">Cứ 10 vòng có một bạn mới</string>
+    <string name="friend_hidden_title">Tớ là ai?</string>
     <string name="song_listen">Nghe nhé!</string>
     <string name="song_again">Nghe lại nhé!</string>
     <string name="song_your_turn">Đến lượt bạn!</string>
@@ -69,5 +71,8 @@
     <string name="cd_tile">Thẻ</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">Vòng %1$d, hoàn thành với %2$d sao</item>
+    </plurals>
+    <plurals name="friend_rounds_left" tools:ignore="MissingQuantity,UnusedQuantity">
+        <item quantity="other">Thêm %1$d vòng nữa là gặp tớ</item>
     </plurals>
 </resources>

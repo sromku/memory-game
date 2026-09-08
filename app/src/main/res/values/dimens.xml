@@ -105,12 +105,18 @@
     <dimen name="peek_target_padding">5dp</dimen>
 
     <!-- friends album -->
-    <dimen name="album_padding_top">64dp</dimen>
+    <dimen name="album_padding_top">78dp</dimen>
     <dimen name="album_padding_bottom">24dp</dimen>
     <dimen name="album_padding_side">24dp</dimen>
     <dimen name="album_section_gap">18dp</dimen>
     <dimen name="album_card">64dp</dimen>
     <dimen name="album_card_padding">6dp</dimen>
+    <dimen name="album_hint_text_size">14dp</dimen>
+    <dimen name="popup_friend_padding_top">46dp</dimen>
+    <dimen name="popup_friend_size">124dp</dimen>
+    <dimen name="popup_friend_shadow_size">92dp</dimen>
+    <dimen name="popup_friend_text_gap">6dp</dimen>
+    <dimen name="popup_friend_text_side">40dp</dimen>
 
     <!-- parents' corner -->
     <dimen name="popup_hold_bar">6dp</dimen>

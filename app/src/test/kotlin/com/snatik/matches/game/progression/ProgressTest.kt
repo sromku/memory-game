@@ -109,6 +109,23 @@ class ProgressTest {
     }
 
     @Test
+    fun `a shadow knows how many rounds away it is`() {
+        val order = Friends.order(T)
+        assertEquals(10, Progress.EMPTY.roundsToFriend(T, order[0]))
+        assertEquals(20, Progress.EMPTY.roundsToFriend(T, order[1]))
+        val seven = played(one, 7)
+        assertEquals(3, seven.roundsToFriend(T, order[0]))
+        assertEquals(13, seven.roundsToFriend(T, order[1]))
+        val fourteen = played(one, 14) // the second road opened at ten rounds and is fresh: the first road is closer
+        assertEquals(6, fourteen.roundsToFriend(T, order[1]))
+        assertNull("already a friend", fourteen.roundsToFriend(T, order[0]))
+        val eighteen = played(two, 4, from = fourteen)
+        assertEquals("the closest road counts", 6, eighteen.roundsToFriend(T, order[1]))
+        val twentyTwo = played(two, 8, from = fourteen)
+        assertEquals(2, twentyTwo.roundsToFriend(T, order[1]))
+    }
+
+    @Test
     fun `quick play picks the next round of the highest open difficulty with rounds left`() {
         assertEquals(RoundSpec(T, one, 1), Progress.EMPTY.quickPlayRound(T))
         val opened = played(one, Road.ROUNDS_TO_UNLOCK_NEXT)

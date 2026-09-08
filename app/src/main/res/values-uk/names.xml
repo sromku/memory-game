@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Курка</item>
+        <item>Півень</item>
+        <item>Курча</item>
+        <item>Індик</item>
+        <item>Кінь</item>
+        <item>Корова</item>
+        <item>Бик</item>
+        <item>Коза</item>
+        <item>Овечка</item>
+        <item>Собака</item>
+        <item>Зайчик</item>
+        <item>Ослик</item>
+        <item>Порося</item>
+        <item>Качка</item>
+        <item>Бджола</item>
+        <item>Гусак</item>
+        <item>Курчатко</item>
+        <item>Папуга</item>
+        <item>Муха</item>
+        <item>Дрізд</item>
+        <item>Кіт</item>
+        <item>Щур</item>
+        <item>Мишка</item>
+        <item>Хом\'як</item>
+        <item>Черепаха</item>
+        <item>Кошеня</item>
+        <item>Бобер</item>
+        <item>Хамелеон</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Какашка</item>
+        <item>Окей</item>
+        <item>Тако</item>
+        <item>Клас</item>
+        <item>Сором</item>
+        <item>Смачно</item>
+        <item>Тсс</item>
+        <item>Круто</item>
+        <item>Бешкетник</item>
+        <item>Піца</item>
+        <item>Серце</item>
+        <item>Два серця</item>
+        <item>Усмішка</item>
+        <item>Посмішка</item>
+        <item>Ой</item>
+        <item>Веселий кіт</item>
+        <item>Крик</item>
+        <item>Янгол</item>
+        <item>Ботан</item>
+        <item>Сміх</item>
+        <item>Обійми</item>
+        <item>Ку-ку</item>
+        <item>Вушка</item>
+        <item>Ковбой</item>
+        <item>Зірка</item>
+        <item>Смайлик</item>
+        <item>Дай п\'ять</item>
+        <item>Мир</item>
+        <item>Нудно</item>
+        <item>Нудить</item>
+        <item>Мовчок</item>
+        <item>Думаю</item>
+        <item>Хворію</item>
+        <item>Поцілунок</item>
+        <item>Хот-дог</item>
+        <item>Кіт</item>
+        <item>Хай щастить</item>
+        <item>Мавпочка</item>
+        <item>Пальчик</item>
+        <item>Ура</item>
+        <item>Один</item>
+        <item>Соня</item>
+        <item>Вау</item>
+        <item>Цьом</item>
+        <item>Апчхи</item>
+        <item>Брехунець</item>
+        <item>Клоун</item>
+        <item>Вжух</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Риба-клоун</item>
+        <item>Кит</item>
+        <item>Восьминіг</item>
+        <item>Краб</item>
+        <item>Морський коник</item>
+        <item>Черепаха</item>
+        <item>Дельфін</item>
+        <item>Морська зірка</item>
+        <item>Медуза</item>
+        <item>Тюлень</item>
+        <item>Пінгвін</item>
+        <item>Морж</item>
+        <item>Омар</item>
+        <item>Креветка</item>
+        <item>Риба-куля</item>
+        <item>Кальмар</item>
+        <item>Скат</item>
+        <item>Нарвал</item>
+        <item>Косатка</item>
+        <item>Видра</item>
+        <item>Рак-самітник</item>
+        <item>Мушля</item>
+        <item>Риба-ангел</item>
+        <item>Золота рибка</item>
+        <item>Акула</item>
+        <item>Вугор</item>
+        <item>Равлик</item>
+        <item>Манта</item>
+        <item>Фламінго</item>
+        <item>Пелікан</item>
+        <item>Чайка</item>
+        <item>Жабка</item>
+        <item>Качка</item>
+        <item>Короп кої</item>
+        <item>Риба-ліхтар</item>
+        <item>Морський їжак</item>
+    </string-array>
+</resources>

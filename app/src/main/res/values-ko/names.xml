@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>암탉</item>
+        <item>수탉</item>
+        <item>닭</item>
+        <item>칠면조</item>
+        <item>말</item>
+        <item>소</item>
+        <item>황소</item>
+        <item>염소</item>
+        <item>양</item>
+        <item>개</item>
+        <item>토끼</item>
+        <item>당나귀</item>
+        <item>돼지</item>
+        <item>오리</item>
+        <item>꿀벌</item>
+        <item>거위</item>
+        <item>병아리</item>
+        <item>앵무새</item>
+        <item>파리</item>
+        <item>검은새</item>
+        <item>고양이</item>
+        <item>쥐</item>
+        <item>생쥐</item>
+        <item>햄스터</item>
+        <item>거북이</item>
+        <item>아기 고양이</item>
+        <item>비버</item>
+        <item>카멜레온</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>응가</item>
+        <item>오케이</item>
+        <item>타코</item>
+        <item>엄지척</item>
+        <item>수줍음</item>
+        <item>맛있다</item>
+        <item>쉿</item>
+        <item>멋져</item>
+        <item>장난꾸러기</item>
+        <item>피자</item>
+        <item>하트</item>
+        <item>두 하트</item>
+        <item>활짝 웃음</item>
+        <item>미소</item>
+        <item>아이쿠</item>
+        <item>행복한 고양이</item>
+        <item>비명</item>
+        <item>천사</item>
+        <item>공부벌레</item>
+        <item>웃음</item>
+        <item>포옹</item>
+        <item>까꿍</item>
+        <item>귀</item>
+        <item>카우보이</item>
+        <item>별</item>
+        <item>스마일</item>
+        <item>하이파이브</item>
+        <item>평화</item>
+        <item>지루해</item>
+        <item>메스꺼워</item>
+        <item>지퍼</item>
+        <item>생각 중</item>
+        <item>아파</item>
+        <item>뽀뽀</item>
+        <item>핫도그</item>
+        <item>고양이</item>
+        <item>행운을 빌어</item>
+        <item>원숭이</item>
+        <item>가리키기</item>
+        <item>만세</item>
+        <item>하나</item>
+        <item>졸려</item>
+        <item>와</item>
+        <item>쪽</item>
+        <item>에취</item>
+        <item>거짓말쟁이</item>
+        <item>광대</item>
+        <item>휘익</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>흰동가리</item>
+        <item>고래</item>
+        <item>문어</item>
+        <item>게</item>
+        <item>해마</item>
+        <item>바다거북</item>
+        <item>돌고래</item>
+        <item>불가사리</item>
+        <item>해파리</item>
+        <item>물개</item>
+        <item>펭귄</item>
+        <item>바다코끼리</item>
+        <item>바닷가재</item>
+        <item>새우</item>
+        <item>복어</item>
+        <item>오징어</item>
+        <item>가오리</item>
+        <item>일각고래</item>
+        <item>범고래</item>
+        <item>해달</item>
+        <item>소라게</item>
+        <item>조개</item>
+        <item>엔젤피시</item>
+        <item>금붕어</item>
+        <item>상어</item>
+        <item>뱀장어</item>
+        <item>달팽이</item>
+        <item>쥐가오리</item>
+        <item>플라밍고</item>
+        <item>펠리컨</item>
+        <item>갈매기</item>
+        <item>개구리</item>
+        <item>오리</item>
+        <item>비단잉어</item>
+        <item>초롱아귀</item>
+        <item>성게</item>
+    </string-array>
+</resources>

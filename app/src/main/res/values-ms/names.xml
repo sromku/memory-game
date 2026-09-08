@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_animals">
+        <item>Ayam betina</item>
+        <item>Ayam jantan</item>
+        <item>Ayam</item>
+        <item>Ayam belanda</item>
+        <item>Kuda</item>
+        <item>Lembu</item>
+        <item>Lembu jantan</item>
+        <item>Kambing</item>
+        <item>Biri-biri</item>
+        <item>Anjing</item>
+        <item>Arnab</item>
+        <item>Keldai</item>
+        <item>Babi</item>
+        <item>Itik</item>
+        <item>Lebah</item>
+        <item>Angsa</item>
+        <item>Anak ayam</item>
+        <item>Burung kakak tua</item>
+        <item>Lalat</item>
+        <item>Burung hitam</item>
+        <item>Kucing</item>
+        <item>Tikus besar</item>
+        <item>Tikus</item>
+        <item>Hamster</item>
+        <item>Kura-kura</item>
+        <item>Anak kucing</item>
+        <item>Memerang</item>
+        <item>Sesumpah</item>
+    </string-array>
+    <string-array name="names_emoji">
+        <item>Tahi</item>
+        <item>Okey</item>
+        <item>Taco</item>
+        <item>Ibu jari</item>
+        <item>Malu</item>
+        <item>Sedap</item>
+        <item>Syy</item>
+        <item>Hebat</item>
+        <item>Nakal</item>
+        <item>Piza</item>
+        <item>Hati</item>
+        <item>Dua hati</item>
+        <item>Senyum lebar</item>
+        <item>Senyum</item>
+        <item>Alamak</item>
+        <item>Kucing gembira</item>
+        <item>Jerit</item>
+        <item>Malaikat</item>
+        <item>Ulat buku</item>
+        <item>Ketawa</item>
+        <item>Peluk</item>
+        <item>Cak cak</item>
+        <item>Telinga</item>
+        <item>Koboi</item>
+        <item>Bintang</item>
+        <item>Muka senyum</item>
+        <item>Tepuk lima</item>
+        <item>Damai</item>
+        <item>Bosan</item>
+        <item>Loya</item>
+        <item>Zip</item>
+        <item>Berfikir</item>
+        <item>Sakit</item>
+        <item>Cium</item>
+        <item>Hot dog</item>
+        <item>Kucing</item>
+        <item>Semoga berjaya</item>
+        <item>Monyet</item>
+        <item>Menunjuk</item>
+        <item>Hore</item>
+        <item>Satu</item>
+        <item>Mengantuk</item>
+        <item>Wah</item>
+        <item>Cium sayang</item>
+        <item>Bersin</item>
+        <item>Penipu kecil</item>
+        <item>Badut</item>
+        <item>Wuss</item>
+    </string-array>
+    <string-array name="names_ocean">
+        <item>Ikan badut</item>
+        <item>Paus</item>
+        <item>Sotong kurita</item>
+        <item>Ketam</item>
+        <item>Kuda laut</item>
+        <item>Penyu</item>
+        <item>Lumba-lumba</item>
+        <item>Tapak sulaiman</item>
+        <item>Obor-obor</item>
+        <item>Anjing laut</item>
+        <item>Penguin</item>
+        <item>Walrus</item>
+        <item>Udang kara</item>
+        <item>Udang</item>
+        <item>Ikan buntal</item>
+        <item>Sotong</item>
+        <item>Ikan pari</item>
+        <item>Narwhal</item>
+        <item>Orca</item>
+        <item>Memerang laut</item>
+        <item>Umang-umang</item>
+        <item>Kerang</item>
+        <item>Ikan bidadari</item>
+        <item>Ikan emas</item>
+        <item>Jerung</item>
+        <item>Belut</item>
+        <item>Siput</item>
+        <item>Pari manta</item>
+        <item>Flamingo</item>
+        <item>Undan</item>
+        <item>Camar</item>
+        <item>Katak</item>
+        <item>Itik</item>
+        <item>Koi</item>
+        <item>Ikan tanglung</item>
+        <item>Landak laut</item>
+    </string-array>
+</resources>
