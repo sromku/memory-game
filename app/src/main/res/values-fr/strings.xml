@@ -61,6 +61,13 @@
     <string name="cd_rate">Noter sur Google Play</string>
     <string name="cd_close">Fermer</string>
     <string name="cd_privacy_policy">Ouvrir la politique de confidentialité</string>
+    <string name="parents">Pour les parents</string>
+    <string name="parents_hold">Maintenir pour ouvrir…</string>
+    <string name="cd_parents">Pour les parents, maintenir pour ouvrir</string>
+    <string name="reset_progress">Tout recommencer</string>
+    <string name="reset_hold">Continuez à appuyer…</string>
+    <string name="cd_reset">Tout recommencer, maintenir pour confirmer</string>
+    <string name="parents_note">Tout recommencer efface toutes les étoiles et tous les amis sur cet appareil.</string>
     <string name="cd_tile">Carte</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Manche %1$d, réussie avec %2$d étoile</item>

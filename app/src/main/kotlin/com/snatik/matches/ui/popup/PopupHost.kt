@@ -48,11 +48,18 @@ class PopupHost(
     val isWonShown: Boolean get() = shown?.popup is PopupWonView
 
     /** Popups carry traced vector frames with hundreds of paths; they are inflated off the main thread first. */
-    fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onPrivacyPolicy: () -> Unit, onLanguage: () -> Unit) {
+    fun showSettings(soundEnabled: Boolean, onToggleSound: () -> Boolean, onRate: () -> Unit, onParents: () -> Unit, onLanguage: () -> Unit) {
         scope.launch {
             val frame = settingsFrame(context.getString(R.string.settings))
             val icons = listOf(R.drawable.button_music_on, R.drawable.button_music_off, R.drawable.button_rate).map { context.loadDrawable(it) }
-            showFramed(PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onPrivacyPolicy, onLanguage))
+            showFramed(PopupSettingsView(context, frame, icons[0], icons[1], icons[2], soundEnabled, onToggleSound, onRate, onParents, onLanguage))
+        }
+    }
+
+    /** The parents' corner, in the settings frame. */
+    fun showParents(onPrivacyPolicy: () -> Unit, onReset: () -> Unit) {
+        scope.launch {
+            showFramed(PopupParentsView(context, settingsFrame(context.getString(R.string.parents)), onPrivacyPolicy, onReset))
         }
     }
 

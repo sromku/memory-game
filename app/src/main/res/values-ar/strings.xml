@@ -61,6 +61,13 @@
     <string name="cd_rate">قيّم على Google Play</string>
     <string name="cd_close">إغلاق</string>
     <string name="cd_privacy_policy">فتح سياسة الخصوصية</string>
+    <string name="parents">للوالدين</string>
+    <string name="parents_hold">اضغط مطولًا…</string>
+    <string name="cd_parents">للوالدين، اضغط مطولًا للفتح</string>
+    <string name="reset_progress">البدء من جديد</string>
+    <string name="reset_hold">استمر بالضغط…</string>
+    <string name="cd_reset">البدء من جديد، اضغط مطولًا للتأكيد</string>
+    <string name="parents_note">البدء من جديد يمحو كل النجوم والأصدقاء على هذا الجهاز.</string>
     <string name="cd_tile">بطاقة</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="zero">الجولة %1$d، أُنجزت بلا نجوم</item>

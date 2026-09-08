@@ -60,6 +60,17 @@ class ProgressStoreTest {
     }
 
     @Test
+    fun `reset forgets everything and writes an empty file`() = runTest(dispatcher) {
+        val store = store()
+        store.record(RoundSpec(T, Difficulty.LEVEL_1, 1), RoundResult(3, 21))
+        advanceUntilIdle()
+        store.reset()
+        advanceUntilIdle()
+        assertEquals(Progress.EMPTY, store.progress.value)
+        assertEquals(Progress.EMPTY, store { _, _ -> error("no migration after a reset") }.progress.value)
+    }
+
+    @Test
     fun `an unreadable file means empty progress, not a crash`() = runTest(dispatcher) {
         file.writeText("   not a progress file")
         assertEquals(Progress.EMPTY, store().progress.value)

@@ -61,6 +61,13 @@
     <string name="cd_rate">Beoordelen op Google Play</string>
     <string name="cd_close">Sluiten</string>
     <string name="cd_privacy_policy">Privacybeleid openen</string>
+    <string name="parents">Voor ouders</string>
+    <string name="parents_hold">Houd ingedrukt…</string>
+    <string name="cd_parents">Voor ouders, houd ingedrukt om te openen</string>
+    <string name="reset_progress">Opnieuw beginnen</string>
+    <string name="reset_hold">Blijf vasthouden…</string>
+    <string name="cd_reset">Opnieuw beginnen, houd vast om te bevestigen</string>
+    <string name="parents_note">Opnieuw beginnen wist alle sterren en vrienden op dit apparaat.</string>
     <string name="cd_tile">Kaart</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Ronde %1$d, gehaald met %2$d ster</item>

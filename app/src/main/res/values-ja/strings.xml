@@ -61,6 +61,13 @@
     <string name="cd_rate">Google Play で ひょうか</string>
     <string name="cd_close">とじる</string>
     <string name="cd_privacy_policy">プライバシーポリシーをひらく</string>
+    <string name="parents">おうちのかたへ</string>
+    <string name="parents_hold">ながおしでひらく…</string>
+    <string name="cd_parents">おうちのかたへ、ながおしでひらく</string>
+    <string name="reset_progress">さいしょから</string>
+    <string name="reset_hold">そのままおして…</string>
+    <string name="cd_reset">さいしょから、ながおしでけってい</string>
+    <string name="parents_note">さいしょからにすると、このたんまつのほしとともだちがすべてきえます。</string>
     <string name="cd_tile">カード</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">ラウンド %1$d、ほし %2$d こで クリア</item>

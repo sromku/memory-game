@@ -61,6 +61,13 @@
     <string name="cd_rate">Google Play에서 평가</string>
     <string name="cd_close">닫기</string>
     <string name="cd_privacy_policy">개인정보 처리방침 열기</string>
+    <string name="parents">보호자용</string>
+    <string name="parents_hold">길게 누르세요…</string>
+    <string name="cd_parents">보호자용, 길게 눌러 열기</string>
+    <string name="reset_progress">처음부터 다시</string>
+    <string name="reset_hold">계속 누르세요…</string>
+    <string name="cd_reset">처음부터 다시, 길게 눌러 확인</string>
+    <string name="parents_note">처음부터 다시 하면 이 기기의 모든 별과 친구가 지워져요.</string>
     <string name="cd_tile">카드</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">라운드 %1$d, 별 %2$d개로 완료</item>

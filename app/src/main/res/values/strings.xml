@@ -72,6 +72,13 @@
     <string name="cd_rate">Rate on Google Play</string>
     <string name="cd_close">Close</string>
     <string name="cd_privacy_policy">Open the privacy policy</string>
+    <string name="parents">For parents</string>
+    <string name="parents_hold">Hold to open…</string>
+    <string name="cd_parents">For parents, hold to open</string>
+    <string name="reset_progress">Start over</string>
+    <string name="reset_hold">Keep holding…</string>
+    <string name="cd_reset">Start over, hold to confirm</string>
+    <string name="parents_note">Starting over erases all stars and friends on this device.</string>
     <string name="cd_tile">Card</string>
 
     <!-- round number, stars -->

@@ -5,6 +5,7 @@ LANGS['es'] = dict(
     strings=dict(
         app_name='Juego de memoria', sound_on='Sonido SÍ', sound_off='Sonido NO', rate_this='Valorar', privacy_policy='Privacidad',
         language='Idioma', language_phone='Idioma del teléfono', cd_language='Elegir el idioma',
+        parents='Para padres', parents_hold='Mantén pulsado…', cd_parents='Para padres, mantén pulsado', reset_progress='Empezar de cero', reset_hold='Sigue pulsando…', cd_reset='Empezar de cero, mantén pulsado', parents_note='Empezar de cero borra todas las estrellas y amigos de este dispositivo.',
         album_title='Amigos', cd_album='Álbum de amigos', cd_friend_found='Un amigo', cd_friend_hidden='Un amigo por conocer',
         shop_remember='¡Recuerda estos!', shop_again='¡Otra vez!', shop_tap='¡Tócalos en orden!', peek_find='¿Dónde está…',
         shadow_prompt='¿De quién es la sombra?', odd_prompt='¿Cuál es diferente?',
@@ -38,6 +39,7 @@ LANGS['pt-rBR'] = dict(
     strings=dict(
         app_name='Jogo da memória', sound_on='Som LIGADO', sound_off='Som DESLIGADO', rate_this='Avaliar', privacy_policy='Privacidade',
         language='Idioma', language_phone='Idioma do celular', cd_language='Escolher o idioma',
+        parents='Para os pais', parents_hold='Segure para abrir…', cd_parents='Para os pais, segure para abrir', reset_progress='Recomeçar', reset_hold='Continue segurando…', cd_reset='Recomeçar, segure para confirmar', parents_note='Recomeçar apaga todas as estrelas e amigos deste aparelho.',
         album_title='Amigos', cd_album='Álbum de amigos', cd_friend_found='Um amigo', cd_friend_hidden='Um amigo a conhecer',
         shop_remember='Lembre destes!', shop_again='Mais uma vez!', shop_tap='Toque neles em ordem!', peek_find='Onde está…',
         shadow_prompt='De quem é a sombra?', odd_prompt='Qual é o diferente?',
@@ -71,6 +73,7 @@ LANGS['fr'] = dict(
     strings=dict(
         app_name='Jeu de mémoire', sound_on='Son ON', sound_off='Son OFF', rate_this='Noter', privacy_policy='Confidentialité',
         language='Langue', language_phone='Langue du téléphone', cd_language='Choisir la langue',
+        parents='Pour les parents', parents_hold='Maintenir pour ouvrir…', cd_parents='Pour les parents, maintenir pour ouvrir', reset_progress='Tout recommencer', reset_hold='Continuez à appuyer…', cd_reset='Tout recommencer, maintenir pour confirmer', parents_note='Tout recommencer efface toutes les étoiles et tous les amis sur cet appareil.',
         album_title='Amis', cd_album='Album des amis', cd_friend_found='Un ami', cd_friend_hidden='Un ami à rencontrer',
         shop_remember='Retiens-les !', shop_again='Encore une fois !', shop_tap="Touche-les dans l'ordre !", peek_find='Où est…',
         shadow_prompt='À qui est cette ombre ?', odd_prompt='Lequel est différent ?',
@@ -104,6 +107,7 @@ LANGS['de'] = dict(
     strings=dict(
         app_name='Memory-Spiel', sound_on='Ton AN', sound_off='Ton AUS', rate_this='Bewerten', privacy_policy='Datenschutz',
         language='Sprache', language_phone='Sprache des Telefons', cd_language='Sprache wählen',
+        parents='Für Eltern', parents_hold='Gedrückt halten…', cd_parents='Für Eltern, gedrückt halten', reset_progress='Von vorn beginnen', reset_hold='Weiter halten…', cd_reset='Von vorn beginnen, zum Bestätigen halten', parents_note='Von vorn beginnen löscht alle Sterne und Freunde auf diesem Gerät.',
         album_title='Freunde', cd_album='Freundealbum', cd_friend_found='Ein Freund', cd_friend_hidden='Ein Freund, den du noch triffst',
         shop_remember='Merk sie dir!', shop_again='Noch einmal!', shop_tap='Tippe sie der Reihe nach an!', peek_find='Wo ist…',
         shadow_prompt='Wessen Schatten ist das?', odd_prompt='Welches ist anders?',
@@ -137,6 +141,7 @@ LANGS['it'] = dict(
     strings=dict(
         app_name='Gioco di memoria', sound_on='Suono SÌ', sound_off='Suono NO', rate_this='Valuta', privacy_policy='Privacy',
         language='Lingua', language_phone='Lingua del telefono', cd_language='Scegli la lingua',
+        parents='Per i genitori', parents_hold='Tieni premuto…', cd_parents='Per i genitori, tieni premuto', reset_progress='Ricomincia da capo', reset_hold='Continua a premere…', cd_reset='Ricomincia da capo, tieni premuto per confermare', parents_note='Ricominciare cancella tutte le stelle e gli amici su questo dispositivo.',
         album_title='Amici', cd_album='Album degli amici', cd_friend_found='Un amico', cd_friend_hidden='Un amico da conoscere',
         shop_remember='Ricordali!', shop_again='Ancora una volta!', shop_tap='Toccali in ordine!', peek_find="Dov'è…",
         shadow_prompt='Di chi è questa ombra?', odd_prompt='Qual è diverso?',

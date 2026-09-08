@@ -61,6 +61,13 @@
     <string name="cd_rate">在 Google Play 評分</string>
     <string name="cd_close">關閉</string>
     <string name="cd_privacy_policy">開啟隱私權政策</string>
+    <string name="parents">家長專區</string>
+    <string name="parents_hold">長按開啟…</string>
+    <string name="cd_parents">家長專區，長按開啟</string>
+    <string name="reset_progress">重新開始</string>
+    <string name="reset_hold">請繼續按住…</string>
+    <string name="cd_reset">重新開始，長按確認</string>
+    <string name="parents_note">重新開始會清除這台裝置上所有的星星和朋友。</string>
     <string name="cd_tile">卡片</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">第 %1$d 關，獲得 %2$d 顆星星</item>

@@ -61,6 +61,13 @@
     <string name="cd_rate">Oceń w Google Play</string>
     <string name="cd_close">Zamknij</string>
     <string name="cd_privacy_policy">Otwórz politykę prywatności</string>
+    <string name="parents">Dla rodziców</string>
+    <string name="parents_hold">Przytrzymaj…</string>
+    <string name="cd_parents">Dla rodziców, przytrzymaj, aby otworzyć</string>
+    <string name="reset_progress">Zacznij od nowa</string>
+    <string name="reset_hold">Trzymaj dalej…</string>
+    <string name="cd_reset">Zacznij od nowa, przytrzymaj, aby potwierdzić</string>
+    <string name="parents_note">Zaczęcie od nowa usuwa wszystkie gwiazdki i przyjaciół na tym urządzeniu.</string>
     <string name="cd_tile">Karta</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Runda %1$d, ukończona z %2$d gwiazdką</item>

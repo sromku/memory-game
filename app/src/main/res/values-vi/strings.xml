@@ -61,6 +61,13 @@
     <string name="cd_rate">Đánh giá trên Google Play</string>
     <string name="cd_close">Đóng</string>
     <string name="cd_privacy_policy">Mở chính sách quyền riêng tư</string>
+    <string name="parents">Dành cho phụ huynh</string>
+    <string name="parents_hold">Giữ để mở…</string>
+    <string name="cd_parents">Dành cho phụ huynh, giữ để mở</string>
+    <string name="reset_progress">Chơi lại từ đầu</string>
+    <string name="reset_hold">Giữ tiếp…</string>
+    <string name="cd_reset">Chơi lại từ đầu, giữ để xác nhận</string>
+    <string name="parents_note">Chơi lại từ đầu sẽ xóa mọi ngôi sao và bạn bè trên thiết bị này.</string>
     <string name="cd_tile">Thẻ</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">Vòng %1$d, hoàn thành với %2$d sao</item>

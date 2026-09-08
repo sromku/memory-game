@@ -84,17 +84,17 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/privacy"
+        android:id="@+id/parents"
         android:layout_width="match_parent"
         android:layout_height="@dimen/popup_settings_row_height"
         android:layout_marginStart="5dp"
         android:layout_marginTop="@dimen/popup_settings_row_gap"
-        android:contentDescription="@string/cd_privacy_policy"
+        android:contentDescription="@string/cd_parents"
         android:gravity="start|center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/privacy_image"
+            android:id="@+id/parents_image"
             android:layout_width="@dimen/popup_settings_row_height"
             android:layout_height="@dimen/popup_settings_row_height"
             android:layout_marginStart="5dp"
@@ -104,7 +104,7 @@
 
         <TextView
             style="@style/GameText"
-            android:id="@+id/privacy_text"
+            android:id="@+id/parents_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -118,7 +118,7 @@
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="4"
-            android:text="@string/privacy_policy"
+            android:text="@string/parents"
             android:textColor="@color/white"
             android:textSize="@dimen/popup_settings_sound_text_size" />
     </LinearLayout>

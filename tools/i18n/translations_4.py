@@ -5,6 +5,7 @@ LANGS['ja'] = dict(
     strings=dict(
         app_name='メモリーゲーム', sound_on='おと オン', sound_off='おと オフ', rate_this='ひょうか', privacy_policy='プライバシー',
         language='ことば', language_phone='スマホのことば', cd_language='ことばをえらぶ',
+        parents='おうちのかたへ', parents_hold='ながおしでひらく…', cd_parents='おうちのかたへ、ながおしでひらく', reset_progress='さいしょから', reset_hold='そのままおして…', cd_reset='さいしょから、ながおしでけってい', parents_note='さいしょからにすると、このたんまつのほしとともだちがすべてきえます。',
         album_title='ともだち', cd_album='ともだちアルバム', cd_friend_found='ともだち', cd_friend_hidden='まだあっていないともだち',
         shop_remember='おぼえてね！', shop_again='もういちど！', shop_tap='じゅんばんにタッチ！', peek_find='どこかな…',
         shadow_prompt='だれのかげ？', odd_prompt='ちがうのはどれ？',
@@ -38,6 +39,7 @@ LANGS['ko'] = dict(
     strings=dict(
         app_name='기억력 게임', sound_on='소리 켬', sound_off='소리 끔', rate_this='평가하기', privacy_policy='개인정보',
         language='언어', language_phone='휴대폰 언어', cd_language='언어 선택',
+        parents='보호자용', parents_hold='길게 누르세요…', cd_parents='보호자용, 길게 눌러 열기', reset_progress='처음부터 다시', reset_hold='계속 누르세요…', cd_reset='처음부터 다시, 길게 눌러 확인', parents_note='처음부터 다시 하면 이 기기의 모든 별과 친구가 지워져요.',
         album_title='친구들', cd_album='친구 앨범', cd_friend_found='친구', cd_friend_hidden='아직 만나지 못한 친구',
         shop_remember='기억해!', shop_again='한 번 더!', shop_tap='순서대로 눌러 봐!', peek_find='어디 있을까…',
         shadow_prompt='누구의 그림자일까?', odd_prompt='다른 하나는?',
@@ -71,6 +73,7 @@ LANGS['zh-rTW'] = dict(
     strings=dict(
         app_name='記憶遊戲', sound_on='聲音 開', sound_off='聲音 關', rate_this='評分', privacy_policy='隱私權',
         language='語言', language_phone='手機語言', cd_language='選擇語言',
+        parents='家長專區', parents_hold='長按開啟…', cd_parents='家長專區，長按開啟', reset_progress='重新開始', reset_hold='請繼續按住…', cd_reset='重新開始，長按確認', parents_note='重新開始會清除這台裝置上所有的星星和朋友。',
         album_title='朋友', cd_album='朋友相簿', cd_friend_found='朋友', cd_friend_hidden='還沒見到的朋友',
         shop_remember='記住它們！', shop_again='再一次！', shop_tap='按順序點一點！', peek_find='在哪裡…',
         shadow_prompt='這是誰的影子？', odd_prompt='哪個不一樣？',
@@ -104,6 +107,7 @@ LANGS['zh-rCN'] = dict(
     strings=dict(
         app_name='记忆游戏', sound_on='声音 开', sound_off='声音 关', rate_this='评分', privacy_policy='隐私',
         language='语言', language_phone='手机语言', cd_language='选择语言',
+        parents='家长专区', parents_hold='长按打开…', cd_parents='家长专区，长按打开', reset_progress='重新开始', reset_hold='请继续按住…', cd_reset='重新开始，长按确认', parents_note='重新开始会清除这台设备上所有的星星和朋友。',
         album_title='朋友', cd_album='朋友相册', cd_friend_found='朋友', cd_friend_hidden='还没见到的朋友',
         shop_remember='记住它们！', shop_again='再一次！', shop_tap='按顺序点一点！', peek_find='在哪里…',
         shadow_prompt='这是谁的影子？', odd_prompt='哪个不一样？',
@@ -137,6 +141,7 @@ LANGS['ms'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Bunyi HIDUP', sound_off='Bunyi MATI', rate_this='Beri nilai', privacy_policy='Privasi',
         language='Bahasa', language_phone='Bahasa telefon', cd_language='Pilih bahasa',
+        parents='Untuk ibu bapa', parents_hold='Tahan untuk buka…', cd_parents='Untuk ibu bapa, tahan untuk buka', reset_progress='Mula semula', reset_hold='Terus tahan…', cd_reset='Mula semula, tahan untuk sahkan', parents_note='Mula semula akan memadam semua bintang dan kawan pada peranti ini.',
         album_title='Kawan', cd_album='Album kawan', cd_friend_found='Seorang kawan', cd_friend_hidden='Kawan yang belum ditemui',
         shop_remember='Ingat ini!', shop_again='Sekali lagi!', shop_tap='Sentuh ikut urutan!', peek_find='Di mana…',
         shadow_prompt='Bayang siapa ini?', odd_prompt='Yang mana berbeza?',

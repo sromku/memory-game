@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/privacy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/popup_settings_row_height"
+        android:layout_marginStart="5dp"
+        android:contentDescription="@string/cd_privacy_policy"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/popup_settings_row_height"
+            android:layout_height="@dimen/popup_settings_row_height"
+            android:layout_marginStart="5dp"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_privacy" />
+
+        <TextView
+            style="@style/GameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/popup_settings_row_end"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/white"
+            android:textSize="@dimen/popup_settings_sound_text_size"
+            app:autoSizeMaxTextSize="@dimen/popup_settings_sound_text_size"
+            app:autoSizeMinTextSize="11sp"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/popup_settings_row_height"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="@dimen/popup_settings_row_gap"
+        android:contentDescription="@string/cd_reset"
+        android:gravity="start|center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/popup_settings_row_height"
+            android:layout_height="@dimen/popup_settings_row_height"
+            android:layout_marginStart="5dp"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_reset" />
+
+        <TextView
+            android:id="@+id/reset_text"
+            style="@style/GameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/popup_settings_row_end"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            android:text="@string/reset_progress"
+            android:textColor="@color/white"
+            android:textSize="@dimen/popup_settings_sound_text_size"
+            app:autoSizeMaxTextSize="@dimen/popup_settings_sound_text_size"
+            app:autoSizeMinTextSize="11sp"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/reset_hold"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/popup_hold_bar"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="@dimen/popup_settings_row_end"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="@color/road_gold"
+        android:progressBackgroundTint="@color/road_star_slot"
+        tools:progress="40" />
+
+    <TextView
+        android:id="@+id/note"
+        style="@style/GameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/popup_settings_row_gap"
+        android:layout_marginEnd="@dimen/popup_settings_row_end"
+        android:maxLines="2"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="3"
+        android:text="@string/parents_note"
+        android:textColor="@color/white"
+        android:textSize="@dimen/popup_note_text_size" />
+
+</merge>

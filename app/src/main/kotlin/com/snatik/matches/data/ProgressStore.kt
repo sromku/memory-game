@@ -47,6 +47,12 @@ class ProgressStore(
         persist(updated)
     }
 
+    /** Forgets everything; the empty file is written so the 1.x migration does not run again. */
+    fun reset() {
+        _progress.value = Progress.EMPTY
+        persist(Progress.EMPTY)
+    }
+
     private fun load(): Progress {
         if (file.exists()) {
             return runCatching { ProgressCodec.decode(file.readText()) }.getOrDefault(Progress.EMPTY)

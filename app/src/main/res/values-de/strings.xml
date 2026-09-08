@@ -61,6 +61,13 @@
     <string name="cd_rate">Bei Google Play bewerten</string>
     <string name="cd_close">Schließen</string>
     <string name="cd_privacy_policy">Datenschutzerklärung öffnen</string>
+    <string name="parents">Für Eltern</string>
+    <string name="parents_hold">Gedrückt halten…</string>
+    <string name="cd_parents">Für Eltern, gedrückt halten</string>
+    <string name="reset_progress">Von vorn beginnen</string>
+    <string name="reset_hold">Weiter halten…</string>
+    <string name="cd_reset">Von vorn beginnen, zum Bestätigen halten</string>
+    <string name="parents_note">Von vorn beginnen löscht alle Sterne und Freunde auf diesem Gerät.</string>
     <string name="cd_tile">Karte</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Runde %1$d, geschafft mit %2$d Stern</item>

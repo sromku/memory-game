@@ -111,4 +111,8 @@
     <dimen name="album_section_gap">18dp</dimen>
     <dimen name="album_card">64dp</dimen>
     <dimen name="album_card_padding">6dp</dimen>
+
+    <!-- parents' corner -->
+    <dimen name="popup_hold_bar">6dp</dimen>
+    <dimen name="popup_note_text_size">12dp</dimen>
 </resources>

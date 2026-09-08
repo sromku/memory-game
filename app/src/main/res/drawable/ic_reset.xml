@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Round button in the popup's own style with a circling arrow, for the reset row. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="50"
+    android:viewportHeight="50">
+    <path android:fillColor="#8B2A0F" android:pathData="M25,2 a23,23 0 1,0 0.001,0 z" />
+    <path android:fillColor="#F0511E" android:pathData="M25,5.5 a19.5,19.5 0 1,0 0.001,0 z" />
+    <path android:fillColor="#FF7A45" android:pathData="M25,7.5 a17.5,17.5 0 0,1 17.5,17.5 a17.5,11 0 0,0 -35,0 a17.5,17.5 0 0,1 17.5,-17.5 z" />
+    <path
+        android:pathData="M33.5,17.5 A11,11 0 1,0 35.5,29"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="4.5" />
+    <path android:fillColor="#FFFFFF" android:pathData="M36.5,12 L37,22 L28,19.5 z" />
+</vector>

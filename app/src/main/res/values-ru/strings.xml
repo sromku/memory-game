@@ -61,6 +61,13 @@
     <string name="cd_rate">Оценить в Google Play</string>
     <string name="cd_close">Закрыть</string>
     <string name="cd_privacy_policy">Открыть политику конфиденциальности</string>
+    <string name="parents">Родителям</string>
+    <string name="parents_hold">Удерживайте…</string>
+    <string name="cd_parents">Родителям, удерживайте, чтобы открыть</string>
+    <string name="reset_progress">Начать заново</string>
+    <string name="reset_hold">Продолжайте удерживать…</string>
+    <string name="cd_reset">Начать заново, удерживайте для подтверждения</string>
+    <string name="parents_note">Начать заново удалит все звёзды и друзей на этом устройстве.</string>
     <string name="cd_tile">Карточка</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Раунд %1$d, пройден с %2$d звездой</item>

@@ -52,6 +52,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object ReturnToRoadMap : UiEvent
         data object OpenAlbum : UiEvent
         data object ShowSettings : UiEvent
+        data object ShowParents : UiEvent
         data object ShowLanguages : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
         data object ClosePopup : UiEvent
@@ -253,6 +254,18 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     fun openSettings() {
         uiEvents.trySend(UiEvent.ShowSettings)
+    }
+
+    fun openParents() {
+        uiEvents.trySend(UiEvent.ShowParents)
+    }
+
+    /** From the parents' corner: every road back to its first round, in every theme. */
+    fun resetProgress() {
+        progressStore.reset()
+        preferences.lastDifficulty = null
+        _selectedDifficulty.value = null
+        uiEvents.trySend(UiEvent.ClosePopup)
     }
 
     fun openLanguages() {

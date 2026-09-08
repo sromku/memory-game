@@ -61,6 +61,13 @@
     <string name="cd_rate">Оцінити в Google Play</string>
     <string name="cd_close">Закрити</string>
     <string name="cd_privacy_policy">Відкрити політику конфіденційності</string>
+    <string name="parents">Батькам</string>
+    <string name="parents_hold">Утримуйте…</string>
+    <string name="cd_parents">Батькам, утримуйте, щоб відкрити</string>
+    <string name="reset_progress">Почати спочатку</string>
+    <string name="reset_hold">Продовжуйте утримувати…</string>
+    <string name="cd_reset">Почати спочатку, утримуйте для підтвердження</string>
+    <string name="parents_note">Початок спочатку видалить усі зірки та друзів на цьому пристрої.</string>
     <string name="cd_tile">Картка</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Раунд %1$d, пройдено з %2$d зіркою</item>

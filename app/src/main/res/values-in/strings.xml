@@ -61,6 +61,13 @@
     <string name="cd_rate">Beri nilai di Google Play</string>
     <string name="cd_close">Tutup</string>
     <string name="cd_privacy_policy">Buka kebijakan privasi</string>
+    <string name="parents">Untuk orang tua</string>
+    <string name="parents_hold">Tahan untuk membuka…</string>
+    <string name="cd_parents">Untuk orang tua, tahan untuk membuka</string>
+    <string name="reset_progress">Mulai dari awal</string>
+    <string name="reset_hold">Terus tahan…</string>
+    <string name="cd_reset">Mulai dari awal, tahan untuk konfirmasi</string>
+    <string name="parents_note">Mulai dari awal menghapus semua bintang dan teman di perangkat ini.</string>
     <string name="cd_tile">Kartu</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">Ronde %1$d, selesai dengan %2$d bintang</item>

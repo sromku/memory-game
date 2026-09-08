@@ -61,6 +61,13 @@
     <string name="cd_rate">ให้คะแนนใน Google Play</string>
     <string name="cd_close">ปิด</string>
     <string name="cd_privacy_policy">เปิดนโยบายความเป็นส่วนตัว</string>
+    <string name="parents">สำหรับผู้ปกครอง</string>
+    <string name="parents_hold">กดค้างเพื่อเปิด…</string>
+    <string name="cd_parents">สำหรับผู้ปกครอง กดค้างเพื่อเปิด</string>
+    <string name="reset_progress">เริ่มใหม่ทั้งหมด</string>
+    <string name="reset_hold">กดค้างต่อไป…</string>
+    <string name="cd_reset">เริ่มใหม่ทั้งหมด กดค้างเพื่อยืนยัน</string>
+    <string name="parents_note">การเริ่มใหม่จะลบดาวและเพื่อนทั้งหมดในเครื่องนี้</string>
     <string name="cd_tile">การ์ด</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">รอบ %1$d ผ่านแล้วได้ %2$d ดาว</item>

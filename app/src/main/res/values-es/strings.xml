@@ -61,6 +61,13 @@
     <string name="cd_rate">Valorar en Google Play</string>
     <string name="cd_close">Cerrar</string>
     <string name="cd_privacy_policy">Abrir la política de privacidad</string>
+    <string name="parents">Para padres</string>
+    <string name="parents_hold">Mantén pulsado…</string>
+    <string name="cd_parents">Para padres, mantén pulsado</string>
+    <string name="reset_progress">Empezar de cero</string>
+    <string name="reset_hold">Sigue pulsando…</string>
+    <string name="cd_reset">Empezar de cero, mantén pulsado</string>
+    <string name="parents_note">Empezar de cero borra todas las estrellas y amigos de este dispositivo.</string>
     <string name="cd_tile">Carta</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Ronda %1$d, completada con %2$d estrella</item>

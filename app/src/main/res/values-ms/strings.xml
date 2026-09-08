@@ -61,6 +61,13 @@
     <string name="cd_rate">Beri nilai di Google Play</string>
     <string name="cd_close">Tutup</string>
     <string name="cd_privacy_policy">Buka dasar privasi</string>
+    <string name="parents">Untuk ibu bapa</string>
+    <string name="parents_hold">Tahan untuk buka…</string>
+    <string name="cd_parents">Untuk ibu bapa, tahan untuk buka</string>
+    <string name="reset_progress">Mula semula</string>
+    <string name="reset_hold">Terus tahan…</string>
+    <string name="cd_reset">Mula semula, tahan untuk sahkan</string>
+    <string name="parents_note">Mula semula akan memadam semua bintang dan kawan pada peranti ini.</string>
     <string name="cd_tile">Kad</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="other">Pusingan %1$d, selesai dengan %2$d bintang</item>

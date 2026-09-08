@@ -61,6 +61,13 @@
     <string name="cd_rate">Google Play पर रेटिंग दें</string>
     <string name="cd_close">बंद करें</string>
     <string name="cd_privacy_policy">गोपनीयता नीति खोलें</string>
+    <string name="parents">माता-पिता के लिए</string>
+    <string name="parents_hold">दबाए रखें…</string>
+    <string name="cd_parents">माता-पिता के लिए, खोलने के लिए दबाए रखें</string>
+    <string name="reset_progress">फिर से शुरू करें</string>
+    <string name="reset_hold">दबाए रखें…</string>
+    <string name="cd_reset">फिर से शुरू करें, पुष्टि के लिए दबाए रखें</string>
+    <string name="parents_note">फिर से शुरू करने पर इस डिवाइस के सभी तारे और दोस्त मिट जाएँगे।</string>
     <string name="cd_tile">कार्ड</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">राउंड %1$d, %2$d तारे के साथ पूरा</item>

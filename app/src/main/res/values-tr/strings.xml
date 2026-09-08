@@ -61,6 +61,13 @@
     <string name="cd_rate">Google Play\'de puan ver</string>
     <string name="cd_close">Kapat</string>
     <string name="cd_privacy_policy">Gizlilik politikasını aç</string>
+    <string name="parents">Ebeveynler için</string>
+    <string name="parents_hold">Basılı tutun…</string>
+    <string name="cd_parents">Ebeveynler için, açmak için basılı tutun</string>
+    <string name="reset_progress">Baştan başla</string>
+    <string name="reset_hold">Basılı tutmaya devam edin…</string>
+    <string name="cd_reset">Baştan başla, onaylamak için basılı tutun</string>
+    <string name="parents_note">Baştan başlamak bu cihazdaki tüm yıldızları ve arkadaşları siler.</string>
     <string name="cd_tile">Kart</string>
     <plurals name="cd_round_done" tools:ignore="MissingQuantity,UnusedQuantity">
         <item quantity="one">Tur %1$d, %2$d yıldızla tamamlandı</item>

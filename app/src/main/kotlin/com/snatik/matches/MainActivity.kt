@@ -127,9 +127,10 @@ class MainActivity : AppCompatActivity() {
                 soundEnabled = viewModel.soundEnabled.value,
                 onToggleSound = viewModel::toggleSound,
                 onRate = ::openStoreListing,
-                onPrivacyPolicy = ::openPrivacyPolicy,
+                onParents = viewModel::openParents,
                 onLanguage = viewModel::openLanguages,
             )
+            UiEvent.ShowParents -> popups.showParents(onPrivacyPolicy = ::openPrivacyPolicy, onReset = viewModel::resetProgress)
             UiEvent.ShowLanguages -> popups.showLanguages(AppLanguages.chosen) { tag ->
                 popups.close()
                 AppLanguages.choose(tag) // AppCompat recreates the activity in the new language
