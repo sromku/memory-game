@@ -55,7 +55,7 @@ class ProgressTest {
         assertFalse(Progress.EMPTY.isUnlocked(T, two))
         assertFalse(played(one, Road.ROUNDS_TO_UNLOCK_NEXT - 1).isUnlocked(T, two))
         assertTrue(played(one, Road.ROUNDS_TO_UNLOCK_NEXT).isUnlocked(T, two))
-        assertFalse("each difficulty opens only from the one before it", played(one, 40).isUnlocked(T, Difficulty.LEVEL_3))
+        assertFalse("each difficulty opens only from the one before it", played(one, Road.ROUNDS_PER_DIFFICULTY).isUnlocked(T, Difficulty.LEVEL_3))
         assertTrue("a road with a result on it is open", played(Difficulty.LEVEL_5, 1).isUnlocked(T, Difficulty.LEVEL_5))
     }
 
@@ -67,8 +67,8 @@ class ProgressTest {
         assertEquals(1, p.starsOn(T, two))
         assertEquals(13, p.totalStars)
         assertEquals(listOf(1, 2, 3, 4), p.completedRounds(T, one).map { it.index })
-        assertTrue(played(one, 40).isCompleted(RoundSpec(T, one, 40)))
-        assertFalse(played(one, 39).isCompleted(RoundSpec(T, one, 40)))
+        assertTrue(played(one, Road.ROUNDS_PER_DIFFICULTY).isCompleted(RoundSpec(T, one, Road.ROUNDS_PER_DIFFICULTY)))
+        assertFalse(played(one, Road.ROUNDS_PER_DIFFICULTY - 1).isCompleted(RoundSpec(T, one, Road.ROUNDS_PER_DIFFICULTY)))
     }
 
     @Test
@@ -97,9 +97,9 @@ class ProgressTest {
         assertEquals(RoundSpec(T, one, 1), Progress.EMPTY.quickPlayRound(T))
         val opened = played(one, Road.ROUNDS_TO_UNLOCK_NEXT)
         assertEquals(RoundSpec(T, two, 1), opened.quickPlayRound(T))
-        val twoDone = played(two, 40, from = opened)
+        val twoDone = played(two, Road.ROUNDS_PER_DIFFICULTY, from = opened)
         assertEquals(RoundSpec(T, Difficulty.LEVEL_3, 1), twoDone.quickPlayRound(T))
-        val everything = Difficulty.entries.fold(Progress.EMPTY) { p, d -> played(d, 40, stars = 3, from = p) }
+        val everything = Difficulty.entries.fold(Progress.EMPTY) { p, d -> played(d, Road.ROUNDS_PER_DIFFICULTY, stars = 3, from = p) }
         assertNull(everything.quickPlayRound(T))
     }
 }

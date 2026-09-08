@@ -1,19 +1,19 @@
 # Progression
 
-Each difficulty is a road of 40 rounds. Finishing a round earns up to three stars; the road remembers
+Each difficulty is a road of 100 rounds. Finishing a round earns up to three stars; the road remembers
 the best stars and best time of every round. The next difficulty opens once 10 rounds of the
 previous one are done, so a young child is never dropped onto a big board. Nothing is ever locked
 behind anything but play.
 
 ## Rounds
 
-A round is fully described by its difficulty and its index (1..40), see `RoundSpec`:
+A round is fully described by its difficulty and its index (1..100), see `RoundSpec`:
 
 - **Board**: the difficulty's card count and grid, unchanged.
-- **Time**: the difficulty's time at round 1, tightening steadily to 70% of it by round 40. Stars
+- **Time**: the difficulty's time at round 1, tightening steadily to 70% of it by round 100. Stars
   keep the same thresholds relative to the round's time.
-- **Special** rounds, every fifth (5, 10, ... 40), are mini-games, alternating between
-  "Who was here?" (who-was-here.md) and "Follow the song" (follow-the-song.md).
+- **Special** rounds, every fifth (5, 10, ... 100), are mini-games; the games take turns along the
+  road in the order of the `MiniGame` enum ("Who was here?", "Follow the song", and the ones after).
 - **Theme**: every theme has its own six roads. Progress, stars and unlocking are per theme, so a
   child who finished Beginner with the animals starts the monsters from their first round.
 
@@ -52,7 +52,7 @@ can be replayed; the next round is gold, breathes, and waits under a bobbing arr
 grey. Special rounds are eight-pointed badges. The map opens centred on the next round; after a
 round is played it opens on that round, pops its stars in, then travels on to the next one.
 
-Difficulty buttons show the road's rounded mean stars and "done / 40"; a road that has not opened
+Difficulty buttons show the road's rounded mean stars and "done / 100"; a road that has not opened
 yet is grey with a padlock and shakes its head when tapped. The clock of a round is the round's
 own time, so later rounds are judged more strictly.
 

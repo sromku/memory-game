@@ -1,7 +1,7 @@
 # Follow the song
 
-The second mini-game. Special rounds alternate between the two: rounds 5, 15, 25 and 35 are
-"Who was here?", rounds 10, 20, 30 and 40 are "Follow the song". It trains working memory.
+The second mini-game; special rounds take turns through all the mini-games. It trains working
+memory.
 
 ## What the child sees
 

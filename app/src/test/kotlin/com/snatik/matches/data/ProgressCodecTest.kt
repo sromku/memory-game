@@ -38,7 +38,7 @@ class ProgressCodecTest {
             "1 1 1 3 10",
             "garbage line",
             "1 9 1 3 10", // no such difficulty
-            "1 1 99 3 10", // no such round
+            "1 1 999 3 10", // no such round
             "1 2 2 5 10", // too many stars
             "1 2 3 1 -4", // negative time
             "7 1 1 3 10", // no such theme

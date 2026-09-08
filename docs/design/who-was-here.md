@@ -1,7 +1,6 @@
 # Who was here?
 
-The first mini-game, played on the special rounds 5, 15, 25 and 35 of a road (the others are
-"Follow the song"). It trains visual
+The first mini-game; special rounds (every fifth) take turns through all the mini-games. It trains visual
 recall rather than the card game's spatial memory, with the same characters, ground and sounds.
 
 ## What the child sees

@@ -1,5 +1,6 @@
 package com.snatik.matches.game
 
+import com.snatik.matches.game.progression.Road
 import com.snatik.matches.game.progression.RoundSpec
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -51,7 +52,7 @@ class GameResultTest {
 
     @Test
     fun `later rounds judge against their tighter time`() {
-        val last = RoundSpec(T, Difficulty.LEVEL_1, 40) // 42 seconds
+        val last = RoundSpec(T, Difficulty.LEVEL_1, Road.ROUNDS_PER_DIFFICULTY) // 42 seconds
         assertEquals(3, GameResult.compute(last, 1, passedSeconds = 21).stars)
         assertEquals(2, GameResult.compute(last, 1, passedSeconds = 22).stars)
         assertEquals(0, GameResult.compute(last, 1, passedSeconds = 42).stars)

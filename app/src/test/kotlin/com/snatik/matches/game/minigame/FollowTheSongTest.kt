@@ -21,6 +21,7 @@ class FollowTheSongTest {
         assertEquals(3, FollowTheSong.songLength(round(10)))
         assertEquals(4, FollowTheSong.songLength(round(20)))
         assertEquals(6, FollowTheSong.songLength(round(40)))
+        assertEquals(7, FollowTheSong.songLength(round(100)))
         assertEquals(3, FollowTheSong.partySize(round(10)))
         assertEquals(3, FollowTheSong.partySize(round(20)))
         assertEquals(4, FollowTheSong.partySize(round(30)))
@@ -30,8 +31,8 @@ class FollowTheSongTest {
     @Test
     fun `a song only names singers of the party`() {
         repeat(30) { seed ->
-            val game = FollowTheSong.create(round(40), Random(seed))
-            assertEquals(6, game.song.size)
+            val game = FollowTheSong.create(round(100), Random(seed))
+            assertEquals(7, game.song.size)
             assertTrue(game.song.all { it in 0 until game.partySize })
         }
     }

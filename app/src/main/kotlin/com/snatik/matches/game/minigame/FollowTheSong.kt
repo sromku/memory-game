@@ -63,11 +63,12 @@ class FollowTheSong private constructor(val partySize: Int, val song: List<Int>)
 
     companion object {
         const val MIN_SONG = 3
+        const val MAX_SONG = 7
         const val MIN_PARTY = 3
         const val MAX_PARTY = 4
 
-        /** Three notes on round 10, one more every ten rounds. */
-        fun songLength(round: RoundSpec): Int = MIN_SONG + (round.index - 1) / 10
+        /** Three notes on round 10, one more every ten rounds, up to [MAX_SONG]. */
+        fun songLength(round: RoundSpec): Int = (MIN_SONG + (round.index - 1) / 10).coerceAtMost(MAX_SONG)
 
         /** Three singers until round 30, four from then on. */
         fun partySize(round: RoundSpec): Int = (MIN_PARTY + (round.index - 1) / 20).coerceAtMost(MAX_PARTY)

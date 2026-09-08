@@ -13,9 +13,9 @@ class RoundSpecTest {
     private val T = GameTheme.ANIMALS
 
     @Test
-    fun `time tightens from the full time at round 1 to 70 percent at round 40`() {
+    fun `time tightens from the full time at round 1 to 70 percent at the last round`() {
         assertEquals(Difficulty.LEVEL_1.timeSeconds, RoundSpec(T, Difficulty.LEVEL_1, 1).timeSeconds)
-        assertEquals((Difficulty.LEVEL_1.timeSeconds * 0.7f).toInt(), RoundSpec(T, Difficulty.LEVEL_1, 40).timeSeconds)
+        assertEquals((Difficulty.LEVEL_1.timeSeconds * 0.7f).toInt(), RoundSpec(T, Difficulty.LEVEL_1, Road.ROUNDS_PER_DIFFICULTY).timeSeconds)
         val times = Road.rounds(T, Difficulty.LEVEL_6).map { it.timeSeconds }
         assertEquals("never gets looser along the road", times.sortedDescending(), times)
         assertEquals(Difficulty.LEVEL_6.timeSeconds, times.first())
@@ -25,20 +25,16 @@ class RoundSpecTest {
     @Test
     fun `every fifth round is special`() {
         val special = Road.rounds(T, Difficulty.LEVEL_2).filter { it.isSpecial }.map { it.index }
-        assertEquals(listOf(5, 10, 15, 20, 25, 30, 35, 40), special)
+        assertEquals((5..Road.ROUNDS_PER_DIFFICULTY step 5).toList(), special)
         assertFalse(RoundSpec(T, Difficulty.LEVEL_2, 1).isSpecial)
     }
 
     @Test
-    fun `special rounds alternate between the two mini-games`() {
+    fun `special rounds take turns through the mini-games`() {
         val games = Road.rounds(T, Difficulty.LEVEL_1).mapNotNull { it.miniGame }
-        assertEquals(
-            listOf(
-                MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG, MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG,
-                MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG, MiniGame.WHO_WAS_HERE, MiniGame.FOLLOW_THE_SONG,
-            ),
-            games,
-        )
+        assertEquals(Road.ROUNDS_PER_DIFFICULTY / Road.SPECIAL_EVERY, games.size)
+        assertEquals(MiniGame.entries.toList(), games.take(MiniGame.entries.size))
+        assertEquals(games.take(MiniGame.entries.size), games.drop(MiniGame.entries.size).take(MiniGame.entries.size))
         assertNull(RoundSpec(T, Difficulty.LEVEL_1, 7).miniGame)
     }
 
