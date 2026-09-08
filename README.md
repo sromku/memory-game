@@ -11,9 +11,12 @@ rounds, find the pairs before the clock runs out, collect stars.
 </p>
 
 - 3 themes: Animals, Monsters and Emojis, each with its own progress
-- 6 roads per theme, from 3x2 up to 10x5 cards, 40 rounds each; the next road opens as you play
-- Every fifth round is a mini-game: "Who was here?" and "Follow the song"
+- 6 roads per theme, from 3x2 up to 10x5 cards, 100 rounds each; the next road opens as you play
+- Every fifth round is one of seven mini-games: "Who was here?", "Follow the song", "What changed?",
+  "Shadow match", "Odd one out", "Shopping list" and "Peek and find"
 - Stars per round, confetti and hopping friends when a round is done, a friend of the day on the menu
+- A friends album: every ten rounds a character joins it, and the collected friends visit the menu
+- A parents' corner behind a hold-to-open gate, with the privacy policy and a start-over
 - 21 languages, switchable in the game's settings
 - Works on phones and tablets, in landscape, offline
 
@@ -28,9 +31,10 @@ up with its developer policies, and the code sat still while Android moved on by
 
 **2026.** The revival. The whole app was converted from Java to Kotlin, restructured, debugged,
 tested and prepared for release purely with AI (Claude Code), with the original artwork and gameplay
-kept intact. Then it grew: the single round per difficulty became roads of forty rounds, two
-mini-games arrived on the special rounds, the menu came alive, and the game learned twenty new
-languages, with the words lifted out of the artwork so every picture could speak them. It is on its
+kept intact. Then it grew: the single round per difficulty became roads of a hundred rounds per theme,
+seven mini-games arrived on the special rounds, a friends album filled up, the menu came alive,
+and the game learned twenty new languages, with the words lifted out of the artwork so every
+picture could speak them. It is on its
 way back to the store.
 
 ## Building
@@ -93,7 +97,7 @@ SDKs; `CLAUDE.md` spells this out and the `checkChildSafety` task fails the buil
 
 - `game/` pure Kotlin rules: `Difficulty`, `Board`, `GameEngine` (flip state machine), `GameResult` (stars and score)
 - `game/progression/` roads and rounds (`RoundSpec`, `Road`) and the player's `Progress`
-- `game/minigame/` the rules of "Who was here?" and "Follow the song"
+- `game/minigame/` the rules of the seven mini-games, one class each, behind `MiniGameRules`
 - `data/` `ProgressStore` (the versioned progress file) and `GamePreferences` (sound, language, last road; keys compatible with 2019)
 - `ui/GameViewModel` the screen flow, the round in progress, its clock, and the timing of every effect
 - `ui/road/` the map: `RoadGeometry` places rounds, `RoadNode` states them, `RoadMapView` draws them
