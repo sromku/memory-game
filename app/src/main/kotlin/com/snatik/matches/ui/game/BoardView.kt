@@ -12,7 +12,6 @@ import com.snatik.matches.game.Difficulty
 import com.snatik.matches.game.Game
 import com.snatik.matches.ui.character.CharacterDrawable
 import kotlin.math.max
-import kotlin.math.min
 
 /** A grid of [TileView]s sized to fill the space this view was given. */
 class BoardView(context: Context) : LinearLayout(context) {
@@ -52,9 +51,10 @@ class BoardView(context: Context) : LinearLayout(context) {
         val margin = max(density.toInt(), (baseMargin - difficulty.level * 2 * density).toInt())
         val availableWidth = width - paddingLeft - paddingRight
         val availableHeight = height - paddingTop - paddingBottom
-        tileSize = min(
+        tileSize = minOf(
             (availableHeight - difficulty.rows * 2 * margin) / difficulty.rows,
             (availableWidth - difficulty.columns * 2 * margin) / difficulty.columns,
+            resources.getDimensionPixelSize(R.dimen.card_max_size),
         )
 
         for (row in 0 until difficulty.rows) {

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="card_margin">10dp</dimen>
+    <!-- Cards never grow past this, so a small board on a big screen stays a board of cards, not a wall. -->
+    <dimen name="card_max_size">240dp</dimen>
     <dimen name="screen_back_button">84dp</dimen>
     <dimen name="screen_back_margin">18dp</dimen>
     
