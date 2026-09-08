@@ -37,6 +37,8 @@
     <string name="who_missing">だれがいない？</string>
     <string name="cd_choice">カード %1$d</string>
     <string name="changed_prompt">なにがかわった？</string>
+    <string name="shadow_prompt">だれのかげ？</string>
+    <string name="odd_prompt">ちがうのはどれ？</string>
     <string name="song_listen">きいて！</string>
     <string name="song_again">もういちど きいて！</string>
     <string name="song_your_turn">きみのばん！</string>

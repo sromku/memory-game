@@ -37,6 +37,8 @@
     <string name="who_missing">Wie mist er?</string>
     <string name="cd_choice">Kaart %1$d</string>
     <string name="changed_prompt">Wat is er anders?</string>
+    <string name="shadow_prompt">Wiens schaduw is dit?</string>
+    <string name="odd_prompt">Welke is anders?</string>
     <string name="song_listen">Luister!</string>
     <string name="song_again">Luister nog eens!</string>
     <string name="song_your_turn">Jouw beurt!</string>

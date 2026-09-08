@@ -49,4 +49,4 @@ object Road {
 }
 
 /** The games that special rounds play instead of a board of cards. */
-enum class MiniGame { WHO_WAS_HERE, FOLLOW_THE_SONG, WHAT_CHANGED }
+enum class MiniGame { WHO_WAS_HERE, FOLLOW_THE_SONG, WHAT_CHANGED, SHADOW_MATCH, ODD_ONE_OUT }

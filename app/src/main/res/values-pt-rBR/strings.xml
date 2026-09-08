@@ -37,6 +37,8 @@
     <string name="who_missing">Quem sumiu?</string>
     <string name="cd_choice">Carta %1$d</string>
     <string name="changed_prompt">O que mudou?</string>
+    <string name="shadow_prompt">De quem é a sombra?</string>
+    <string name="odd_prompt">Qual é o diferente?</string>
     <string name="song_listen">Escute!</string>
     <string name="song_again">Escute de novo!</string>
     <string name="song_your_turn">Sua vez!</string>

@@ -5,6 +5,7 @@ LANGS['es'] = dict(
     strings=dict(
         app_name='Juego de memoria', sound_on='Sonido SÍ', sound_off='Sonido NO', rate_this='Valorar', privacy_policy='Privacidad',
         language='Idioma', language_phone='Idioma del teléfono', cd_language='Elegir el idioma',
+        shadow_prompt='¿De quién es la sombra?', odd_prompt='¿Cuál es diferente?',
         changed_prompt='¿Qué cambió?',
         cd_theme_picker='Cambiar el tema', cd_difficulty_picker='Cambiar el camino',
         difficulty_name_1='Novato', difficulty_name_2='Fácil', difficulty_name_3='Medio', difficulty_name_4='Difícil', difficulty_name_5='Durísimo', difficulty_name_6='Maestro', theme_animals='Animales', theme_monsters='Monstruos', theme_emoji='Emojis', settings='Ajustes', level_completed='¡Nivel superado!', time='Tiempo', score='Puntos', play='jugar',
@@ -35,6 +36,7 @@ LANGS['pt-rBR'] = dict(
     strings=dict(
         app_name='Jogo da memória', sound_on='Som LIGADO', sound_off='Som DESLIGADO', rate_this='Avaliar', privacy_policy='Privacidade',
         language='Idioma', language_phone='Idioma do celular', cd_language='Escolher o idioma',
+        shadow_prompt='De quem é a sombra?', odd_prompt='Qual é o diferente?',
         changed_prompt='O que mudou?',
         cd_theme_picker='Mudar o tema', cd_difficulty_picker='Mudar o caminho',
         difficulty_name_1='Iniciante', difficulty_name_2='Fácil', difficulty_name_3='Médio', difficulty_name_4='Difícil', difficulty_name_5='Dificílimo', difficulty_name_6='Mestre', theme_animals='Animais', theme_monsters='Monstros', theme_emoji='Emojis', settings='Ajustes', level_completed='Fase concluída!', time='Tempo', score='Pontos', play='jogar',
@@ -65,6 +67,7 @@ LANGS['fr'] = dict(
     strings=dict(
         app_name='Jeu de mémoire', sound_on='Son ON', sound_off='Son OFF', rate_this='Noter', privacy_policy='Confidentialité',
         language='Langue', language_phone='Langue du téléphone', cd_language='Choisir la langue',
+        shadow_prompt='À qui est cette ombre ?', odd_prompt='Lequel est différent ?',
         changed_prompt="Qu'est-ce qui a changé ?",
         cd_theme_picker='Changer de thème', cd_difficulty_picker='Changer de chemin',
         difficulty_name_1='Débutant', difficulty_name_2='Facile', difficulty_name_3='Moyen', difficulty_name_4='Difficile', difficulty_name_5='Très dur', difficulty_name_6='Maître', theme_animals='Animaux', theme_monsters='Monstres', theme_emoji='Émojis', settings='Réglages', level_completed='Niveau réussi !', time='Temps', score='Score', play='jouer',
@@ -95,6 +98,7 @@ LANGS['de'] = dict(
     strings=dict(
         app_name='Memory-Spiel', sound_on='Ton AN', sound_off='Ton AUS', rate_this='Bewerten', privacy_policy='Datenschutz',
         language='Sprache', language_phone='Sprache des Telefons', cd_language='Sprache wählen',
+        shadow_prompt='Wessen Schatten ist das?', odd_prompt='Welches ist anders?',
         changed_prompt='Was ist anders?',
         cd_theme_picker='Thema wechseln', cd_difficulty_picker='Weg wechseln',
         difficulty_name_1='Anfänger', difficulty_name_2='Leicht', difficulty_name_3='Mittel', difficulty_name_4='Schwer', difficulty_name_5='Sehr schwer', difficulty_name_6='Meister', theme_animals='Tiere', theme_monsters='Monster', theme_emoji='Emojis', settings='Optionen', level_completed='Geschafft!', time='Zeit', score='Punkte', play='spielen',
@@ -125,6 +129,7 @@ LANGS['it'] = dict(
     strings=dict(
         app_name='Gioco di memoria', sound_on='Suono SÌ', sound_off='Suono NO', rate_this='Valuta', privacy_policy='Privacy',
         language='Lingua', language_phone='Lingua del telefono', cd_language='Scegli la lingua',
+        shadow_prompt='Di chi è questa ombra?', odd_prompt='Qual è diverso?',
         changed_prompt='Cosa è cambiato?',
         cd_theme_picker='Cambia tema', cd_difficulty_picker='Cambia sentiero',
         difficulty_name_1='Novizio', difficulty_name_2='Facile', difficulty_name_3='Medio', difficulty_name_4='Difficile', difficulty_name_5='Estremo', difficulty_name_6='Maestro', theme_animals='Animali', theme_monsters='Mostri', theme_emoji='Emoji', settings='Opzioni', level_completed='Livello finito!', time='Tempo', score='Punti', play='gioca',

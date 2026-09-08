@@ -5,6 +5,7 @@ LANGS['ru'] = dict(
     strings=dict(
         app_name='Игра на память', sound_on='Звук ВКЛ', sound_off='Звук ВЫКЛ', rate_this='Оценить', privacy_policy='Конфиденциальность',
         language='Язык', language_phone='Язык телефона', cd_language='Выбрать язык',
+        shadow_prompt='Чья это тень?', odd_prompt='Кто здесь другой?',
         changed_prompt='Что изменилось?',
         cd_theme_picker='Сменить тему', cd_difficulty_picker='Сменить дорожку',
         difficulty_name_1='Новичок', difficulty_name_2='Легко', difficulty_name_3='Средне', difficulty_name_4='Сложно', difficulty_name_5='Эксперт', difficulty_name_6='Мастер', theme_animals='Животные', theme_monsters='Монстры', theme_emoji='Эмодзи', settings='Настройки', level_completed='Уровень пройден!', time='Время', score='Очки', play='играть',
@@ -35,6 +36,7 @@ LANGS['uk'] = dict(
     strings=dict(
         app_name='Гра на пам\'ять', sound_on='Звук УВІМК', sound_off='Звук ВИМК', rate_this='Оцінити', privacy_policy='Конфіденційність',
         language='Мова', language_phone='Мова телефону', cd_language='Вибрати мову',
+        shadow_prompt='Чия це тінь?', odd_prompt='Хто тут інший?',
         changed_prompt='Що змінилося?',
         cd_theme_picker='Змінити тему', cd_difficulty_picker='Змінити доріжку',
         difficulty_name_1='Новачок', difficulty_name_2='Легко', difficulty_name_3='Середньо', difficulty_name_4='Складно', difficulty_name_5='Експерт', difficulty_name_6='Майстер', theme_animals='Тварини', theme_monsters='Монстри', theme_emoji='Емодзі', settings='Опції', level_completed='Рівень пройдено!', time='Час', score='Очки', play='грати',
@@ -65,6 +67,7 @@ LANGS['pl'] = dict(
     strings=dict(
         app_name='Gra pamięciowa', sound_on='Dźwięk WŁ', sound_off='Dźwięk WYŁ', rate_this='Oceń', privacy_policy='Prywatność',
         language='Język', language_phone='Język telefonu', cd_language='Wybierz język',
+        shadow_prompt='Czyj to cień?', odd_prompt='Który jest inny?',
         changed_prompt='Co się zmieniło?',
         cd_theme_picker='Zmień motyw', cd_difficulty_picker='Zmień ścieżkę',
         difficulty_name_1='Nowicjusz', difficulty_name_2='Łatwy', difficulty_name_3='Średni', difficulty_name_4='Trudny', difficulty_name_5='Ekspert', difficulty_name_6='Mistrz', theme_animals='Zwierzęta', theme_monsters='Potwory', theme_emoji='Emoji', settings='Opcje', level_completed='Poziom zaliczony!', time='Czas', score='Punkty', play='graj',
@@ -95,6 +98,7 @@ LANGS['nl'] = dict(
     strings=dict(
         app_name='Memoryspel', sound_on='Geluid AAN', sound_off='Geluid UIT', rate_this='Beoordelen', privacy_policy='Privacy',
         language='Taal', language_phone='Taal van de telefoon', cd_language='Kies de taal',
+        shadow_prompt='Wiens schaduw is dit?', odd_prompt='Welke is anders?',
         changed_prompt='Wat is er anders?',
         cd_theme_picker='Thema wijzigen', cd_difficulty_picker='Pad wijzigen',
         difficulty_name_1='Beginner', difficulty_name_2='Makkelijk', difficulty_name_3='Gemiddeld', difficulty_name_4='Moeilijk', difficulty_name_5='Expert', difficulty_name_6='Meester', theme_animals='Dieren', theme_monsters='Monsters', theme_emoji="Emoji's", settings='Opties', level_completed='Level gehaald!', time='Tijd', score='Score', play='spelen',
@@ -125,6 +129,7 @@ LANGS['tr'] = dict(
     strings=dict(
         app_name='Hafıza Oyunu', sound_on='Ses AÇIK', sound_off='Ses KAPALI', rate_this='Puan ver', privacy_policy='Gizlilik',
         language='Dil', language_phone='Telefon dili', cd_language='Dil seç',
+        shadow_prompt='Bu kimin gölgesi?', odd_prompt='Hangisi farklı?',
         changed_prompt='Ne değişti?',
         cd_theme_picker='Temayı değiştir', cd_difficulty_picker='Yolu değiştir',
         difficulty_name_1='Acemi', difficulty_name_2='Kolay', difficulty_name_3='Orta', difficulty_name_4='Zor', difficulty_name_5='Uzman', difficulty_name_6='Usta', theme_animals='Hayvanlar', theme_monsters='Canavarlar', theme_emoji='Emojiler', settings='Ayarlar', level_completed='Bölüm bitti!', time='Süre', score='Puan', play='oyna',

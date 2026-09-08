@@ -37,6 +37,8 @@
     <string name="who_missing">誰不見了？</string>
     <string name="cd_choice">卡片 %1$d</string>
     <string name="changed_prompt">哪裡不一樣？</string>
+    <string name="shadow_prompt">這是誰的影子？</string>
+    <string name="odd_prompt">哪個不一樣？</string>
     <string name="song_listen">聽！</string>
     <string name="song_again">再聽一次！</string>
     <string name="song_your_turn">換你了！</string>

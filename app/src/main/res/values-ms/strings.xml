@@ -37,6 +37,8 @@
     <string name="who_missing">Siapa yang hilang?</string>
     <string name="cd_choice">Kad %1$d</string>
     <string name="changed_prompt">Apa yang berubah?</string>
+    <string name="shadow_prompt">Bayang siapa ini?</string>
+    <string name="odd_prompt">Yang mana berbeza?</string>
     <string name="song_listen">Dengar!</string>
     <string name="song_again">Dengar sekali lagi!</string>
     <string name="song_your_turn">Giliran kamu!</string>

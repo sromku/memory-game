@@ -18,6 +18,8 @@ import com.snatik.matches.game.GameResult
 import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.minigame.FollowTheSong
 import com.snatik.matches.game.minigame.MiniGameRules
+import com.snatik.matches.game.minigame.OddOneOut
+import com.snatik.matches.game.minigame.ShadowMatch
 import com.snatik.matches.game.minigame.WhatChanged
 import com.snatik.matches.game.minigame.WhoWasHere
 import com.snatik.matches.game.progression.MiniGame as MiniGameKind
@@ -185,6 +187,8 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             MiniGameKind.WHO_WAS_HERE -> WhoWasHere.create(round, characters)
             MiniGameKind.FOLLOW_THE_SONG -> FollowTheSong.create(round)
             MiniGameKind.WHAT_CHANGED -> WhatChanged.create(round, characters)
+            MiniGameKind.SHADOW_MATCH -> ShadowMatch.create(round, characters)
+            MiniGameKind.ODD_ONE_OUT -> OddOneOut.create(round, characters)
         }
         startMiniGame(round, rules)
         uiEvents.trySend(UiEvent.OpenMiniGame(kind))

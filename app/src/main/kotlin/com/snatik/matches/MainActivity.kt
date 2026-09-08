@@ -28,6 +28,8 @@ import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
 import com.snatik.matches.game.progression.MiniGame
 import com.snatik.matches.ui.minigame.FollowTheSongFragment
+import com.snatik.matches.ui.minigame.OddOneOutFragment
+import com.snatik.matches.ui.minigame.ShadowMatchFragment
 import com.snatik.matches.ui.minigame.PartyGameFragment
 import com.snatik.matches.ui.minigame.WhatChangedFragment
 import com.snatik.matches.ui.minigame.WhoWasHereFragment
@@ -153,6 +155,8 @@ class MainActivity : AppCompatActivity() {
         MiniGame.WHO_WAS_HERE -> WhoWasHereFragment()
         MiniGame.FOLLOW_THE_SONG -> FollowTheSongFragment()
         MiniGame.WHAT_CHANGED -> WhatChangedFragment()
+        MiniGame.SHADOW_MATCH -> ShadowMatchFragment()
+        MiniGame.ODD_ONE_OUT -> OddOneOutFragment()
     }
 
     private fun isOnBackStack(name: String): Boolean =

@@ -37,6 +37,8 @@
     <string name="who_missing">من الغائب؟</string>
     <string name="cd_choice">بطاقة %1$d</string>
     <string name="changed_prompt">ما الذي تغيّر؟</string>
+    <string name="shadow_prompt">ظلّ مَن هذا؟</string>
+    <string name="odd_prompt">أيّهم مختلف؟</string>
     <string name="song_listen">اسمع!</string>
     <string name="song_again">اسمع مرة أخرى!</string>
     <string name="song_your_turn">دورك!</string>
