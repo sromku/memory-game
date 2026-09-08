@@ -6,6 +6,7 @@
     android:layoutDirection="ltr">
 
     <HorizontalScrollView
+        android:id="@+id/scroller"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
@@ -22,6 +23,30 @@
             android:gravity="center_vertical"
             android:orientation="horizontal" />
     </HorizontalScrollView>
+
+    <!-- Chevrons at the edges, shown while there is more to scroll that way; a tap pages along. -->
+    <ImageView
+        android:id="@+id/scroll_left"
+        android:layout_width="@dimen/theme_arrow_size"
+        android:layout_height="@dimen/theme_arrow_size"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="@dimen/theme_arrow_margin"
+        android:contentDescription="@string/cd_more"
+        android:rotation="180"
+        android:src="@drawable/ic_scroll_more"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/scroll_right"
+        android:layout_width="@dimen/theme_arrow_size"
+        android:layout_height="@dimen/theme_arrow_size"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/theme_arrow_margin"
+        android:contentDescription="@string/cd_more"
+        android:src="@drawable/ic_scroll_more"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/back_button"

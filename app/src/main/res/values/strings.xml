@@ -38,6 +38,7 @@
     <string name="cd_difficulty_picker">Change the road</string>
     <string name="cd_settings">Settings</string>
     <string name="cd_difficulty">Difficulty %1$d</string>
+    <string name="cd_more">More</string>
     <string name="cd_back">Back</string>
     <string name="cd_road_map">Rounds of this difficulty</string>
     <string name="cd_locked">Locked</string>

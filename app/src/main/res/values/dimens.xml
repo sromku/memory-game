@@ -22,6 +22,8 @@
     
     <!-- theme -->
     <dimen name="theme_padding">40dp</dimen>
+    <dimen name="theme_arrow_size">52dp</dimen>
+    <dimen name="theme_arrow_margin">6dp</dimen>
     <dimen name="theme_margin">20dp</dimen>
     
     <!-- difficulty level -->

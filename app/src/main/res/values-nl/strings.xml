@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">Pad wijzigen</string>
     <string name="cd_settings">Instellingen</string>
     <string name="cd_difficulty">Niveau %1$d</string>
+    <string name="cd_more">Meer</string>
     <string name="cd_back">Terug</string>
     <string name="cd_road_map">Rondes van dit niveau</string>
     <string name="cd_locked">Vergrendeld</string>

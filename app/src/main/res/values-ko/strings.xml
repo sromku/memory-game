@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">길 바꾸기</string>
     <string name="cd_settings">설정</string>
     <string name="cd_difficulty">난이도 %1$d</string>
+    <string name="cd_more">더 보기</string>
     <string name="cd_back">뒤로</string>
     <string name="cd_road_map">이 난이도의 라운드</string>
     <string name="cd_locked">잠김</string>

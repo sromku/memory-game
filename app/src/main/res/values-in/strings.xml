@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">Ganti jalur</string>
     <string name="cd_settings">Pengaturan</string>
     <string name="cd_difficulty">Tingkat %1$d</string>
+    <string name="cd_more">Lainnya</string>
     <string name="cd_back">Kembali</string>
     <string name="cd_road_map">Ronde tingkat ini</string>
     <string name="cd_locked">Terkunci</string>

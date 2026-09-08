@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">Changer de chemin</string>
     <string name="cd_settings">Réglages</string>
     <string name="cd_difficulty">Difficulté %1$d</string>
+    <string name="cd_more">Plus</string>
     <string name="cd_back">Retour</string>
     <string name="cd_road_map">Manches de cette difficulté</string>
     <string name="cd_locked">Verrouillé</string>

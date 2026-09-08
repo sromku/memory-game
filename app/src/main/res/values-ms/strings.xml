@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">Tukar laluan</string>
     <string name="cd_settings">Tetapan</string>
     <string name="cd_difficulty">Tahap %1$d</string>
+    <string name="cd_more">Lagi</string>
     <string name="cd_back">Kembali</string>
     <string name="cd_road_map">Pusingan tahap ini</string>
     <string name="cd_locked">Berkunci</string>

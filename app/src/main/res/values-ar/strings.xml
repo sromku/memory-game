@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">تغيير الطريق</string>
     <string name="cd_settings">الإعدادات</string>
     <string name="cd_difficulty">المستوى %1$d</string>
+    <string name="cd_more">المزيد</string>
     <string name="cd_back">رجوع</string>
     <string name="cd_road_map">جولات هذا المستوى</string>
     <string name="cd_locked">مقفل</string>

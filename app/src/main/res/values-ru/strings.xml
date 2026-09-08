@@ -28,6 +28,7 @@
     <string name="cd_difficulty_picker">Сменить дорожку</string>
     <string name="cd_settings">Настройки</string>
     <string name="cd_difficulty">Сложность %1$d</string>
+    <string name="cd_more">Ещё</string>
     <string name="cd_back">Назад</string>
     <string name="cd_road_map">Раунды этой сложности</string>
     <string name="cd_locked">Закрыто</string>
