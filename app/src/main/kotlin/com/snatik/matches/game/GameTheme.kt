@@ -2,6 +2,7 @@ package com.snatik.matches.game
 
 import androidx.annotation.ArrayRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import com.snatik.matches.R
 
 /**
@@ -15,11 +16,13 @@ enum class GameTheme(
     @DrawableRes val backgroundRes: Int,
     val groundLine: Float,
     @ArrayRes val cardImagesRes: Int,
+    @StringRes val nameRes: Int,
     val characters: List<String>,
 ) {
-    ANIMALS(id = 1, R.drawable.back_animals, groundLine = 0.83f, R.array.theme_card_animals, characters("animals", 28)),
-    MONSTERS(id = 2, R.drawable.back_horror, groundLine = 0.81f, R.array.theme_card_monsters, characters("mosters", 40)),
-    EMOJI(id = 3, R.drawable.background, groundLine = 0.825f, R.array.theme_card_emoji, characters("emoji", 48));
+    ANIMALS(id = 1, R.drawable.back_animals, groundLine = 0.83f, R.array.theme_card_animals, R.string.theme_animals, characters("animals", 28)),
+    MONSTERS(id = 2, R.drawable.back_horror, groundLine = 0.81f, R.array.theme_card_monsters, R.string.theme_monsters, characters("mosters", 40)),
+    EMOJI(id = 3, R.drawable.background, groundLine = 0.825f, R.array.theme_card_emoji, R.string.theme_emoji, characters("emoji", 48)),
+    OCEAN(id = 4, R.drawable.back_ocean, groundLine = 0.78f, R.array.theme_card_ocean, R.string.theme_ocean, characters("ocean", 36));
 
     companion object
 }

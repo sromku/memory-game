@@ -15,6 +15,12 @@
         <item>@drawable/monsters_theme_star_2</item>
         <item>@drawable/monsters_theme_star_3</item>
     </array>
+    <array name="theme_card_ocean">
+        <item>@drawable/ocean_theme_star_0</item>
+        <item>@drawable/ocean_theme_star_1</item>
+        <item>@drawable/ocean_theme_star_2</item>
+        <item>@drawable/ocean_theme_star_3</item>
+    </array>
     <array name="theme_card_emoji">
         <item>@drawable/emoji_theme_star_0</item>
         <item>@drawable/emoji_theme_star_1</item>

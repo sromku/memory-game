@@ -48,7 +48,7 @@ class AlbumFragment : Fragment(R.layout.album_fragment) {
 
     private fun addSection(binding: AlbumFragmentBinding, theme: GameTheme, friends: Set<Int>) {
         val section = AlbumSectionBinding.inflate(LayoutInflater.from(requireContext()), binding.sections, true)
-        section.name.text = getString(THEME_NAMES.getValue(theme))
+        section.name.text = getString(theme.nameRes)
         section.count.text = getString(R.string.road_progress_format, friends.size, theme.characters.size)
         val card = resources.getDimensionPixelSize(R.dimen.album_card)
         val padding = resources.getDimensionPixelSize(R.dimen.album_card_padding)
@@ -82,10 +82,5 @@ class AlbumFragment : Fragment(R.layout.album_fragment) {
 
     private companion object {
         const val SHADOW_ALPHA = 110
-        val THEME_NAMES = mapOf(
-            GameTheme.ANIMALS to R.string.theme_animals,
-            GameTheme.MONSTERS to R.string.theme_monsters,
-            GameTheme.EMOJI to R.string.theme_emoji,
-        )
     }
 }

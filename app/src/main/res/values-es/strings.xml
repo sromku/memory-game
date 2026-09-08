@@ -17,6 +17,7 @@
     <string name="theme_animals">Animales</string>
     <string name="theme_monsters">Monstruos</string>
     <string name="theme_emoji">Emojis</string>
+    <string name="theme_ocean">Océano</string>
     <string name="settings">Ajustes</string>
     <string name="level_completed">¡Nivel superado!</string>
     <string name="time">Tiempo</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">Cambiar el tema</string>
     <string name="cd_difficulty_picker">Cambiar el camino</string>
     <string name="cd_settings">Ajustes</string>
-    <string name="cd_theme_animals">Tema de animales</string>
-    <string name="cd_theme_monsters">Tema de monstruos</string>
-    <string name="cd_theme_emoji">Tema de emojis</string>
     <string name="cd_difficulty">Dificultad %1$d</string>
     <string name="cd_back">Atrás</string>
     <string name="cd_road_map">Rondas de esta dificultad</string>

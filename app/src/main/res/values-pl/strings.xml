@@ -17,6 +17,7 @@
     <string name="theme_animals">Zwierzęta</string>
     <string name="theme_monsters">Potwory</string>
     <string name="theme_emoji">Emoji</string>
+    <string name="theme_ocean">Ocean</string>
     <string name="settings">Opcje</string>
     <string name="level_completed">Poziom zaliczony!</string>
     <string name="time">Czas</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">Zmień motyw</string>
     <string name="cd_difficulty_picker">Zmień ścieżkę</string>
     <string name="cd_settings">Ustawienia</string>
-    <string name="cd_theme_animals">Motyw zwierzęta</string>
-    <string name="cd_theme_monsters">Motyw potwory</string>
-    <string name="cd_theme_emoji">Motyw emoji</string>
     <string name="cd_difficulty">Poziom %1$d</string>
     <string name="cd_back">Wstecz</string>
     <string name="cd_road_map">Rundy tego poziomu</string>

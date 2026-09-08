@@ -17,6 +17,7 @@
     <string name="theme_animals">Haiwan</string>
     <string name="theme_monsters">Raksasa</string>
     <string name="theme_emoji">Emoji</string>
+    <string name="theme_ocean">Lautan</string>
     <string name="settings">Tetapan</string>
     <string name="level_completed">Selesai!</string>
     <string name="time">Masa</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">Tukar tema</string>
     <string name="cd_difficulty_picker">Tukar laluan</string>
     <string name="cd_settings">Tetapan</string>
-    <string name="cd_theme_animals">Tema haiwan</string>
-    <string name="cd_theme_monsters">Tema raksasa</string>
-    <string name="cd_theme_emoji">Tema emoji</string>
     <string name="cd_difficulty">Tahap %1$d</string>
     <string name="cd_back">Kembali</string>
     <string name="cd_road_map">Pusingan tahap ini</string>

@@ -5,45 +5,23 @@
     android:layout_height="match_parent"
     android:layoutDirection="ltr">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:clipToPadding="false"
+        android:fillViewport="true"
         android:paddingStart="@dimen/theme_padding"
-        android:paddingEnd="@dimen/theme_padding">
+        android:paddingEnd="@dimen/theme_padding"
+        android:scrollbars="none">
 
-        <ImageView
-            android:id="@+id/theme_animals"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/theme_margin"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/cd_theme_animals"
-            tools:src="@drawable/animals_theme_star_0" />
-
-        <ImageView
-            android:id="@+id/theme_monsters"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/theme_margin"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/cd_theme_monsters"
-            tools:src="@drawable/monsters_theme_star_0" />
-
-        <ImageView
-            android:id="@+id/theme_emoji"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/theme_margin"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/cd_theme_emoji"
-            tools:src="@drawable/emoji_theme_star_0" />
-
-    </LinearLayout>
+        <!-- One card per theme, added in code, each as wide as a third of the screen. -->
+        <LinearLayout
+            android:id="@+id/cards"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
 
     <ImageView
         android:id="@+id/back_button"

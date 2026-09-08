@@ -58,7 +58,7 @@ class RoadMapFragment : Fragment(R.layout.road_map_fragment) {
     private suspend fun themeThumb(theme: GameTheme): LabeledDrawable {
         val cards = resources.obtainTypedArray(theme.cardImagesRes)
         val art = try { cards.getResourceId(viewModel.progress.value.themeStars(theme), 0) } finally { cards.recycle() }
-        val name = Label(getString(THEME_NAMES.getValue(theme)), x = 0.5f, y = 0.078f, height = 0.062f, maxWidth = 0.5f)
+        val name = Label(getString(theme.nameRes), x = 0.5f, y = 0.078f, height = 0.062f, maxWidth = 0.5f)
         return LabeledDrawable(requireContext(), requireContext().loadDrawable(art), listOf(name))
     }
 
@@ -72,11 +72,6 @@ class RoadMapFragment : Fragment(R.layout.road_map_fragment) {
     }
 
     private companion object {
-        val THEME_NAMES = mapOf(
-            GameTheme.ANIMALS to R.string.theme_animals,
-            GameTheme.MONSTERS to R.string.theme_monsters,
-            GameTheme.EMOJI to R.string.theme_emoji,
-        )
         val DIFFICULTY_NAMES = listOf(
             R.string.difficulty_name_1, R.string.difficulty_name_2, R.string.difficulty_name_3,
             R.string.difficulty_name_4, R.string.difficulty_name_5, R.string.difficulty_name_6,

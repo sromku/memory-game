@@ -17,6 +17,7 @@
     <string name="theme_animals">สัตว์</string>
     <string name="theme_monsters">มอนสเตอร์</string>
     <string name="theme_emoji">อีโมจิ</string>
+    <string name="theme_ocean">มหาสมุทร</string>
     <string name="settings">ตั้งค่า</string>
     <string name="level_completed">ผ่านแล้ว!</string>
     <string name="time">เวลา</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">เปลี่ยนธีม</string>
     <string name="cd_difficulty_picker">เปลี่ยนเส้นทาง</string>
     <string name="cd_settings">การตั้งค่า</string>
-    <string name="cd_theme_animals">ธีมสัตว์</string>
-    <string name="cd_theme_monsters">ธีมมอนสเตอร์</string>
-    <string name="cd_theme_emoji">ธีมอีโมจิ</string>
     <string name="cd_difficulty">ระดับ %1$d</string>
     <string name="cd_back">กลับ</string>
     <string name="cd_road_map">รอบของระดับนี้</string>

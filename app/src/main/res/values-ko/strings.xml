@@ -17,6 +17,7 @@
     <string name="theme_animals">동물</string>
     <string name="theme_monsters">괴물</string>
     <string name="theme_emoji">이모지</string>
+    <string name="theme_ocean">바다</string>
     <string name="settings">설정</string>
     <string name="level_completed">클리어!</string>
     <string name="time">시간</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">테마 바꾸기</string>
     <string name="cd_difficulty_picker">길 바꾸기</string>
     <string name="cd_settings">설정</string>
-    <string name="cd_theme_animals">동물 테마</string>
-    <string name="cd_theme_monsters">괴물 테마</string>
-    <string name="cd_theme_emoji">이모지 테마</string>
     <string name="cd_difficulty">난이도 %1$d</string>
     <string name="cd_back">뒤로</string>
     <string name="cd_road_map">이 난이도의 라운드</string>

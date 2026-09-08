@@ -10,7 +10,7 @@ rounds, find the pairs before the clock runs out, collect stars.
   <img src="docs/screenshots/level-complete.png" width="49%" alt="Level completed with stars" />
 </p>
 
-- 3 themes: Animals, Monsters and Emojis, each with its own progress
+- 4 themes: Animals, Monsters, Emojis and Ocean, each with its own progress
 - 6 roads per theme, from 3x2 up to 10x5 cards, 100 rounds each; the next road opens as you play
 - Every fifth round is one of seven mini-games: "Who was here?", "Follow the song", "What changed?",
   "Shadow match", "Odd one out", "Shopping list" and "Peek and find"

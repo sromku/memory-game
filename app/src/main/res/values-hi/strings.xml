@@ -17,6 +17,7 @@
     <string name="theme_animals">जानवर</string>
     <string name="theme_monsters">राक्षस</string>
     <string name="theme_emoji">इमोजी</string>
+    <string name="theme_ocean">समुद्र</string>
     <string name="settings">सेटिंग</string>
     <string name="level_completed">शाबाश!</string>
     <string name="time">समय</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">थीम बदलें</string>
     <string name="cd_difficulty_picker">रास्ता बदलें</string>
     <string name="cd_settings">सेटिंग</string>
-    <string name="cd_theme_animals">जानवरों की थीम</string>
-    <string name="cd_theme_monsters">राक्षसों की थीम</string>
-    <string name="cd_theme_emoji">इमोजी थीम</string>
     <string name="cd_difficulty">स्तर %1$d</string>
     <string name="cd_back">वापस</string>
     <string name="cd_road_map">इस स्तर के राउंड</string>

@@ -17,6 +17,7 @@
     <string name="theme_animals">Dieren</string>
     <string name="theme_monsters">Monsters</string>
     <string name="theme_emoji">Emoji\'s</string>
+    <string name="theme_ocean">Oceaan</string>
     <string name="settings">Opties</string>
     <string name="level_completed">Level gehaald!</string>
     <string name="time">Tijd</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">Thema wijzigen</string>
     <string name="cd_difficulty_picker">Pad wijzigen</string>
     <string name="cd_settings">Instellingen</string>
-    <string name="cd_theme_animals">Thema dieren</string>
-    <string name="cd_theme_monsters">Thema monsters</string>
-    <string name="cd_theme_emoji">Thema emoji</string>
     <string name="cd_difficulty">Niveau %1$d</string>
     <string name="cd_back">Terug</string>
     <string name="cd_road_map">Rondes van dit niveau</string>

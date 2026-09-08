@@ -5,6 +5,7 @@ LANGS['ar'] = dict(
     strings=dict(
         app_name='لعبة الذاكرة', sound_on='الصوت مفعّل', sound_off='الصوت مغلق', rate_this='قيّمنا', privacy_policy='الخصوصية',
         language='اللغة', language_phone='لغة الهاتف', cd_language='اختيار اللغة',
+        theme_ocean='المحيط', cd_theme_ocean='موضوع المحيط',
         parents='للوالدين', parents_hold='اضغط مطولًا…', cd_parents='للوالدين، اضغط مطولًا للفتح', reset_progress='البدء من جديد', reset_hold='استمر بالضغط…', cd_reset='البدء من جديد، اضغط مطولًا للتأكيد', parents_note='البدء من جديد يمحو كل النجوم والأصدقاء على هذا الجهاز.',
         album_title='الأصدقاء', cd_album='ألبوم الأصدقاء', cd_friend_found='صديق', cd_friend_hidden='صديق لم تقابله بعد',
         shop_remember='تذكّر هؤلاء!', shop_again='مرة أخرى!', shop_tap='المسهم بالترتيب!', peek_find='أين…',
@@ -39,6 +40,7 @@ LANGS['hi'] = dict(
     strings=dict(
         app_name='मेमोरी गेम', sound_on='आवाज़ चालू', sound_off='आवाज़ बंद', rate_this='रेटिंग दें', privacy_policy='गोपनीयता',
         language='भाषा', language_phone='फ़ोन की भाषा', cd_language='भाषा चुनें',
+        theme_ocean='समुद्र', cd_theme_ocean='समुद्र थीम',
         parents='माता-पिता के लिए', parents_hold='दबाए रखें…', cd_parents='माता-पिता के लिए, खोलने के लिए दबाए रखें', reset_progress='फिर से शुरू करें', reset_hold='दबाए रखें…', cd_reset='फिर से शुरू करें, पुष्टि के लिए दबाए रखें', parents_note='फिर से शुरू करने पर इस डिवाइस के सभी तारे और दोस्त मिट जाएँगे।',
         album_title='दोस्त', cd_album='दोस्तों का एल्बम', cd_friend_found='एक दोस्त', cd_friend_hidden='एक दोस्त जिससे मिलना बाकी है',
         shop_remember='इन्हें याद रखो!', shop_again='एक बार और!', shop_tap='अब क्रम से छुओ!', peek_find='कहाँ है…',
@@ -73,6 +75,7 @@ LANGS['id'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Suara NYALA', sound_off='Suara MATI', rate_this='Beri nilai', privacy_policy='Privasi',
         language='Bahasa', language_phone='Bahasa ponsel', cd_language='Pilih bahasa',
+        theme_ocean='Laut', cd_theme_ocean='Tema laut',
         parents='Untuk orang tua', parents_hold='Tahan untuk membuka…', cd_parents='Untuk orang tua, tahan untuk membuka', reset_progress='Mulai dari awal', reset_hold='Terus tahan…', cd_reset='Mulai dari awal, tahan untuk konfirmasi', parents_note='Mulai dari awal menghapus semua bintang dan teman di perangkat ini.',
         album_title='Teman', cd_album='Album teman', cd_friend_found='Seorang teman', cd_friend_hidden='Teman yang belum ditemui',
         shop_remember='Ingat ini!', shop_again='Sekali lagi!', shop_tap='Sentuh sesuai urutan!', peek_find='Di mana…',
@@ -107,6 +110,7 @@ LANGS['vi'] = dict(
     strings=dict(
         app_name='Trò chơi trí nhớ', sound_on='Âm thanh BẬT', sound_off='Âm thanh TẮT', rate_this='Đánh giá', privacy_policy='Quyền riêng tư',
         language='Ngôn ngữ', language_phone='Ngôn ngữ điện thoại', cd_language='Chọn ngôn ngữ',
+        theme_ocean='Đại dương', cd_theme_ocean='Chủ đề đại dương',
         parents='Dành cho phụ huynh', parents_hold='Giữ để mở…', cd_parents='Dành cho phụ huynh, giữ để mở', reset_progress='Chơi lại từ đầu', reset_hold='Giữ tiếp…', cd_reset='Chơi lại từ đầu, giữ để xác nhận', parents_note='Chơi lại từ đầu sẽ xóa mọi ngôi sao và bạn bè trên thiết bị này.',
         album_title='Bạn bè', cd_album='Album bạn bè', cd_friend_found='Một người bạn', cd_friend_hidden='Một người bạn chưa gặp',
         shop_remember='Nhớ nhé!', shop_again='Một lần nữa!', shop_tap='Chạm theo thứ tự nào!', peek_find='Ở đâu…',
@@ -141,6 +145,7 @@ LANGS['th'] = dict(
     strings=dict(
         app_name='เกมความจำ', sound_on='เสียง เปิด', sound_off='เสียง ปิด', rate_this='ให้คะแนน', privacy_policy='ความเป็นส่วนตัว',
         language='ภาษา', language_phone='ภาษาของโทรศัพท์', cd_language='เลือกภาษา',
+        theme_ocean='มหาสมุทร', cd_theme_ocean='ธีมมหาสมุทร',
         parents='สำหรับผู้ปกครอง', parents_hold='กดค้างเพื่อเปิด…', cd_parents='สำหรับผู้ปกครอง กดค้างเพื่อเปิด', reset_progress='เริ่มใหม่ทั้งหมด', reset_hold='กดค้างต่อไป…', cd_reset='เริ่มใหม่ทั้งหมด กดค้างเพื่อยืนยัน', parents_note='การเริ่มใหม่จะลบดาวและเพื่อนทั้งหมดในเครื่องนี้',
         album_title='เพื่อน', cd_album='อัลบั้มเพื่อน', cd_friend_found='เพื่อน', cd_friend_hidden='เพื่อนที่ยังไม่ได้พบ',
         shop_remember='จำไว้นะ!', shop_again='อีกครั้ง!', shop_tap='แตะตามลำดับ!', peek_find='อยู่ไหน…',

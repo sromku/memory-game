@@ -17,6 +17,7 @@
     <string name="theme_animals">Животные</string>
     <string name="theme_monsters">Монстры</string>
     <string name="theme_emoji">Эмодзи</string>
+    <string name="theme_ocean">Океан</string>
     <string name="settings">Настройки</string>
     <string name="level_completed">Уровень пройден!</string>
     <string name="time">Время</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">Сменить тему</string>
     <string name="cd_difficulty_picker">Сменить дорожку</string>
     <string name="cd_settings">Настройки</string>
-    <string name="cd_theme_animals">Тема «Животные»</string>
-    <string name="cd_theme_monsters">Тема «Монстры»</string>
-    <string name="cd_theme_emoji">Тема «Эмодзи»</string>
     <string name="cd_difficulty">Сложность %1$d</string>
     <string name="cd_back">Назад</string>
     <string name="cd_road_map">Раунды этой сложности</string>

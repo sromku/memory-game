@@ -53,7 +53,7 @@ class ArtPipeline(
         add(Asset("button_music_off", 50, 65, byWidth = false))
         add(Asset("button_rate", 50, 65, byWidth = false))
         add(Asset("tile_back_star", 90, 90))
-        for (theme in listOf("animals", "monsters", "emoji")) for (stars in 0..3) add(Asset("${theme}_theme_star_$stars", 300, 360))
+        for (theme in listOf("animals", "monsters", "emoji", "ocean")) for (stars in 0..3) add(Asset("${theme}_theme_star_$stars", 300, 360))
         for (level in 1..6) for (stars in 0..3) add(Asset("button_difficulty_${level}_star_$stars", 260, 340))
     }
 
@@ -99,6 +99,7 @@ class ArtPipeline(
         background("background", 3760)
         background("back_animals", 3072)
         background("back_horror", 3072)
+        background("back_ocean", 3072)
         // Card pictures become vector characters (assets/characters), drawn and animated by the app.
         val tracer = vtracer?.let { CharacterTracer(it, root.resolve("art/character-overrides.txt"), log) }
         for (tile in original.resolve("tiles").listFiles { f -> f.extension == "png" }.orEmpty().sorted()) {

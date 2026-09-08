@@ -20,6 +20,7 @@
     <string name="theme_animals">Animals</string>
     <string name="theme_monsters">Monsters</string>
     <string name="theme_emoji">Emojis</string>
+    <string name="theme_ocean">Ocean</string>
     <string name="settings">Settings</string>
     <string name="level_completed">Level completed</string>
     <string name="time">Time</string>
@@ -36,9 +37,6 @@
     <string name="cd_theme_picker">Change the theme</string>
     <string name="cd_difficulty_picker">Change the road</string>
     <string name="cd_settings">Settings</string>
-    <string name="cd_theme_animals">Animals theme</string>
-    <string name="cd_theme_monsters">Monsters theme</string>
-    <string name="cd_theme_emoji">Emoji theme</string>
     <string name="cd_difficulty">Difficulty %1$d</string>
     <string name="cd_back">Back</string>
     <string name="cd_road_map">Rounds of this difficulty</string>

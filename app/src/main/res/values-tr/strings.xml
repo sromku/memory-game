@@ -17,6 +17,7 @@
     <string name="theme_animals">Hayvanlar</string>
     <string name="theme_monsters">Canavarlar</string>
     <string name="theme_emoji">Emojiler</string>
+    <string name="theme_ocean">Okyanus</string>
     <string name="settings">Ayarlar</string>
     <string name="level_completed">Bölüm bitti!</string>
     <string name="time">Süre</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">Temayı değiştir</string>
     <string name="cd_difficulty_picker">Yolu değiştir</string>
     <string name="cd_settings">Ayarlar</string>
-    <string name="cd_theme_animals">Hayvanlar teması</string>
-    <string name="cd_theme_monsters">Canavarlar teması</string>
-    <string name="cd_theme_emoji">Emoji teması</string>
     <string name="cd_difficulty">Zorluk %1$d</string>
     <string name="cd_back">Geri</string>
     <string name="cd_road_map">Bu zorluğun turları</string>

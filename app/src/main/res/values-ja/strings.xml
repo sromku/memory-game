@@ -17,6 +17,7 @@
     <string name="theme_animals">どうぶつ</string>
     <string name="theme_monsters">モンスター</string>
     <string name="theme_emoji">えもじ</string>
+    <string name="theme_ocean">うみ</string>
     <string name="settings">せってい</string>
     <string name="level_completed">クリア！</string>
     <string name="time">タイム</string>
@@ -26,9 +27,6 @@
     <string name="cd_theme_picker">テーマをかえる</string>
     <string name="cd_difficulty_picker">みちをかえる</string>
     <string name="cd_settings">せってい</string>
-    <string name="cd_theme_animals">どうぶつのテーマ</string>
-    <string name="cd_theme_monsters">モンスターのテーマ</string>
-    <string name="cd_theme_emoji">えもじのテーマ</string>
     <string name="cd_difficulty">むずかしさ %1$d</string>
     <string name="cd_back">もどる</string>
     <string name="cd_road_map">このむずかしさのラウンド</string>

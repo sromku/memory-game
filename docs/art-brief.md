@@ -51,6 +51,14 @@ One companion for the menu, in four stages, `pet_1.png` … `pet_4.png`, 400 × 
 an egg, a hatchling, a young one, a grown one. Same character across the four, in the animals
 family style. It stands on the menu grass and changes stage at star milestones.
 
+## Generating with the tool
+
+`tools/generate-world.py` did the ocean world: one call per character with three animal tiles as
+style references and a transparent background, one call for the scenery with the animals
+background as reference, at 1024 px, resized to the pipeline's sizes. `tools/compose-theme-card.py`
+then made the theme's cards from the animals cards' frame with a crop of the new background and
+three of the new characters inside. The key is read from a file outside the repository.
+
 ## Checking a batch before it enters the pipeline
 
 Put the PNGs in a folder and run `./gradlew regenerateArt` with the tracer; open the traced
