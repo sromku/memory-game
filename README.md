@@ -93,20 +93,6 @@ The Play listing declares the game for children and certifies COPPA and GDPR com
 must keep it free of data collection, network access, permissions, ads, purchases and third-party
 SDKs; `CLAUDE.md` spells this out and the `checkChildSafety` task fails the build when it can tell.
 
-## Code layout
-
-- `game/` pure Kotlin rules: `Difficulty`, `Board`, `GameEngine` (flip state machine), `GameResult` (stars and score)
-- `game/progression/` roads and rounds (`RoundSpec`, `Road`) and the player's `Progress`
-- `game/minigame/` the rules of the seven mini-games, one class each, behind `MiniGameRules`
-- `data/` `ProgressStore` (the versioned progress file) and `GamePreferences` (sound, language, last road; keys compatible with 2019)
-- `ui/GameViewModel` the screen flow, the round in progress, its clock, and the timing of every effect
-- `ui/road/` the map: `RoadGeometry` places rounds, `RoadNode` states them, `RoadMapView` draws them
-- `ui/minigame/` the mini-game screens and the party scene they share
-- `ui/image/` `ArtCache` (traced vectors rendered once), `LabeledDrawable` (words on art)
-- `ui/character/` the vector card characters and their animation
-- `audio/SoundPlayer` sound effects and the mini-game notes (`tools/generate-sounds.py`)
-- Design notes for every feature are in `docs/design`.
-
 ## License
 
 - Code: [Apache License 2.0](./LICENSE)
