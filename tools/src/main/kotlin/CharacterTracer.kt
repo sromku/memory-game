@@ -82,7 +82,10 @@ class CharacterTracer(private val vtracer: File, private val overrides: File?, p
         val full = width * height
         for (p in parts) {
             val bx = p.box
-            if (bx.top > height * 0.6f && bx.width > width * 0.25f && bx.height < height * 0.2f && b(p.color) > r(p.color) && b(p.color) > g(p.color)) p.group = Group.SHADOW
+            // A shadow is wide, low and flat, and bluish or plain grey (generated pictures cast grey ones).
+            val muted = maxOf(r(p.color), g(p.color), b(p.color)) - minOf(r(p.color), g(p.color), b(p.color)) < 60
+            val bluish = b(p.color) > r(p.color) && b(p.color) > g(p.color)
+            if (bx.top > height * 0.6f && bx.width > width * 0.25f && bx.height < height * 0.2f && (bluish || muted)) p.group = Group.SHADOW
         }
         val body = parts.filter { it.group == Group.BODY }
         val whites = body.filter { minOf(r(it.color), g(it.color), b(it.color)) > 200 && it.box.area < full * 0.06f && it.box.bottom < height * 0.7f }

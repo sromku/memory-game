@@ -70,13 +70,24 @@ def generate(prompt, references, size, background, api_key, attempts=3):
             time.sleep(10 * (attempt + 1))
 
 
+def clean_alpha(image, threshold=48):
+    """Drops the faint haze the model leaves around a transparent picture, which would trace as a
+    pale rectangle on the card; edges keep their anti-aliasing above the threshold."""
+    import numpy as np
+    from PIL import Image
+    a = np.array(image)
+    faint = a[..., 3] < threshold
+    a[faint] = 0
+    return Image.fromarray(a, 'RGBA')
+
+
 def character(world, index, creature, api_key):
     from PIL import Image
     out = f'art/original/tiles/{world}_{index}.png'
     if os.path.exists(out):
         return f'{out} exists'
     png = generate(CHARACTER_PROMPT.format(creature=creature), REFERENCES, '1024x1024', 'transparent', api_key)
-    image = Image.open(io.BytesIO(png)).convert('RGBA')
+    image = clean_alpha(Image.open(io.BytesIO(png)).convert('RGBA'))
     image.resize((400, 400), Image.LANCZOS).save(out)
     return f'{out} ({creature})'
 
