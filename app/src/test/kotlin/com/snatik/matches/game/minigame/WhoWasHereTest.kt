@@ -49,14 +49,14 @@ class WhoWasHereTest {
         val game = WhoWasHere.create(round(5), characterCount = 10, random = Random(1))
         val first = game.turns[0]
         val wrong = first.choices.first { it != first.missing }
-        assertFalse(game.answer(wrong))
+        assertEquals(MiniGameRules.Answer.WRONG, game.answer(wrong))
         assertEquals(0, game.turnIndex)
-        assertTrue(game.answer(first.missing))
+        assertEquals(MiniGameRules.Answer.RIGHT, game.answer(first.missing))
         assertEquals(1, game.turnIndex)
-        assertTrue(game.answer(game.turns[1].missing))
-        assertTrue(game.answer(game.turns[2].missing))
+        assertEquals(MiniGameRules.Answer.RIGHT, game.answer(game.turns[1].missing))
+        assertEquals(MiniGameRules.Answer.RIGHT, game.answer(game.turns[2].missing))
         assertTrue(game.isOver)
-        assertFalse("nothing to answer after the last turn", game.answer(0))
+        assertEquals("nothing to answer after the last turn", MiniGameRules.Answer.IGNORED, game.answer(0))
         assertEquals(1, game.mistakes)
         assertEquals(2, game.stars)
     }

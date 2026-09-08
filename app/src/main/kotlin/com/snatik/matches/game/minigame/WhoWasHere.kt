@@ -31,15 +31,15 @@ class WhoWasHere private constructor(val turns: List<Turn>) : MiniGameRules {
 
     override val isOver: Boolean get() = turnIndex >= turns.size
 
-    /** Answers the current turn. True when [choice] is the missing character; that ends the turn. */
-    fun answer(choice: Int): Boolean {
-        val turn = currentTurn ?: return false
+    /** Answers the current turn with a card; the missing character ends the turn. */
+    override fun answer(choice: Int): MiniGameRules.Answer {
+        val turn = currentTurn ?: return MiniGameRules.Answer.IGNORED
         if (choice != turn.missing) {
             mistakes++
-            return false
+            return MiniGameRules.Answer.WRONG
         }
         turnIndex++
-        return true
+        return MiniGameRules.Answer.RIGHT
     }
 
     /** No mistakes earn three stars, one mistake two, anything more one: nobody leaves empty-handed. */

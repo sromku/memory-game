@@ -26,7 +26,10 @@ import com.snatik.matches.ui.GameViewModel.UiEvent
 import com.snatik.matches.ui.difficulty.DifficultySelectFragment
 import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
+import com.snatik.matches.game.progression.MiniGame
 import com.snatik.matches.ui.minigame.FollowTheSongFragment
+import com.snatik.matches.ui.minigame.PartyGameFragment
+import com.snatik.matches.ui.minigame.WhatChangedFragment
 import com.snatik.matches.ui.minigame.WhoWasHereFragment
 import com.snatik.matches.ui.popup.AppLanguages
 import com.snatik.matches.ui.popup.PopupHost
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         } else {
             viewModel.game?.result?.let { if (currentFragment is GameFragment) showWonPopup(it) }
-            viewModel.miniGame?.result?.let { if (currentFragment is WhoWasHereFragment || currentFragment is FollowTheSongFragment) showWonPopup(it) }
+            viewModel.miniGame?.result?.let { if (currentFragment is PartyGameFragment) showWonPopup(it) }
         }
 
         lifecycleScope.launch {
@@ -104,13 +107,9 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                 push(GameFragment(), BACK_STACK_GAME)
             }
-            UiEvent.OpenWhoWasHere -> {
+            is UiEvent.OpenMiniGame -> {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-                push(WhoWasHereFragment(), BACK_STACK_GAME)
-            }
-            UiEvent.OpenFollowTheSong -> {
-                supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-                push(FollowTheSongFragment(), BACK_STACK_GAME)
+                push(miniGameFragment(event.kind), BACK_STACK_GAME)
             }
             UiEvent.ReturnToRoadMap -> {
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
@@ -148,6 +147,12 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.fragment_container, fragment)
             addToBackStack(name)
         }
+    }
+
+    private fun miniGameFragment(kind: MiniGame): Fragment = when (kind) {
+        MiniGame.WHO_WAS_HERE -> WhoWasHereFragment()
+        MiniGame.FOLLOW_THE_SONG -> FollowTheSongFragment()
+        MiniGame.WHAT_CHANGED -> WhatChangedFragment()
     }
 
     private fun isOnBackStack(name: String): Boolean =

@@ -18,6 +18,7 @@ import com.snatik.matches.game.GameResult
 import com.snatik.matches.game.GameTheme
 import com.snatik.matches.game.minigame.FollowTheSong
 import com.snatik.matches.game.minigame.MiniGameRules
+import com.snatik.matches.game.minigame.WhatChanged
 import com.snatik.matches.game.minigame.WhoWasHere
 import com.snatik.matches.game.progression.MiniGame as MiniGameKind
 import kotlinx.coroutines.Job
@@ -43,8 +44,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object ClosePicker : UiEvent
         data object OpenRoadMap : UiEvent
         data object OpenGame : UiEvent
-        data object OpenWhoWasHere : UiEvent
-        data object OpenFollowTheSong : UiEvent
+        data class OpenMiniGame(val kind: MiniGameKind) : UiEvent
         data object ReturnToRoadMap : UiEvent
         data object ShowSettings : UiEvent
         data object ShowLanguages : UiEvent
@@ -174,28 +174,32 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     /** Special rounds are mini-games; every other round is a board of cards. */
     fun selectRound(round: RoundSpec) {
-        when (round.miniGame) {
-            MiniGameKind.WHO_WAS_HERE -> {
-                startMiniGame(round, WhoWasHere.create(round, round.theme.characters.size))
-                uiEvents.trySend(UiEvent.OpenWhoWasHere)
-            }
-            MiniGameKind.FOLLOW_THE_SONG -> {
-                startMiniGame(round, FollowTheSong.create(round))
-                uiEvents.trySend(UiEvent.OpenFollowTheSong)
-            }
-            null -> {
-                startRound(round)
-                uiEvents.trySend(UiEvent.OpenGame)
-            }
+        val kind = round.miniGame
+        if (kind == null) {
+            startRound(round)
+            uiEvents.trySend(UiEvent.OpenGame)
+            return
         }
+        val characters = round.theme.characters.size
+        val rules: MiniGameRules = when (kind) {
+            MiniGameKind.WHO_WAS_HERE -> WhoWasHere.create(round, characters)
+            MiniGameKind.FOLLOW_THE_SONG -> FollowTheSong.create(round)
+            MiniGameKind.WHAT_CHANGED -> WhatChanged.create(round, characters)
+        }
+        startMiniGame(round, rules)
+        uiEvents.trySend(UiEvent.OpenMiniGame(kind))
     }
 
-    /** Answers the mini-game's current turn; true when the card was the missing character. */
-    fun answerWhoWasHere(choice: Int): Boolean {
-        val rules = miniGame?.rules as? WhoWasHere ?: return false
-        val right = rules.answer(choice)
-        if (right && _soundEnabled.value) sounds.playCorrect()
-        return right
+    /** Answers the mini-game with a card or a character, with the right and wrong sounds. */
+    fun answerMiniGame(choice: Int): MiniGameRules.Answer {
+        val rules = miniGame?.rules ?: return MiniGameRules.Answer.IGNORED
+        val answer = rules.answer(choice)
+        if (_soundEnabled.value) when (answer) {
+            MiniGameRules.Answer.RIGHT -> sounds.playCorrect()
+            MiniGameRules.Answer.WRONG -> sounds.playWrong()
+            MiniGameRules.Answer.IGNORED -> Unit
+        }
+        return answer
     }
 
     /** The note of a singer at [position] in a party of [partySize], spread over the scale. */

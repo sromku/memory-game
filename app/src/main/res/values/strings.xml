@@ -46,6 +46,7 @@
     <string name="who_look">Look!</string>
     <string name="who_missing">Who is missing?</string>
     <string name="cd_choice">Card %1$d</string>
+    <string name="changed_prompt">What changed?</string>
     <string name="song_listen">Listen!</string>
     <string name="song_again">Listen again!</string>
     <string name="song_your_turn">Your turn!</string>

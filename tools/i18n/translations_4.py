@@ -5,6 +5,7 @@ LANGS['ja'] = dict(
     strings=dict(
         app_name='メモリーゲーム', sound_on='おと オン', sound_off='おと オフ', rate_this='ひょうか', privacy_policy='プライバシー',
         language='ことば', language_phone='スマホのことば', cd_language='ことばをえらぶ',
+        changed_prompt='なにがかわった？',
         cd_theme_picker='テーマをかえる', cd_difficulty_picker='みちをかえる',
         difficulty_name_1='はじめて', difficulty_name_2='かんたん', difficulty_name_3='ふつう', difficulty_name_4='むずかしい', difficulty_name_5='げきむず', difficulty_name_6='たつじん', theme_animals='どうぶつ', theme_monsters='モンスター', theme_emoji='えもじ', settings='せってい', level_completed='クリア！', time='タイム', score='スコア', play='あそぶ',
         cd_quick_play='あそぶ', cd_map='テーマとみち', cd_settings='せってい', cd_theme_animals='どうぶつのテーマ',
@@ -34,6 +35,7 @@ LANGS['ko'] = dict(
     strings=dict(
         app_name='기억력 게임', sound_on='소리 켬', sound_off='소리 끔', rate_this='평가하기', privacy_policy='개인정보',
         language='언어', language_phone='휴대폰 언어', cd_language='언어 선택',
+        changed_prompt='뭐가 달라졌지?',
         cd_theme_picker='테마 바꾸기', cd_difficulty_picker='길 바꾸기',
         difficulty_name_1='초보', difficulty_name_2='쉬움', difficulty_name_3='보통', difficulty_name_4='어려움', difficulty_name_5='아주 어려움', difficulty_name_6='달인', theme_animals='동물', theme_monsters='괴물', theme_emoji='이모지', settings='설정', level_completed='클리어!', time='시간', score='점수', play='놀기',
         cd_quick_play='놀기', cd_map='테마와 길', cd_settings='설정', cd_theme_animals='동물 테마',
@@ -63,6 +65,7 @@ LANGS['zh-rTW'] = dict(
     strings=dict(
         app_name='記憶遊戲', sound_on='聲音 開', sound_off='聲音 關', rate_this='評分', privacy_policy='隱私權',
         language='語言', language_phone='手機語言', cd_language='選擇語言',
+        changed_prompt='哪裡不一樣？',
         cd_theme_picker='更換主題', cd_difficulty_picker='更換路線',
         difficulty_name_1='新手', difficulty_name_2='簡單', difficulty_name_3='中等', difficulty_name_4='困難', difficulty_name_5='超難', difficulty_name_6='大師', theme_animals='動物', theme_monsters='怪獸', theme_emoji='表情', settings='設定', level_completed='過關！', time='時間', score='分數', play='玩',
         cd_quick_play='開始玩', cd_map='主題與路線', cd_settings='設定', cd_theme_animals='動物主題',
@@ -92,6 +95,7 @@ LANGS['zh-rCN'] = dict(
     strings=dict(
         app_name='记忆游戏', sound_on='声音 开', sound_off='声音 关', rate_this='评分', privacy_policy='隐私',
         language='语言', language_phone='手机语言', cd_language='选择语言',
+        changed_prompt='哪里不一样？',
         cd_theme_picker='更换主题', cd_difficulty_picker='更换路线',
         difficulty_name_1='新手', difficulty_name_2='简单', difficulty_name_3='中等', difficulty_name_4='困难', difficulty_name_5='超难', difficulty_name_6='大师', theme_animals='动物', theme_monsters='怪兽', theme_emoji='表情', settings='设置', level_completed='过关！', time='时间', score='分数', play='玩',
         cd_quick_play='开始玩', cd_map='主题和路线', cd_settings='设置', cd_theme_animals='动物主题',
@@ -121,6 +125,7 @@ LANGS['ms'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Bunyi HIDUP', sound_off='Bunyi MATI', rate_this='Beri nilai', privacy_policy='Privasi',
         language='Bahasa', language_phone='Bahasa telefon', cd_language='Pilih bahasa',
+        changed_prompt='Apa yang berubah?',
         cd_theme_picker='Tukar tema', cd_difficulty_picker='Tukar laluan',
         difficulty_name_1='Baru', difficulty_name_2='Mudah', difficulty_name_3='Sederhana', difficulty_name_4='Sukar', difficulty_name_5='Pakar', difficulty_name_6='Mahir', theme_animals='Haiwan', theme_monsters='Raksasa', theme_emoji='Emoji', settings='Tetapan', level_completed='Selesai!', time='Masa', score='Skor', play='main',
         cd_quick_play='Main', cd_map='Tema dan laluan', cd_settings='Tetapan', cd_theme_animals='Tema haiwan',

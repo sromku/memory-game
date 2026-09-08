@@ -10,7 +10,7 @@
         android:id="@+id/scene"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:importantForAccessibility="no" />
+        android:contentDescription="@string/cd_singers" />
 
     <TextView
         android:id="@+id/prompt"
@@ -23,14 +23,22 @@
         android:gravity="center_horizontal"
         android:maxLines="1"
         android:textSize="@dimen/who_prompt_text_size"
+        android:visibility="invisible"
         app:autoSizeMaxTextSize="@dimen/who_prompt_text_size"
         app:autoSizeMinTextSize="12sp"
         app:autoSizeTextType="uniform"
-        android:visibility="invisible"
         tools:text="@string/who_missing"
         tools:visibility="visible" />
 
-    <!-- The three cards to pick from. -->
+    <com.snatik.matches.ui.minigame.SongProgressView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/song_progress_height"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="@dimen/song_progress_margin_top"
+        android:importantForAccessibility="no" />
+
+    <!-- Up to three cards to pick from. -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,14 +93,14 @@
         tools:visibility="visible" />
 
     <TextView
-        style="@style/GameText"
         android:id="@+id/time_bar_text"
+        style="@style/GameText"
         android:layout_width="@dimen/clock_width"
         android:layout_height="@dimen/clock_height"
         android:layout_gravity="end|top"
         android:layout_marginTop="@dimen/screen_back_margin"
         android:layout_marginEnd="@dimen/clock_text_margin_right"
-                android:gravity="center"
+        android:gravity="center"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="4"

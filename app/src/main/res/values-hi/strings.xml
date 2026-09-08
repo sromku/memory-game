@@ -36,6 +36,7 @@
     <string name="who_look">देखो!</string>
     <string name="who_missing">कौन गायब है?</string>
     <string name="cd_choice">कार्ड %1$d</string>
+    <string name="changed_prompt">क्या बदला?</string>
     <string name="song_listen">सुनो!</string>
     <string name="song_again">फिर से सुनो!</string>
     <string name="song_your_turn">तुम्हारी बारी!</string>

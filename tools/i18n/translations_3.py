@@ -5,6 +5,7 @@ LANGS['ar'] = dict(
     strings=dict(
         app_name='لعبة الذاكرة', sound_on='الصوت مفعّل', sound_off='الصوت مغلق', rate_this='قيّمنا', privacy_policy='الخصوصية',
         language='اللغة', language_phone='لغة الهاتف', cd_language='اختيار اللغة',
+        changed_prompt='ما الذي تغيّر؟',
         cd_theme_picker='تغيير الموضوع', cd_difficulty_picker='تغيير الطريق',
         difficulty_name_1='مبتدئ', difficulty_name_2='سهل', difficulty_name_3='متوسط', difficulty_name_4='صعب', difficulty_name_5='خبير', difficulty_name_6='ماهر', theme_animals='حيوانات', theme_monsters='وحوش', theme_emoji='إيموجي', settings='الإعدادات', level_completed='أحسنت!', time='الوقت', score='النقاط', play='العب',
         cd_quick_play='العب', cd_map='المواضيع والطرق', cd_settings='الإعدادات', cd_theme_animals='موضوع الحيوانات',
@@ -34,6 +35,7 @@ LANGS['hi'] = dict(
     strings=dict(
         app_name='मेमोरी गेम', sound_on='आवाज़ चालू', sound_off='आवाज़ बंद', rate_this='रेटिंग दें', privacy_policy='गोपनीयता',
         language='भाषा', language_phone='फ़ोन की भाषा', cd_language='भाषा चुनें',
+        changed_prompt='क्या बदला?',
         cd_theme_picker='थीम बदलें', cd_difficulty_picker='रास्ता बदलें',
         difficulty_name_1='नया', difficulty_name_2='आसान', difficulty_name_3='मध्यम', difficulty_name_4='कठिन', difficulty_name_5='विशेषज्ञ', difficulty_name_6='मास्टर', theme_animals='जानवर', theme_monsters='राक्षस', theme_emoji='इमोजी', settings='सेटिंग', level_completed='शाबाश!', time='समय', score='अंक', play='खेलो',
         cd_quick_play='खेलो', cd_map='थीम और रास्ते', cd_settings='सेटिंग', cd_theme_animals='जानवरों की थीम',
@@ -63,6 +65,7 @@ LANGS['id'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Suara NYALA', sound_off='Suara MATI', rate_this='Beri nilai', privacy_policy='Privasi',
         language='Bahasa', language_phone='Bahasa ponsel', cd_language='Pilih bahasa',
+        changed_prompt='Apa yang berubah?',
         cd_theme_picker='Ganti tema', cd_difficulty_picker='Ganti jalur',
         difficulty_name_1='Pemula', difficulty_name_2='Mudah', difficulty_name_3='Sedang', difficulty_name_4='Sulit', difficulty_name_5='Pakar', difficulty_name_6='Master', theme_animals='Hewan', theme_monsters='Monster', theme_emoji='Emoji', settings='Pengaturan', level_completed='Selesai!', time='Waktu', score='Skor', play='main',
         cd_quick_play='Main', cd_map='Tema dan jalur', cd_settings='Pengaturan', cd_theme_animals='Tema hewan',
@@ -92,6 +95,7 @@ LANGS['vi'] = dict(
     strings=dict(
         app_name='Trò chơi trí nhớ', sound_on='Âm thanh BẬT', sound_off='Âm thanh TẮT', rate_this='Đánh giá', privacy_policy='Quyền riêng tư',
         language='Ngôn ngữ', language_phone='Ngôn ngữ điện thoại', cd_language='Chọn ngôn ngữ',
+        changed_prompt='Có gì khác?',
         cd_theme_picker='Đổi chủ đề', cd_difficulty_picker='Đổi con đường',
         difficulty_name_1='Mới', difficulty_name_2='Dễ', difficulty_name_3='Vừa', difficulty_name_4='Khó', difficulty_name_5='Rất khó', difficulty_name_6='Bậc thầy', theme_animals='Động vật', theme_monsters='Quái vật', theme_emoji='Emoji', settings='Cài đặt', level_completed='Xong rồi!', time='Thời gian', score='Điểm', play='chơi',
         cd_quick_play='Chơi', cd_map='Chủ đề và con đường', cd_settings='Cài đặt', cd_theme_animals='Chủ đề động vật',
@@ -121,6 +125,7 @@ LANGS['th'] = dict(
     strings=dict(
         app_name='เกมความจำ', sound_on='เสียง เปิด', sound_off='เสียง ปิด', rate_this='ให้คะแนน', privacy_policy='ความเป็นส่วนตัว',
         language='ภาษา', language_phone='ภาษาของโทรศัพท์', cd_language='เลือกภาษา',
+        changed_prompt='อะไรเปลี่ยนไป?',
         cd_theme_picker='เปลี่ยนธีม', cd_difficulty_picker='เปลี่ยนเส้นทาง',
         difficulty_name_1='มือใหม่', difficulty_name_2='ง่าย', difficulty_name_3='ปานกลาง', difficulty_name_4='ยาก', difficulty_name_5='ยากมาก', difficulty_name_6='เซียน', theme_animals='สัตว์', theme_monsters='มอนสเตอร์', theme_emoji='อีโมจิ', settings='ตั้งค่า', level_completed='ผ่านแล้ว!', time='เวลา', score='คะแนน', play='เล่น',
         cd_quick_play='เล่น', cd_map='ธีมและเส้นทาง', cd_settings='การตั้งค่า', cd_theme_animals='ธีมสัตว์',

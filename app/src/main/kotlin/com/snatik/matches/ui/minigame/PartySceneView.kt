@@ -41,6 +41,10 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         /** 1 while the character sings, fading to 0. */
         var glow = 0f
         var glowAnimator: ValueAnimator? = null
+
+        /** Side-to-side offset while shaking its head, -1..1. */
+        var shake = 0f
+        var shakeAnimator: ValueAnimator? = null
         val bounds = Rect()
     }
 
@@ -190,8 +194,29 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         return true
     }
 
+    /** Everyone hops, one after another. */
+    fun celebrate() {
+        guests.forEachIndexed { index, guest -> postDelayed({ guest.drawable.hop() }, JOY_STAGGER_MS * index) }
+    }
+
+    /** The character at [position] shakes its head: a quick side-to-side wiggle. */
+    fun shakeHead(position: Int) {
+        val guest = guests.getOrNull(position) ?: return
+        guest.shakeAnimator?.cancel()
+        guest.shakeAnimator = ValueAnimator.ofFloat(0f, 1f).apply {
+            duration = SHAKE_MS
+            interpolator = LinearInterpolator()
+            addUpdateListener {
+                val t = it.animatedValue as Float
+                guest.shake = sin(t * 3 * PI).toFloat() * (1 - t)
+                invalidate()
+            }
+            start()
+        }
+    }
+
     fun clear() {
-        guests.forEach { it.animator?.cancel(); it.glowAnimator?.cancel(); it.drawable.stop(); it.drawable.callback = null }
+        guests.forEach { it.animator?.cancel(); it.glowAnimator?.cancel(); it.shakeAnimator?.cancel(); it.drawable.stop(); it.drawable.callback = null }
         guests.clear()
         gap = null
         markerAnimator.cancel()
@@ -230,7 +255,7 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
             for (guest in guests) {
                 if (guest.visible <= 0f) continue
                 val drawable = guest.drawable
-                val left = (width * guest.x - size / 2f).toInt()
+                val left = (width * guest.x - size / 2f + guest.shake * size * SHAKE_AMPLITUDE).toInt()
                 val feet = groundY + (1f - guest.visible) * size * SINK_DEPTH
                 val top = (feet - size * drawable.feetFraction).toInt()
                 guest.bounds.set(left, top, left + size, top + size)
@@ -288,5 +313,7 @@ class PartySceneView @JvmOverloads constructor(context: Context, attrs: Attribut
         const val HIDE_STAGGER_MS = 60L
         const val JOY_DELAY_MS = 350L
         const val JOY_STAGGER_MS = 90L
+        const val SHAKE_MS = 450L
+        const val SHAKE_AMPLITUDE = 0.08f
     }
 }

@@ -36,6 +36,7 @@
     <string name="who_look">보세요!</string>
     <string name="who_missing">누가 없을까?</string>
     <string name="cd_choice">카드 %1$d</string>
+    <string name="changed_prompt">뭐가 달라졌지?</string>
     <string name="song_listen">들어 봐!</string>
     <string name="song_again">다시 들어 봐!</string>
     <string name="song_your_turn">네 차례야!</string>

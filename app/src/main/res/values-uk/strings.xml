@@ -36,6 +36,7 @@
     <string name="who_look">Дивись!</string>
     <string name="who_missing">Кого бракує?</string>
     <string name="cd_choice">Картка %1$d</string>
+    <string name="changed_prompt">Що змінилося?</string>
     <string name="song_listen">Слухай!</string>
     <string name="song_again">Слухай ще раз!</string>
     <string name="song_your_turn">Твій хід!</string>

@@ -47,6 +47,12 @@ class FollowTheSong private constructor(val partySize: Int, val song: List<Int>)
             else -> 1
         }
 
+    override fun answer(choice: Int): MiniGameRules.Answer = when (tap(choice)) {
+        Outcome.MISTAKE -> MiniGameRules.Answer.WRONG
+        Outcome.IGNORED -> MiniGameRules.Answer.IGNORED
+        else -> MiniGameRules.Answer.RIGHT
+    }
+
     fun tap(singer: Int): Outcome {
         if (isOver) return Outcome.IGNORED
         if (singer != song[position]) {

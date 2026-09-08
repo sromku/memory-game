@@ -36,6 +36,7 @@
     <string name="who_look">Bak!</string>
     <string name="who_missing">Kim eksik?</string>
     <string name="cd_choice">Kart %1$d</string>
+    <string name="changed_prompt">Ne değişti?</string>
     <string name="song_listen">Dinle!</string>
     <string name="song_again">Tekrar dinle!</string>
     <string name="song_your_turn">Sıra sende!</string>

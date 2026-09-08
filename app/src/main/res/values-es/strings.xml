@@ -36,6 +36,7 @@
     <string name="who_look">¡Mira!</string>
     <string name="who_missing">¿Quién falta?</string>
     <string name="cd_choice">Carta %1$d</string>
+    <string name="changed_prompt">¿Qué cambió?</string>
     <string name="song_listen">¡Escucha!</string>
     <string name="song_again">¡Escucha otra vez!</string>
     <string name="song_your_turn">¡Te toca!</string>
