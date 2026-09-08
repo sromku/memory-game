@@ -1,0 +1,63 @@
+<en-US>
+The game is back, bigger! Four worlds: Animals, Monsters, Emojis and the new Ocean, each with six roads of 100 rounds and stars to collect. Every fifth round is a surprise mini-game, seven in all. A friends album: every ten rounds a new friend joins, tap one to meet it by name. A parents' corner behind a hold-to-open gate. Speaks 21 languages, switchable in the settings. Works on phones and tablets. No ads, no internet, nothing collected.
+</en-US>
+<es-ES>
+¡El juego ha vuelto, y más grande! Cuatro mundos: Animales, Monstruos, Emojis y el nuevo Océano, cada uno con seis caminos de 100 rondas y estrellas por ganar. Cada quinta ronda es un minijuego sorpresa, siete en total. Un álbum de amigos: cada diez rondas llega un amigo nuevo; tócalo para conocerlo por su nombre. Un rincón para padres. Habla 21 idiomas, se cambia en los ajustes. Para móviles y tabletas. Sin anuncios, sin internet, sin recopilar nada.
+</es-ES>
+<pt-BR>
+O jogo voltou, e maior! Quatro mundos: Animais, Monstros, Emojis e o novo Oceano, cada um com seis estradas de 100 rodadas e estrelas para juntar. A cada cinco rodadas, um minijogo surpresa, sete no total. Um álbum de amigos: a cada dez rodadas chega um amigo novo; toque nele para conhecê-lo pelo nome. Um cantinho dos pais. Fala 21 idiomas, trocáveis nas configurações. Para celulares e tablets. Sem anúncios, sem internet, nada é coletado.
+</pt-BR>
+<fr-FR>
+Le jeu est de retour, en plus grand ! Quatre mondes : Animaux, Monstres, Emojis et le nouvel Océan, chacun avec six routes de 100 manches et des étoiles à gagner. Une manche sur cinq est un mini-jeu surprise, sept en tout. Un album d'amis : toutes les dix manches, un nouvel ami arrive ; touchez-le pour le rencontrer par son nom. Un coin des parents. Parle 21 langues, au choix dans les réglages. Téléphones et tablettes. Sans pub, sans internet, rien n'est collecté.
+</fr-FR>
+<de-DE>
+Das Spiel ist zurück, und größer! Vier Welten: Tiere, Monster, Emojis und der neue Ozean, jede mit sechs Straßen zu je 100 Runden und Sternen zum Sammeln. Jede fünfte Runde ist ein Überraschungs-Minispiel, sieben insgesamt. Ein Freundealbum: alle zehn Runden kommt ein neuer Freund; tippe ihn an und lerne seinen Namen. Eine Elternecke. Spricht 21 Sprachen, umschaltbar in den Einstellungen. Für Handys und Tablets. Keine Werbung, kein Internet, nichts wird gesammelt.
+</de-DE>
+<it-IT>
+Il gioco è tornato, più grande! Quattro mondi: Animali, Mostri, Emoji e il nuovo Oceano, ognuno con sei strade da 100 turni e stelle da raccogliere. Ogni quinto turno è un minigioco a sorpresa, sette in tutto. Un album degli amici: ogni dieci turni arriva un nuovo amico; toccalo per conoscerlo per nome. Un angolo dei genitori. Parla 21 lingue, si cambiano nelle impostazioni. Per telefoni e tablet. Niente pubblicità, niente internet, nessun dato raccolto.
+</it-IT>
+<ru-RU>
+Игра вернулась, и стала больше! Четыре мира: Животные, Монстры, Эмодзи и новый Океан, в каждом шесть дорог по 100 раундов и звёзды. Каждый пятый раунд — мини-игра-сюрприз, всего их семь. Альбом друзей: каждые десять раундов приходит новый друг, нажми на него и узнай его имя. Уголок для родителей. Говорит на 21 языке, язык меняется в настройках. Для телефонов и планшетов. Без рекламы, без интернета, ничего не собирает.
+</ru-RU>
+<uk>
+Гра повернулася, і стала більшою! Чотири світи: Тварини, Монстри, Емодзі та новий Океан, у кожному шість доріг по 100 раундів і зірки. Кожен п'ятий раунд — міні-гра-сюрприз, усього їх сім. Альбом друзів: кожні десять раундів приходить новий друг, торкнись його і дізнайся ім'я. Куточок для батьків. Говорить 21 мовою, мова змінюється в налаштуваннях. Для телефонів і планшетів. Без реклами, без інтернету, нічого не збирає.
+</uk>
+<pl-PL>
+Gra wróciła, i to większa! Cztery światy: Zwierzęta, Potwory, Emoji i nowy Ocean, każdy z sześcioma drogami po 100 rund i gwiazdkami do zebrania. Co piąta runda to niespodzianka: minigra, siedem w sumie. Album przyjaciół: co dziesięć rund dołącza nowy przyjaciel, dotknij go i poznaj jego imię. Kącik dla rodziców. Mówi w 21 językach, do zmiany w ustawieniach. Na telefony i tablety. Bez reklam, bez internetu, nic nie zbiera.
+</pl-PL>
+<nl-NL>
+Het spel is terug, en groter! Vier werelden: Dieren, Monsters, Emoji's en de nieuwe Oceaan, elk met zes wegen van 100 rondes en sterren om te verzamelen. Elke vijfde ronde is een verrassings-minigame, zeven in totaal. Een vriendenalbum: elke tien rondes komt er een nieuwe vriend bij; tik erop en leer zijn naam. Een ouderhoek. Spreekt 21 talen, te kiezen in de instellingen. Voor telefoons en tablets. Geen advertenties, geen internet, niets wordt verzameld.
+</nl-NL>
+<tr-TR>
+Oyun geri döndü, hem de daha büyük! Dört dünya: Hayvanlar, Canavarlar, Emojiler ve yeni Okyanus; her birinde 100 turluk altı yol ve toplanacak yıldızlar. Her beşinci tur sürpriz bir mini oyun, toplam yedi tane. Arkadaş albümü: her on turda yeni bir arkadaş gelir, dokun ve adını öğren. Ebeveyn köşesi. 21 dil konuşur, ayarlardan değiştirilir. Telefon ve tabletlerde. Reklamsız, internetsiz, hiçbir veri toplanmaz.
+</tr-TR>
+<ar>
+عادت اللعبة، وصارت أكبر! أربعة عوالم: الحيوانات والوحوش والإيموجي والمحيط الجديد، في كل منها ست طرق من 100 جولة ونجوم تُجمع. كل جولة خامسة لعبة مصغّرة مفاجئة، سبع ألعاب في المجموع. ألبوم الأصدقاء: كل عشر جولات ينضم صديق جديد، المسه لتعرف اسمه. ركن للوالدين. تتحدث 21 لغة تُغيَّر من الإعدادات. للهواتف والأجهزة اللوحية. بلا إعلانات، بلا إنترنت، لا تجمع أي بيانات.
+</ar>
+<hi-IN>
+गेम वापस आ गया, और भी बड़ा! चार दुनिया: जानवर, राक्षस, इमोजी और नया समुद्र, हर एक में 100 राउंड की छह सड़कें और जमा करने के लिए तारे। हर पाँचवाँ राउंड एक सरप्राइज़ मिनी-गेम, कुल सात। दोस्तों का एल्बम: हर दस राउंड पर एक नया दोस्त आता है, उसे छूकर उसका नाम जानो। माता-पिता का कोना। 21 भाषाएँ, सेटिंग्स में बदलें। फ़ोन और टैबलेट पर। न विज्ञापन, न इंटरनेट, कुछ भी इकट्ठा नहीं।
+</hi-IN>
+<id>
+Gamenya kembali, lebih besar! Empat dunia: Hewan, Monster, Emoji, dan Laut yang baru, masing-masing dengan enam jalan berisi 100 ronde dan bintang untuk dikumpulkan. Setiap ronde kelima adalah mini-game kejutan, tujuh semuanya. Album teman: setiap sepuluh ronde datang teman baru, ketuk untuk mengenal namanya. Pojok orang tua. Tersedia dalam 21 bahasa, diganti di pengaturan. Untuk ponsel dan tablet. Tanpa iklan, tanpa internet, tidak ada data yang dikumpulkan.
+</id>
+<vi>
+Trò chơi đã trở lại, lớn hơn! Bốn thế giới: Động vật, Quái vật, Emoji và Đại dương mới, mỗi thế giới có sáu con đường 100 vòng và sao để thu thập. Cứ năm vòng có một trò chơi nhỏ bất ngờ, tổng cộng bảy trò. Album bạn bè: cứ mười vòng lại có một người bạn mới, chạm vào để biết tên. Góc dành cho cha mẹ. Hỗ trợ 21 ngôn ngữ, đổi trong cài đặt. Cho điện thoại và máy tính bảng. Không quảng cáo, không internet, không thu thập gì.
+</vi>
+<th>
+เกมกลับมาแล้ว ใหญ่กว่าเดิม! สี่โลก: สัตว์ มอนสเตอร์ อีโมจิ และมหาสมุทรใหม่ แต่ละโลกมีหกเส้นทาง ทางละ 100 รอบ พร้อมดาวให้สะสม ทุกรอบที่ห้าเป็นมินิเกมเซอร์ไพรส์ รวมเจ็ดเกม อัลบั้มเพื่อน: ทุกสิบรอบจะมีเพื่อนใหม่ แตะเพื่อรู้จักชื่อ มุมสำหรับผู้ปกครอง รองรับ 21 ภาษา เปลี่ยนได้ในการตั้งค่า ใช้ได้ทั้งโทรศัพท์และแท็บเล็ต ไม่มีโฆษณา ไม่ใช้อินเทอร์เน็ต ไม่เก็บข้อมูลใดๆ
+</th>
+<ja-JP>
+ゲームがもっと大きくなって帰ってきました！どうぶつ・モンスター・絵文字・新しい海の4つの世界、それぞれに100ラウンドの道が6本、集める星もいっぱい。5ラウンドごとにサプライズのミニゲーム、全部で7種類。なかまアルバム：10ラウンドごとに新しいなかまが登場、タップして名前を知ろう。保護者のコーナー。21言語に対応、設定で切り替え。スマホでもタブレットでも。広告なし、通信なし、データ収集なし。
+</ja-JP>
+<ko-KR>
+게임이 더 커져서 돌아왔어요! 동물, 몬스터, 이모지, 새로운 바다까지 네 개의 세계, 각각 100라운드 길이 여섯 개와 모을 별들. 다섯 라운드마다 깜짝 미니게임, 모두 일곱 가지. 친구 앨범: 열 라운드마다 새 친구가 찾아와요. 눌러서 이름을 알아보세요. 부모님 코너. 21개 언어 지원, 설정에서 변경. 휴대폰과 태블릿에서. 광고 없음, 인터넷 없음, 수집하는 정보 없음.
+</ko-KR>
+<zh-TW>
+遊戲回來了，變得更大！四個世界：動物、怪獸、表情符號和全新的海洋，每個世界有六條 100 關的道路和可收集的星星。每五關有一個驚喜小遊戲，共七種。朋友圖鑑：每十關會有新朋友加入，點一下認識它的名字。家長專區。支援 21 種語言，可在設定中切換。手機和平板皆可。無廣告、無網路、不收集任何資料。
+</zh-TW>
+<zh-CN>
+游戏回来了，变得更大！四个世界：动物、怪兽、表情符号和全新的海洋，每个世界有六条 100 关的道路和可收集的星星。每五关有一个惊喜小游戏，共七种。朋友图鉴：每十关会有新朋友加入，点一下认识它的名字。家长专区。支持 21 种语言，可在设置中切换。手机和平板均可。无广告、无网络、不收集任何数据。
+</zh-CN>
+<ms>
+Permainan kembali, lebih besar! Empat dunia: Haiwan, Raksasa, Emoji dan Lautan yang baru, setiap satu dengan enam jalan 100 pusingan dan bintang untuk dikumpul. Setiap pusingan kelima ialah permainan mini kejutan, tujuh kesemuanya. Album kawan: setiap sepuluh pusingan datang kawan baru, ketik untuk mengenali namanya. Sudut ibu bapa. 21 bahasa, boleh ditukar dalam tetapan. Untuk telefon dan tablet. Tiada iklan, tiada internet, tiada data dikumpul.
+</ms>
