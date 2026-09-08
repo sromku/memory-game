@@ -43,6 +43,10 @@
     <string name="shop_again">Nog een keer!</string>
     <string name="shop_tap">Tik ze op volgorde aan!</string>
     <string name="peek_find">Waar is…</string>
+    <string name="album_title">Vrienden</string>
+    <string name="cd_album">Vriendenalbum</string>
+    <string name="cd_friend_found">Een vriend</string>
+    <string name="cd_friend_hidden">Een vriend om nog te ontmoeten</string>
     <string name="song_listen">Luister!</string>
     <string name="song_again">Luister nog eens!</string>
     <string name="song_your_turn">Jouw beurt!</string>

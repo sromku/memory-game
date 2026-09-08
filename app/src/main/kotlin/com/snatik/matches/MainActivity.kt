@@ -18,11 +18,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.snatik.matches.databinding.ActivityMainBinding
 import com.snatik.matches.game.GameResult
+import com.snatik.matches.game.GameTheme
 import com.snatik.matches.ui.BackgroundCrossfader
 import com.snatik.matches.ui.image.ArtCache
 import com.snatik.matches.ui.image.ArtWarmup
 import com.snatik.matches.ui.GameViewModel
 import com.snatik.matches.ui.GameViewModel.UiEvent
+import com.snatik.matches.ui.album.AlbumFragment
 import com.snatik.matches.ui.difficulty.DifficultySelectFragment
 import com.snatik.matches.ui.game.GameFragment
 import com.snatik.matches.ui.menu.MenuFragment
@@ -59,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
         popups = PopupHost(binding.popupContainer, lifecycleScope) { shown -> popupBackCallback.isEnabled = shown }
         backgrounds = BackgroundCrossfader(binding.backgroundDefault, binding.backgroundTheme, lifecycleScope)
-        backgrounds.loadDefault(assets)
+        backgrounds.loadDefault(assets, viewModel.progress.value.friendsOf(GameTheme.ANIMALS))
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
@@ -106,6 +108,7 @@ class MainActivity : AppCompatActivity() {
             UiEvent.OpenDifficultyPicker -> push(DifficultySelectFragment(), BACK_STACK_PICKER)
             UiEvent.ClosePicker -> supportFragmentManager.popBackStack(BACK_STACK_PICKER, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             UiEvent.OpenRoadMap -> push(RoadMapFragment(), BACK_STACK_ROAD)
+            UiEvent.OpenAlbum -> push(AlbumFragment(), BACK_STACK_ALBUM)
             UiEvent.OpenGame -> {
                 // "Play again" replaces the finished round instead of stacking on top of it.
                 supportFragmentManager.popBackStack(BACK_STACK_GAME, FragmentManager.POP_BACK_STACK_INCLUSIVE)
@@ -195,6 +198,7 @@ class MainActivity : AppCompatActivity() {
         const val PLAY_STORE_PACKAGE = "com.snatik.matches"
         const val BACK_STACK_PICKER = "picker"
         const val BACK_STACK_ROAD = "road"
+        const val BACK_STACK_ALBUM = "album"
         const val BACK_STACK_GAME = "game"
     }
 }

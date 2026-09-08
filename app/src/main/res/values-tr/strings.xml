@@ -43,6 +43,10 @@
     <string name="shop_again">Bir kez daha!</string>
     <string name="shop_tap">Sırayla dokun!</string>
     <string name="peek_find">Nerede…</string>
+    <string name="album_title">Arkadaşlar</string>
+    <string name="cd_album">Arkadaş albümü</string>
+    <string name="cd_friend_found">Bir arkadaş</string>
+    <string name="cd_friend_hidden">Tanışılacak bir arkadaş</string>
     <string name="song_listen">Dinle!</string>
     <string name="song_again">Tekrar dinle!</string>
     <string name="song_your_turn">Sıra sende!</string>

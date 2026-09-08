@@ -28,6 +28,18 @@
         tools:src="@drawable/button_start" />
 
     <ImageView
+        android:id="@+id/album_button"
+        android:layout_width="@dimen/settings_game_button"
+        android:layout_height="@dimen/settings_game_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/settings_game_button_margin"
+        android:layout_toStartOf="@id/start_game_button"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/cd_album"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/button_album" />
+
+    <ImageView
         android:id="@+id/settings_game_button"
         android:layout_width="@dimen/settings_game_button"
         android:layout_height="@dimen/settings_game_button"

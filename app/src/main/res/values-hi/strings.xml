@@ -43,6 +43,10 @@
     <string name="shop_again">एक बार और!</string>
     <string name="shop_tap">अब क्रम से छुओ!</string>
     <string name="peek_find">कहाँ है…</string>
+    <string name="album_title">दोस्त</string>
+    <string name="cd_album">दोस्तों का एल्बम</string>
+    <string name="cd_friend_found">एक दोस्त</string>
+    <string name="cd_friend_hidden">एक दोस्त जिससे मिलना बाकी है</string>
     <string name="song_listen">सुनो!</string>
     <string name="song_again">फिर से सुनो!</string>
     <string name="song_your_turn">तुम्हारी बारी!</string>

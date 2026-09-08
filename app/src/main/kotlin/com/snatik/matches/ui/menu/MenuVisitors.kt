@@ -5,9 +5,9 @@ import java.util.TimeZone
 import kotlin.random.Random
 
 /**
- * The few animals standing on the grass of the menu. They are drawn from the day, so the same
- * friends are there every time the app opens today and different ones tomorrow; the first of
- * them is the friend of the day, who says hello when the menu appears.
+ * The few animals standing on the grass of the menu: the player's collected friends, drawn from
+ * the day, so the same ones are there every time the app opens today and different ones
+ * tomorrow; the first of them is the friend of the day, who says hello when the menu appears.
  */
 class MenuVisitor(
     /** Character asset name, from the animals theme. */
@@ -29,11 +29,17 @@ object MenuVisitors {
             return (now + TimeZone.getDefault().getOffset(now)) / DAY_MILLIS
         }
 
-    val visitors: List<MenuVisitor> by lazy {
+    /**
+     * Today's three visitors, drawn from the animal [friends] the player has collected (character
+     * indices); before there are three, the rest of the animals fill in.
+     */
+    fun visitors(friends: List<Int>): List<MenuVisitor> {
         val random = Random(today)
-        val names = GameTheme.ANIMALS.characters.shuffled(random).take(3)
+        val animals = GameTheme.ANIMALS.characters
+        val pool = friends.map { animals[it] }.ifEmpty { animals }
+        val names = (pool.shuffled(random).take(3) + animals.shuffled(random)).distinct().take(3)
         val places = spots.shuffled(random).take(3)
-        names.zip(places) { name, x -> MenuVisitor(name, x, 0.85f + random.nextFloat() * 0.3f) }
+        return names.zip(places) { name, x -> MenuVisitor(name, x, 0.85f + random.nextFloat() * 0.3f) }
     }
 
     /** Today's hello, one of [greetings]. */

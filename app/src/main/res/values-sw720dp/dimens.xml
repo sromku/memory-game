@@ -103,4 +103,12 @@
     <!-- peek and find -->
     <dimen name="peek_target_size">70dp</dimen>
     <dimen name="peek_target_padding">8dp</dimen>
+
+    <!-- friends album -->
+    <dimen name="album_padding_top">110dp</dimen>
+    <dimen name="album_padding_bottom">40dp</dimen>
+    <dimen name="album_padding_side">60dp</dimen>
+    <dimen name="album_section_gap">30dp</dimen>
+    <dimen name="album_card">96dp</dimen>
+    <dimen name="album_card_padding">9dp</dimen>
 </resources>

@@ -14,6 +14,7 @@ object ArtWarmup {
     fun plan(resources: Resources, progress: Progress, theme: GameTheme): List<Int> = buildList {
         add(R.drawable.button_start)
         add(R.drawable.button_settings)
+        add(R.drawable.button_album)
         add(R.drawable.tooltip_play)
         add(R.drawable.button_back)
         for (t in GameTheme.entries) add(typedArrayId(resources, t.cardImagesRes, progress.themeStars(t)))

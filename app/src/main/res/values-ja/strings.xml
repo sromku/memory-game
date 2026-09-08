@@ -43,6 +43,10 @@
     <string name="shop_again">もういちど！</string>
     <string name="shop_tap">じゅんばんにタッチ！</string>
     <string name="peek_find">どこかな…</string>
+    <string name="album_title">ともだち</string>
+    <string name="cd_album">ともだちアルバム</string>
+    <string name="cd_friend_found">ともだち</string>
+    <string name="cd_friend_hidden">まだあっていないともだち</string>
     <string name="song_listen">きいて！</string>
     <string name="song_again">もういちど きいて！</string>
     <string name="song_your_turn">きみのばん！</string>

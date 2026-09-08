@@ -50,6 +50,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         data object OpenGame : UiEvent
         data class OpenMiniGame(val kind: MiniGameKind) : UiEvent
         data object ReturnToRoadMap : UiEvent
+        data object OpenAlbum : UiEvent
         data object ShowSettings : UiEvent
         data object ShowLanguages : UiEvent
         data class ShowWon(val result: GameResult) : UiEvent
@@ -141,6 +142,10 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         return wanted?.takeIf { current.isUnlocked(theme, it) }
             ?: current.quickPlayRound(theme)?.difficulty
             ?: Difficulty.entries.last { current.isUnlocked(theme, it) }
+    }
+
+    fun openAlbum() {
+        uiEvents.trySend(UiEvent.OpenAlbum)
     }
 
     fun openThemePicker() {

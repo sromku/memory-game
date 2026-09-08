@@ -33,6 +33,7 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
             // Traced vectors: inflate them off the main thread so the first frame is not held up.
             binding.startGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_start))
             binding.settingsGameButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_settings))
+            binding.albumButton.setImageDrawable(requireContext().loadDrawable(R.drawable.button_album))
             val play = Label(getString(R.string.play), x = 0.5f, y = 0.33f, height = 0.3f, maxWidth = 0.7f)
             binding.tooltip.setImageDrawable(LabeledDrawable(requireContext(), requireContext().loadDrawable(R.drawable.tooltip_play), listOf(play)))
         }
@@ -40,6 +41,7 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
         binding.settingsGameButton.setOnClickListener { viewModel.openSettings() }
         // The big button opens the map, the hub: the next round waits there, one tap away.
         binding.startGameButton.setOnClickListener { leave(binding, viewModel::play) }
+        binding.albumButton.setOnClickListener { leave(binding, viewModel::openAlbum) }
         startLightsAnimation(binding)
         startTooltipAnimation(binding)
     }
@@ -52,6 +54,7 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
 
     private fun leave(binding: MenuFragmentBinding, then: () -> Unit) {
         binding.startGameButton.isEnabled = false
+        binding.albumButton.isEnabled = false
         animateAllAssetsOff(binding, then)
     }
 
@@ -75,12 +78,16 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
             interpolator = slide
             duration = slideDuration
         }
+        val album = ObjectAnimator.ofFloat(binding.albumButton, View.TRANSLATION_Y, 120.dp(binding.root)).apply {
+            interpolator = slide
+            duration = slideDuration
+        }
         val start = ObjectAnimator.ofFloat(binding.startGameButton, View.TRANSLATION_Y, 130.dp(binding.root)).apply {
             interpolator = slide
             duration = slideDuration
         }
         AnimatorSet().apply {
-            playTogether(title, lightsX, lightsY, tooltip, settings, start)
+            playTogether(title, lightsX, lightsY, tooltip, settings, album, start)
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator) = onEnd()
             })

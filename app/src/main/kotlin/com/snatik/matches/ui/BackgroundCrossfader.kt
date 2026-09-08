@@ -30,11 +30,11 @@ class BackgroundCrossfader(
     private val screenWidth get() = base.resources.displayMetrics.widthPixels
     private val screenHeight get() = base.resources.displayMetrics.heightPixels
 
-    fun loadDefault(assets: AssetManager) {
+    fun loadDefault(assets: AssetManager, friends: List<Int>) {
         scope.launch {
             base.setScene(BitmapLoader.decodeSampled(base.resources, R.drawable.background, screenWidth, screenHeight))
             // The menu's animals: a sixth of the screen tall, rasterised once each, off the main thread.
-            val placed = MenuVisitors.visitors.map { visitor ->
+            val placed = MenuVisitors.visitors(friends).map { visitor ->
                 val character = withContext(Dispatchers.IO) { Character.load(assets, visitor.name) } ?: return@map null
                 val size = (screenHeight * 0.19f * visitor.scale * 1.2f).toInt()
                 visitor to CharacterDrawable(RenderedCharacter.render(character, size))

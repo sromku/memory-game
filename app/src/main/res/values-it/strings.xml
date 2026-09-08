@@ -43,6 +43,10 @@
     <string name="shop_again">Ancora una volta!</string>
     <string name="shop_tap">Toccali in ordine!</string>
     <string name="peek_find">Dov\'è…</string>
+    <string name="album_title">Amici</string>
+    <string name="cd_album">Album degli amici</string>
+    <string name="cd_friend_found">Un amico</string>
+    <string name="cd_friend_hidden">Un amico da conoscere</string>
     <string name="song_listen">Ascolta!</string>
     <string name="song_again">Ascolta ancora!</string>
     <string name="song_your_turn">Tocca a te!</string>

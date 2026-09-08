@@ -53,6 +53,11 @@
     <string name="shop_again">Once more!</string>
     <string name="shop_tap">Now tap them in order!</string>
     <string name="peek_find">Where is…</string>
+    <string name="album_title">Friends</string>
+    <string name="album_title_format" translatable="false">%1$s  %2$d / %3$d</string>
+    <string name="cd_album">Friends album</string>
+    <string name="cd_friend_found">A friend</string>
+    <string name="cd_friend_hidden">A friend still to meet</string>
     <string name="song_listen">Listen!</string>
     <string name="song_again">Listen again!</string>
     <string name="song_your_turn">Your turn!</string>

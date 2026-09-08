@@ -5,6 +5,7 @@ LANGS['ar'] = dict(
     strings=dict(
         app_name='لعبة الذاكرة', sound_on='الصوت مفعّل', sound_off='الصوت مغلق', rate_this='قيّمنا', privacy_policy='الخصوصية',
         language='اللغة', language_phone='لغة الهاتف', cd_language='اختيار اللغة',
+        album_title='الأصدقاء', cd_album='ألبوم الأصدقاء', cd_friend_found='صديق', cd_friend_hidden='صديق لم تقابله بعد',
         shop_remember='تذكّر هؤلاء!', shop_again='مرة أخرى!', shop_tap='المسهم بالترتيب!', peek_find='أين…',
         shadow_prompt='ظلّ مَن هذا؟', odd_prompt='أيّهم مختلف؟',
         changed_prompt='ما الذي تغيّر؟',
@@ -37,6 +38,7 @@ LANGS['hi'] = dict(
     strings=dict(
         app_name='मेमोरी गेम', sound_on='आवाज़ चालू', sound_off='आवाज़ बंद', rate_this='रेटिंग दें', privacy_policy='गोपनीयता',
         language='भाषा', language_phone='फ़ोन की भाषा', cd_language='भाषा चुनें',
+        album_title='दोस्त', cd_album='दोस्तों का एल्बम', cd_friend_found='एक दोस्त', cd_friend_hidden='एक दोस्त जिससे मिलना बाकी है',
         shop_remember='इन्हें याद रखो!', shop_again='एक बार और!', shop_tap='अब क्रम से छुओ!', peek_find='कहाँ है…',
         shadow_prompt='यह किसकी परछाई है?', odd_prompt='कौन सा अलग है?',
         changed_prompt='क्या बदला?',
@@ -69,6 +71,7 @@ LANGS['id'] = dict(
     strings=dict(
         app_name='Permainan Memori', sound_on='Suara NYALA', sound_off='Suara MATI', rate_this='Beri nilai', privacy_policy='Privasi',
         language='Bahasa', language_phone='Bahasa ponsel', cd_language='Pilih bahasa',
+        album_title='Teman', cd_album='Album teman', cd_friend_found='Seorang teman', cd_friend_hidden='Teman yang belum ditemui',
         shop_remember='Ingat ini!', shop_again='Sekali lagi!', shop_tap='Sentuh sesuai urutan!', peek_find='Di mana…',
         shadow_prompt='Bayangan siapa ini?', odd_prompt='Mana yang berbeda?',
         changed_prompt='Apa yang berubah?',
@@ -101,6 +104,7 @@ LANGS['vi'] = dict(
     strings=dict(
         app_name='Trò chơi trí nhớ', sound_on='Âm thanh BẬT', sound_off='Âm thanh TẮT', rate_this='Đánh giá', privacy_policy='Quyền riêng tư',
         language='Ngôn ngữ', language_phone='Ngôn ngữ điện thoại', cd_language='Chọn ngôn ngữ',
+        album_title='Bạn bè', cd_album='Album bạn bè', cd_friend_found='Một người bạn', cd_friend_hidden='Một người bạn chưa gặp',
         shop_remember='Nhớ nhé!', shop_again='Một lần nữa!', shop_tap='Chạm theo thứ tự nào!', peek_find='Ở đâu…',
         shadow_prompt='Bóng của ai đây?', odd_prompt='Ai khác nhất?',
         changed_prompt='Có gì khác?',
@@ -133,6 +137,7 @@ LANGS['th'] = dict(
     strings=dict(
         app_name='เกมความจำ', sound_on='เสียง เปิด', sound_off='เสียง ปิด', rate_this='ให้คะแนน', privacy_policy='ความเป็นส่วนตัว',
         language='ภาษา', language_phone='ภาษาของโทรศัพท์', cd_language='เลือกภาษา',
+        album_title='เพื่อน', cd_album='อัลบั้มเพื่อน', cd_friend_found='เพื่อน', cd_friend_hidden='เพื่อนที่ยังไม่ได้พบ',
         shop_remember='จำไว้นะ!', shop_again='อีกครั้ง!', shop_tap='แตะตามลำดับ!', peek_find='อยู่ไหน…',
         shadow_prompt='เงาของใคร?', odd_prompt='ตัวไหนไม่เหมือน?',
         changed_prompt='อะไรเปลี่ยนไป?',

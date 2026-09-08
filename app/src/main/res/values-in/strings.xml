@@ -43,6 +43,10 @@
     <string name="shop_again">Sekali lagi!</string>
     <string name="shop_tap">Sentuh sesuai urutan!</string>
     <string name="peek_find">Di mana…</string>
+    <string name="album_title">Teman</string>
+    <string name="cd_album">Album teman</string>
+    <string name="cd_friend_found">Seorang teman</string>
+    <string name="cd_friend_hidden">Teman yang belum ditemui</string>
     <string name="song_listen">Dengar!</string>
     <string name="song_again">Dengar lagi!</string>
     <string name="song_your_turn">Giliranmu!</string>

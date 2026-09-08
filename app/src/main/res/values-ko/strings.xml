@@ -43,6 +43,10 @@
     <string name="shop_again">한 번 더!</string>
     <string name="shop_tap">순서대로 눌러 봐!</string>
     <string name="peek_find">어디 있을까…</string>
+    <string name="album_title">친구들</string>
+    <string name="cd_album">친구 앨범</string>
+    <string name="cd_friend_found">친구</string>
+    <string name="cd_friend_hidden">아직 만나지 못한 친구</string>
     <string name="song_listen">들어 봐!</string>
     <string name="song_again">다시 들어 봐!</string>
     <string name="song_your_turn">네 차례야!</string>

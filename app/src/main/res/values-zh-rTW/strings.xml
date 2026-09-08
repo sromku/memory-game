@@ -43,6 +43,10 @@
     <string name="shop_again">再一次！</string>
     <string name="shop_tap">按順序點一點！</string>
     <string name="peek_find">在哪裡…</string>
+    <string name="album_title">朋友</string>
+    <string name="cd_album">朋友相簿</string>
+    <string name="cd_friend_found">朋友</string>
+    <string name="cd_friend_hidden">還沒見到的朋友</string>
     <string name="song_listen">聽！</string>
     <string name="song_again">再聽一次！</string>
     <string name="song_your_turn">換你了！</string>

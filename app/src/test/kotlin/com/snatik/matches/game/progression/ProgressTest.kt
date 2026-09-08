@@ -93,6 +93,22 @@ class ProgressTest {
     }
 
     @Test
+    fun `a friend joins the album for every ten rounds of a theme`() {
+        assertTrue(Progress.EMPTY.friendsOf(T).isEmpty())
+        val nine = played(one, 9)
+        assertTrue(nine.friendsOf(T).isEmpty())
+        val ten = played(one, 10)
+        assertEquals(1, ten.friendsOf(T).size)
+        val twentyFive = played(two, 15, from = ten)
+        assertEquals(2, twentyFive.friendsOf(T).size)
+        assertEquals("friends keep their order", ten.friendsOf(T), twentyFive.friendsOf(T).take(1))
+        assertTrue(twentyFive.friendsOf(GameTheme.MONSTERS).isEmpty())
+        val order = Friends.order(T)
+        assertEquals(T.characters.size, order.toSet().size)
+        assertEquals(order, Friends.order(T))
+    }
+
+    @Test
     fun `quick play picks the next round of the highest open difficulty with rounds left`() {
         assertEquals(RoundSpec(T, one, 1), Progress.EMPTY.quickPlayRound(T))
         val opened = played(one, Road.ROUNDS_TO_UNLOCK_NEXT)

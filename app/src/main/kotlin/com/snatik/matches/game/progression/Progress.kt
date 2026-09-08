@@ -69,6 +69,15 @@ class Progress private constructor(private val results: Map<RoundSpec, RoundResu
     fun quickPlayRound(theme: GameTheme): RoundSpec? =
         Difficulty.entries.reversed().filter { isUnlocked(theme, it) }.firstNotNullOfOrNull { nextRound(theme, it) }
 
+    /**
+     * The theme's friends: one character joins the album for every [Friends.ROUNDS_PER_FRIEND]
+     * rounds done on any of the theme's roads, in the theme's fixed order.
+     */
+    fun friendsOf(theme: GameTheme): List<Int> {
+        val earned = Difficulty.entries.sumOf { completedCount(theme, it) / Friends.ROUNDS_PER_FRIEND }
+        return Friends.order(theme).take(earned)
+    }
+
     fun record(round: RoundSpec, result: RoundResult): Progress {
         val best = results[round]?.improvedBy(result) ?: result
         return Progress(results + (round to best))

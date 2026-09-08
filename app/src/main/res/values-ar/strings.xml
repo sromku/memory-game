@@ -43,6 +43,10 @@
     <string name="shop_again">مرة أخرى!</string>
     <string name="shop_tap">المسهم بالترتيب!</string>
     <string name="peek_find">أين…</string>
+    <string name="album_title">الأصدقاء</string>
+    <string name="cd_album">ألبوم الأصدقاء</string>
+    <string name="cd_friend_found">صديق</string>
+    <string name="cd_friend_hidden">صديق لم تقابله بعد</string>
     <string name="song_listen">اسمع!</string>
     <string name="song_again">اسمع مرة أخرى!</string>
     <string name="song_your_turn">دورك!</string>

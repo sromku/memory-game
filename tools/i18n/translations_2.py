@@ -5,6 +5,7 @@ LANGS['ru'] = dict(
     strings=dict(
         app_name='Игра на память', sound_on='Звук ВКЛ', sound_off='Звук ВЫКЛ', rate_this='Оценить', privacy_policy='Конфиденциальность',
         language='Язык', language_phone='Язык телефона', cd_language='Выбрать язык',
+        album_title='Друзья', cd_album='Альбом друзей', cd_friend_found='Друг', cd_friend_hidden='Друг, с которым ещё предстоит встретиться',
         shop_remember='Запомни их!', shop_again='Ещё раз!', shop_tap='Нажми на них по порядку!', peek_find='Где…',
         shadow_prompt='Чья это тень?', odd_prompt='Кто здесь другой?',
         changed_prompt='Что изменилось?',
@@ -37,6 +38,7 @@ LANGS['uk'] = dict(
     strings=dict(
         app_name='Гра на пам\'ять', sound_on='Звук УВІМК', sound_off='Звук ВИМК', rate_this='Оцінити', privacy_policy='Конфіденційність',
         language='Мова', language_phone='Мова телефону', cd_language='Вибрати мову',
+        album_title='Друзі', cd_album='Альбом друзів', cd_friend_found='Друг', cd_friend_hidden='Друг, з яким ще належить зустрітися',
         shop_remember="Запам'ятай їх!", shop_again='Ще раз!', shop_tap='Торкнись їх по черзі!', peek_find='Де…',
         shadow_prompt='Чия це тінь?', odd_prompt='Хто тут інший?',
         changed_prompt='Що змінилося?',
@@ -69,6 +71,7 @@ LANGS['pl'] = dict(
     strings=dict(
         app_name='Gra pamięciowa', sound_on='Dźwięk WŁ', sound_off='Dźwięk WYŁ', rate_this='Oceń', privacy_policy='Prywatność',
         language='Język', language_phone='Język telefonu', cd_language='Wybierz język',
+        album_title='Przyjaciele', cd_album='Album przyjaciół', cd_friend_found='Przyjaciel', cd_friend_hidden='Przyjaciel do poznania',
         shop_remember='Zapamiętaj je!', shop_again='Jeszcze raz!', shop_tap='Dotknij ich po kolei!', peek_find='Gdzie jest…',
         shadow_prompt='Czyj to cień?', odd_prompt='Który jest inny?',
         changed_prompt='Co się zmieniło?',
@@ -101,6 +104,7 @@ LANGS['nl'] = dict(
     strings=dict(
         app_name='Memoryspel', sound_on='Geluid AAN', sound_off='Geluid UIT', rate_this='Beoordelen', privacy_policy='Privacy',
         language='Taal', language_phone='Taal van de telefoon', cd_language='Kies de taal',
+        album_title='Vrienden', cd_album='Vriendenalbum', cd_friend_found='Een vriend', cd_friend_hidden='Een vriend om nog te ontmoeten',
         shop_remember='Onthoud deze!', shop_again='Nog een keer!', shop_tap='Tik ze op volgorde aan!', peek_find='Waar is…',
         shadow_prompt='Wiens schaduw is dit?', odd_prompt='Welke is anders?',
         changed_prompt='Wat is er anders?',
@@ -133,6 +137,7 @@ LANGS['tr'] = dict(
     strings=dict(
         app_name='Hafıza Oyunu', sound_on='Ses AÇIK', sound_off='Ses KAPALI', rate_this='Puan ver', privacy_policy='Gizlilik',
         language='Dil', language_phone='Telefon dili', cd_language='Dil seç',
+        album_title='Arkadaşlar', cd_album='Arkadaş albümü', cd_friend_found='Bir arkadaş', cd_friend_hidden='Tanışılacak bir arkadaş',
         shop_remember='Bunları aklında tut!', shop_again='Bir kez daha!', shop_tap='Sırayla dokun!', peek_find='Nerede…',
         shadow_prompt='Bu kimin gölgesi?', odd_prompt='Hangisi farklı?',
         changed_prompt='Ne değişti?',

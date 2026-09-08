@@ -43,6 +43,10 @@
     <string name="shop_again">Một lần nữa!</string>
     <string name="shop_tap">Chạm theo thứ tự nào!</string>
     <string name="peek_find">Ở đâu…</string>
+    <string name="album_title">Bạn bè</string>
+    <string name="cd_album">Album bạn bè</string>
+    <string name="cd_friend_found">Một người bạn</string>
+    <string name="cd_friend_hidden">Một người bạn chưa gặp</string>
     <string name="song_listen">Nghe nhé!</string>
     <string name="song_again">Nghe lại nhé!</string>
     <string name="song_your_turn">Đến lượt bạn!</string>
