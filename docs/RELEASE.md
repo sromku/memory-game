@@ -128,3 +128,11 @@ answer for this app:
 Then **Test and release** > **Production** > **Create new release**, upload
 `release/memory-game-<version>-<code>.apk` produced by `scripts/verify-release.sh`, add release
 notes, and submit for review. Review of a previously removed app can take longer than usual.
+
+## Store listing assets
+
+The Play listing (texts in twenty-one languages, icon, feature graphics, screenshots per phone
+and tablet size) is kept outside the repository, in a private folder with its own README and the
+small builder that draws the feature graphics from the game's art. Play wants 16:9 screenshots of
+1080 px or more for promotion and tablet shots between 1080 and 7680 px; the app's title art per
+language is what the feature graphics use.

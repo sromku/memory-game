@@ -292,6 +292,12 @@ class RoadMapView @JvmOverloads constructor(context: Context, attrs: AttributeSe
         }
     }
 
+    /** The rounds' accessibility bounds follow the scroll; screen readers cache them until told otherwise. */
+    override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
+        super.onScrollChanged(l, t, oldl, oldt)
+        accessibility.invalidateRoot()
+    }
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         if (event.action == MotionEvent.ACTION_DOWN) performClick()
         return gestures.onTouchEvent(event)
